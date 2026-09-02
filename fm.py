@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
+from typing import Optional
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -12,7 +13,7 @@ class TorchFM(nn.Module):
         nn.init.xavier_uniform_(self.lin.weight)
         self.lin.bias.data.fill_(0.0)
 
-    def forward(self, x: torch.Tensor, active_idx: torch.Tensor | None = None) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, active_idx: Optional[torch.Tensor] = None) -> torch.Tensor:
         if active_idx is not None:
             E = self.V[active_idx]  # (B,F,K)
             summed = torch.sum(E, dim=1)

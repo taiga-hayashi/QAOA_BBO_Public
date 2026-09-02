@@ -2,8 +2,11 @@ from typing import Dict, Tuple
 from qiskit_optimization import QuadraticProgram
 from qiskit_algorithms import QAOA
 from qiskit_algorithms.optimizers import COBYLA
-from qiskit.primitives import StatevectorSampler
+from qiskit_aer.primitives import SamplerV2 as AerSampler
 from qiskit_optimization.algorithms import MinimumEigenOptimizer
+
+from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
+from qiskit_aer import AerSimulator
 
 def solve_qubo_qaoa(qubo_dict: Dict[Tuple[int, int], float], offset: float = 0.0, reps: int = 1, maxiter: int = 100):
     """
@@ -46,8 +49,9 @@ def solve_qubo_qaoa(qubo_dict: Dict[Tuple[int, int], float], offset: float = 0.0
     
     # QAOAとソルバーのセットアップ
     optimizer = COBYLA(maxiter=maxiter)
-    sampler = StatevectorSampler()  # デフォルトのローカルシミュレータ（状態ベクトル計算）
-    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=reps)
+    sampler = AerSampler()  # 高速なシミュレータ (qiskit-aer)
+    pm = generate_preset_pass_manager(optimization_level=1, target=AerSimulator().target)
+    qaoa = QAOA(sampler=sampler, optimizer=optimizer, reps=reps, transpiler=pm)
     
     min_eigen_optimizer = MinimumEigenOptimizer(qaoa)
     

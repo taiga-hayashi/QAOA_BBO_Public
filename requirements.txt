@@ -3,3 +3,5 @@ numpy
 qiskit
 qiskit-optimization
 qiskit-algorithms
+matplotlib
+PyYAML
