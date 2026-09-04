@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  4 SEP 2026 22:38
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  4 SEP 2026 22:42
  restricted system commands enabled.
 **fm_xy_qaoa_scaling_report.tex
 (./fm_xy_qaoa_scaling_report.tex
@@ -967,6 +967,45 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \TX@cols=\count318
 \TX@ftn=\toks41
 )
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/subca
+ption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/capti
+on.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/capti
+on3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen275
+\captionmargin=\dimen276
+\caption@leftmargin=\dimen277
+\caption@rightmargin=\dimen278
+\caption@width=\dimen279
+\caption@indent=\dimen280
+\caption@parindent=\dimen281
+\caption@hangindent=\dimen282
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \lefts
+kip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionski
+p \sbox \@tempboxa {#1{\hskip 1\zw }#2}\ifdim \wd \@tempboxa <\hsize \centering
+ \fi #1{\hskip 1\zw }#2\par \vskip \belowcaptionskip } on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count319
+\c@continuedfloat=\count320
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count321
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count322
+)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/xcolor/xcolor
 .sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -1011,8 +1050,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 106.
 )
-\Gin@req@height=\dimen275
-\Gin@req@width=\dimen276
+\Gin@req@height=\dimen283
+\Gin@req@width=\dimen284
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/hype
 rref.sty
@@ -1050,16 +1089,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 ptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count319
+\c@section@level=\count323
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/stringenc/s
 tringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen277
-\Hy@linkcounter=\count320
-\Hy@pagecounter=\count321
+\@linkdim=\dimen285
+\Hy@linkcounter=\count324
+\Hy@pagecounter=\count325
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/pd1e
 nc.def
@@ -1069,7 +1108,7 @@ File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 calc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count322
+\Hy@SavedSpaceFactor=\count326
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/puen
 c.def
@@ -1082,14 +1121,14 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count323
+\c@Hy@tempcnt=\count327
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen278
+\XeTeXLinkMargin=\dimen286
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/bitset/bits
 et.sty
@@ -1100,9 +1139,9 @@ bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count324
-\Field@Width=\dimen279
-\Fld@charsize=\dimen280
+\Fld@menulength=\count328
+\Field@Width=\dimen287
+\Fld@charsize=\dimen288
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -1110,17 +1149,17 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count325
-\c@Item=\count326
-\c@Hfootnote=\count327
+\Hy@abspage=\count329
+\c@Item=\count330
+\c@Hfootnote=\count331
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/hlua
 tex.def
 File: hluatex.def 2026-01-29 v7.01p Hyperref driver for luaTeX
-\Fld@listcount=\count328
-\c@bookmark@seq@number=\count329
+\Fld@listcount=\count332
+\c@bookmark@seq@number=\count333
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/rerunfilechec
 k/rerunfilecheck.sty
@@ -1135,7 +1174,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip64
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+Package hyperref Info: Option `colorlinks' set `true' on input line 18.
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/tcolorbox/tco
 lorbox.sty
@@ -1150,8 +1189,8 @@ r/pgf.sty
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/utiliti
 es/pgfutil-common.tex
 \pgfutil@everybye=\toks42
-\pgfutil@tempdima=\dimen281
-\pgfutil@tempdimb=\dimen282
+\pgfutil@tempdima=\dimen289
+\pgfutil@tempdimb=\dimen290
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/utiliti
 es/pgfutil-latex.def
@@ -1182,26 +1221,26 @@ es/pgfkeys.code.tex
 es/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks45
 ))
-\pgf@x=\dimen283
-\pgf@y=\dimen284
-\pgf@xa=\dimen285
-\pgf@ya=\dimen286
-\pgf@xb=\dimen287
-\pgf@yb=\dimen288
-\pgf@xc=\dimen289
-\pgf@yc=\dimen290
-\pgf@xd=\dimen291
-\pgf@yd=\dimen292
+\pgf@x=\dimen291
+\pgf@y=\dimen292
+\pgf@xa=\dimen293
+\pgf@ya=\dimen294
+\pgf@xb=\dimen295
+\pgf@yb=\dimen296
+\pgf@xc=\dimen297
+\pgf@yc=\dimen298
+\pgf@xd=\dimen299
+\pgf@yd=\dimen300
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count330
-\c@pgf@countb=\count331
-\c@pgf@countc=\count332
-\c@pgf@countd=\count333
+\c@pgf@counta=\count334
+\c@pgf@countb=\count335
+\c@pgf@countc=\count336
+\c@pgf@countd=\count337
 \t@pgf@toka=\toks46
 \t@pgf@tokb=\toks47
 \t@pgf@tokc=\toks48
-\pgf@sys@id@count=\count334
+\pgf@sys@id@count=\count338
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/systeml
 ayer/pgf.cfg
@@ -1220,8 +1259,8 @@ File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/systeml
 ayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count335
-\pgfsyssoftpath@bigbuffer@items=\count336
+\pgfsyssoftpath@smallbuffer@items=\count339
+\pgfsyssoftpath@bigbuffer@items=\count340
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/systeml
 ayer/pgfsysprotocol.code.tex
@@ -1237,8 +1276,8 @@ fmath.code.tex
 fmathutil.code.tex)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/math/pg
 fmathparser.code.tex
-\pgfmath@dimen=\dimen293
-\pgfmath@count=\count337
+\pgfmath@dimen=\dimen301
+\pgfmath@count=\count341
 \pgfmath@box=\box77
 \pgfmath@toks=\toks49
 \pgfmath@stack@operand=\toks50
@@ -1266,39 +1305,39 @@ fmathfunctions.integerarithmetics.code.tex)
 fmathcalc.code.tex)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/math/pg
 fmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count338
+\c@pgfmathroundto@lastzeros=\count342
 ))
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/math/pg
 fint.code.tex)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen294
-\pgf@picmaxx=\dimen295
-\pgf@picminy=\dimen296
-\pgf@picmaxy=\dimen297
-\pgf@pathminx=\dimen298
-\pgf@pathmaxx=\dimen299
-\pgf@pathminy=\dimen300
-\pgf@pathmaxy=\dimen301
-\pgf@xx=\dimen302
-\pgf@xy=\dimen303
-\pgf@yx=\dimen304
-\pgf@yy=\dimen305
-\pgf@zx=\dimen306
-\pgf@zy=\dimen307
+\pgf@picminx=\dimen302
+\pgf@picmaxx=\dimen303
+\pgf@picminy=\dimen304
+\pgf@picmaxy=\dimen305
+\pgf@pathminx=\dimen306
+\pgf@pathmaxx=\dimen307
+\pgf@pathminy=\dimen308
+\pgf@pathmaxy=\dimen309
+\pgf@xx=\dimen310
+\pgf@xy=\dimen311
+\pgf@yx=\dimen312
+\pgf@yy=\dimen313
+\pgf@zx=\dimen314
+\pgf@zy=\dimen315
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen308
-\pgf@path@lasty=\dimen309
+\pgf@path@lastx=\dimen316
+\pgf@path@lasty=\dimen317
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen310
-\pgf@shorten@start@additional=\dimen311
+\pgf@shorten@end@additional=\dimen318
+\pgf@shorten@start@additional=\dimen319
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorescopes.code.tex
@@ -1306,19 +1345,19 @@ File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box78
 \pgf@hbox=\box79
 \pgf@layerbox@main=\box80
-\pgf@picture@serial@count=\count339
+\pgf@picture@serial@count=\count343
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen312
+\pgflinewidth=\dimen320
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen313
-\pgf@pt@y=\dimen314
-\pgf@pt@temp=\dimen315
+\pgf@pt@x=\dimen321
+\pgf@pt@y=\dimen322
+\pgf@pt@temp=\dimen323
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorequick.code.tex
@@ -1335,14 +1374,14 @@ File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen316
+\pgfarrowsep=\dimen324
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen317
-\pgf@sys@shading@range@num=\count340
-\pgf@shadingcount=\count341
+\pgf@max=\dimen325
+\pgf@sys@shading@range@num=\count344
+\pgf@shadingcount=\count345
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/basicla
 yer/pgfcoreimage.code.tex
@@ -1381,8 +1420,8 @@ File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/pgf/compatibi
 lity/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen318
-\pgf@nodesepend=\dimen319
+\pgf@nodesepstart=\dimen326
+\pgf@nodesepend=\dimen327
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/pgf/compatibi
 lity/pgfcomp-version-1-18.sty
@@ -1401,8 +1440,8 @@ fmath.code.tex))
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/utiliti
 es/pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen320
-\pgffor@skip=\dimen321
+\pgffor@iter=\dimen328
+\pgffor@skip=\dimen329
 \pgffor@stack=\toks52
 \pgffor@toks=\toks53
 ))
@@ -1413,34 +1452,34 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/librari
 es/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count342
-\pgfplotmarksize=\dimen322
+\pgf@plot@mark@count=\count346
+\pgfplotmarksize=\dimen330
 )
-\tikz@lastx=\dimen323
-\tikz@lasty=\dimen324
-\tikz@lastxsaved=\dimen325
-\tikz@lastysaved=\dimen326
-\tikz@lastmovetox=\dimen327
-\tikz@lastmovetoy=\dimen328
-\tikzleveldistance=\dimen329
-\tikzsiblingdistance=\dimen330
+\tikz@lastx=\dimen331
+\tikz@lasty=\dimen332
+\tikz@lastxsaved=\dimen333
+\tikz@lastysaved=\dimen334
+\tikz@lastmovetox=\dimen335
+\tikz@lastmovetoy=\dimen336
+\tikzleveldistance=\dimen337
+\tikzsiblingdistance=\dimen338
 \tikz@figbox=\box83
 \tikz@figbox@bg=\box84
 \tikz@tempbox=\box85
 \tikz@tempbox@bg=\box86
-\tikztreelevel=\count343
-\tikznumberofchildren=\count344
-\tikznumberofcurrentchild=\count345
-\tikz@fig@count=\count346
+\tikztreelevel=\count347
+\tikznumberofchildren=\count348
+\tikznumberofcurrentchild=\count349
+\tikz@fig@count=\count350
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/modules
 /pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count347
-\pgfmatrixcurrentcolumn=\count348
-\pgf@matrix@numberofcolumns=\count349
+\pgfmatrixcurrentrow=\count351
+\pgfmatrixcurrentcolumn=\count352
+\pgf@matrix@numberofcolumns=\count353
 )
-\tikz@expandcount=\count350
+\tikz@expandcount=\count354
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pgf/fronten
 dlayer/tikz/libraries/tikzlibrarytopaths.code.tex
@@ -1465,11 +1504,11 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box88
 \tcb@lowerbox=\box89
 \tcb@phantombox=\box90
-\c@tcbbreakpart=\count351
-\c@tcblayer=\count352
-\c@tcolorbox@number=\count353
+\c@tcbbreakpart=\count355
+\c@tcblayer=\count356
+\c@tcolorbox@number=\count357
 \l__tcobox_tmpa_box=\box91
-\l__tcobox_tmpa_dim=\dimen331
+\l__tcobox_tmpa_dim=\dimen339
 \tcb@temp=\box92
 \tcb@temp=\box93
 \tcb@temp=\box94
@@ -1509,8 +1548,8 @@ Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
 \tcb@totalupperbox=\box98
 \tcb@totallowerbox=\box99
 )
-\c@definition=\count354
-\c@theorem=\count355
+\c@definition=\count358
+\c@theorem=\count359
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/luatex/luatexja/pat
 ches/lltjp-array.sty
@@ -1518,30 +1557,30 @@ Package: lltjp-array 2024-07-21 Patch to array for LuaTeX-ja
 ) (./fm_xy_qaoa_scaling_report.aux)
 \openout1 = fm_xy_qaoa_scaling_report.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1551,15 +1590,15 @@ LaTeX Font Info:    ... okay on input line 64.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(62.59605pt, 472.31577pt, 62.59605pt)
-* v-part:(T,H,B)=(62.59605pt, 719.85474pt, 62.59605pt)
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=472.31577pt
-* \textheight=719.85474pt
-* \oddsidemargin=-9.67393pt
-* \evensidemargin=-9.67393pt
-* \topmargin=-46.05847pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-51.74902pt
 * \headheight=21.90002pt
 * \headsep=14.48451pt
 * \topskip=13.9734pt
@@ -1577,20 +1616,23 @@ LaTeX Font Info:    ... okay on input line 64.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/context/base/mkii/s
 upp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count356
-\scratchdimen=\dimen332
+\scratchcounter=\count360
+\scratchdimen=\dimen340
 \scratchbox=\box100
-\nofMPsegments=\count357
-\nofMParguments=\count358
+\nofMPsegments=\count361
+\nofMParguments=\count362
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count359
-\MPscratchDim=\dimen333
-\MPnumerator=\count360
-\makeMPintoPDFobject=\count361
+\MPscratchCnt=\count363
+\MPscratchDim=\dimen341
+\MPnumerator=\count364
+\makeMPintoPDFobject=\count365
 \everyMPtoPDFconversion=\toks57
 )
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/epstopdf-pkg/
@@ -1604,7 +1646,7 @@ pstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 71.
  (./fm_xy_qaoa_scaling_report.out)
 (./fm_xy_qaoa_scaling_report.out)
 \@outlinefile=\write4
@@ -1612,38 +1654,38 @@ Package hyperref Info: Link coloring ON on input line 64.
 \openout4 = fm_xy_qaoa_scaling_report.out
 (load cache: extra_lmroman17-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 67.
+(Font)              scaled to size 15.97903pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 67.
+(Font)              scaled to size 15.97903pt on input line 74.
 (load cache: extra_lmroman12-bold.luc)
 LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <17.28> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 14.59271pt on input line 67.
+(Font)              scaled to size 14.59271pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <17.28> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 67.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 14.59271pt on input line 67.
+(Font)              scaled to size 14.59271pt on input line 74.
 (load cache: extra_haranoajigothic-medium.luc)(load cache: extra_lmroman12-regul
 ar.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 67.
+(Font)              scaled to size 11.09656pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 67.
-LaTeX Font Info:    Calculating math sizes for size <13.14001> on input line 67
+(Font)              scaled to size 11.09656pt on input line 74.
+LaTeX Font Info:    Calculating math sizes for size <13.14001> on input line 74
 .
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 7.76755pt on input line 67.
+(Font)              scaled to size 7.76755pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 5.54828pt on input line 67.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+(Font)              scaled to size 5.54828pt on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
 
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsa
 .fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
 
 
 (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsb
@@ -1651,271 +1693,181 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 67.
+(Font)              scaled to size 11.09656pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 7.76755pt on input line 67.
+(Font)              scaled to size 7.76755pt on input line 74.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 5.54828pt on input line 67.
+(Font)              scaled to size 5.54828pt on input line 74.
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 68.
+(Font)              scaled to size 8.32242pt on input line 75.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 68.
+(Font)              scaled to size 8.32242pt on input line 75.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 68.
+(Font)              scaled to size 8.32242pt on input line 75.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.32242pt on input line 68.
+(Font)              scaled to size 8.32242pt on input line 75.
 (load cache: extra_lmsans9-regular.luc)
-LaTeX Font Info:    Calculating math sizes for size <9.85501> on input line 70.
+LaTeX Font Info:    Calculating math sizes for size <9.85501> on input line 77.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 5.82565pt on input line 70.
+(Font)              scaled to size 5.82565pt on input line 77.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 4.16121pt on input line 70.
+(Font)              scaled to size 4.16121pt on input line 77.
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.5> not available
-(Font)              size <5> substituted on input line 70.
+(Font)              size <5> substituted on input line 77.
 
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 5.82565pt on input line 70.
+(Font)              scaled to size 5.82565pt on input line 77.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 4.16121pt on input line 70.
+(Font)              scaled to size 4.16121pt on input line 77.
 (load cache: extra_lmroman9-bold.luc)
 LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <9> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 7.60036pt on input line 73.
+(Font)              scaled to size 7.60036pt on input line 80.
 LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <9> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 73.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 7.60036pt on input line 73.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 78.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 78.
-(load cache: extra_lmsans10-regular.luc)
+(Font)              scaled to size 7.60036pt on input line 80.
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 13.31584pt on input line 78.
+(Font)              scaled to size 13.31584pt on input line 87.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 13.31584pt on input line 78.
+(Font)              scaled to size 13.31584pt on input line 87.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 13.31584pt on input line 78.
+(Font)              scaled to size 13.31584pt on input line 87.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 13.31584pt on input line 78.
-(load cache: extra_lmsans12-regular.luc) (./fm_xy_qaoa_scaling_report.toc
-LaTeX Font Info:    Calculating math sizes for size <10.95001> on input line 2.
-
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 6.47295pt on input line 2.
-LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 4.62357pt on input line 2.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 6.47295pt on input line 2.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 4.62357pt on input line 2.
- [1
+(Font)              scaled to size 13.31584pt on input line 87.
+(load cache: extra_lmsans12-regular.luc) (./fm_xy_qaoa_scaling_report.toc [1
 
 {/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/pdftex/updmap/
 pdftex.map}])
 \tf@toc=\write5
 
 \openout5 = fm_xy_qaoa_scaling_report.toc
- [2]
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 83.
+(Font)              scaled to size 11.09656pt on input line 95.
 (load cache: extra_lmroman10-bold.luc)
 LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <10> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 97.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 96.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 97.
+(Font)              scaled to size 8.44485pt on input line 96.
 LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 97.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 96.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 97.
- [3] [4]
-LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <10> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 143.
-LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 143.
-LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <10> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 143.
-LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 143.
- [5](load cache: extra_lmroman10-italic.luc)
-LaTeX Font Info:    Font shape `JT3/mc/m/it' in size <10> not available
-(Font)              Font shape `JT3/mc/m/n' tried instead on input line 154.
-LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 154.
-LaTeX Font Info:    Font shape `JY3/mc/m/it' in size <10> not available
-(Font)              Font shape `JY3/mc/m/n' tried instead on input line 154.
+(Font)              scaled to size 8.44485pt on input line 96.
+LaTeX Font Info:    Calculating math sizes for size <10.95001> on input line 97
+.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
-(Font)              scaled to size 8.44485pt on input line 154.
+(Font)              scaled to size 6.47295pt on input line 97.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 97.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 97.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 6.47295pt on input line 97.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 97.
+ [2] [3]
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 153.
+LaTeX Font Info:    Font shape `JT3/gt/b/n' in size <10> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 153.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 153.
+LaTeX Font Info:    Font shape `JY3/gt/b/n' in size <10> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 153.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 153.
+(load cache: extra_lmroman10-italic.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/it' in size <10> not available
+(Font)              Font shape `JT3/mc/m/n' tried instead on input line 160.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 160.
+LaTeX Font Info:    Font shape `JY3/mc/m/it' in size <10> not available
+(Font)              Font shape `JY3/mc/m/n' tried instead on input line 160.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 160.
 (load cache: extra_lmroman7-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 6.47295pt on input line 171.
+(Font)              scaled to size 6.47295pt on input line 173.
 (load cache: extra_lmroman5-regular.luc)
 LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
-(Font)              scaled to size 4.62357pt on input line 171.
- [6](load cache: extra_lmmono10-regular.luc)
-
-Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 196.
-
-
-Overfull \hbox (9.20004pt too wide) in paragraph at lines 196--196
-|\JY3/gt/b/n/10.95001 サ |ー
- []
-
-
-Overfull \hbox (4.23843pt too wide) in paragraph at lines 196--196
-|\JY3/mc/m/it/10.95001 ロ []
- []
-
-
-Overfull \hbox (8.41353pt too wide) in paragraph at lines 196--196
-[]\TU/lmr/m/n/10.95001 SA
- []
-
-
-Overfull \hbox (9.20004pt too wide) in paragraph at lines 196--196
-|\JY3/mc/m/it/10.95001 ュ |ー
- []
-
-
-Overfull \hbox (4.13724pt too wide) in paragraph at lines 196--196
-|\JY3/mc/m/it/10.95001 ル [] | 
- []
-
-
-Overfull \hbox (9.20004pt too wide) in paragraph at lines 196--196
-|\JY3/mc/m/it/10.95001 サ |ー
- []
-
-
-Overfull \hbox (19.38268pt too wide) in paragraph at lines 196--196
-\OML/cmm/m/it/10.95001 H[] \OT1/cmr/m/n/10.95001 =
- []
-
-
-Overfull \hbox (18.7013pt too wide) in paragraph at lines 196--196
-[][] \OML/cmm/m/it/10.95001 X[]$| 
- []
-
-
-Overfull \hbox (5.475pt too wide) in paragraph at lines 196--196
-\TU/lmr/m/n/10.95001 XY
- []
-
-
-Overfull \hbox (9.20004pt too wide) in paragraph at lines 196--196
-|\JY3/mc/m/it/10.95001 サ |ー
- []
-
-
-Overfull \hbox (27.53923pt too wide) in paragraph at lines 196--196
-[] \OML/cmm/m/it/10.95001 H[]$| 
- []
-
-
-Overfull \hbox (20.52235pt too wide) in alignment at lines 196--196
-[][][][][]
- []
-
-
-LaTeX Warning: Float too large for page by 142.64497pt on input line 197.
-
-
-Overfull \hbox (115.06601pt too wide) in paragraph at lines 216--229
- [][][][] 
- []
-
-[7] [8]
-Overfull \hbox (18.7361pt too wide) in paragraph at lines 260--275
- [][][][] 
- []
-
-<figures/scaling_feasibility.pdf, id=215, 722.7pt x 361.35pt>
+(Font)              scaled to size 4.62357pt on input line 173.
+ [4](load cache: extra_lmmono10-regular.luc) [5]
+<figures/scaling_feasibility.pdf, id=168, 722.7pt x 361.35pt>
 File: figures/scaling_feasibility.pdf Graphic file (type pdf)
 <use figures/scaling_feasibility.pdf>
-Package luatex.def Info: figures/scaling_feasibility.pdf  used on input line 28
-2.
-(luatex.def)             Requested size: 415.64017pt x 207.81874pt.
-[9]
-<figures/scaling_success_prob.pdf, id=224, 722.7pt x 397.485pt>
+Package luatex.def Info: figures/scaling_feasibility.pdf  used on input line 26
+3.
+(luatex.def)             Requested size: 154.78653pt x 77.39099pt.
+<figures/scaling_success_prob.pdf, id=169, 722.7pt x 397.485pt>
 File: figures/scaling_success_prob.pdf Graphic file (type pdf)
 <use figures/scaling_success_prob.pdf>
 Package luatex.def Info: figures/scaling_success_prob.pdf  used on input line 2
-99.
-(luatex.def)             Requested size: 415.64017pt x 228.60062pt.
- [10<./figures/scaling_feasibility.pdf><./figures/scaling_success_prob.pdf>]
-<figures/scaling_concentration_boost.pdf, id=431, 722.7pt x 361.35pt>
+70.
+(luatex.def)             Requested size: 154.78653pt x 85.13008pt.
+<figures/scaling_concentration_boost.pdf, id=170, 722.7pt x 361.35pt>
 File: figures/scaling_concentration_boost.pdf Graphic file (type pdf)
 <use figures/scaling_concentration_boost.pdf>
 Package luatex.def Info: figures/scaling_concentration_boost.pdf  used on input
- line 315.
-(luatex.def)             Requested size: 401.47128pt x 200.73358pt.
-[11<./figures/scaling_concentration_boost.pdf>]
-<figures/dist_N6.pdf, id=533, 867.24pt x 433.62pt>
+ line 277.
+(luatex.def)             Requested size: 154.78653pt x 77.39099pt.
+ [6<./figures/scaling_feasibility.pdf><./figures/scaling_success_prob.pdf><./fig
+ures/scaling_concentration_boost.pdf>]
+<figures/dist_N6.pdf, id=470, 867.24pt x 433.62pt>
 File: figures/dist_N6.pdf Graphic file (type pdf)
 <use figures/dist_N6.pdf>
-Package luatex.def Info: figures/dist_N6.pdf  used on input line 329.
-(luatex.def)             Requested size: 231.43732pt x 115.71596pt.
-<figures/dist_N8.pdf, id=534, 867.24pt x 433.62pt>
+Package luatex.def Info: figures/dist_N6.pdf  used on input line 302.
+(luatex.def)             Requested size: 232.17242pt x 116.08649pt.
+<figures/dist_N8.pdf, id=471, 867.24pt x 433.62pt>
 File: figures/dist_N8.pdf Graphic file (type pdf)
 <use figures/dist_N8.pdf>
-Package luatex.def Info: figures/dist_N8.pdf  used on input line 335.
-(luatex.def)             Requested size: 231.43732pt x 115.71596pt.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 344.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 344.
-
-<figures/lambda_N6.pdf, id=536, 1011.78pt x 361.35pt>
-File: figures/lambda_N6.pdf Graphic file (type pdf)
-<use figures/lambda_N6.pdf>
-Package luatex.def Info: figures/lambda_N6.pdf  used on input line 351.
-(luatex.def)             Requested size: 231.43732pt x 82.65662pt.
-<figures/lambda_N8.pdf, id=537, 1011.78pt x 361.35pt>
+Package luatex.def Info: figures/dist_N8.pdf  used on input line 308.
+(luatex.def)             Requested size: 232.17242pt x 116.08649pt.
+<figures/lambda_N8.pdf, id=473, 1011.78pt x 361.35pt>
 File: figures/lambda_N8.pdf Graphic file (type pdf)
 <use figures/lambda_N8.pdf>
-Package luatex.def Info: figures/lambda_N8.pdf  used on input line 357.
-(luatex.def)             Requested size: 231.43732pt x 82.65662pt.
-[12<./figures/dist_N6.pdf><./figures/dist_N8.pdf><./figures/lambda_N6.pdf><./fig
-ures/lambda_N8.pdf>]
-<figures/bbo_N8.pdf, id=933, 650.43pt x 397.485pt>
+Package luatex.def Info: figures/lambda_N8.pdf  used on input line 324.
+(luatex.def)             Requested size: 217.66211pt x 77.73283pt.
+<figures/bbo_N8.pdf, id=474, 650.43pt x 397.485pt>
 File: figures/bbo_N8.pdf Graphic file (type pdf)
 <use figures/bbo_N8.pdf>
-Package luatex.def Info: figures/bbo_N8.pdf  used on input line 379.
-(luatex.def)             Requested size: 354.23682pt x 216.4825pt.
- [13<./figures/bbo_N8.pdf>] [14] [15]
+Package luatex.def Info: figures/bbo_N8.pdf  used on input line 330.
+(luatex.def)             Requested size: 217.66211pt x 133.01425pt.
+ [7<./figures/dist_N6.pdf><./figures/dist_N8.pdf>](load cache: extra_lmroman9-it
+alic.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/it' in size <9> not available
+(Font)              Font shape `JT3/mc/m/n' tried instead on input line 364.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 7.60036pt on input line 364.
+LaTeX Font Info:    Font shape `JY3/mc/m/it' in size <9> not available
+(Font)              Font shape `JY3/mc/m/n' tried instead on input line 364.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 7.60036pt on input line 364.
+
+[8<./figures/lambda_N8.pdf><./figures/bbo_N8.pdf>]
 (./fm_xy_qaoa_scaling_report.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1926,69 +1878,69 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `fm_xy_qaoa_scaling_report.out' has not chang
 ed.
-(rerunfilecheck)             Checksum: E8E87EB528FFEFC8F47FADD91B0AF58C;4537.
+(rerunfilecheck)             Checksum: 4C99355DB814B8E0AA83D3193F8449F4;3308.
 )
 
 Here is how much of LuaTeX's memory you used:
- 27649 strings out of 476076
- 244653,1144653 words of node,token memory allocated
- 1582 words of node memory still in use:
-   11 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 1 glyph, 423 attribute, 61 glue_sp
-ec, 50 attribute_list, 2 write, 14 user_defined nodes
-   avail lists: 1:16,2:51090,3:533,4:441,5:262,6:59,7:6724,8:58,9:2661,10:44,11:
-126
- 49288 multiletter control sequences out of 65536+600000
- 129 fonts using 102221127 bytes
- 119i,12n,112p,2049b,649s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 29063 strings out of 476076
+ 244655,1144653 words of node,token memory allocated
+ 1463 words of node memory still in use:
+   11 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 1 glyph, 370 attribute, 60 glue_sp
+ec, 46 attribute_list, 2 write, 14 user_defined nodes
+   avail lists: 1:17,2:62755,3:640,4:554,5:322,6:79,7:7475,8:62,9:2975,10:46,11:
+188
+ 50717 multiletter control sequences out of 65536+600000
+ 130 fonts using 106004175 bytes
+ 119i,12n,128p,2049b,822s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/lm
-/lmmono9-regular.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
-ts/opentype/public/lm/lmmono10-regular.otf></opt/homebrew/Cellar/texlive/2026030
-1/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></opt/homebrew/
-Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/lm/lmroman10-ital
-ic.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/pu
-blic/lm/lmroman10-bold.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-di
-st/fonts/opentype/public/lm/lmsans12-regular.otf></opt/homebrew/Cellar/texlive/2
-0260301/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/ho
-mebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/lm/lmsans1
-0-regular.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/open
-type/public/lm/lmroman9-bold.otf></opt/homebrew/Cellar/texlive/20260301/share/te
-xmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></opt/homebrew/Cellar/tex
-live/20260301/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-R
-egular.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentyp
-e/public/lm/lmroman12-regular.otf></opt/homebrew/Cellar/texlive/20260301/share/t
-exmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/homebrew/Cellar/texl
-ive/20260301/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Me
-dium.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260
-301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Ce
-llar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb>
-</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi9.pfb></opt/homebrew/Cellar/texlive/20260301/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></opt/homebrew/Cellar/texli
-ve/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></op
+/lmroman9-italic.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
+ts/opentype/public/lm/lmmono9-regular.otf></opt/homebrew/Cellar/texlive/20260301
+/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/homebrew/C
+ellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regula
+r.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/pub
+lic/lm/lmroman10-italic.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-d
+ist/fonts/opentype/public/lm/lmroman10-bold.otf></opt/homebrew/Cellar/texlive/20
+260301/share/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/home
+brew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/lm/lmroman10
+-regular.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opent
+ype/public/lm/lmsans9-regular.otf></opt/homebrew/Cellar/texlive/20260301/share/t
+exmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></opt/homebrew/Cellar/texli
+ve/20260301/share/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></opt
+/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/haranoa
+ji/HaranoAjiMincho-Regular.otf></opt/homebrew/Cellar/texlive/20260301/share/texm
+f-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/homebrew/Cellar/texl
+ive/20260301/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/
+homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/opentype/public/haranoaj
+i/HaranoAjiGothic-Medium.otf></opt/homebrew/Cellar/texlive/20260301/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/202
+60301/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></opt/homeb
+rew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20260301
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar
+/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></op
 t/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/
-cmextra/cmmib9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texliv
-e/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebr
-ew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20260301/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/homebrew/Cellar/t
-exlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+cm/cmmi9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmib10.pfb></opt/homebrew/Cellar/texlive/20260301/share/tex
+mf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></opt/homebrew/Cellar/tex
+live/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/ho
+mebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebrew/Cellar/texlive/20260301/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/
+texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt
+/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on fm_xy_qaoa_scaling_report.pdf (8 pages, 615466 bytes).
 
-Output written on fm_xy_qaoa_scaling_report.pdf (15 pages, 645138 bytes).
-
-PDF statistics: 1220 PDF objects out of 1440 (max. 8388607)
- 497 compressed objects within 5 object streams
- 82 named destinations out of 1000 (max. 1048576)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1057 PDF objects out of 1200 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 55 named destinations out of 1000 (max. 1048576)
+ 152 words of extra memory for PDF output out of 10000 (max. 100000000)
 
