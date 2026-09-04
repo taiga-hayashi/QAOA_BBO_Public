@@ -50,6 +50,7 @@ def main():
     lr = config.get("lr", 0.1)
     qaoa_reps = config.get("qaoa_reps", 1)
     qaoa_maxiter = config.get("qaoa_maxiter", 50)
+    qaoa_optimizer = config.get("qaoa_optimizer", "COBYLA")
     
     print("=== 1. ブラックボックス関数(ランダムQUBO)の定義と初期データ生成 ===")
     Q_bb = create_random_qubo_bb(d, seed=seed_val)
@@ -98,7 +99,7 @@ def main():
         qubo_dict, offset = fm_to_qubo(model)
         
         # QAOAによる最適化
-        result = solve_qubo_qaoa(qubo_dict, offset=offset, reps=qaoa_reps, maxiter=qaoa_maxiter)
+        result = solve_qubo_qaoa(qubo_dict, offset=offset, reps=qaoa_reps, maxiter=qaoa_maxiter, optimizer_name=qaoa_optimizer)
         
         # QAOAの最良解を新しい入力として評価
         best_sample = result.samples[0]

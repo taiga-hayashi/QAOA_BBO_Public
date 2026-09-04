@@ -16,5 +16,6 @@ epochs: 150             # 学習エポック数
 lr: 0.1                 # FMの学習率
 
 # QAOAの設定
-qaoa_reps: 1            # QAOAのレイヤー数 (p)
-qaoa_maxiter: 50        # COBYLAオプティマイザの最大イテレーション数
+qaoa_reps: 1            # QAOAのレイヤー数 (p)。増やすと表現力が上がりますが、計算コストが増えます
+qaoa_optimizer: "COBYLA" # QAOAのパラメータ最適化に使う古典オプティマイザ (COBYLA, SPSA, SLSQP など)
+qaoa_maxiter: 50        # 古典オプティマイザの最大イテレーション数
