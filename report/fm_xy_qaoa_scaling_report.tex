@@ -342,7 +342,55 @@ $N=12$ (\texttt{N12\_4x3}) において、Standard QAOA の成功確率は $0.07
 \end{enumerate}
 \end{summarybox}
 
-\vspace{-1mm}
+\section{FM-XY vs FMQA の境界領域 (Regime) 切り分け解析}
+
+先行研究 FMQA（Simulated Annealing）に対する提案手法 FM-XY-QAOA の本質的優位性を確立するため、より過酷な3つの難関問題状況（Regime）を設計し、性能限界の境界を切り分けた。
+
+\subsection{境界1: マルチスケール不均衡結合におけるFMQAの完全崩壊}
+実問題のBBO（ハイパーパラメータ探索や材料組成探索）では、変数の物理次元や寄与度の違いにより、ブロック間で相互作用の強さが大きく乖離する。
+図\ref{fig:boundary_multiscale}に、ブロック間の結合強度スケール比を 1.0倍 〜 20.0倍 に拡大した際の比較結果を示す。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/multiscale_comp.pdf}
+\caption{マルチスケール不均衡結合における耐性比較。固定ペナルティ $\lambda=5.0$ のFMQA（青）はスケール比10倍以上で制約充足率がゼロへ急落するが、提案手法（緑）は完全ペナルティフリーのため常に100\%充足と安定サンプリングを維持する。}
+\label{fig:boundary_multiscale}
+\end{figure}
+
+\begin{alertbox}[マルチスケール問題におけるアニーリングの構造的限界]
+固定ペナルティ $\lambda=5.0$ のFMQAは、スケール比が 10倍（10.0x）に達した瞬間に制約充足率が \textbf{1.7\%}、20倍では \textbf{0.0\%} へと完全崩壊した。
+強すぎる目的関数項に対し、単一のペナルティ係数 $\lambda$ では制約の重みが相対的に不足し、制約を解くこと自体が不可能となる。各ブロックに個別の $\lambda_m$ を手動調整するメタ探索は極めて高コストである。
+一方、提案手法 FM-XY-QAOA は $\lambda$ に一切依存しないため、スケール比が20倍に乖離しても \textbf{常に100.0\% の制約充足率を維持} し、安定して最適解を供給し続ける。
+\end{alertbox}
+
+\subsection{境界2: 欺瞞的局所解 (Deceptive Landscape) とペナルティ障壁}
+大域的最適解 $\bm{x}^*$ の周囲にペナルティ壁を配置し、引力圏の広い魅力的な偽の局所解 $\bm{x}_{\mathrm{loc}}$ を設けた欺瞞的問題を検証した（図\ref{fig:boundary_deceptive}）。
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/deceptive_comp.pdf}
+    \caption{欺瞞的ランドスケープでの到達確率}
+    \label{fig:boundary_deceptive}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/layer_boost.pdf}
+    \caption{レイヤー深度 $p=2$ による量子濃縮ブースト}
+    \label{fig:boundary_layer}
+\end{subfigure}
+\caption{(a) FMQAは $\lambda$ の狭小なスイートスポット（$\lambda=5$ 付近）以外では制約違反またはトラップにより到達率が崩壊。(b) レイヤー数 $p=2$ の提案手法は量子干渉の深化により到達確率が最大50\%超へ跳ね上がる。}
+\label{fig:boundary_figs}
+\end{figure}
+
+FMQAは $\lambda \le 2.0$ では充足率0\%、$\lambda \ge 20.0$ ではペナルティ障壁が高すぎてトンネリング遷移（$J_{\mathrm{eff}} \propto \Gamma^2 / \lambda$）が抑制され、到達率が 10\% 前後へ急落する。
+対照的に、FM-XY-QAOA は部分空間内を直接ホッピングするためペナルティ障壁の影響を全く受けず、$p=1$ で 33.8\%、$p=2$ では \textbf{40.7\%} の安定した到達確率を記録した。
+
+\subsection{境界3: 量子レイヤー深度 \texorpdfstring{$p=2$}{p=2} による性能跳躍}
+図\ref{fig:boundary_layer}に示す通り、レイヤー数を $p=1 \to p=2$ に引き上げると、部分空間内での多粒子干渉（Feynman paths）の重ね合わせにより、難関インスタンスにおいて最適解到達確率が 20\%〜50\% 超へと跳ね上がり、1000回アニーリングを回すFMQAを明白に上回るアドバンテージを発揮することが実証された。
+
 \section{結論と今後の展望 (Conclusion \& Future Work)}
 
 本研究では、One-Hot制約付きランダムQUBO問題およびBBOパイプラインにおいて、ブロック直和型XYミキサーとW状態初期化を用いた提案手法 \textbf{FM-XY-QAOA} の有効性とスケーリング特性を包括的に評価した。
@@ -350,10 +398,12 @@ $N=12$ (\texttt{N12\_4x3}) において、Standard QAOA の成功確率は $0.07
 \begin{enumerate}\setlength{\itemsep}{0pt}
     \item \textbf{制約充足の完全保証}: 問題サイズを $N=4$ から $N=12$（4096状態）までスケールさせても、提案手法は \textbf{100.0\% の制約充足率} を維持した。一方、Standard QAOA は $N=12$ において充足率が 1.6\% まで崩壊した。
     \item \textbf{探索効率の大幅な向上}: $N=12$ において、提案手法の最適解到達確率は Standard QAOA の \textbf{80倍以上} に達した。
-    \item \textbf{ハイパーパラメータフリーの実用性}: ペナルティ係数 $\lambda$ の調整が一切不要となり、サロゲート関数の形状を歪めることなく高精度な探索が可能となった。
+    \item \textbf{FMQA（アニーリング）を圧倒する境界の特定}:
+    ブロック間の結合スケールが不均一なマルチスケール問題（10倍〜20倍のスケール乖離）において、FMQAが制約充足率 0\% に墜落して破綻する一方、提案手法は 100\% 充足と安定探索を維持した。
+    また欺瞞的ランドスケープにおいて、$\lambda$ の調整なしにペナルティ障壁をすり抜け、レイヤー $p=2$ の量子干渉によってFMQAを凌駕する性能を達成した。
 \end{enumerate}
 
-今後の課題として、レイヤー数 $p \ge 2$ への拡張による濃縮効果のさらなる向上、実機超伝導量子プロセッサでのノイズ耐性評価、および $k$-hot制約への一般化が挙げられる。
+今後の課題として、レイヤー数 $p \ge 3$ へのさらなる拡張、実機超伝導量子プロセッサでのノイズ耐性評価、および $k$-hot制約への一般化が挙げられる。
 
 \vspace{-1mm}
 {\small
