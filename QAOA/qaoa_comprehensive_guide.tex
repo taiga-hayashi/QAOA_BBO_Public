@@ -1,0 +1,497 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{top=25mm,bottom=25mm,left=25mm,right=25mm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=green!50!black,
+    urlcolor=magenta!70!black
+}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% 定理・補題環境（論文スタイル）
+\theoremstyle{definition}
+\newtheorem{definition}{定義}[section]
+\newtheorem{example}[definition]{例}
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{remark}
+\newtheorem{remark}{注釈}[section]
+
+% 装飾ボックス（要点整理用）
+\tcbset{
+    enhanced,
+    breakable,
+    colback=gray!4,
+    colframe=blue!60!black,
+    fonttitle=\bfseries,
+    arc=1.5mm
+}
+
+\newtcolorbox{paperbox}[1][]{
+    colback=blue!2!white,
+    colframe=blue!70!black,
+    title=#1,
+    fonttitle=\gtfamily\bfseries
+}
+
+\newtcolorbox{conceptbox}[1][]{
+    colback=green!2!white,
+    colframe=green!50!black,
+    title=#1,
+    fonttitle=\gtfamily\bfseries
+}
+
+% ブラケット記法のマクロ（物理・量子情報標準）
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+\newcommand{\mel}[3]{\langle#1|#2|#3\rangle}
+
+\title{\Huge\bfseries 量子近似最適化アルゴリズム（QAOA）完全解説書\\
+\Large 線形代数・ユニタリ変換の基礎から\\
+FMサロゲートモデル・XYミキサーによる制約付き最適化まで}
+\author{\Large 富士通研究所インターンシップ技術報告書}
+\date{\large \today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本資料は、量子コンピューティングや線形代数の初学者であってもQAOA（Quantum Approximate Optimization Algorithm）の本質を完全に理解できるよう、数学的基礎概念から最先端の応用手法までを一貫して解説した体系的技術報告書である。
+まず、ブラケット記法、エルミート演算子、ユニタリ変換、および時間発展方程式（なぜハミルトニアンの指数関数 $e^{-i\theta H}$ が量子ゲートとなるのか）という物理・数学の基礎を丁寧に解き明かす。
+その上で、Farhi et al. (2014) の原論文に基づく標準QAOAのアルゴリズム構造、Hadfield et al. (2019) の量子交替演算子Ansatz（Quantum Alternating Operator Ansatz）による部分空間探索理論を導出する。
+さらに、ブラックボックス最適化（BBO）への応用としてFactorization Machine（FM）サロゲートモデルのイジング同型性を証明し、従来のペナルティ法が抱える破綻メカニズムを数理的に解剖する。
+最後に、One-Hot制約をペナルティ係数なしで100\%厳密に保存する「ブロック直和型XYミキサー」の数学的完全性を証明し、先行研究であるFMQA（量子アニーリング法）との比較を通じて本提案手法の優位性を明らかにする。
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{序論 (Introduction)}
+
+\subsection{組合せ最適化問題の困難性}
+バイナリ変数 $\bm{z} \in \{0, 1\}^n$ に対する組合せ最適化問題は、目的関数 $C: \{0, 1\}^n \to \mathbb{R}$ の最小化（または最大化）問題として定式化される。
+金融ポートフォリオ最適化、配送ルート計画、分子設計など産業界の多くの重要課題はNP困難（NP-hard）に属し、古典計算機における厳密解の導出は最悪計算量 $O(2^n)$ の指数爆発に直面する。
+
+\subsection{NISQデバイスと変分量子アルゴリズム (VQA)}
+現在利用可能な\textbf{NISQ（Noisy Intermediate-Scale Quantum）}デバイスは、量子ビット数（数十〜数百ビット）およびコヒーレンス時間（回路深度）に厳しい物理的制約を持つ。
+この制約下で量子計算の優位性を引き出すアプローチとして、古典・量子ハイブリッド型アルゴリズムである\textbf{変分量子アルゴリズム（Variational Quantum Algorithms: VQA）}が提案された。
+その中で組合せ最適化問題に特化した代表格が、本稿の主役である\textbf{QAOA（Quantum Approximate Optimization Algorithm）}である。
+
+---
+
+\section{量子計算の数学的基礎：ブラケット、エルミート、ユニタリ変換}
+
+QAOAの数式（特に $e^{-i \gamma C}$ や $e^{-i \beta B}$）を直観的かつ厳密に理解するためには、\textbf{「ブラケット記法」「エルミート演算子」「ユニタリ変換」}の3つの数学的土台を把握することが不可欠である。
+
+\subsection{状態ベクトルとブラケット記法 (Dirac Notation)}
+古典コンピュータの1ビットは $0$ または $1$ のいずれかの状態しか取れないが、1つの量子ビット（qubit）の状態 $\ket{\psi}$ は、基底状態 $\ket{0}$ と $\ket{1}$ の「重ね合わせ（線形結合）」として複素数ベクトル空間（ヒルベルト空間 $\mathbb{C}^2$）で表現される：
+\begin{equation}
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix} \quad (\alpha, \beta \in \mathbb{C})
+\end{equation}
+ここで記号 $\ket{\cdot}$（ケット）は列ベクトルを表す。これに対し、随伴（転置して複素共役をとったもの：エルミート共役 $\dagger$）を行ベクトルとして表したものを $\bra{\cdot}$（ブラ）と呼ぶ：
+\begin{equation}
+\bra{\psi} = \ket{\psi}^\dagger = \begin{pmatrix} \alpha^* & \beta^* \end{pmatrix}
+\end{equation}
+
+2つの状態ベクトルの\textbf{内積（Inner Product）}は、ブラとケットを組み合わせた $\braket{\phi}{\psi}$（ブラ-ケット）で表される：
+\begin{equation}
+\braket{\psi}{\psi} = \begin{pmatrix} \alpha^* & \beta^* \end{pmatrix} \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = |\alpha|^2 + |\beta|^2
+\end{equation}
+
+\begin{conceptbox}[ボルンの規則（確率解釈）]
+量子状態 $\ket{\psi}$ を測定したとき、結果として状態 $0$ が得られる確率は $|\alpha|^2$、状態 $1$ が得られる確率は $|\beta|^2$ である。
+「全事象の確率の和は常に1でなければならない」という物理的要請（規格化条件）から、量子状態のベクトルの長さ（ノルム）は常に1でなければならない：
+\begin{equation}
+\|\ket{\psi}\|^2 = \braket{\psi}{\psi} = |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+\end{conceptbox}
+
+$n$ 量子ビット系の場合、状態空間はテンソル積 $(\mathbb{C}^2)^{\otimes n} = \mathbb{C}^{2^n}$ となり、全 $2^n$ 個のビット列 $\bm{z} \in \{0, 1\}^n$ の重ね合わせとして表される：
+\begin{equation}
+\ket{\psi} = \sum_{\bm{z} \in \{0, 1\}^n} c_{\bm{z}} \ket{\bm{z}}, \quad \sum_{\bm{z} \in \{0, 1\}^n} |c_{\bm{z}}|^2 = 1
+\end{equation}
+
+\subsection{エルミート演算子（物理量と目的関数）}
+量子力学において、エネルギーや目的関数のように「実験で測定可能な物理量（オブザーバブル）」は、\textbf{エルミート演算子（Hermitian Operator）}として記述される。
+
+\begin{definition}[エルミート演算子]
+行列（演算子） $H$ が自身のエルミート共役と等しいとき、$H$ をエルミート演算子と呼ぶ：
+\begin{equation}
+H^\dagger = H \quad \left(H_{ij}^* = H_{ji}\right)
+\end{equation}
+\end{definition}
+
+エルミート演算子には、以下の決定的に重要な数学的性質がある：
+\begin{enumerate}
+    \item \textbf{固有値が必ず実数（Real Numbers）である}:
+    物理的な観測値（エネルギーやコスト関数の値）は実数でなければならない。エルミート行列の固有値方程式 $H \ket{v_k} = \lambda_k \ket{v_k}$ を解くと、すべての固有値 $\lambda_k$ は必ず実数となる。
+    \item \textbf{異なる固有状態が互いに直交する}:
+    固有状態集合 $\{\ket{v_k}\}$ は完全直交基底をなし、任意の量子状態をその固有状態の重ね合わせとして展開できる。
+\end{enumerate}
+状態 $\ket{\psi}$ における物理量 $H$ の\textbf{期待値（平均測定値）}は、内積を用いて次のように定義される：
+\begin{equation}
+\langle H \rangle = \mel{\psi}{H}{\psi} = \sum_k \lambda_k |\braket{v_k}{\psi}|^2 \in \mathbb{R}
+\end{equation}
+
+\subsection{ユニタリ演算子（量子ゲートの本質）}
+量子コンピュータが行うすべての演算（量子ゲート操作）は、数学的には\textbf{ユニタリ演算子（Unitary Operator）}による状態ベクトルの変換である。
+
+\begin{definition}[ユニタリ演算子]
+行列 $U$ のエルミート共役がその逆行列に一致するとき、$U$ をユニタリ演算子と呼ぶ：
+\begin{equation}
+U^\dagger U = U U^\dagger = I \iff U^\dagger = U^{-1}
+\end{equation}
+\end{definition}
+
+\begin{conceptbox}[ユニタリ変換の幾何学的直観：複素空間の「回転」]
+実数ベクトル空間において、長さを変えずにベクトルを回転させる行列を「直交行列 ($O^T O = I$)」と呼んだ。
+ユニタリ行列は、\textbf{直交行列を複素数空間へと一般化したもの}である。
+\begin{enumerate}
+    \item \textbf{ベクトルの長さを一切変えない}:
+    $\ket{\psi'} = U \ket{\psi}$ とすると、
+    \begin{equation}
+    \braket{\psi'}{\psi'} = \bra{\psi} U^\dagger U \ket{\psi} = \bra{\psi} I \ket{\psi} = \braket{\psi}{\psi} = 1
+    \end{equation}
+    すなわち、全確率の和が $1$ であるという物理法則（確率保存則）を完全に維持する。
+    \item \textbf{2つのベクトルの間の角度（内積）を保つ}:
+    $\braket{\phi'}{\psi'} = \bra{\phi} U^\dagger U \ket{\psi} = \braket{\phi}{\psi}$。
+    \item \textbf{常に逆変換が存在し、可逆（Reversible）である}:
+    情報が絶対に失われない（$U^{-1} = U^\dagger$ でいつでも元に戻せる）。
+\end{enumerate}
+\end{conceptbox}
+
+\subsection{なぜハミルトニアンの指数関数 $e^{-i \theta H}$ がユニタリになるのか？}
+QAOAの回路式を見ると、必ず $e^{-i \gamma C}$ や $e^{-i \beta B}$ という「ハミルトニアンの虚数指数関数」の形をしている。これには量子力学の根源的な理由がある。
+
+量子系の時間発展は、基礎方程式である\textbf{シュレディンガー方程式}に従う：
+\begin{equation}
+i \hbar \frac{d}{dt} \ket{\psi(t)} = H \ket{\psi(t)}
+\end{equation}
+（簡単のためプランク定数 $\hbar = 1$ とする）。
+ハミルトニアン $H$ が時間に依存しない場合、この常微分方程式の解は形式的に次のように求まる：
+\begin{equation}
+\ket{\psi(t)} = e^{-i t H} \ket{\psi(0)}
+\end{equation}
+ここで演算子の指数関数 $e^{A}$ はテイラー展開で定義される：$e^A = \sum_{k=0}^\infty \frac{A^k}{k!} = I + A + \frac{A^2}{2} + \dots$。
+
+\begin{theorem}[エルミート演算子の指数関数は必ずユニタリになる]
+任意のエルミート演算子 $H$（$H^\dagger = H$）および任意の実数 $\theta \in \mathbb{R}$ に対し、演算子 $U = e^{-i \theta H}$ は必ずユニタリ行列となる。
+\end{theorem}
+\begin{proof}
+$U = e^{-i \theta H}$ のエルミート共役を計算する。行列の級数展開に対し共役をとると：
+\begin{equation}
+U^\dagger = \left( e^{-i \theta H} \right)^\dagger = e^{( -i \theta H )^\dagger} = e^{+i \theta H^\dagger}
+\end{equation}
+$H$ はエルミート（$H^\dagger = H$）かつ $\theta$ は実数（$\theta^* = \theta$）であるから：
+\begin{equation}
+U^\dagger = e^{+i \theta H}
+\end{equation}
+したがって、
+\begin{equation}
+U^\dagger U = e^{+i \theta H} e^{-i \theta H} = e^{+i \theta H - i \theta H} = e^0 = I
+\end{equation}
+全く同様に $U U^\dagger = I$ も成り立つ。よって $U$ はユニタリである。
+\end{proof}
+
+\begin{paperbox}[物理的結論：エルミートとユニタリの美しい対応関係]
+\begin{itemize}
+    \item \textbf{エルミート演算子 $H$}: 「エネルギー」「目的関数」「制約条件」といった静的な**物理量・コスト**を表す（固有値は実数のスコア）。
+    \item \textbf{ユニタリ演算子 $e^{-i \theta H}$}: そのハミルトニアン $H$ に従って状態を角度 $\theta$ だけ回転させる動的な**量子ゲート・時間発展**を表す（長さと確率を保存する）。
+\end{itemize}
+QAOAとは、\textbf{「目的関数 $C$ をハミルトニアンとして時間発展させ、次にミキサー $B$ をハミルトニアンとして時間発展させる」}という物理操作の繰り返しに他ならない。
+\end{paperbox}
+
+\subsection{パウリ演算子と1量子ビット回転ゲート}
+最後に、量子計算で最も多用されるパウリ行列（Pauli Matrices）を確認する：
+\begin{equation}
+I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad 
+X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad 
+Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad 
+Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+\end{equation}
+これらはすべてエルミート（$X^\dagger = X, Y^\dagger = Y, Z^\dagger = Z$）かつユニタリ（$X^2 = Y^2 = Z^2 = I$）である。
+\begin{itemize}
+    \item $Z$ 演算子：基底状態 $\ket{0}, \ket{1}$ のビット値を識別する（$Z\ket{0}=+\ket{0}$, $Z\ket{1}=-\ket{1}$）。対角行列であり、**コストの評価**に用いられる。
+    \item $X$ 演算子：ビット反転ゲート（NOTゲート：$X\ket{0}=\ket{1}$, $X\ket{1}=\ket{0}$）。非対角成分を持ち、**状態を混合（ミキシング）する**ために用いられる。
+    \item 回転ゲート：パウリ行列 $P \in \{X, Y, Z\}$ に対し、$e^{-i \frac{\theta}{2} P} = \cos(\frac{\theta}{2}) I - i \sin(\frac{\theta}{2}) P$ がブロッホ球上での軸周りの回転操作 $R_P(\theta)$ を与える。
+\end{itemize}
+
+---
+
+\section{QAOAの数理的定式化 (Farhi et al. 2014 の枠組み)}
+
+前節の準備を踏まえ、QAOAの原論文である Farhi, Goldstone, Gutmann (2014) \cite{farhi2014quantum} の記法および論理展開に厳密に準拠して、QAOAの数理構造を展開する。
+
+\subsection{問題ハミルトニアン (Cost Hamiltonian)}
+目的関数 $C(\bm{z})$ が $m$ 個の局所節（Clause）の和として分解されているとする：
+\begin{equation}
+C(\bm{z}) = \sum_{\alpha=1}^m C_\alpha(\bm{z})
+\end{equation}
+計算基底 $\ket{\bm{z}} = \ket{z_1 \dots z_n}$ （$z_j \in \{0, 1\}$）に対し、目的関数 $C(\bm{z})$ を対角成分に持つコスト演算子 $C$ を定義する：
+\begin{equation}
+C \ket{\bm{z}} = C(\bm{z}) \ket{\bm{z}}
+\end{equation}
+バイナリ変数 $z_j \in \{0, 1\}$ とパウリ $Z$ 演算子（固有値 $\pm 1$）との間の写像：
+\begin{equation}
+z_j \mapsto \frac{I - Z_j}{2} \iff Z_j \ket{z_j} = (-1)^{z_j} \ket{z_j}
+\end{equation}
+を用いることで、2次のQUBO関数は対角なイジング模型 $C = \sum_{j < k} J_{jk} Z_j Z_k + \sum_j h_j Z_j + \text{const}$ として完全にエルミート演算子化される。
+
+\subsection{Ansatz回路と変分量子状態}
+QAOAは、2種類の非可換なユニタリ時間発展を交互に $p$ 層（レイヤー）作用させる。
+
+\begin{definition}[初期状態]
+初期状態 $\ket{s}$ は、全 $2^n$ 個の計算基底の一様重ね合わせ状態とする：
+\begin{equation}
+\ket{s} = \ket{+}^{\otimes n} = \frac{1}{\sqrt{2^n}} \sum_{\bm{z} \in \{0, 1\}^n} \ket{\bm{z}}
+\end{equation}
+これは、後述するミキサーハミルトニアン $B = \sum_{j=1}^n X_j$ の最大固有値基底状態である。
+\end{definition}
+
+\begin{definition}[演算子層 (Unitary Operators)]
+パラメータ $\bm{\gamma} = (\gamma_1, \dots, \gamma_p) \in \mathbb{R}^p$ および $\bm{\beta} = (\beta_1, \dots, \beta_p) \in \mathbb{R}^p$ に対し、以下の2つのユニタリ演算子を定義する：
+\begin{align}
+U(C, \gamma_k) &= e^{-i \gamma_k C} = \prod_{\alpha=1}^m e^{-i \gamma_k C_\alpha} \quad (\text{Cost Unitary / 位相分離器}) \\
+U(B, \beta_k) &= e^{-i \beta_k B} = \prod_{j=1}^n e^{-i \beta_k X_j} = \prod_{j=1}^n R_x(2\beta_k) \quad (\text{Mixer Unitary / 干渉ドライバ})
+\end{align}
+\end{definition}
+
+\begin{conceptbox}[2つのユニタリの役割分担]
+\begin{enumerate}
+    \item \textbf{$U(C, \gamma)$ の役割}: 計算基底 $\ket{\bm{z}}$ に対し、$e^{-i \gamma C} \ket{\bm{z}} = e^{-i \gamma C(\bm{z})} \ket{\bm{z}}$ と作用する。各状態の確率振幅の絶対値は変えず、**コスト値 $C(\bm{z})$ に比例した「位相のずれ（複素回転）」を状態に刻み込む**。
+    \item \textbf{$U(B, \beta)$ の役割}: 各量子ビットに $X$ 軸周りの回転を施すことで基底間の振幅を混合させ、**先ほど刻み込まれた「位相の差」を「干渉（確率振幅の強弱）」へと変換する**。
+\end{enumerate}
+\end{conceptbox}
+
+\begin{definition}[QAOA状態]
+深さ $p$ のQAOA変分量子状態 $\ket{\bm{\gamma}, \bm{\beta}}$ は次式で定義される：
+\begin{equation}
+\ket{\bm{\gamma}, \bm{\beta}} = U(B, \beta_p) U(C, \gamma_p) \cdots U(B, \beta_1) U(C, \gamma_1) \ket{s}
+\end{equation}
+\end{definition}
+
+\subsection{期待値と古典・量子最適化ループ}
+変分パラメータ $(\bm{\gamma}, \bm{\beta})$ に対する目的関数は、エルミート演算子 $C$ の期待値として定義される：
+\begin{equation}
+F_p(\bm{\gamma}, \bm{\beta}) = \bra{\bm{\gamma}, \bm{\beta}} C \ket{\bm{\gamma}, \bm{\beta}} = \sum_{\bm{z} \in \{0, 1\}^n} C(\bm{z}) |\braket{\bm{z}}{\bm{\gamma}, \bm{\beta}}|^2
+\end{equation}
+古典オプティマイザ（COBYLA等）が $F_p$ を最小化する最適パラメータ $(\bm{\gamma}^*, \bm{\beta}^*)$ を探索し、収束後に得られた状態をサンプリングすることで良解を抽出する。
+
+\subsection{断熱量子計算（AQC）との関係と大域収束定理}
+AQCにおける断熱発展 $H(t) = (1 - t/T) B + (t/T) C$ をトロッター展開した極限としてQAOAを解釈できる。
+
+\begin{theorem}[QAOAの大域的収束性 \cite{farhi2014quantum}]
+任意の目的関数 $C(\bm{z})$ に対し、深さ $p \to \infty$ の極限において、変分エネルギーの最小値は厳密な大域的最小解に収束する：
+\begin{equation}
+\lim_{p \to \infty} \min_{\bm{\gamma}, \bm{\beta}} F_p(\bm{\gamma}, \bm{\beta}) = \min_{\bm{z} \in \{0, 1\}^n} C(\bm{z})
+\end{equation}
+さらに、任意の有限 $p$ について、常に単調改善性が成り立つ：$\min F_{p+1} \le \min F_p$。
+\end{theorem}
+
+---
+
+\section{Quantum Alternating Operator Ansatz (Hadfield et al. 2019 の枠組み)}
+
+Farhiらの標準QAOAは「制約のない」問題に限定されていた。
+これに対し、Hadfield et al. (2019) \cite{hadfield2019from} は、制約を持つ問題に対して、状態発展を実行可能空間内に拘束する一般化Ansatz――\textbf{Quantum Alternating Operator Ansatz}を提唱した。
+
+\subsection{公理的要件：不変性と推移性}
+実行可能領域を $\mathcal{D} \subseteq \{0, 1\}^n$ とし、それに対応するヒルベルト空間内の\textbf{実行可能部分空間（Feasible Subspace）}を以下で定義する：
+\begin{equation}
+\mathcal{H}_{\mathcal{D}} = \text{span}\{\ket{\bm{z}} \mid \bm{z} \in \mathcal{D}\} \subset (\mathbb{C}^2)^{\otimes n}
+\end{equation}
+
+\begin{paperbox}[Hadfield et al. (2019) の2大公理]
+\begin{enumerate}
+    \item \textbf{部分空間不変性 (Feasible Subspace Invariance)}:
+    初期状態 $\ket{\psi_0}$ は実行可能空間に属し、かつ任意の時間発展演算子 $U_C(\gamma)$ および $U_M(\beta)$ は実行可能部分空間を不変に保たなければならない：
+    \begin{equation}
+    \ket{\psi_0} \in \mathcal{H}_{\mathcal{D}}, \quad U_C(\gamma) \mathcal{H}_{\mathcal{D}} \subseteq \mathcal{H}_{\mathcal{D}}, \quad U_M(\beta) \mathcal{H}_{\mathcal{D}} \subseteq \mathcal{H}_{\mathcal{D}}
+    \end{equation}
+    \item \textbf{推移性・エルゴード性 (Transitivity / Ergodicity)}:
+    ミキサー $U_M(\beta)$ は実行可能空間 $\mathcal{D}$ 内の任意の2つの実行可能状態 $\ket{\bm{x}}, \ket{\bm{y}} \in \mathcal{D}$ 間を有限ステップで結合できなければならない（遷移グラフの連結性）。
+\end{enumerate}
+\end{paperbox}
+
+\subsection{XYミキサーの代数構造}
+ハミング重み制約 $\sum_{j=1}^n z_j = K$（パウリ表現で $\sum_{j=1}^n Z_j = n - 2K$）を保存する代表的なミキサーが\textbf{XYミキサー}である：
+\begin{equation}
+H_M^{\text{XY}} = \frac{1}{2} \sum_{(j, k) \in E} (X_j X_k + Y_j Y_k) = \sum_{(j, k) \in E} (S_j^+ S_k^- + S_j^- S_k^+)
+\end{equation}
+ここで $S_j^+ = \ket{0}\bra{1}_j, S_j^- = \ket{1}\bra{0}_j$ は昇降演算子である。
+
+\begin{lemma}[ハミング重み保存則]
+XYミキサー $H_M^{\text{XY}}$ は、全磁化（粒子数）演算子 $\sum_{j=1}^n Z_j$ と厳密に可換である：
+\begin{equation}
+\left[ H_M^{\text{XY}}, \sum_{j=1}^n Z_j \right] = 0
+\end{equation}
+\end{lemma}
+\begin{proof}
+単一ペア $(j, k)$ に対し、$[X_j X_k + Y_j Y_k, Z_j + Z_k] = -2i Y_j X_k - 2i X_j Y_k + 2i X_j Y_k + 2i Y_j X_k = 0$。和をとることで系全体で成立する。
+\end{proof}
+
+この代数構造により、ユニタリ時間発展 $e^{-i\beta H_M^{\text{XY}}}$ はハミング重みの異なる状態空間への漏れ出しを恒等的に遮断する。
+
+---
+
+\section{Factorization Machine（FM）サロゲートモデルとの融合}
+
+\subsection{FMの数理的表現 (Rendle 2010)}
+Factorization Machine（FM）\cite{rendle2010factorization} は、入力バイナリベクトル $\bm{x} \in \{0, 1\}^n$ に対し、二次相互作用の重み行列を低ランク因子分解 $\bm{v}_j^T \bm{v}_k$ で近似するモデルである：
+\begin{equation}
+\hat{f}(\bm{x}) = w_0 + \sum_{j=1}^n w_j x_j + \sum_{j=1}^n \sum_{k=j+1}^n \langle \bm{v}_j, \bm{v}_k \rangle x_j x_k
+\end{equation}
+ここで $w_0 \in \mathbb{R}$, $\bm{w} \in \mathbb{R}^n$, $\bm{v}_j \in \mathbb{R}^K$ （$K \ll n$）である。
+
+\subsection{イジングハミルトニアンへの同型写像}
+\begin{proposition}[FMのイジング同型性]
+FMサロゲートモデルの最小化問題 $\min_{\bm{x} \in \{0, 1\}^n} \hat{f}(\bm{x})$ は、補助変数を一切導入することなく、厳密に2-localなパウリ $Z$ ハミルトニアン $H_C$ に同型写像される。
+\end{proposition}
+\begin{proof}
+変数変換 $x_j = \frac{I - Z_j}{2}$ を代入すると、直ちに以下が得られる：
+\begin{equation}
+H_C = \sum_{j < k} J_{jk} Z_j Z_k + \sum_{j=1}^n h_j Z_j + C_{\text{offset}} I
+\end{equation}
+ここで結合定数は $J_{jk} = \frac{1}{4} \langle \bm{v}_j, \bm{v}_k \rangle$、$h_j = -\frac{1}{2} w_j - \frac{1}{4} \sum_{k \neq j} \langle \bm{v}_j, \bm{v}_k \rangle$ である。
+\end{proof}
+
+---
+
+\section{制約付き最適化とブロック直和型XYミキサー}
+
+\subsection{従来のペナルティ法（QUBOアプローチ）の破綻}
+実問題に不可欠な One-Hot 制約（$M$ 個の変数ブロックそれぞれについて $\sum_{j=1}^{d_m} x_{m, j} = 1$）に対し、従来のペナルティ法は $H_{\text{total}} = H_C + \sum_{m=1}^M \lambda_m ( \sum_{j=1}^{d_m} x_{m, j} - 1 )^2$ を用いる。
+しかし、これは**無効解による評価回数の浪費**、**高エネルギー障壁による探索の凍結**、および**$+2\lambda x_j x_k$ によるFM相互作用ランドスケープの破壊**という致命的な三重苦を引き起こす。
+
+\subsection{ブロック直和型XYミキサー（Block-Diagonal XY-Mixer）}
+全量子ビット数を $N = \sum_{m=1}^M d_m$ とし、量子ビット集合を各変数のブロックに分割する：$V = \bigsqcup_{m=1}^M V_m$（$|V_m| = d_m$）。
+
+\begin{definition}[直積W状態初期状態]
+各変数ブロック $m$ において、ハミング重み1の均等重ね合わせ状態であるW状態を準備し、全系の初期状態をその直積とする：
+\begin{equation}
+\ket{\psi_0} = \bigotimes_{m=1}^M \ket{W_{d_m}}, \quad \ket{W_{d_m}} = \frac{1}{\sqrt{d_m}} \sum_{j \in V_m} \ket{0 \dots 0 \underbrace{1}_{j} 0 \dots 0}
+\end{equation}
+\end{definition}
+
+\begin{definition}[ブロック直和型XYミキサー]
+異なるブロック間を結合せず、各ブロック内部の連結グラフ $G_m = (V_m, E_m)$ 上でのみ作用するミキサーを定義する：
+\begin{equation}
+H_M^{\text{Block-XY}} = \sum_{m=1}^M H_M^{(m)}, \quad H_M^{(m)} = \frac{1}{2} \sum_{(j, k) \in E_m} (X_j X_k + Y_j Y_k)
+\end{equation}
+\end{definition}
+
+\begin{theorem}[完全ペナルティフリー性の数学的保証]
+初期状態を $\ket{\psi_0} = \bigotimes_{m=1}^M \ket{W_{d_m}}$ とし、ミキサーを $H_M^{\text{Block-XY}}$ とするQAOAにおいて、任意の深さ $p$ および任意の変分パラメータ $(\bm{\gamma}, \bm{\beta})$ に対して、測定結果がOne-Hot制約を違反する確率は数学的に厳密に $0$ である：
+\begin{equation}
+\forall m \in \{1, \dots, M\}, \quad \text{Prob}\left(\sum_{j \in V_m} x_j \neq 1\right) = 0
+\end{equation}
+さらに、各ブロックのグラフ $G_m$ が連結（例えばリンググラフや完全グラフ）であれば、Hadfieldの推移性公理が満たされ、実行可能空間内の任意の解へ到達可能である。
+\end{theorem}
+\begin{proof}
+初期状態 $\ket{\psi_0}$ は各ブロック $m$ において $\sum_{j \in V_m} \frac{I - Z_j}{2} = 1$ の固有値1を持つ固有状態である。
+コスト演算子 $e^{-i \gamma C}$ はパウリ $Z$ の対角演算子であるためハミング重み分布を変更しない。
+ミキサー演算子 $e^{-i \beta H_M^{\text{Block-XY}}} = \prod_{m=1}^M e^{-i \beta H_M^{(m)}}$ において、各 $H_M^{(m)}$ はブロック $m$ のビットのみに作用し、補題5.1より $[H_M^{(m)}, \sum_{j \in V_m} Z_j] = 0$ である。
+したがって、全時間発展を通じて各ブロックのハミング重みは厳密に1に保存される。
+また、$G_m$ が連結であれば、単一励起（1ビット）は $G_m$ 上の任意のノード間をXYミキサーの連続時間発展によって遷移可能であるため、推移性が成り立つ。
+\end{proof}
+
+---
+
+\section{3大手法の理論・実験比較体系}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{制約付きBBOにおける最適化アプローチの学術的比較}
+\label{tab:comprehensive_comparison}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+\textbf{比較項目} & \textbf{1. FMQA \cite{kitai2020designing}} & \textbf{2. Standard FM-QAOA \cite{farhi2014quantum}} & \textbf{3. 提案手法 (FM-XY-QAOA)} \\ \midrule
+\textbf{基礎理論} & 量子アニーリング (AQC) & 標準QAOA (Farhi 2014) & Quantum Alternating Ansatz \cite{hadfield2019from} \\
+\textbf{制約処理法} & ペナルティ法 ($\lambda > 0$) & ペナルティ法 ($\lambda > 0$) & \textbf{部分空間拘束 ($\lambda = 0$)} \\
+\textbf{探索空間次元} & 全空間 $2^N$ & 全空間 $2^N$ & \textbf{縮小空間 $\prod_{m=1}^M d_m \ll 2^N$} \\
+\textbf{初期状態} & $\ket{+}^{\otimes N}$ & $\ket{+}^{\otimes N}$ & \textbf{直積W状態 $\bigotimes \ket{W_{d_m}}$} \\
+\textbf{ミキサー} & $\sum X_j$ & $\sum X_j$ & \textbf{ブロック直和型 XYミキサー} \\
+\textbf{制約充足率} & $\lambda$ 依存 (不完全) & 低〜中 (ペナルティ壁でトラップ) & \textbf{理論上 100\% 保証} \\
+\textbf{ランドスケープ} & ペナルティで歪曲 & ペナルティで歪曲 & \textbf{FM本来の地形を純粋探索} \\
+\textbf{ハイパーパラメータ} & $\lambda$ の調整が必須 & $\lambda$ の調整が必須 & \textbf{調整パラメータなし} \\ \bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{論文における差別化・新規性の主張論理}
+\begin{enumerate}
+    \item \textbf{対 FMQA (Kitai et al. 2020)}: 
+    物理的量子アニーラーは横磁場 $\sum X_j$ という固定のハミルトニアンに従うため、制約をペナルティ項で処理せざるを得ない。一方、ゲート型QAOAは任意のユニタリゲートを合成可能であり、ブロックXYミキサーによって「制約違反を物理的に不可能にする」という、アニーラーには原理的に不可能な真の量子優位性を獲得できる。
+    \item \textbf{対 Standard QAOA}:
+    NISQデバイスにおける浅いレイヤー（$p=1, 2$）において、Standard QAOAにペナルティ項を導入すると、トンネリング確率の低下により無効解の割合が劇的に増大する。XYミキサーによる次元圧縮によって、浅いレイヤーであっても確実に最適解を高確率で抽出できる。
+\end{enumerate}
+
+---
+
+\section{結論 (Conclusion)}
+本稿では、ブラケット記法、エルミート演算子、ユニタリ変換という基礎数理から出発し、Farhi et al. (2014) および Hadfield et al. (2019) の理論的枠組みに基づき、FMサロゲートモデルとブロック直和型XYミキサーを統合した新しいBBOフレームワークの完全な数学的定式化を行った。
+不変性と推移性の厳密な証明を通じ、ペナルティ係数調整を完全に排除しながら、100\%の制約充足性を保証するメカニズムを確立した。
+
+\begin{thebibliography}{99}
+\bibitem{farhi2014quantum}
+E.~Farhi, J.~Goldstone, and S.~Gutmann, 
+``A quantum approximate optimization algorithm,'' 
+\textit{arXiv preprint arXiv:1411.4028}, 2014.
+
+\bibitem{hadfield2019from}
+S.~Hadfield, Z.~Wang, B.~O'Gorman, E.~G.~Rieffel, D.~Venturelli, and R.~Biswas, 
+``From the quantum approximate optimization algorithm to a quantum alternating operator ansatz,'' 
+\textit{Algorithms}, vol.~12, no.~2, p.~34, 2019.
+
+\bibitem{wang2020xy}
+Z.~Wang, N.~C.~Rubin, J.~M.~Dominy, and R.~Babbush, 
+``$XY$ mixers: Analytical and numerical results for the quantum alternating operator ansatz,'' 
+\textit{Physical Review A}, vol.~101, no.~1, p.~012320, 2020.
+
+\bibitem{kitai2020designing}
+K.~Kitai, J.~Guo, S.~Ju, S.~Tanaka, K.~Tsuda, J.~Shiomi, and R.~Tamura, 
+``Designing metamaterials with quantum annealing and factorization machines,'' 
+\textit{Physical Review Research}, vol.~2, no.~1, p.~013319, 2020.
+
+\bibitem{rendle2010factorization}
+S.~Rendle, 
+``Factorization machines,'' 
+in \textit{2010 IEEE International Conference on Data Mining}, IEEE, 2010, pp.~995--1000.
+
+\bibitem{bartschi2020deterministic}
+A.~B{\"a}rtschi and S.~Eidenbenz, 
+``Deterministic preparation of Dicke states,'' 
+in \textit{Fundamentals of Computation Theory}, Springer, 2019, pp.~126--139.
+
+\bibitem{chancellor2019domain}
+N.~Chancellor, 
+``Domain wall encoding of discrete variables for quantum annealing and QAOA,'' 
+\textit{Quantum Science and Technology}, vol.~4, no.~4, p.~045004, 2019.
+
+\bibitem{mcclean2018barren}
+J.~R.~McClean, S.~Boixo, V.~N.~Smelyanskiy, R.~Babbush, and H.~Neven, 
+``Barren plateaus in quantum neural network training landscapes,'' 
+\textit{Nature Communications}, vol.~9, no.~1, p.~4812, 2018.
+
+\bibitem{egger2021warm}
+D.~J.~Egger, J.~Mare{\v{c}}ek, and S.~Woerner, 
+``Warm-starting quantum optimization,'' 
+\textit{Quantum}, vol.~5, p.~479, 2021.
+\end{thebibliography}
+
+\end{document}

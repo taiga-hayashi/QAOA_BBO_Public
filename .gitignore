@@ -3,3 +3,23 @@ __pycache__/
 *.pyc
 .DS_Store
 result/
+
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Temporary and backup files
+*.bak
+*.orig
+*.tmp
+
+# Temporary preview image directories
+preview/
+preview_all/
+preview_new/
+pdf_images/
