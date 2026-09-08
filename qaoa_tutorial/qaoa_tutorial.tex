@@ -246,7 +246,7 @@
 本書の目的は，この\textbf{「物理学の量子力学」と「計算科学の量子アルゴリズム」の間に横たわる断絶を完全に埋める}ことである：
 \begin{enumerate}\setlength{\itemsep}{2pt}
     \item \textbf{スピン系から量子ゲートへの完全な翻訳}: 量子ビット $\ket{0}, \ket{1}$ はスピン$1/2$粒子の $S_z$ 固有状態 $\ket{\uparrow}, \ket{\downarrow}$ そのものであり，1量子ビット回転ゲートは磁場中のラーモア歳差運動 $e^{-i \frac{\theta}{2} \bm{n}\cdot\bm{\sigma}}$，イジング相互作用ゲート $R_{ZZ}$ は2スピン結合にほかならない\cite{nielsen2010quantum,barenco1995elementary}．
-    \item \textbf{断熱量子計算（AQC）と量子断熱定理}: 時間依存ハミルトニアンの基底状態追従，Born-Fock-Katoの量子断熱定理\cite{born1928beweis,kato1950adiabatic}，反交差とLandau-Zener遷移\cite{landau1932theorie,zener1932non}，そしてリー・トロッター分解\cite{trotter1959product,suzuki1976generalized,lloyd1996universal}という物理の王道からQAOAの誕生（Farhi et al., 2014\cite{farhi2014quantum}）を必然として導く．
+    \item \textbf{断熱量子計算（AQC）と量子アニーリング（QA）の物理数理}: 時間依存ハミルトニアンの基底状態追従，Born-Fock-Katoの量子断熱定理\cite{born1928beweis,kato1950adiabatic}，反交差とLandau-Zener遷移\cite{landau1932theorie,zener1932non}，門脇・西森の量子アニーリング（QA\cite{kadowaki1998quantum}）との深層的関係（孤立系vs開放系，計算万能性\cite{aharonov2007adiabatic}），そしてリー・トロッター分解\cite{trotter1959product,suzuki1976generalized,lloyd1996universal}という物理の王道からQAOAの誕生（Farhi et al., 2014\cite{farhi2014quantum}）を必然として導く．
     \item \textbf{原論文のハイゼンベルク描像による厳密証明}: FarhiらのLight Cone解析は，大学3年生が習う「ハイゼンベルク方程式と演算子のユニタリ時間発展 $A(t) = U^\dagger A U$」そのものであり，代数計算を一切省略せずに3正則MaxCut近似比0.6924を完全に導出する．
     \item \textbf{凝縮系物理の知恵（XYミキサー）}: One-Hot制約付き最適化において，従来のペナルティ法（Standard QAOA\cite{lucas2014ising}）が解空間の指数爆発により破綻するのに対し，Hadfield et al. (2019)\cite{hadfield2019from}やWang et al. (2020)\cite{wang2020xy}のXYミキサーは，物性物理で親しまれている「XXZスピン鎖のフリップフロップ項 $\sigma_i^+ \sigma_j^- + \sigma_i^- \sigma_j^+$」であり，全スピン $S_z^{\text{tot}}$ 保存則（ハミング重み保存）によって無効解空間を物理排除する．
     \item \textbf{古典角度最適化と機械学習サロゲートの融合}: 変分エネルギー地形の非凸性，Barren Plateau現象\cite{mcclean2018barren,wang2021noise}，パラメータシフト則\cite{mitarai2018quantum,schuld2019evaluating}，そしてFactorization Machine（FM\cite{rendle2010factorization,kitai2020designing}）との調和までを一気通貫で解説する．
@@ -258,7 +258,7 @@
 \noindent
 \textbf{本書の構成と学習フロー}：
 \begin{itemize}
-    \item \textbf{基礎理論コース（第1章〜第3章）}: スピン系と回路の対応，イジング模型への変換，AQCとトロッター分解の数理．
+    \item \textbf{基礎理論コース（第1章〜第3章）}: スピン系と回路の対応，イジング模型への変換，AQC・量子アニーリングとトロッター分解の数理．
     \item \textbf{原論文徹底解読コース（第4章）}: Farhi (2014) のMaxCut近似比0.6924の厳密証明．
     \item \textbf{制約付き最適化とXYミキサーコース（第5章〜第7章）}: ペナルティ法の破綻，Hadfield (2019) の対称性保存則，Wang (2020) のNISQ実装論．
     \item \textbf{古典角度最適化と実践BBOコース（第8章〜第9章）}: 変分最適化，INTERP，Factorization Machineとの調和．
@@ -326,7 +326,7 @@ $\ket{W_d}$ & W状態 & $d$ 個のビットに1つだけ1が立った均等重�
 本教材では，以下のステップに従ってQAOAの理論体系を基礎から最先端まで段階的に修得する：
 \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
     \item \textbf{第2章}: \textbf{量子回路入門：スピン1/2系から量子ゲートへの物理的架け橋}．大学3年生の量子力学で親しんだスピン1/2系（$\ket{\uparrow}, \ket{\downarrow}$）とパウリ行列を基礎に，ラーモア歳差運動としての回転ゲート，CNOT，およびイジング相互作用（$R_{ZZ}$）のゲート分解\cite{nielsen2010quantum,barenco1995elementary}を学ぶ．
-    \item \textbf{第3章}: 組合せ最適化を物理のスピン系（イジング模型/QUBO）へマッピングする数学的基盤\cite{lucas2014ising}と，QAOAの直接の先祖である断熱量子計算（AQC）の物理原理\cite{farhi2000quantum,farhi2001quantum,born1928beweis,kato1950adiabatic,jansen2007bounds}およびトロッター分解\cite{trotter1959product,suzuki1976generalized,lloyd1996universal}を修得する．
+    \item \textbf{第3章}: 組合せ最適化を物理のスピン系（イジング模型/QUBO）へマッピングする数学的基盤\cite{lucas2014ising}と，QAOAの直接の先祖である断熱量子計算（AQC）の物理原理\cite{farhi2000quantum,farhi2001quantum,born1928beweis,kato1950adiabatic,jansen2007bounds}，門脇・西森の量子アニーリング（QA）\cite{kadowaki1998quantum}との深層的関係，およびトロッター分解\cite{trotter1959product,suzuki1976generalized,lloyd1996universal}を修得する．
     \item \textbf{第4章}: \textbf{Farhi et al. (2014) の原論文}\cite{farhi2014quantum}を徹底的に解読し，コスト演算子・横磁場ミキサー・変分ハイブリッドループ・3正則グラフMaxCutの近似比導出を追体験する．
     \item \textbf{第5章}: 現実の産業問題で頻出するOne-Hot制約などの等式制約に対し，従来のペナルティ法（Standard QAOA）がなぜ解空間の指数消滅により壊滅的な破綻を迎えるのかを解明する\cite{lucas2014ising,choi2008different,hadfield2019from}．
     \item \textbf{第6章}: \textbf{Hadfield et al. (2019) の原著論文}\cite{hadfield2019from}を解読し，探索空間を有効解のみに閉じる「Quantum Alternating Operator Ansatz」とXYミキサーの理論，およびW状態生成\cite{bartschi2019deterministic}を学ぶ．
@@ -354,17 +354,51 @@ $\ket{W_d}$ & W状態 & $d$ 個のビットに1つだけ1が立った均等重�
 ここで $\ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$ は基準となる基底（計算基底）である．
 この量子ビットを観測（$Z$ 基底での射影測定）すると，$|\alpha|^2$ の確率で $0$ が得られ，$|\beta|^2$ の確率で $1$ が得られる（ボルンの規則）．
 
-\begin{insightbox}[量子力学（スピン$1/2$系）との物理的対応関係]
-大学の量子力学講義で学ぶスピン$1/2$粒子のスピン上向き・下向き状態と，量子ビットの計算基底は完全に1対1対応する：
-\begin{equation}
-    \ket{0} \equiv \ket{\uparrow_z} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad \ket{1} \equiv \ket{\downarrow_z} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
-\end{equation}
-スピン角運動量演算子 $\bm{S} = \frac{\hbar}{2}\bm{\sigma}$（パウリ行列 $\bm{\sigma} = (X, Y, Z)$）に対し，外部静磁場 $\bm{B} = B \bm{n}$ によるゼーマン相互作用ハミルトニアン $\mathcal{H} = -\bm{\mu}\cdot\bm{B} = \frac{\hbar \omega}{2} \bm{n}\cdot\bm{\sigma}$ の下でのシュレーディンガー時間発展演算子は：
-\begin{equation}
-    U(t) = \exp\left(-\frac{i}{\hbar} \mathcal{H} t\right) = \exp\left(-i \frac{\omega t}{2} \bm{n}\cdot\bm{\sigma}\right) = \cos\left(\frac{\omega t}{2}\right) I - i \sin\left(\frac{\omega t}{2}\right) (\bm{n}\cdot\bm{\sigma})
-\end{equation}
-となる．これはまさに，回転角 $\theta = \omega t$ の\textbf{「1量子ビット回転ゲート $R_{\bm{n}}(\theta)$」}そのものである！
-すなわち，\textbf{量子回路におけるゲート操作とは，電磁場パルスによってスピンを所望の角度だけラーモア歳差運動させる物理過程}にほかならない．
+\begin{insightbox}[量子力学（スピン$1/2$系）との物理的対応関係の完全整理]
+大学の量子力学講義で学ぶスピン$1/2$粒子（電子や中性子など）の物理と，量子情報科学における量子ビットは，以下の通り数理的・物理的に完全に1対1対応している：
+
+\begin{enumerate}
+    \item \textbf{状態空間とブロッホ球の幾何学}:
+    スピン$1/2$粒子の状態空間は2次元ヒルベルト空間 $\mathbb{C}^2$ であり，$S_z$ 固有基底 $\{\ket{\uparrow_z}, \ket{\downarrow_z}\}$ が量子ビットの計算基底 $\{\ket{0}, \ket{1}\}$ に対応する：
+    \begin{equation}
+        \ket{0} \equiv \ket{\uparrow_z} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad \ket{1} \equiv \ket{\downarrow_z} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+    \end{equation}
+    任意の一粒子純粋状態は，規格化条件と全位相の自由度を除くと，極角 $\theta \in [0, \pi]$ と方位角 $\phi \in [0, 2\pi)$ を用いて：
+    \begin{equation}
+        \ket{\psi} = \cos\left(\frac{\theta}{2}\right)\ket{0} + e^{i\phi}\sin\left(\frac{\theta}{2}\right)\ket{1}
+    \end{equation}
+    と表される．この状態におけるパウリ行列 $\bm{\sigma} = (X, Y, Z)$ の期待値ベクトル（スピン偏極ベクトル）を計算すると：
+    \begin{equation}
+        \bm{P} = \langle \bm{\sigma} \rangle = (\mel{\psi}{X}{\psi}, \; \mel{\psi}{Y}{\psi}, \; \mel{\psi}{Z}{\psi})^\top = (\sin\theta \cos\phi, \; \sin\theta \sin\phi, \; \cos\theta)^\top
+    \end{equation}
+    となり，これはまさに三次元実空間の単位球面（\textbf{ブロッホ球: Bloch Sphere}）上の方向余弦ベクトルそのものである！
+
+    \item \textbf{ゼーマン相互作用とラーモア歳差運動（1量子ビットゲートの物理）}:
+    スピン角運動量演算子 $\bm{S} = \frac{\hbar}{2}\bm{\sigma}$（磁気回転比 $\gamma$）を持つスピンに対し，外部静磁場 $\bm{B} = B \bm{n}$（$\bm{n}$ は単位ベクトル）を印加したときのゼーマン相互作用ハミルトニアンは：
+    \begin{equation}
+        \mathcal{H} = -\bm{\mu}\cdot\bm{B} = -\gamma B \bm{n}\cdot\bm{S} = \frac{\hbar \omega_L}{2} \bm{n}\cdot\bm{\sigma} \quad (\omega_L \equiv -\gamma B \text{ はラーモア周波数})
+    \end{equation}
+    である．ハイゼンベルク方程式 $\frac{d}{dt}\bm{S}(t) = \frac{i}{\hbar}[\mathcal{H}, \bm{S}(t)]$ を計算すると：
+    \begin{equation}
+        \frac{d}{dt}\bm{S}(t) = \gamma \bm{S}(t) \times \bm{B}
+    \end{equation}
+    が得られ，スピンベクトルが磁場軸 $\bm{n}$ の周りを角周波数 $\omega_L$ で歳差運動（ラーモア歳差運動）することが示される．
+    シュレーディンガー描像における時間発展演算子は，$(\bm{n}\cdot\bm{\sigma})^2 = I$ というパウリ行列の反交換関係 $\{ \sigma_a, \sigma_b \} = 2\delta_{ab} I$ に着目してテイラー展開の偶数次・奇数次を分離することで：
+    \begin{align}
+        U(t) &= \exp\left(-\frac{i}{\hbar} \mathcal{H} t\right) = \exp\left(-i \frac{\omega_L t}{2} \bm{n}\cdot\bm{\sigma}\right) \nonumber \\
+        &= \sum_{m=0}^\infty \frac{(-1)^m (\omega_L t / 2)^{2m}}{(2m)!} I - i \sum_{m=0}^\infty \frac{(-1)^m (\omega_L t / 2)^{2m+1}}{(2m+1)!} (\bm{n}\cdot\bm{\sigma}) \nonumber \\
+        &= \cos\left(\frac{\omega_L t}{2}\right) I - i \sin\left(\frac{\omega_L t}{2}\right) (\bm{n}\cdot\bm{\sigma})
+    \end{align}
+    と厳密に求まる．回転角を $\theta = \omega_L t$ と置けば，これはまさに量子計算における\textbf{「1量子ビット回転ゲート $R_{\bm{n}}(\theta)$」}そのものである！
+    すなわち，\textbf{量子回路における1量子ビットゲートとは，電磁場パルスによってスピンを所望の時間だけラーモア歳差運動させる物理過程}にほかならない．
+
+    \item \textbf{2スピン結合とイジングゲート $R_{ZZ}(\theta)$（QAOAコスト層の物理）}:
+    2つの空間的に近接したスピン$1/2$粒子間に働くスピン結合ハミルトニアン（一軸異方性イジング相互作用）は：
+    \begin{equation}
+        \mathcal{H}_{\text{Ising}} = J S_{1z} S_{2z} = \frac{\hbar J}{4} Z_1 Z_2
+    \end{equation}
+    である．このハミルトニアンに従う自然な時間発展演算子は $U(t) = \exp\left(-i \frac{J t}{4} Z_1 Z_2\right)$ であり，回転角 $\theta = \frac{J t}{2}$ と同定すれば，まさに\textbf{QAOAのコスト層の主役である2量子ビット相互作用ゲート $R_{ZZ}(\theta) = e^{-i \frac{\theta}{2} Z_1 Z_2}$ そのもの}となる．
+\end{enumerate}
 \end{insightbox}
 
 \section{量子回路図の読み方}
@@ -544,31 +578,173 @@ QAOAを真に深く理解するためには，その直接の先祖である \te
 各時刻 $t$ における瞬時固有状態方程式を $H(t)\ket{n(t)} = E_n(t)\ket{n(t)}$ とする（$E_0(t) \le E_1(t) \le \dots$）．
 ボルンとフォック（Born \& Fock, 1928）\cite{born1928beweis}および加藤敏夫（Kato, 1950）\cite{kato1950adiabatic}によって厳密化された量子断熱定理は以下を主張する：
 
-\begin{theorem}[量子断熱定理]
+\begin{theorem}[量子断熱定理（Born \& Fock, 1928; Kato, 1950）]
 系が時刻 $t=0$ において初期ハミルトニアン $H(0)$ の基底状態 $\ket{0(0)}$ に準備されているとする．
-全実行時間 $T$ に対し，$H(t)$ の時間変化が十分にゆっくりであれば，終状態 $\ket{\psi(T)}$ は時刻 $T$ における目的ハミルトニアン $H(T)$ の基底状態 $\ket{0(T)}$ に極めて高い確率で留まり続ける．
+全実行時間 $T$ に対し，ハミルトニアン $H(t)$ の時間変化が十分にゆっくりであれば，終状態 $\ket{\psi(T)}$ は時刻 $T$ における目的ハミルトニアン $H(T)$ の基底状態 $\ket{0(T)}$ に極めて高い確率（漸近的に確率1）で留まり続ける．
 \end{theorem}
 
-断熱性が保たれ，第1励起状態 $\ket{1(t)}$ への脱落（非断熱遷移）が起きないための数学的十分条件（断熱条件）は，Jansen, Ruskai, Seiler (2007)\cite{jansen2007bounds}らの厳密な漸近解析により以下で与えられる：
-\begin{equation}
-    T \gg \frac{\max_{t \in [0, T]} \left| \mel{1(t)}{\frac{dH}{dt}}{0(t)} \right|}{\Delta_{\min}^2}
-\end{equation}
-ここで，\textbf{$\Delta(t) = E_1(t) - E_0(t)$ は基底状態と第1励起状態のエネルギー差（エネルギースペクトルギャップ）}であり，$\Delta_{\min} = \min_{t \in [0, T]} \Delta(t)$ は発展路における最小エネルギーギャップである．
+量子力学や断熱量子計算を学ぶ読者にとって，\textbf{「なぜゆっくり変化させるだけで基底状態に留まるのか？」「なぜ断熱条件の分母にエネルギーギャップの2乗 $\Delta_{\min}^2$ が現れるのか？」}という疑問は，物理的・数学的にも最も探究心をそそる重要論点である．
+多くの教科書では結果の不等式のみが天下り的に紹介されることが多いが，ここでは時間依存シュレーディンガー方程式から出発し，\textbf{一切の論理ジャンプなしにステップ・バイ・ステップで量子断熱条件を厳密に導出}する．
+
+\begin{insightbox}[【大学3年生向け徹底導出】シュレーディンガー方程式からの量子断熱条件の完全導出]
+\begin{enumerate}[label=\textbf{Step \arabic* :}, leftmargin=*]
+    \item \textbf{瞬時固有基底の導入と動的位相の分離}:\\
+    各時刻 $t \in [0, T]$ における瞬時ハミルトニアン $H(t)$ の固有方程式を：
+    \begin{equation}
+        H(t) \ket{n(t)} = E_n(t) \ket{n(t)} \quad (E_0(t) < E_1(t) \le E_2(t) \le \dots)
+    \end{equation}
+    とする．全発展路において基底状態は孤立（エネルギースペクトルギャップ $\Delta(t) = E_1(t) - E_0(t) > 0$）しているものとする．固有状態は正規直交完全系（$\braket{m(t)}{n(t)} = \delta_{mn}$）を張る．
+    一般の状態ベクトル $\ket{\psi(t)}$ を瞬時固有基底で展開する際，静的ハミルトニアンの時間発展因子 $e^{-i E_n t / \hbar}$ の自然な拡張として，\textbf{動的位相（Dynamic Phase）}：
+    \begin{equation}
+        \theta_n(t) \equiv -\frac{1}{\hbar} \int_0^t E_n(t') dt'
+    \end{equation}
+    をあらかじめ位相因子として括り出し，以下のように展開する：
+    \begin{equation}
+        \ket{\psi(t)} = \sum_n c_n(t) e^{i \theta_n(t)} \ket{n(t)}
+    \end{equation}
+    初期条件は，時刻 $t=0$ で系が基底状態 $\ket{0(0)}$ にあるため，$c_0(0) = 1$ かつ $n \ge 1$ に対し $c_n(0) = 0$ である．
+
+    \item \textbf{シュレーディンガー方程式への代入と動的位相の厳密相殺}:\\
+    時間依存シュレーディンガー方程式 $i\hbar \frac{d}{dt}\ket{\psi(t)} = H(t)\ket{\psi(t)}$ の左辺に対し，積の微分法を適用すると：
+    \begin{align}
+        i\hbar \frac{d}{dt}\ket{\psi(t)} &= i\hbar \sum_n \Bigl[ \dot{c}_n(t) e^{i\theta_n(t)} \ket{n(t)} + c_n(t) (i \dot{\theta}_n(t)) e^{i\theta_n(t)} \ket{n(t)} \nonumber \\
+        &\qquad\qquad + c_n(t) e^{i\theta_n(t)} \ket{\dot{n}(t)} \Bigr] \nonumber \\
+        &= i\hbar \sum_n \dot{c}_n(t) e^{i\theta_n(t)} \ket{n(t)} + \sum_n E_n(t) c_n(t) e^{i\theta_n(t)} \ket{n(t)} \nonumber \\
+        &\quad + i\hbar \sum_n c_n(t) e^{i\theta_n(t)} \ket{\dot{n}(t)}
+    \end{align}
+    となる（ここで $\dot{\theta}_n(t) = -\frac{E_n(t)}{\hbar}$ を代入した）．
+    一方，右辺はハミルトニアンの固有方程式より：
+    \begin{equation}
+        H(t) \ket{\psi(t)} = \sum_n c_n(t) e^{i\theta_n(t)} H(t)\ket{n(t)} = \sum_n E_n(t) c_n(t) e^{i\theta_n(t)} \ket{n(t)}
+    \end{equation}
+    である．両辺の第2項（エネルギー固有値に起因する項）が完全に一致して相殺するため，以下の方程式が厳密に得られる：
+    \begin{equation}
+        i\hbar \sum_n \left[ \dot{c}_n(t) \ket{n(t)} + c_n(t) \ket{\dot{n}(t)} \right] e^{i\theta_n(t)} = 0
+    \end{equation}
+
+    \item \textbf{固有ブラ $\bra{m(t)}$ への射影とベリー位相}:\\
+    上式の両辺に左から任意の固有状態 $\bra{m(t)}$ を掛け，基底の直交性 $\braket{m(t)}{n(t)} = \delta_{mn}$ を適用する：
+    \begin{equation}
+        \dot{c}_m(t) e^{i\theta_m(t)} + \sum_n c_n(t) e^{i\theta_n(t)} \braket{m(t)}{\dot{n}(t)} = 0
+    \end{equation}
+    両辺に $e^{-i\theta_m(t)}$ を掛けて $\dot{c}_m(t)$ について整理すると：
+    \begin{equation}
+        \dot{c}_m(t) = - c_m(t) \braket{m(t)}{\dot{m}(t)} - \sum_{n \neq m} c_n(t) e^{i(\theta_n(t) - \theta_m(t))} \braket{m(t)}{\dot{n}(t)}
+    \end{equation}
+    ここで対角項 $\braket{m(t)}{\dot{m}(t)}$ は，規格化条件 $\braket{m(t)}{m(t)}=1$ の時間微分 $\frac{d}{dt}\braket{m}{m} = 2\text{Re}[\braket{m}{\dot{m}}] = 0$ より純虚数である．
+    この対角項は，固有基底の局所位相再定義（ゲージ変換 $\ket{m(t)} \to e^{i\gamma_m(t)}\ket{m(t)}$）によって\textbf{ベリー位相（Berry Phase）}\cite{berry1984quantal} $\gamma_m(t) = i \int_0^t \braket{m(t')}{\dot{m}(t')}dt'$ として完全に吸収できる．
+    したがって，状態間の非断熱遷移（励起）を司る本質は，\textbf{非対角項 $\braket{m(t)}{\dot{n}(t)}$ ($n \neq m$)} のみである．
+
+    \item \textbf{基本恒等式 $\braket{m}{\dot{n}} = \frac{\mel{m}{\dot{H}}{n}}{E_n - E_m}$ の厳密な代数証明}:\\
+    非対角内積 $\braket{m(t)}{\dot{n}(t)}$ とハミルトニアンの時間変化率 $\dot{H}(t)$ の関係を明らかにするため，瞬時固有方程式 $H(t)\ket{n(t)} = E_n(t)\ket{n(t)}$ の両辺を時間 $t$ で微分する：
+    \begin{equation}
+        \dot{H}(t)\ket{n(t)} + H(t)\ket{\dot{n}(t)} = \dot{E}_n(t)\ket{n(t)} + E_n(t)\ket{\dot{n}(t)}
+    \end{equation}
+    左から $m \neq n$ なる固有状態 $\bra{m(t)}$ を掛けると，$H(t)$ のエルミート性 $\mel{m(t)}{H(t)}{\dot{n}(t)} = E_m(t)\braket{m(t)}{\dot{n}(t)}$ および直交性 $\braket{m(t)}{n(t)}=0$ より：
+    \begin{equation}
+        \mel{m(t)}{\dot{H}(t)}{n(t)} + E_m(t)\braket{m(t)}{\dot{n}(t)} = E_n(t)\braket{m(t)}{\dot{n}(t)}
+    \end{equation}
+    同類項をまとめると $(E_n(t) - E_m(t))\braket{m(t)}{\dot{n}(t)} = \mel{m(t)}{\dot{H}(t)}{n(t)}$ となる．エネルギー準位の縮退がない（$E_n(t) \neq E_m(t)$）ため，両辺をエネルギー差で割ることで，\textbf{一切の近似なしに厳密に}以下の基本恒等式が得られる：
+    \begin{equation}
+        \braket{m(t)}{\dot{n}(t)} = \frac{\mel{m(t)}{\dot{H}(t)}{n(t)}}{E_n(t) - E_m(t)} \quad (m \neq n)
+    \end{equation}
+
+    \item \textbf{部分積分と「ギャップの2乗 $\Delta(t)^2$」の数学的必然性}:\\
+    上記恒等式を係数の運動方程式に代入し，断熱極限における最低次の摂動論（Born近似 $c_0(t) \approx 1, c_{m\ge 1}(t) \approx 0$）を適用すると，基底状態から第1励起状態への遷移振幅 $c_1(T)$（$m=1, n=0$）は：
+    \begin{equation}
+        c_1(T) \approx \int_0^T \frac{\mel{1(t)}{\dot{H}(t)}{0(t)}}{\Delta(t)} \exp\left(\frac{i}{\hbar}\int_0^t \Delta(t') dt'\right) dt
+    \end{equation}
+    と表される（ここで $\Delta(t) = E_1(t) - E_0(t) > 0$）．
+    ここで被積分関数の量子振動因子に対し，$\frac{d}{dt}\left[\exp\left(\frac{i}{\hbar}\int_0^t \Delta dt'\right)\right] = \frac{i}{\hbar}\Delta(t) \exp\left(\frac{i}{\hbar}\int_0^t \Delta dt'\right)$ を用いて\textbf{部分積分（Integration by Parts）}を実行する：
+    \begin{align}
+        c_1(T) &\approx \int_0^T \frac{\mel{1(t)}{\dot{H}(t)}{0(t)}}{\Delta(t)} \cdot \left[ \frac{\hbar}{i\Delta(t)} \frac{d}{dt} e^{\frac{i}{\hbar}\int_0^t \Delta(t') dt'} \right] dt \nonumber \\
+        &= \left[ \frac{\hbar}{i} \frac{\mel{1(t)}{\dot{H}(t)}{0(t)}}{\Delta(t)^2} e^{\frac{i}{\hbar}\int_0^t \Delta(t') dt'} \right]_0^T \nonumber \\
+        &\quad - \frac{\hbar}{i}\int_0^T \frac{d}{dt}\left( \frac{\mel{1(t)}{\dot{H}(t)}{0(t)}}{\Delta(t)^2} \right) e^{\frac{i}{\hbar}\int_0^t \Delta(t') dt'} dt
+    \end{align}
+    \textbf{ここにギャップの2乗 $\Delta(t)^2$ が現れる数学的必然性がある！}
+    ハミルトニアンの変化に伴う固有状態の混合率（$\sim 1/\Delta$）に対し，シュレーディンガー方程式特有の高速位相振動を時間積分する際にさらに位相微分（$\sim \hbar/\Delta$）で割られるため，分母に必然的に2乗が現れるのである．
+
+    \item \textbf{断熱タイムスケール $T$ と量子断熱条件の導出}:\\
+    全実行時間を $T$ とし，正規化無次元時間 $s = t/T \in [0, 1]$ を導入すると，連鎖律より $\dot{H}(t) = \frac{1}{T}\frac{dH}{ds}$ とスケールする．
+    したがって遷移振幅 $c_1(T)$ の漸近的上限オーダーは：
+    \begin{equation}
+        |c_1(T)| \le \mathcal{O}\left( \frac{\hbar}{T} \frac{\max_{s \in [0, 1]} \left| \mel{1(s)}{\frac{dH}{ds}}{0(s)} \right|}{\min_{s \in [0, 1]} \Delta(s)^2} \right)
+    \end{equation}
+    と評価される．
+    第1励起状態への遷移確率 $P_{0 \to 1} = |c_1(T)|^2 \ll 1$ に抑えて断熱性を保つための条件は，振幅 $|c_1(T)| \ll 1$ である．
+    これより，全実行時間 $T$ に対する\textbf{量子断熱条件（Jansen et al., 2007\cite{jansen2007bounds}）}：
+    \begin{equation}
+        T \gg \frac{\hbar \max_{s \in [0, 1]} \left| \mel{1(s)}{\frac{dH}{ds}}{0(s)} \right|}{\Delta_{\min}^2}
+    \end{equation}
+    が数学的飛躍なく完全に導出される．ここで $\Delta_{\min} = \min_{s \in [0, 1]} \Delta(s)$ は発展路上の最小エネルギーギャップである．
+\end{enumerate}
+\end{insightbox}
 
 \subsection{3. 反交差（Avoided Crossing）とランダウ・ツェナー遷移}
 なぜ分母にギャップの2乗 $\Delta_{\min}^2$ が現れるのか？その物理的実態は，量子力学における準位の反交差（Avoided Level Crossing）とランダウ・ツェナー遷移（Landau-Zener Transition）\cite{landau1932theorie,zener1932non}にある（図\ref{fig:avoided_crossing}）．
 
-\begin{insightbox}[大学の量子力学演習でおなじみの2準位系ランダウ・ツェナー模型]
-反交差近傍におけるダイナミクスは，大学3年生の量子力学講義や演習問題で頻出する以下の標準的な2準位系時間依存ハミルトニアンで記述される：
-\begin{equation}
-    \mathcal{H}_{\text{LZ}}(t) = \frac{1}{2}\begin{pmatrix} -v t & \Delta_{\min} \\ \Delta_{\min} & v t \end{pmatrix} = -\frac{v t}{2} Z + \frac{\Delta_{\min}}{2} X
-\end{equation}
-ここで $v = \left|\frac{d}{dt}(E_1 - E_0)\right|$ は透熱エネルギー準位の相対掃引速度である．
-時刻 $t \to -\infty$ から $t \to +\infty$ へと発展させたとき，基底状態から第1励起状態へと非断熱的に跳び移る遷移確率は，ツェナー（1932）によって厳密に解かれ：
-\begin{equation}
-    P_{\text{LZ}} = \exp\left(-\frac{\pi \Delta_{\min}^2}{2\hbar v}\right)
-\end{equation}
-となる．断熱性を維持する（$P_{\text{LZ}} \approx 0$）ためには，掃引速度 $v \propto 1/T$ を極小に，すなわち実行時間 $T \propto 1/\Delta_{\min}^2$ を長大に取らねばならない物理的根拠がここにある．
+\begin{insightbox}[【大学3年生向け徹底解説】2準位系ランダウ・ツェナー模型の物理と数理解析]
+反交差近傍における量子ダイナミクスは，大学3年生の量子力学講義や演習問題で頻出する標準的な\textbf{「時間依存2準位系ランダウ・ツェナー（Landau-Zener: LZ）模型」}\cite{landau1932theorie,zener1932non}として完全に定式化できる．本項では，透熱基底と断熱基底の対比からツェナー公式の物理的意味までを余すところなく解読する．
+
+\begin{enumerate}[label=\textbf{(\arabic*)}, leftmargin=*]
+    \item \textbf{模型のハミルトニアンと透熱基底（Diabatic Basis）}:\\
+    局所的な2つの直交状態基底（透熱基底）$\{\ket{0}, \ket{1}\}$ において，時間依存ハミルトニアンを行列表現すると：
+    \begin{equation}
+        \mathcal{H}_{\text{LZ}}(t) = \frac{1}{2}\begin{pmatrix} -v t & \Delta_{\min} \\ \Delta_{\min} & v t \end{pmatrix} = -\frac{v t}{2} Z + \frac{\Delta_{\min}}{2} X
+    \end{equation}
+    と表される．ここで $v > 0$ は透熱エネルギーの掃引速度（傾き），$\Delta_{\min} > 0$ は2状態間の量子力学的結合（トンネル分裂 / オフダイアゴナル相互作用）である．
+    仮に結合が存在しない（$\Delta_{\min} = 0$）場合，透熱エネルギー固有値は対角成分 $\epsilon_0(t) = -\frac{vt}{2}$，$\epsilon_1(t) = +\frac{vt}{2}$ となり，時刻 $t=0$ で完全に交差する直線を描く（エネルギー交差）．
+
+    \newpage
+    \item \textbf{断熱準位（Adiabatic Levels）の厳密解と反交差（Avoided Crossing）の幾何学}:\\
+    非対角結合 $\Delta_{\min} > 0$ が存在する場合，各時刻 $t$ における瞬時固有値 $E$ は，特性方程式：
+    \begin{equation}
+        \det\left(\mathcal{H}_{\text{LZ}}(t) - E I\right) = E^2 - \left(\frac{v t}{2}\right)^2 - \left(\frac{\Delta_{\min}}{2}\right)^2 = 0
+    \end{equation}
+    を解くことで，一切の近似なく厳密に求まる：
+    \begin{equation}
+        E_\pm(t) = \pm \frac{1}{2} \sqrt{(v t)^2 + \Delta_{\min}^2}
+    \end{equation}
+    この瞬時固有エネルギー $E_-(t)$（基底状態）および $E_+(t)$（励起状態）を\textbf{断熱準位}と呼ぶ．
+    \begin{itemize}
+        \item 遠方時刻 $|t| \gg \Delta_{\min}/v$ では，$E_\pm(t) \approx \pm \frac{v|t|}{2}$ となり，透熱エネルギーの直線に漸近する．
+        \item しかし交差中心 $t=0$ では，エネルギー差が $E_+(0) - E_-(0) = \Delta_{\min} > 0$ となり，\textbf{2つの準位は決して交差せず，互いに反発し合って離れる（反交差: Avoided Crossing）}！
+    \end{itemize}
+    このとき，断熱基底状態 $\ket{E_-(t)}$ のスピン状態は，時刻 $t \to -\infty$ の $\ket{0}$ から，反交差近傍 $t=0$ での均等重ね合わせ $\frac{\ket{0}-\ket{1}}{\sqrt{2}}$ を経て，時刻 $t \to +\infty$ では $\ket{1}$ へと連続的・滑らかに反転する．
+
+    \item \textbf{ツェナーの遷移確率公式（Zener Formula, 1932）}:\\
+    時刻 $t \to -\infty$ において基底状態 $\ket{E_-(-\infty)} = \ket{0}$ に準備された系が，時刻 $t \to +\infty$ まで発展したとき，目的の基底状態 $\ket{E_+(+\infty)} = \ket{1}$ に留まれず，\textbf{透熱準位のレールに沿って直進して励起状態 $\ket{0}$ へと脱落（非断熱遷移）してしまう確率}は，ツェナー（1932）によって厳密に解かれた：
+    \begin{equation}
+        P_{\text{LZ}} = \exp\left(-\frac{\pi \Delta_{\min}^2}{2\hbar v}\right)
+    \end{equation}
+
+    \item \textbf{なぜ $\frac{\Delta_{\min}^2}{\hbar v}$ なのか？――時定数の比による物理的直観}:\\
+    指数の引数に現れる無次元パラメータ $\gamma_{\text{LZ}} = \frac{\Delta_{\min}^2}{\hbar v}$ は，以下の2つの特徴的時定数の比として極めて直観的に理解できる：
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{反交差領域の通過時間 $\tau_{\text{cross}}$}:
+        準位が非対角結合によって大きく曲がる時間幅は，$|vt| \lesssim \Delta_{\min}$ の範囲であるから，$\tau_{\text{cross}} \sim \frac{\Delta_{\min}}{v}$ である．
+        \item \textbf{量子力学的応答時間（ボーア周期）$\tau_{\text{Bohr}}$}:
+        最小エネルギーギャップ $\Delta_{\min}$ に対応する系の量子位相の応答周期は，不確定性関係およびボーア周波数 $\omega = \Delta_{\min}/\hbar$ より，$\tau_{\text{Bohr}} \sim \frac{\hbar}{\Delta_{\min}}$ である．
+    \end{enumerate}
+    両者の比を取ると：
+    \begin{equation}
+        \frac{\tau_{\text{cross}}}{\tau_{\text{Bohr}}} \sim \frac{\Delta_{\min} / v}{\hbar / \Delta_{\min}} = \frac{\Delta_{\min}^2}{\hbar v}
+    \end{equation}
+    が現れる！
+    \begin{itemize}
+        \item \textbf{断熱通過（$\tau_{\text{cross}} \gg \tau_{\text{Bohr}}$ すなわち $\frac{\Delta_{\min}^2}{\hbar v} \gg 1$）}:\\
+        ボトルネックを通過する間に量子位相が何周期も高速回転するため，系はハミルトニアンの変化に完全に追従し，断熱基底状態に留まり続ける（$P_{\text{LZ}} = e^{-\text{大}} \approx 0$）．
+        \item \textbf{急変脱落（$\tau_{\text{cross}} \ll \tau_{\text{Bohr}}$ すなわち $\frac{\Delta_{\min}^2}{\hbar v} \ll 1$）}:\\
+        通過が速すぎて量子系が応答できず，波束は元の状態のまま直進して励起状態へ跳び移る（$P_{\text{LZ}} \approx 1$）．
+    \end{itemize}
+
+    \item \textbf{AQC / 量子アニーリングへの直接的要請}:\\
+    全実行時間を $T$ とすると，掃引速度は $v \propto 1/T$ である．断熱遷移確率を抑制して最適解を得る（$P_{\text{LZ}} \ll 1$）ためには，$\frac{\pi \Delta_{\min}^2}{2\hbar v} \gg 1$ すなわち：
+    \begin{equation}
+        T \gg \frac{\hbar}{\Delta_{\min}^2}
+    \end{equation}
+    が必然的に要求される．これは前項で一般的な時間依存摂動論から導いた量子断熱条件と完全に調和する．
+\end{enumerate}
 \end{insightbox}
 
 \begin{figure}[htbp]
@@ -616,6 +792,87 @@ QAOAを真に深く理解するためには，その直接の先祖である \te
 最小ギャップ $\Delta_{\min}$ の極小領域を通過する際，ハミルトニアンの変化速度が速すぎると，波束は基底状態のレールから外れ，励起状態へとトンネリング脱落してしまう（ランダウ・ツェナー遷移確率 $P_{\text{LZ}} \approx \exp\left(-\frac{\pi \Delta_{\min}^2}{2 v}\right)$）．
 特に，NP困難な問題では\textbf{量子一次相転移（First-Order Quantum Phase Transition）}やスピングラス相におけるアンダーソン局在\cite{altshuler2010anderson}が発生し，量子ビット数 $N$ に対してギャップが指数関数的に極小化（$\Delta_{\min} \propto e^{-\alpha N}$）する．
 その結果，断熱性を維持するために必要な時間 $T$ は $T \propto e^{2\alpha N}$ へと指数爆発し，\textbf{「原理的には解けるが，現実的な時間内では解けない」というAQCの根本的限界}が明らかとなった．
+
+\subsection{4. 量子アニーリング（Quantum Annealing: QA）との深層的関係と決定的な相違点}
+ここで，多くの読者（特に物理学や情報科学を学ぶ学生）が抱く極めて自然な疑問がある：
+\begin{quote}
+\textit{「横磁場から始めてイジング模型の基底状態を求めるアナログ発展といえば，門脇・西森（1998）が提唱した\textbf{『量子アニーリング（Quantum Annealing: QA）』}や，カナダのD-Wave Systems社が実用化した量子アニーラーと何が違うのか？AQCとQAは同一のものなのか？」}
+\end{quote}
+結論から言えば，\textbf{AQCと量子アニーリングは「時間依存ハミルトニアンによる基底状態探索」という数理的枠組みを共有しつつも，物理的動作環境（孤立系か開放系か），数学的目標（計算万能性か組合せ最適化ヒューリスティクスか），そして断熱定理に対する依存度において決定的な3大相違点を持つ}．本項では，一次文献\cite{kadowaki1998quantum,farhi2000quantum,aharonov2007adiabatic,albash2018adiabatic}に基づき，両者の共通点と相違点を厳密に解き明かす．
+
+\subsubsection*{1. 歴史的起源と着想の対比}
+\begin{itemize}
+    \item \textbf{量子アニーリング (QA: Kadowaki \& Nishimori, 1998\cite{kadowaki1998quantum})}:
+    東京工業大学の門脇正史と西森秀稔によって提唱された．その起源は，統計物理学におけるスピングラスの基底状態探索および古典の\textbf{シミュレーテッド・アニーリング（Simulated Annealing: SA\cite{kirkpatrick1983optimization}）}の量子拡張にある．
+    SAでは，熱揺らぎ（ボルツマン因子 $\propto e^{-\Delta E / k_B T}$）を利用して古典エネルギー障壁を乗り越えるため，細く高いポテンシャル障壁に遭遇すると脱出確率が指数関数的に極小化する．これに対し門脇と西森は，横磁場 $\Gamma(t) \sum_i X_i$ を導入し，\textbf{「量子トンネル効果（量子揺らぎ）」によって障壁をすり抜けるメタヒューリスティクス}としてQAを考案した．WKB近似によれば，幅 $w$，高さ $V$ の障壁に対するトンネル確率は $P_{\text{tunnel}} \propto \exp\left(-\frac{2}{\hbar}\int \sqrt{2m(V - E)}dx\right)$ であり，幅 $w$ が細ければどれほど高い障壁であっても瞬時に貫通できるという物理的強みを持つ．
+    
+    \item \textbf{断熱量子計算 (AQC: Farhi et al., 2000\cite{farhi2000quantum}, 2001\cite{farhi2001quantum})}:
+    MITの理論物理学者・計算機科学者である Edward Farhi らによって提唱された．彼らの動機は，Shorの素因数分解やGroverの探索に続く「NP困難な問題を解く普遍的な量子計算モデル」の構築にあった．すなわち，メタヒューリスティクスにとどまらず，量子断熱定理\cite{born1928beweis,kato1950adiabatic}を計算原理とする厳密なアルゴリズムとして考案された．
+\end{itemize}
+
+\subsubsection*{2. 数理形式の共通点}
+両者は，全系の時間発展を以下の時間依存ハミルトニアンで記述する点で完全に一致している：
+\begin{equation}
+    H(t) = A(t) H_{\text{init}} + B(t) H_C = -A(t)\sum_{i=1}^n X_i + B(t)\left(\sum_{i} h_i Z_i + \sum_{i<j} J_{ij} Z_i Z_j\right)
+\end{equation}
+ここで時間スケジュール関数は，$t=0$ で $A(0) = 1, B(0) = 0$（自明な一様重ね合わせ状態 $\ket{+}^{\otimes n}$ が厳密な基底状態）であり，$t=T$ で $A(T) = 0, B(T) = 1$（目的のイジング模型 $H_C$）へと連続的に変化する．
+
+\subsubsection*{3. 決定的な3大相違点}
+形式的な数式が酷似しているにもかかわらず，物理学および計算機科学の立場からは以下の決定的な違いが存在する（表\ref{tab:aqc_vs_qa}）：
+
+\begin{enumerate}
+    \item \textbf{孤立系のユニタリ発展（AQC） vs 開放系の散逸ダイナミクス（QA）}:
+    \begin{itemize}
+        \item \textbf{AQC}: 絶対零度（$T=0$）の完全孤立系を前提とする．シュレーディンガー方程式に従う純粋なユニタリ発展であり，断熱条件 $T \gg \max |\mel{1}{\dot{H}}{0}| / \Delta_{\min}^2$ が破れて第1励起状態 $\ket{1(t)}$ へ跳び移った瞬間，その励起エネルギーを逃がす術はなく，計算は即座に失敗（誤った局所解）となる．
+        \item \textbf{QA（現実の量子アニーラー）}: 希釈冷凍機（$T \sim 12\text{--}15\text{ mK}$）で動作するが，超伝導基板の格子振動（フォノン）や周囲の電磁場環境（熱浴）と不可避に結合した\textbf{開放量子系（Open Quantum System）}である．そのダイナミクスはユニタリ発展ではなく，リンドブラッド（Lindblad）型マスター方程式に従う．
+        ここで決定的に重要な物理的差異は，\textbf{「環境への熱緩和（Thermal Relaxation / Incoherent Tunneling）」}である\cite{albash2018adiabatic}．アニーリング途中でランダウ・ツェナー遷移や熱揺らぎによって励起状態へ跳び上がったとしても，\textbf{系が環境熱浴へフォノンや光子を放出してエネルギーを散逸させることで，再び基底状態へと緩和（クーリング）して戻ってくる機構}が働く．このため，QAは厳密な断熱条件に縛られず，有限の高速掃引でも高い確率で最適解に到達する実用的探索能力を発揮する．
+    \end{itemize}
+
+    \item \textbf{計算万能性（Universality）の有無}:
+    \begin{itemize}
+        \item 通常の横磁場イジング模型（$H(t) = -A(t)\sum X_i + B(t)H_C$）は，計算基底における非対角成分がすべて実数非正（$\le 0$）である「ストカスティック（stoquastic）ハミルトニアン」に分類される．この場合，量子モンテカルロ（QMC）法で負符号問題が発生しないため，古典計算機で多項式時間サンプリングできる領域が広く存在する．
+        \item しかし，Aharonov et al. (2007)\cite{aharonov2007adiabatic}の金字塔的定理により，\textbf{非ストカスティック（non-stoquastic）な相互作用（例：$X_i X_j$, $Y_i Y_j$ や非対角複素位相項）を含む2局所ハミルトニアンを用いたAQCは，標準的な回路型万能量子計算（BQP）と多項式時間の換算で厳密に等価（万能断熱量子計算: Universal AQC）}であることが証明された．すなわち，AQCは単なる最適化手法にとどまらず，ゲート型量子コンピュータと同一の万能計算能力を秘めた普遍的計算モデルである．
+    \end{itemize}
+
+    \item \textbf{評価基準と思想（計算量理論 vs メタヒューリスティクス）}:
+    \begin{itemize}
+        \item AQCは理論計算機科学の厳密性を重視し，「最悪ケースにおいてギャップ $\Delta_{\min}$ が量子ビット数 $N$ に対して多項式的にしか縮まないか，指数関数的に閉じるか」という漸近的計算量を追求する．
+        \item QAは実用アルゴリズムの観点から，相転移点近傍で非断熱遷移が生じることを織り込み済みで，多スタート探索（多数回アニーリングショット）と熱緩和を組み合わせ，現実的な時間内で「十分良質な近似解・厳密解」を高速にサンプリングすることを目指す．
+    \end{itemize}
+\end{enumerate}
+
+\begin{table}[htbp]
+\centering
+\caption{断熱量子計算（AQC）と量子アニーリング（QA）の物理・数学・計算論的対比}
+\label{tab:aqc_vs_qa}
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{比較項目} & \textbf{断熱量子計算 (AQC)} & \textbf{量子アニーリング (QA)} \\
+\midrule
+\textbf{提唱者・年代} & E.~Farhi et al. (2000, 2001)\cite{farhi2000quantum,farhi2001quantum} & 門脇正史，西森秀稔 (1998)\cite{kadowaki1998quantum} \\
+\textbf{物理系} & 完全孤立系（Closed Quantum System） & 熱浴と結合した開放量子系（Open System） \\
+\textbf{動作温度} & 絶対零度 $T = 0$（純粋状態） & 極低温有限温度 $T > 0$（熱混合状態） \\
+\textbf{基礎方程式} & シュレーディンガー方程式（ユニタリ発展） & Lindbladマスター方程式（散逸ダイナミクス） \\
+\textbf{断熱定理の扱い} & 厳格に成立必須（$T \gg 1/\Delta_{\min}^2$） & 破れても熱緩和による基底状態復帰を許容 \\
+\textbf{励起への耐性} & 励起＝探索失敗（エネルギー散逸なし） & 熱浴へのエネルギー散逸により再緩和可能 \\
+\textbf{計算万能性} & 非ストカスティック項で万能量子計算\cite{aharonov2007adiabatic} & 横磁場イジングではストカスティック（特化型） \\
+\textbf{ハードウェア} & 理想的量子プロセッサ & 超伝導フラックス量子ビット（D-Wave等） \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection*{4. AQC / QA から QAOA への進化の必然性}
+それでは，なぜこれら連続時間のアナログ方式（AQC / QA）が存在するにもかかわらず，ゲート型量子コンピュータ上で動作する\textbf{QAOA}が必要とされたのだろうか？そこには2つのハードウェア的・アルゴリズム的宿命があった：
+
+\begin{enumerate}
+    \item \textbf{結合トポロジーの制約とマイナー埋め込みの壁}:
+    D-Waveなどの量子アニーラーは物理的な素子配線（ChimeraグラフやPegasusグラフなど）に隣接結合が固定されている．したがって，全結合グラフや高次結合を持つ実問題を解くためには，複数の物理量子ビットを強い強磁性結合（FM結合）で結びつけて1つの論理ビットとして扱う\textbf{「マイナー埋め込み（Minor Embedding\cite{choi2008different}）」}が不可欠となる．これにより，問題規模に対して必要な量子ビット数が数倍〜数十倍に膨れ上がり，強いFM結合が切断される「チェーンブレイク（Chain Break）」エラーがボトルネックとなる．
+    
+    \item \textbf{NISQゲート型ハードウェアにおけるトロッター化の壁}:
+    汎用ゲート型量子コンピュータ（IBM，Google，富士通など）でAQCの連続時間発展を再現しようとすると，後述する\textbf{トロッター分解}によって離散ゲート列に変換する必要がある（次節\ref{sec:trotter_detailed}）．しかし，断熱条件を満たすための長時間 $T$ を離散化すると，数千〜数万段に及ぶ深い量子回路（$p \gg 10^3$）が必要となり，現代のNISQプロセッサのコヒーレンス時間（数十マイクロ秒）とゲートノイズの壁に衝突して完全に計算が崩壊する．
+\end{enumerate}
+
+この\textbf{「アナログアニーラーの結合制約」と「トロッター化AQCのNISQにおける破綻」を同時に打ち破る歴史的ブレークスルー}として考案されたのが，次章（第4章）で詳解する \textbf{QAOA（Farhi et al., 2014\cite{farhi2014quantum}）} なのである！
 
 \section{トロッター分解 (Trotter-Suzuki Decomposition)：アナログからディジタルへ}
 \label{sec:trotter_detailed}
@@ -819,38 +1076,53 @@ QAOAは図\ref{fig:vqa_loop}に示すハイブリッドループによって最�
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[scale=0.90, >=latex]
-    % QPU Box (x: 0 to 5.0, y: 0 to 4.6)
-    \draw[fill=cyan!8, draw=cyan!80!black, thick, rounded corners=3mm] (0, 0) rectangle (5.0, 4.6);
-    \node[font=\bfseries\large, text=cyan!80!black] at (2.5, 4.15) {量子プロセッサ (QPU)};
-    \node[font=\footnotesize, align=center] at (2.5, 2.95) {
-        \textbf{量子回路の実行}\\
+\begin{tikzpicture}[scale=0.92, >=latex]
+    % QPU Box (x: 0 to 5.8, y: 0 to 4.8)
+    \draw[fill=cyan!6, draw=cyan!80!black, thick, rounded corners=3mm] (0, 0) rectangle (5.8, 4.8);
+    % QPU Title bar
+    \draw[fill=cyan!18, draw=cyan!80!black, thick, rounded corners=3mm] (0, 3.9) rectangle (5.8, 4.8)
+        node[midway, font=\bfseries\large, text=cyan!90!black] {量子プロセッサ (QPU)};
+    
+    \node[font=\footnotesize, align=center, text width=5.4cm] at (2.9, 2.95) {
+        \textbf{【量子回路の実行】}\\[1mm]
         $\ket{\vec{\gamma}, \vec{\beta}} = \prod_{k=1}^p U_B(\beta_k) U_C(\gamma_k) \ket{s}$
     };
-    \node[font=\footnotesize, align=center] at (2.5, 1.25) {
-        \textbf{計算基底サンプリング}\\
+    
+    \draw[dashed, cyan!50!black] (0.4, 2.05) -- (5.4, 2.05);
+    
+    \node[font=\footnotesize, align=center, text width=5.4cm] at (2.9, 1.05) {
+        \textbf{【計算基底サンプリング】}\\[1mm]
         ($1,000 \sim 10,000$ shots)\\
-        サンプル列 $\{z^{(1)}, z^{(2)}, \dots\}$
+        ビット列サンプル $\{z^{(1)}, z^{(2)}, \dots\}$
     };
 
-    % CPU Box (x: 9.2 to 14.2, y: 0 to 4.6)
-    \draw[fill=orange!8, draw=orange!85!black, thick, rounded corners=3mm] (9.2, 0) rectangle (14.2, 4.6);
-    \node[font=\bfseries\large, text=orange!85!black] at (11.7, 4.15) {古典コンピュータ (CPU)};
-    \node[font=\footnotesize, align=center] at (11.7, 2.95) {
-        \textbf{エネルギー期待値の推定}\\
+    % CPU Box (x: 8.6 to 14.4, y: 0 to 4.8)
+    \draw[fill=orange!6, draw=orange!85!black, thick, rounded corners=3mm] (8.6, 0) rectangle (14.4, 4.8);
+    % CPU Title bar
+    \draw[fill=orange!18, draw=orange!85!black, thick, rounded corners=3mm] (8.6, 3.9) rectangle (14.4, 4.8)
+        node[midway, font=\bfseries\large, text=orange!95!black] {古典コンピュータ (CPU)};
+    
+    \node[font=\footnotesize, align=center, text width=5.4cm] at (11.5, 2.95) {
+        \textbf{【エネルギー期待値の推定】}\\[1mm]
         $F_p(\vec{\gamma}, \vec{\beta}) \approx \frac{1}{K}\sum_{k=1}^K C(z^{(k)})$
     };
-    \node[font=\footnotesize, align=center] at (11.7, 1.25) {
-        \textbf{古典オプティマイザ}\\
-        (COBYLA / SPSA)\\
+    
+    \draw[dashed, orange!50!black] (9.0, 2.05) -- (14.0, 2.05);
+    
+    \node[font=\footnotesize, align=center, text width=5.4cm] at (11.5, 1.05) {
+        \textbf{【古典オプティマイザ】}\\[1mm]
+        (COBYLA / SPSA / 勾配法)\\
         パラメータ更新: $(\vec{\gamma}, \vec{\beta}) \leftarrow (\vec{\gamma}', \vec{\beta}')$
     };
 
-    % Wide clearance arrows (Gap: 5.0 to 9.2 = 4.2cm!)
-    \draw[->, very thick, purple!80!black] (5.0, 3.1) -- (9.2, 3.1)
-        node[midway, above, font=\footnotesize\bfseries, text=purple!85!black] {測定サンプル列};
-    \draw[<-, very thick, blue!80!black] (5.0, 1.4) -- (9.2, 1.4)
-        node[midway, above, font=\footnotesize\bfseries, text=blue!85!black] {新パラメータ $(\vec{\gamma}, \vec{\beta})$};
+    % High clearance interactive arrows (Gap: 5.8 to 8.6 = 2.8cm)
+    \draw[->, very thick, purple!80!black] (5.8, 3.0) -- (8.6, 3.0)
+        node[midway, above, font=\scriptsize\bfseries, text=purple!85!black] {測定サンプル列}
+        node[midway, below, font=\tiny, text=purple!75!black] {$\{z^{(k)}\}$};
+        
+    \draw[<-, very thick, blue!80!black] (5.8, 1.1) -- (8.6, 1.1)
+        node[midway, above, font=\scriptsize\bfseries, text=blue!85!black] {新パラメータ}
+        node[midway, below, font=\tiny, text=blue!75!black] {$(\vec{\gamma}, \vec{\beta})$};
 \end{tikzpicture}
 \caption{QAOAにおける量子・古典ハイブリッド最適化ループ（VQE/VQA型）．QPUが量子重ね合わせから高速にサンプルを生成し，古典CPUがエネルギーを評価してパラメータ $(\vec{\gamma}, \vec{\beta})$ を更新する．}
 \label{fig:vqa_loop}
@@ -1388,6 +1660,16 @@ E.~Farhi, J.~Goldstone, S.~Gutmann, J.~Lapan, A.~Lundgren, and D.~Preda,
 \newblock ``A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem,''
 \newblock \textit{Science}, vol.~292, no.~5516, pp.~472--475, 2001.
 
+\bibitem{kadowaki1998quantum}
+T.~Kadowaki and H.~Nishimori,
+\newblock ``Quantum annealing in the transverse Ising model,''
+\newblock \textit{Physical Review E}, vol.~58, no.~5, pp.~5355--5363, 1998.
+
+\bibitem{kirkpatrick1983optimization}
+S.~Kirkpatrick, C.~D.~Gelatt~Jr., and M.~P.~Vecchi,
+\newblock ``Optimization by Simulated Annealing,''
+\newblock \textit{Science}, vol.~220, no.~4598, pp.~671--680, 1983.
+
 \bibitem{born1928beweis}
 M.~Born and V.~Fock,
 \newblock ``Beweis des Adiabatensatzes,''
@@ -1403,6 +1685,11 @@ S.~Jansen, M.-B.~Ruskai, and R.~Seiler,
 \newblock ``Bounds for the adiabatic approximation with applications to quantum computation,''
 \newblock \textit{Journal of Mathematical Physics}, vol.~48, no.~10, p.~102111, 2007.
 
+\bibitem{berry1984quantal}
+M.~V.~Berry,
+\newblock ``Quantal phase factors accompanying adiabatic changes,''
+\newblock \textit{Proceedings of the Royal Society of London. Series A}, vol.~392, no.~1802, pp.~45--57, 1984.
+
 \bibitem{landau1932theorie}
 L.~D.~Landau,
 \newblock ``Zur Theorie der Energie{\"u}bertragung. II,''
@@ -1417,6 +1704,16 @@ C.~Zener,
 B.~Altshuler, H.~Krovi, and J.~Roland,
 \newblock ``Anderson localization makes adiabatic quantum optimization fail,''
 \newblock \textit{Proceedings of the National Academy of Sciences}, vol.~107, no.~28, pp.~12446--12450, 2010.
+
+\bibitem{aharonov2007adiabatic}
+D.~Aharonov, W.~van~Dam, J.~Kempe, Z.~Landau, S.~Lloyd, and O.~Regev,
+\newblock ``Adiabatic Quantum Computation Is Equivalent to Standard Quantum Computation,''
+\newblock \textit{SIAM Journal on Computing}, vol.~37, no.~1, pp.~166--194, 2007.
+
+\bibitem{albash2018adiabatic}
+T.~Albash and D.~A.~Lidar,
+\newblock ``Adiabatic quantum computation,''
+\newblock \textit{Reviews of Modern Physics}, vol.~90, no.~1, p.~015002, 2018.
 
 \bibitem{trotter1959product}
 H.~F.~Trotter,
