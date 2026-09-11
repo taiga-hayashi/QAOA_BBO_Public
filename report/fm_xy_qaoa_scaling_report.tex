@@ -65,7 +65,7 @@
 \end{center}
 
 \vspace{-3.5mm}
-\subsection{ブラックボックス問題における相互作用の数理と最適化実証}
+\subsection{ブラックボックス問題における相互作用の数理と最適化実証 ($N=8 \sim 24$)}
 \label{sec:interaction_nature}
 \vspace{-1.5mm}
 
@@ -79,15 +79,15 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 \end{equation}
 \textbf{各項の役割とフラストレーション}：\textbf{単独項 $Q_{ii}$}は単一選択肢の固有活性，\textbf{相互作用項 $Q_{ij}$}は2選択肢の同時選択時（$x_i x_j = 1$）の協同シナジー（$Q_{ij} < 0$）または反発（$Q_{ij} > 0$）を表す．全変数ペア間に相互作用が存在するため，単独最適同士が競合する「フラストレーション」が生じ，多峰性のNP困難空間を形成する．\\[0.3mm]
 \textbf{FMサロゲートと量子もつれゲート}：FMは未知の $Q_{ij}$ を潜在内積 $\langle \bm{v}_i, \bm{v}_j \rangle$ で $O(kd)$ 推定し，抽出されたQUBO相互作用 $Q_{ij} x_i x_j$ はパウリ演算子 $\frac{1}{4} Z_i Z_j$ に射影され，QAOAの2量子ビットもつれゲート（$ZZ$回転）により大域探索される．\\[0.3mm]
-\textbf{3手法の性能対決結果}：本問題（$N=8$, 全256通り・有効解16通り）において，\textbf{提案手法（FM-XY）は最適解到達確率 17.97\%（制約充足率 100\%）}を達成し，Standard QAOA（到達率 0.20\%，充足率 6.9\%）を \textbf{約92倍凌駕}，先行FMQA（15.60\%）をも上回った．
+\textbf{3手法の性能対決結果 ($N=8 \sim 24$)}：全4規模（最大 $2^{24} \approx 1,678$ 万通り，有効解 4,096 通り）で性能を競わせた結果，Standard QAOAは制約充足率が急落し（$N=16$ で 0.68\% $\to$ $N=24$ で \textbf{0.00\%}），最適化ソルバーとして \textbf{完全死滅} した．これに対し，\textbf{提案手法（FM-XY）は全域で制約充足率 100.0\% を完全堅持} し，$N=24$ の大規模系でも最適比 94.1\%（$-7.745$）の極めて良質な解を出力した．
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.45\textwidth}
 \vspace{0pt}
 \centering
-\includegraphics[width=\textwidth]{figures/bbo_N8.pdf}
+\includegraphics[width=\textwidth]{figures/scaling_opt_n8_to_n24.pdf}
 \vspace{-2.5mm}
-\captionof{figure}{$N=8$ 相互作用BBO探索推移。提案手法（緑）は制約違反ゼロで大域最適解（$-1.330$）へ収束。}\label{fig:bbo_n8}
+\captionof{figure}{$N=8 \sim 24$ 最適化品質スケーリング。Standard QAOAは $N=24$ で有効解が 0\% に死滅するが，提案手法（緑）は全域 100\% 充足を堅持し大域最適解に肉薄。}\label{fig:scaling_opt_n24}
 \end{minipage}
 
 \clearpage
