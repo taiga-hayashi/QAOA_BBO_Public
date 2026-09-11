@@ -10,6 +10,20 @@ from qiskit_optimization.algorithms import MinimumEigenOptimizer
 from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
 from qiskit_aer import AerSimulator
 
+import qiskit_optimization.algorithms.optimization_algorithm as oa
+
+# Qiskit Optimization の既知問題対策: d >= 20 (2^20 > 10^6) において、
+# デフォルト閾値 min_probability=1e-06 により全サンプルが除外され IndexError になるのを防ぐ
+_orig_eigenvector_to_solutions = oa.OptimizationAlgorithm._eigenvector_to_solutions
+
+def _safe_eigenvector_to_solutions(eigenvector, qubo, min_probability=1e-06):
+    solutions = _orig_eigenvector_to_solutions(eigenvector, qubo, 0.0)
+    if not solutions:
+        solutions = _orig_eigenvector_to_solutions(eigenvector, qubo, -1.0)
+    return solutions
+
+oa.OptimizationAlgorithm._eigenvector_to_solutions = staticmethod(_safe_eigenvector_to_solutions)
+
 from bb_function import is_feasible_one_hot
 
 def create_block_w_state(block_sizes: List[int]) -> QuantumCircuit:
