@@ -28,40 +28,31 @@
 % PAGE 1: 研究背景と提案手法の原理
 % ==============================================================================
 \begin{center}
-\vspace*{-7mm}
-{\LARGE\textbf{One-Hot制約付きブラックボックス最適化における\\[1.5mm]FM-XY-QAOAの実証評価・実験結果レポート}}\\[2mm]
-{\large--- 標準量子OSS（Qiskit）による厳密実証・計算限界とBBOにおける独自の立ち位置 ---}\\[1.5mm]
+\vspace*{-12mm}
+{\LARGE\textbf{One-Hot制約付きブラックボックス最適化における\\[1mm]FM-XY-QAOAの実証評価・実験結果レポート}}\\[1mm]
+{\large--- 標準量子OSS（Qiskit）による厳密実証・計算限界とBBOにおける独自の立ち位置 ---}\\[0.5mm]
 {\normalsize 富士通研究所 インターンシップ研究開発プロジェクト \quad / \quad 2026年9月}
-\vspace{-1mm}
+\vspace{-3mm}
 \end{center}
 
 \section{研究背景と3手法の基本原理}
 \label{sec:overview}
-
-材料探索や分子設計などの実産業ブラックボックス最適化（BBO）では，真の目的関数（BB関数 $y = f_{\mathrm{true}}(\bm{x})$）の数式が未知であり，1回の評価に多大なコスト（合成実験やDFT計算）を要する．このため，少数の実験データから機械学習サロゲートモデル（Factorization Machine: FM）を学習し，その予測重みから構築されたハミルトニアン $H_C$ を最小化する有望な実験候補 $\bm{x}_{\mathrm{next}}$ をサンプラーで探索する．この際，「各ブロックからちょうど1つの選択肢を選ぶ」One-Hot制約が課される：
+\vspace{-1.5mm}
+材料探索等の実産業ブラックボックス最適化（BBO）では，真の目的関数（BB関数 $y = f_{\mathrm{true}}(\bm{x})$）が未知であり評価コストが極めて高い．このため，少数の観測データからFMサロゲートモデルを学習し，構築されたハミルトニアン $H_C$ を最小化する候補 $\bm{x}_{\mathrm{next}}$ をサンプラーで探索する．この際，「各ブロックから1つの選択肢を選ぶ」One-Hot制約が課される：
 \begin{equation}
 \mathcal{X} = \left\{ \bm{x} \in \{0, 1\}^N \;\middle|\; \sum_{j=1}^{d_m} x_{m, j} = 1, \quad \forall m \in \{1, \dots, M\} \right\}
 \end{equation}
-ここで全量子ビット数は $N = \sum_{m=1}^M d_m$ であり，全空間 $2^N$ に対し有効解比率 $|\mathcal{X}|/2^N$ は指数関数的に極小化するため，制約違反解による実験予算の廃棄をいかに防ぐかが最大の課題となる．
+全量子ビット数 $N = \sum d_m$ に対し有効解比率 $|\mathcal{X}|/2^N$ は指数関数的に極小化するため，制約違反解による実験予算の廃棄防止が最重要課題となる．本研究では以下の3手法を比較した：\\[0.5mm]
+\textbf{1. FMQA (量子アニーリング/SA)}: One-Hot制約をペナルティ項 $\lambda \sum (\sum x - 1)^2$ で埋め込む．制約違反解のリスクが常に存在し，係数 $\lambda$ の事前調整が不可欠．\\[0.3mm]
+\textbf{2. Standard QAOA (ゲート型従来法)}: 横磁場ミキサー $H_M = \sum X_i$ とペナルティ法を使用（初期状態 $\ket{+}^{\otimes N}$）．変数の増大で大半が無効解となる．\\[0.3mm]
+\textbf{3. FM-XY-QAOA (ゲート型提案手法)}: ペナルティ項を排除し（$\lambda = 0$），W状態直積 $\bigotimes \ket{W}$ とブロック直和型XYミキサー $H_M^{\mathrm{XY}}$ により，状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に物理的に完全拘束する．\textbf{Qiskit} 公式に完全準拠．
 
-本研究では，以下の3手法のアプローチを比較評価した：
-\begin{itemize}\setlength{\itemsep}{0.5pt}
-    \item \textbf{1. 先行研究 FMQA（量子アニーリング / SA）}:
-    One-Hot制約をペナルティ項 $\lambda \sum_m (\sum_j x_{m, j} - 1)^2$ として埋め込む（QUBO表現）．D-Wave実機等で扱える変数は多いが，制約違反解を出力するリスクが常に存在し，ペナルティ係数 $\lambda$ の事前調整が不可欠となる．
-
-    \item \textbf{2. ゲート型従来法（Standard QAOA）}:
-    全空間を励起する標準の横磁場ミキサー $H_M = \sum_i X_i$ を用い，制約をペナルティ項で付加する（初期状態 $\ket{+}^{\otimes N}$）．有効空間の外側を無差別に探索するため，変数の増大とともにサンプルの大半が制約違反ゴミ解で埋め尽くされる．
-
-    \item \textbf{3. ゲート型提案手法（FM-XY-QAOA）}:
-    ペナルティ項を完全に排除し（$\lambda = 0$），W状態直積 $\bigotimes_{m} \ket{W_{d_m}}$ とブロック直和型XYハミルトニアン $H_M^{\mathrm{XY}}$ により，量子状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に物理的に完全拘束する．標準量子OSSである \textbf{Qiskit} の公式フレームワーク（\texttt{qiskit\_algorithms.QAOA}）に完全準拠して実装されている．
-\end{itemize}
-
-\vspace{-1.5mm}
+\vspace{-2.5mm}
 \begin{center}
 \captionof{table}{比較評価した3手法の仕様対比}\label{tab:methods}
-\vspace{0.5mm}
-\small
-\renewcommand{\arraystretch}{0.92}
+\vspace{0.2mm}
+\scriptsize
+\renewcommand{\arraystretch}{0.80}
 \begin{tabularx}{\textwidth}{l p{3.2cm} p{2.8cm} p{2.8cm} X}
 \toprule
 \textbf{手法名} & \textbf{ソルバー種別} & \textbf{制約の扱い} & \textbf{初期状態 $\ket{\psi_0}$} & \textbf{探索機構 / ミキサー} \\
@@ -73,10 +64,23 @@
 \end{tabularx}
 \end{center}
 
+\vspace{-3mm}
+\subsection{ブラックボックス問題における相互作用の数理と物理的構造}
+\label{sec:interaction_nature}
+\vspace{-1mm}
+本実証の基盤となる真の目的関数（BB関数）は，上三角行列 $Q_{\mathrm{true}} \in \mathbb{R}^{N \times N}$ による二次形式として定式化される：
+\begin{equation}
+y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N Q_{ii} x_i + \sum_{i < j} Q_{ij} x_i x_j
+\end{equation}
+\textbf{各項の役割}：\textbf{単独ポテンシャル項 $Q_{ii}$（1次項）}は単一選択肢 $x_i$ の固有活性，\textbf{ペア相互作用項 $Q_{ij}$（2次項）}は2選択肢が同時に選ばれた際（$x_i x_j = 1$）にのみ作用する相互作用である．$Q_{ij} < 0$ は協同シナジー効果（活性向上），$Q_{ij} > 0$ は反発ペナルティ（性能劣化）を表現する．\\[0.3mm]
+\textbf{全結合スピングラス構造とフラストレーション}：全変数ペア $(i, j)$ 間に相互作用が存在する全結合型（SK型）構造を持つ．単独最適（$Q_{ii} < 0$）同士であってもペア相互作用が反発（$Q_{ij} > 0$）する場合，同時に選択すると悪化する「フラストレーション（競合）」が生じ，無数の局所解を持つNP困難な探索空間が形成される．\\[0.3mm]
+\textbf{サロゲートモデル（FM）と量子回路（QAOA）との対応}：FMサロゲートは，未知の相互作用行列 $Q_{ij}$ を各変数の低ランク潜在ベクトル内積 $\langle \bm{v}_i, \bm{v}_j \rangle$ でモデル化し，少数の観測点から全相互作用を $O(kd)$ で推定する．抽出されたQUBO相互作用 $Q_{ij} x_i x_j$ はパウリ演算子 $\frac{1}{4} Z_i Z_j$ に射影され，QAOA回路の2量子ビットもつれゲート（$ZZ$回転）により大域探索される．
+
 \clearpage
 
 % ==============================================================================
 % PAGE 2: Qiskit公式スケーリング実測と計算・メモリ限界
+
 % ==============================================================================
 \section{Qiskit公式OSSによるスケーリング実測と計算・メモリ限界 ($N=4 \sim 24$)}
 \label{sec:result_scaling}
