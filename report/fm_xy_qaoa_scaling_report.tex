@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{bm}
 \usepackage{geometry}
-\geometry{top=16mm,bottom=16mm,left=16mm,right=16mm}
+\geometry{top=13mm,bottom=13mm,left=15mm,right=15mm}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{float}
@@ -28,16 +28,16 @@
 % PAGE 1: 研究背景と提案手法の原理
 % ==============================================================================
 \begin{center}
-\vspace*{-12mm}
+\vspace*{-14mm}
 {\LARGE\textbf{One-Hot制約付きブラックボックス最適化における\\[1mm]FM-XY-QAOAの実証評価・実験結果レポート}}\\[1mm]
 {\large--- 標準量子OSS（Qiskit）による厳密実証・計算限界とBBOにおける独自の立ち位置 ---}\\[0.5mm]
 {\normalsize 富士通研究所 インターンシップ研究開発プロジェクト \quad / \quad 2026年9月}
-\vspace{-3mm}
+\vspace{-3.5mm}
 \end{center}
 
 \section{研究背景と3手法の基本原理}
 \label{sec:overview}
-\vspace{-1.5mm}
+\vspace{-2mm}
 材料探索等の実産業ブラックボックス最適化（BBO）では，真の目的関数（BB関数 $y = f_{\mathrm{true}}(\bm{x})$）が未知であり評価コストが極めて高い．このため，少数の観測データからFMサロゲートモデルを学習し，構築されたハミルトニアン $H_C$ を最小化する候補 $\bm{x}_{\mathrm{next}}$ をサンプラーで探索する．この際，「各ブロックから1つの選択肢を選ぶ」One-Hot制約が課される：
 \begin{equation}
 \mathcal{X} = \left\{ \bm{x} \in \{0, 1\}^N \;\middle|\; \sum_{j=1}^{d_m} x_{m, j} = 1, \quad \forall m \in \{1, \dots, M\} \right\}
@@ -47,12 +47,12 @@
 \textbf{2. Standard QAOA (ゲート型従来法)}: 横磁場ミキサー $H_M = \sum X_i$ とペナルティ法を使用（初期状態 $\ket{+}^{\otimes N}$）．変数の増大で大半が無効解となる．\\[0.3mm]
 \textbf{3. FM-XY-QAOA (ゲート型提案手法)}: ペナルティ項を排除し（$\lambda = 0$），W状態直積 $\bigotimes \ket{W}$ とブロック直和型XYミキサー $H_M^{\mathrm{XY}}$ により，状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に物理的に完全拘束する．\textbf{Qiskit} 公式に完全準拠．
 
-\vspace{-2.5mm}
+\vspace{-3mm}
 \begin{center}
 \captionof{table}{比較評価した3手法の仕様対比}\label{tab:methods}
 \vspace{0.2mm}
 \scriptsize
-\renewcommand{\arraystretch}{0.80}
+\renewcommand{\arraystretch}{0.75}
 \begin{tabularx}{\textwidth}{l p{3.2cm} p{2.8cm} p{2.8cm} X}
 \toprule
 \textbf{手法名} & \textbf{ソルバー種別} & \textbf{制約の扱い} & \textbf{初期状態 $\ket{\psi_0}$} & \textbf{探索機構 / ミキサー} \\
@@ -64,17 +64,17 @@
 \end{tabularx}
 \end{center}
 
-\vspace{-3mm}
+\vspace{-3.5mm}
 \subsection{ブラックボックス問題における相互作用の数理と物理的構造}
 \label{sec:interaction_nature}
-\vspace{-1mm}
+\vspace{-1.5mm}
 本実証の基盤となる真の目的関数（BB関数）は，上三角行列 $Q_{\mathrm{true}} \in \mathbb{R}^{N \times N}$ による二次形式として定式化される：
 \begin{equation}
 y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N Q_{ii} x_i + \sum_{i < j} Q_{ij} x_i x_j
 \end{equation}
-\textbf{各項の役割}：\textbf{単独ポテンシャル項 $Q_{ii}$（1次項）}は単一選択肢 $x_i$ の固有活性，\textbf{ペア相互作用項 $Q_{ij}$（2次項）}は2選択肢が同時に選ばれた際（$x_i x_j = 1$）にのみ作用する相互作用である．$Q_{ij} < 0$ は協同シナジー効果（活性向上），$Q_{ij} > 0$ は反発ペナルティ（性能劣化）を表現する．\\[0.3mm]
-\textbf{全結合スピングラス構造とフラストレーション}：全変数ペア $(i, j)$ 間に相互作用が存在する全結合型（SK型）構造を持つ．単独最適（$Q_{ii} < 0$）同士であってもペア相互作用が反発（$Q_{ij} > 0$）する場合，同時に選択すると悪化する「フラストレーション（競合）」が生じ，無数の局所解を持つNP困難な探索空間が形成される．\\[0.3mm]
-\textbf{サロゲートモデル（FM）と量子回路（QAOA）との対応}：FMサロゲートは，未知の相互作用行列 $Q_{ij}$ を各変数の低ランク潜在ベクトル内積 $\langle \bm{v}_i, \bm{v}_j \rangle$ でモデル化し，少数の観測点から全相互作用を $O(kd)$ で推定する．抽出されたQUBO相互作用 $Q_{ij} x_i x_j$ はパウリ演算子 $\frac{1}{4} Z_i Z_j$ に射影され，QAOA回路の2量子ビットもつれゲート（$ZZ$回転）により大域探索される．
+\textbf{各項の役割とフラストレーション}：\textbf{単独ポテンシャル項 $Q_{ii}$}は単一選択肢の固有活性，\textbf{ペア相互作用項 $Q_{ij}$}は2選択肢の同時選択時（$x_i x_j = 1$）の協同シナジー（$Q_{ij} < 0$）または反発（$Q_{ij} > 0$）を表す．全変数ペア間に相互作用が存在するため，単独最適同士が反発する「フラストレーション（競合）」が生じ，多峰性のNP困難空間を形成する．\\[0.3mm]
+\textbf{FMサロゲートと量子もつれゲート}：FMは未知の $Q_{ij}$ を潜在内積 $\langle \bm{v}_i, \bm{v}_j \rangle$ で $O(kd)$ 推定し，得られたQUBO相互作用 $Q_{ij} x_i x_j$ はパウリ演算子 $\frac{1}{4} Z_i Z_j$ に射影され，QAOAの2量子ビットもつれゲート（$ZZ$回転）により大域探索される．\\[0.3mm]
+\textbf{3手法の最適化性能対決（実証結果）}：本問題設定（$N=8$, 全256通り・有効解16通り）で最適化性能を競わせた結果，\textbf{提案手法（FM-XY）は最適解到達確率 17.97\%（制約充足率 100\%）}を達成し，Standard QAOA（到達率 0.20\%，充足率 6.9\%）を \textbf{約92倍凌駕}，先行FMQA（15.60\%）をも上回った．BBO探索ループ（第\ref{sec:result_practical}節）でも \textbf{制約違反損失 0 円で大域最適解へ最速収束} することを実証した．
 
 \clearpage
 
