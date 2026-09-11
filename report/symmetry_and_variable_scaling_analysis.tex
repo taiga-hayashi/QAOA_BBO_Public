@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{bm}
 \usepackage{geometry}
-\geometry{top=12mm,bottom=12mm,left=14mm,right=14mm}
+\geometry{top=13mm,bottom=13mm,left=14mm,right=14mm}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{float}
@@ -40,6 +40,15 @@
         boxrule=0.5pt,
         arc=1.2mm,
         left=2mm,right=2mm,top=1mm,bottom=1mm
+    },
+    mathnote/.style={
+        colback=gray!4!white,
+        colframe=gray!60!black,
+        fonttitle=\bfseries\small,
+        coltitle=white,
+        boxrule=0.5pt,
+        arc=1.2mm,
+        left=2mm,right=2mm,top=1mm,bottom=1mm
     }
 }
 
@@ -59,7 +68,7 @@
 
 \begin{abstract}
 \noindent
-ブラックボックス最適化（BBO）や材料設計などの産業実課題において，One-Hot制約（各ブロックから1選択肢を選ぶ）を伴う組み合わせ最適化は普遍的かつ重要である．本稿では，先行研究FMQA（量子アニーリング / SA）と提案手法FM-XY-QAOA（ゲート型量子部分空間探索）を対象とし，\textbf{(1) 数学的な論理変数 $N$ と実機物理量子ビット数の本質的相違}，\textbf{(2) 量子回路の幾何学的対称性（One-Hot部分空間拘束）がアルゴリズムのスケーラビリティに与える影響}，\textbf{(3) 手元PCから128GB〜2TB大容量計算サーバー環境における変数スケーリングの限界試算}，\textbf{(4) ハミルトニアンのスパース性に基づく時間計算量とNISQ実機への適合性}，について理論的・定量的な総括を行う．
+ブラックボックス最適化（BBO）や材料設計などの産業実課題において，One-Hot制約（各ブロックから1選択肢を選ぶ）を伴う組み合わせ最適化は普遍的かつ重要である．本稿では，先行研究FMQA（量子アニーリング / SA）と提案手法FM-XY-QAOA（ゲート型量子部分空間探索）を対象とし，\textbf{(1) 数学的な論理変数 $N$ と実機物理量子ビット数の本質的相違}，\textbf{(2) 量子力学における粒子数保存対称性（$U(1)$ 対称性）と可換性の厳密証明}，\textbf{(3) 手元PCから128GB〜2TB大容量計算サーバー環境における変数スケーリング限界の徹底試算}，\textbf{(4) ハミルトニアンのスパース性に基づく線形時間計算量とNISQ実機への適合性}，について理論的・定量的な総括を行う．
 \end{abstract}
 
 \vspace{-1mm}
@@ -76,7 +85,7 @@
 
 従来のペナルティ法（Standard QAOAやFMQA）では制約違反を回避するためにペナルティ項 $\lambda \sum (\sum x - 1)^2$ を課すが，これには「制約違反解の発生」「ハイパーパラメータ $\lambda$ の調整破綻」「全対全相互作用による回路深さ爆発」が常に付きまとう．
 
-これに対し，\textbf{FM-XY-QAOA} は問題が持つ幾何学的対称性（各ブロックにおけるハミング重み 1 の保存，すなわち粒子数保存対称性 $U(1)^{\otimes M}$）に着目し，初期状態 $\bigotimes \ket{W}$ とブロック直和型XYミキサー $H_M^{\mathrm{XY}}$ によって，量子状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に厳密に完全拘束する．本稿では，この「対称性」の活用が，\textbf{扱える変数規模の限界をどこまで押し上げるのか} を数学的・計算機科学的に解明する．
+これに対し，\textbf{FM-XY-QAOA} は問題が持つ幾何学的対称性（各ブロックにおけるハミング重み 1 の保存，すなわち粒子数保存対称性 $U(1)^{\otimes M}$）に着目し，初期状態 $\bigotimes \ket{W}$ とブロック直和型XYミキサー $H_M^{\mathrm{XY}}$ によって，量子状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に厳密に完全拘束する．本稿では，この「対称性」の物理的詳細と，\textbf{扱える変数規模の限界をどこまで押し上げるのか} を数理的に解明する．
 
 % ==============================================================================
 \section{FMQAとFM-XY-QAOAの変数・ハードウェア厳密対比}
@@ -127,24 +136,112 @@ D-Waveなどの量子アニーリング実機は，物理スピン同士の接�
 \subsection{探索状態空間：FM-XY-QAOAは無駄な空間を 100\% 削ぎ落とす}
 Standard QAOAやFMQAは，全 $2^N$ 通りの空間を探索するため，変数 $N$ が増えると有効解比率が幾何学的に 0 へ崩壊する．FM-XY-QAOAは，部分空間 $|\mathcal{X}| = d^M$ の中だけを探索するため，探索空間の広さは $2^N$ に対して $1 / (2^d / d)^M$ へと極小化される．
 
+\clearpage
+
 % ==============================================================================
-\section{対称性が扱える変数数を増大させる 3 つの機構}
+\section{One-Hot制約における対称性の量子数理物理（詳細解説）}
+\label{sec:symmetry_physics}
+% ==============================================================================
+
+「対称性」という概念の物理的・数学的実体を厳密に解き明かす．量子力学において「対称性がある」とは，ある保存量演算子 $\hat{S}$ とハミルトニアン $H$ が**可換（$[H, \hat{S}] = H\hat{S} - \hat{S}H = 0$）**であり，物理量 $S$ が時間発展において不変に保たれる（ネーターの定理の量子版）ことを意味する．
+
+\subsection{\texorpdfstring{One-Hot制約の量子演算子表現（粒子数保存：$U(1)$ 対称性）}{One-Hot制約の量子演算子表現（粒子数保存：U(1) 対称性）}}
+ビット $x_j \in \{0, 1\}$ を，量子ビットの基底 $\ket{0}, \ket{1}$ に対応させる．量子力学では，$\ket{1}$ を「粒子（励起）が 1 個存在する状態」，$\ket{0}$ を「真空（粒子 0 個）」と解釈する．
+ブロック $m$ における全粒子数（ハミング重み）を測定する\textbf{粒子数演算子 $\hat{N}_m$} は，パウリ $Z$ 演算子を用いて次のように定義される：
+\begin{equation}
+\hat{N}_m = \sum_{j=1}^{d_m} \ket{1}\bra{1}_{m, j} = \sum_{j=1}^{d_m} \frac{I - Z_{m, j}}{2}
+\end{equation}
+このとき，One-Hot 制約「ブロック $m$ から 1 つだけ選ぶ（$\sum_j x_{m,j} = 1$）」とは，量子状態が**「粒子数演算子の固有値 1 の固有部分空間 $\mathcal{H}_1^{(m)}$ に属する」**という条件に厳密に等しい：
+\begin{equation}
+\hat{N}_m \ket{\psi} = 1 \cdot \ket{\psi}, \quad \forall m \in \{1, \dots, M\}
+\end{equation}
+系全体の対称性は，各ブロックの独立な位相回転に対する対称性の直積，すなわち \textbf{$U(1)^{\otimes M}$ 対称性} である．
+
+\subsection{Standard QAOAにおける対称性の破滅的破壊（非可換性）}
+Standard QAOA で採用される横磁場ミキサー $H_M = \sum_i X_i$ は，ビット反転演算子 $X = \ket{0}\bra{1} + \ket{1}\bra{0}$ の総和である．
+粒子数演算子 $\hat{N}$ との交換子を計算すると：
+\begin{equation}
+[X_j, \ket{1}\bra{1}_j] = (\ket{0}\bra{1} + \ket{1}\bra{0})\ket{1}\bra{1} - \ket{1}\bra{1}(\ket{0}\bra{1} + \ket{1}\bra{0}) = \ket{0}\bra{1} - \ket{1}\bra{0} \neq 0
+\end{equation}
+すなわち，\textbf{$[H_M, \hat{N}_m] \neq 0$（非可換）} である．
+これは，横磁場ミキサーが粒子を勝手に生成・消滅させてしまうことを意味する．初期状態 $\ket{+}^{\otimes N}$ 自体，粒子数 0 から $N$ までの無効解が一様に重なり合った状態であり，時間発展のたびに対称性が完全に破壊され，状態は $99.9\%$ 以上の制約違反領域へと漏れ出してしまう．
+
+\subsection{FM-XY-QAOAにおける粒子数保存の厳密証明（可換性）}
+提案手法 FM-XY-QAOA は，初期状態とミキサーの両方に対称性を組み込むことで，この漏れ出しを物理的に 100\% 遮断する．
+
+\begin{enumerate}
+    \item \textbf{初期状態（W状態直積）}:
+    各ブロックにおいて粒子数 1 の状態のみを均等に重ね合わせる：
+    \begin{equation}
+    \ket{W_{d_m}} = \frac{1}{\sqrt{d_m}} \sum_{j=1}^{d_m} \ket{0\dots 0 \underbrace{1}_{j\text{番目}} 0\dots 0} \quad \Longrightarrow \quad \hat{N}_m \ket{W_{d_m}} = 1 \cdot \ket{W_{d_m}}
+    \end{equation}
+    初期時点で，制約違反状態の振幅は厳密にゼロである．
+
+    \item \textbf{XYミキサー（スピン交換・ホッピング）}:
+    隣接する量子ビットペア $(i, j)$ 間のXY相互作用演算子は，昇降演算子 $\sigma^+ = \ket{1}\bra{0}, \sigma^- = \ket{0}\bra{1}$ を用いて次のように表される：
+    \begin{equation}
+    H_{\mathrm{XY}}^{(i, j)} = \frac{1}{2}(X_i X_j + Y_i Y_j) = \sigma_i^+ \sigma_j^- + \sigma_i^- \sigma_j^+ = \ket{01}\bra{10} + \ket{10}\bra{01}
+    \end{equation}
+    この作用は明確である：
+    \begin{itemize}
+        \item $\ket{10} \to \ket{01}$（サイト $i$ の粒子がサイト $j$ へ移動）
+        \item $\ket{01} \to \ket{10}$（サイト $j$ の粒子がサイト $i$ へ移動）
+        \item $\ket{00} \to 0, \quad \ket{11} \to 0$（遷移なし）
+    \end{itemize}
+    この演算子は\textbf{「粒子の位置（席）を入れ替えるだけで，粒子の総数を一切変化させない（$\Delta N = 0$）」}．
+    したがって，任意のペアに対し次式が厳密に成立する：
+    \begin{equation}
+    \left[ H_{\mathrm{XY}}^{(i, j)}, \; \hat{N}_m \right] = 0 \quad (\text{厳密可換})
+    \end{equation}
+
+    \item \textbf{コストハミルトニアン $H_C$ との可換性}:
+    目的関数 $H_C$ はパウリ $Z$ 演算子の二次結合で構成されるため，対角演算子であり，$\hat{N}_m$ と自明に可換である（$[H_C, \hat{N}_m] = 0$）．
+\end{enumerate}
+
+\begin{tcolorbox}[keybox, title=不変部分空間の定理（制約充足率 100\% の数学的保証）]
+任意のレイヤー数 $p$ に対する全時間発展ユニタリ演算子 $U(\bm{\gamma}, \bm{\beta}) = \prod_{k=1}^p e^{-i \beta_k H_M^{\mathrm{XY}}} e^{-i \gamma_k H_C}$ は，粒子数保存演算子 $\hat{N}_m$ と完全に可換である：
+\begin{equation}
+\left[ U(\bm{\gamma}, \bm{\beta}), \; \hat{N}_m \right] = 0, \quad \forall m \in \{1, \dots, M\}
+\end{equation}
+初期状態 $\ket{\psi_0} = \bigotimes_{m=1}^M \ket{W_{d_m}}$ が $\hat{N}_m$ の固有値 1 の固有状態であるため，任意のパラメータ $(\bm{\gamma}, \bm{\beta})$ に対して終状態 $\ket{\psi(\bm{\gamma}, \bm{\beta})} = U \ket{\psi_0}$ も必ず固有値 1 を保持し続ける．
+すなわち，\textbf{量子状態は有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に 100\% 永久拘束され，制約違反状態への漏れ出し確率は恒等的に 0 である}．
+\end{tcolorbox}
+
+\subsection{幾何学的直感：極方向の回転 vs 赤道面内のホッピング}
+高次元スピン空間における直感的な幾何像を考える：
+\begin{itemize}
+    \item \textbf{Standard QAOA（$X$ ゲート）}: 北極（$\ket{00\dots}$：粒子0）と南極（$\ket{11\dots}$：粒子$d$）を結ぶ子午線方向の回転．赤道面（粒子1）から簡単に極方向へ逸脱する．
+    \item \textbf{FM-XY-QAOA（XY ゲート）}: 赤道面（粒子1個の等ハミング重み空間）の円周に沿った水平方向の回転．どれだけ強く回転（時間発展）させても，緯度（粒子数）は決して変化しない．
+\end{itemize}
+
+\clearpage
+
+% ==============================================================================
+\section{対称性による変数スケーリング限界の劇的向上}
 \label{sec:mechanisms}
 % ==============================================================================
 
-FM-XY-QAOAにおいて「対称性」を活用することで扱える変数数が増える理由は，以下の 3 つの物理的・数学的機構に集約される．
+前節で証明した「対称性による部分空間拘束」は，計算機科学的および実験経済学的に 3 つの絶大なスケーリング恩恵をもたらす．
 
-\begin{tcolorbox}[keybox, title=機構 1：古典シミュレータのメモリ爆発回避（部分空間表現）]
-通常の全空間シミュレータ（Qiskit Statevector等）は $2^N$ 次元のベクトルを保持するため，$N=24$（268MB）や $N=32$（68.7GB）でメモリ枯渇する．しかし，対称性により非ゼロ振幅は有効基底 $|\mathcal{X}|$ のみとなるため，有効解のみを追跡する「部分空間シミュレータ」を用いれば，メモリ所要量は $2^N \times 16\text{ B}$ から $|\mathcal{X}| \times 16\text{ B}$ へと劇的に圧縮される．これにより，古典シミュレーションで扱える変数 $N$ が 2 倍以上（$N=24 \to N=56 \sim 64$）に跳ね上がる．
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/symmetry_scaling_explanation.pdf}
+\caption{対称性によるスケーリング限界突破とハードウェア・変数比較の徹底対比。(a) シミュレーション所要メモリ推移。全空間（赤）は $N \ge 32$ でサーバー限界を突破し $N=60$ で 18.4 EB に達するが，部分空間（緑）は $N=60$ でも 17.2 GB に抑えられ 128GB サーバーで実行可能。(b) 有効解比率と制約充足率。Standard QAOAは 0\% へ死滅するが，提案手法は全域で 100.0\% を完全堅持。(c) ハードウェア物理量子ビット数。FMQA（アニーリング）は Minor Embedding により $O(N^2)$ で激増するが，提案手法は 1対1（$Q_{\mathrm{phys}} = N$）で極めて省リソース．}\label{fig:symmetry_scaling_all}
+\end{figure}
+
+\begin{tcolorbox}[keybox, title=機構 1：古典シミュレータのメモリ爆発回避（図(a)参照）]
+図\ref{fig:symmetry_scaling_all}(a)に示す通り，全空間 $2^N$ 次元を保持する場合，赤線は急峻に立ち上がり，手元PC（32GB）は $N=24$，128GBサーバーは $N=32$ で物理限界を迎える．しかし，対称性により非ゼロ振幅は有効部分空間 $|\mathcal{X}| = d^M$ のみに限定されるため，緑線のように所要メモリは指数関数的に抑制される．これにより，手元PCで $N=56$，128GBサーバーで $N=64$（原著論文 $N=60$ を完全包摂）まで古典シミュレーション射程が拡大する．
 \end{tcolorbox}
 
-\begin{tcolorbox}[keybox, title=機構 2：アルゴリズム的死滅の根本打破（制約充足率 100\% の堅持）]
-Standard QAOAでは，有効解比率の指数的縮小に伴い $N \ge 16$ でサンプリング充足率が 0.0\% に死滅し，実質的にアルゴリズムとしてスケール不可能であった．FM-XY-QAOAは対称性の保存により，変数 $N$ をどれだけ拡大しても「常に制約充足率 100.0\%」を完全堅持する．無効解による実験予算廃棄がゼロとなるため，大規模問題でも探索サンプラーとして正常に機能し続ける．
+\begin{tcolorbox}[keybox, title=機構 2：アルゴリズム的死滅の根本打破（図(b)参照）]
+図\ref{fig:symmetry_scaling_all}(b)の通り，全空間に対する有効解比率（赤線）は $N=16$ で $0.39\%$，$N=24$ で $0.02\%$ へと崩壊し，Standard QAOA は無効解しかサンプリングできなくなる．FM-XY-QAOA は緑線のように全スケールで \textbf{制約充足率 100.0\% の水平線を完全堅持} するため，変数が拡大しても探索サンプラーとして破綻しない．
 \end{tcolorbox}
 
-\begin{tcolorbox}[keybox, title=機構 3：NISQ量子回路の浅層化（ノイズによる崩壊の防止）]
-ペナルティ項が存在しないため，全対全の厄介な $ZZ$ ゲート（各ブロック $d(d-1)/2$ 個）が完全消滅する．XYミキサーは最近接リング結合（各ブロック $d$ 個）で実装可能であるため，回路深さが大幅に抑制され，NISQ実機のコヒーレンス時間内で扱える量子ビット数 $N$ の上限が大幅に拡大する．
+\begin{tcolorbox}[keybox, title=機構 3：実機物理ビットの 1対1 対応と浅い回路（図(c)参照）]
+図\ref{fig:symmetry_scaling_all}(c)の通り，FMQA（アニーリング実機）は全対全結合の埋め込み（Minor Embedding）により，論理変数 $N=60$ に対し約 1,200 個もの物理スピンを消費し，チェーン切断リスクを抱える．一方，FM-XY-QAOA はペナルティ項を全廃したため，論理変数 $N$ に対して物理ビットも \textbf{ちょうど $N$ 個（傾き 1 の緑直線）} で完結し，現在の富士通 64Q や IBM 127Q 実機にそのまま配置できる．
 \end{tcolorbox}
+
+\clearpage
 
 % ==============================================================================
 \section{計算サーバー環境別のスケーリング限界徹底試算}
