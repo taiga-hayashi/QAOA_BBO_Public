@@ -26,27 +26,51 @@ gap_a2a = [np.mean(np.array(bench_data[str(n)]["all_to_all"]["vals"]) - np.array
 gap_hyb = [np.mean(np.array(bench_data[str(n)]["hybrid_ls"]["vals"]) - np.array(bench_data[str(n)]["exact_mins"])) for n in Ns]
 gap_fmqa_adapt = [np.mean(sweet_data[str(n)]["adaptive_eval"]["gaps"]) for n in Ns]
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.0, 5.2))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.2, 5.4))
 
-# (a) Feasibility Rate
-ax1.plot(Ns, feas_qaoa, marker='s', markersize=9, linewidth=2.8, color='#2ca02c', label='Enhanced / Baseline QAOA (100% Guaranteed, $\\lambda$-free)')
-ax1.plot(Ns, feas_fmqa_adapt, marker='^', markersize=8, linewidth=2.2, color='#1f77b4', linestyle='--', label='FMQA (Adaptive $\\lambda_{\\mathrm{adaptive}}$: Rigorously Tuned)')
-ax1.plot(Ns, feas_fmqa_fixed5, marker='o', markersize=8, linewidth=2.2, color='#d62728', linestyle='-', label='FMQA (Fixed $\\lambda = 5.0$: Infeasible Collapse)')
+# (a) Feasibility Rate - Using slight horizontal offset so markers do not overlap
+Ns_arr = np.array(Ns, dtype=float)
+offset = 0.35
+
+# 1. FMQA Adaptive (Tuned to satisfy constraints: 100%)
+ax1.plot(Ns_arr - offset, feas_fmqa_adapt, marker='o', markersize=9, linewidth=2.4, color='#1f77b4', linestyle='-', 
+         label='FMQA (Tuned $\\lambda_{\\mathrm{adaptive}}$: 100% Feasible)')
+
+# 2. QAOA (Guaranteed 100%)
+ax1.plot(Ns_arr + offset, feas_qaoa, marker='s', markersize=8, linewidth=2.4, color='#2ca02c', linestyle='-', 
+         label='QAOA (FM-XY / Hybrid: 100% Guaranteed, $\\lambda$-free)')
+
+# 3. FMQA Fixed 5.0 (Un-tuned Reference)
+ax1.plot(Ns_arr, feas_fmqa_fixed5, marker='x', markersize=7, linewidth=1.5, color='#d62728', linestyle=':', alpha=0.6,
+         label='FMQA (Un-tuned $\\lambda=5.0$: Infeasible Collapse 0%)')
+
+# Annotations on ax1
+ax1.annotate('Tuned FMQA & QAOA\n100% Constraint Satisfaction',
+             xy=(24, 100), xytext=(24, 76),
+             ha='center', fontsize=9.5, fontweight='bold', color='#0b4a72',
+             bbox=dict(boxstyle='round,pad=0.45', facecolor='#e6f2fa', edgecolor='#1f77b4', lw=1.5),
+             arrowprops=dict(arrowstyle='->', color='#1f77b4', lw=1.8))
+
+ax1.annotate(r'Un-tuned Baseline ($\lambda=5.0$)' + '\n' + r'Collapse due to strong synergies (0%)',
+             xy=(24, 0), xytext=(24, 25),
+             ha='center', fontsize=8.5, color='#9c1414',
+             bbox=dict(boxstyle='round,pad=0.4', facecolor='#fdeded', edgecolor='#d62728', lw=1.2, alpha=0.9),
+             arrowprops=dict(arrowstyle='->', color='#d62728', lw=1.3))
 
 ax1.set_xlabel('Number of Binary Variables $N$ (Sites $M = N / 4$)', fontweight='bold')
 ax1.set_ylabel('One-Hot Feasibility Rate (%)', fontweight='bold')
 ax1.set_title('(a) Constraint Feasibility in Multi-Scale Catalyst Model', fontweight='bold', pad=10)
 ax1.set_xticks(Ns)
 ax1.set_xticklabels([f"$N={n}$\n($M={n//4}$)" for n in Ns])
-ax1.set_ylim(-5, 108)
+ax1.set_ylim(-10, 115)
 ax1.grid(True, linestyle=':', alpha=0.6)
-ax1.legend(loc='lower left', framealpha=0.92, fontsize=10)
+ax1.legend(loc='center left', framealpha=0.95, fontsize=9.2)
 
 # (b) Residual Gap
 ax2.plot(Ns, gap_p1, marker='o', markersize=7, linewidth=1.8, color='#ff7f0e', label='FM-XY-QAOA (p=1 Baseline, Ring)')
 ax2.plot(Ns, gap_a2a, marker='^', markersize=7, linewidth=1.8, color='#9467bd', label='All-to-All XY-QAOA + CVaR')
 ax2.plot(Ns, gap_hyb, marker='*', markersize=10, linewidth=2.5, color='#2ca02c', label='Hybrid QAOA (QAOA + 1-opt LS)')
-ax2.plot(Ns, gap_fmqa_adapt, marker='d', markersize=7, linewidth=1.8, color='#1f77b4', linestyle='--', label='FMQA (Adaptive $\\lambda_{\\mathrm{adaptive}}$: SA Optimal)')
+ax2.plot(Ns, gap_fmqa_adapt, marker='d', markersize=7, linewidth=1.8, color='#1f77b4', linestyle='--', label='FMQA (Tuned $\\lambda_{\\mathrm{adaptive}}$: SA Optimal)')
 
 ax2.set_xlabel('Number of Binary Variables $N$ (Sites $M = N / 4$)', fontweight='bold')
 ax2.set_ylabel('Energy Residual Gap ($E_{\\mathrm{best}} - E_{\\mathrm{exact}}$)', fontweight='bold')
