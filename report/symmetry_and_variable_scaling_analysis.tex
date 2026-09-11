@@ -6,6 +6,7 @@
 \geometry{top=13mm,bottom=13mm,left=14mm,right=14mm}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{multirow}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{graphicx}
@@ -327,27 +328,34 @@ f(\bm{x}) = \bm{x}^T Q \bm{x} = \sum_{i=1}^N Q_{ii} x_i + \sum_{i < j} Q_{ij} x_
 \begin{table}[H]
 \centering
 \caption{大規模実証実験（$N=20 \sim 32$, 各10インスタンス）における探索性能と計算時間の実測対比（Mean $\pm 1\sigma$）}\label{tab:benchmark_n20_n32}
-\vspace{-1mm}
-\scriptsize
-\begin{tabularx}{\textwidth}{l r r l c r r r X}
+\vspace{1mm}
+\footnotesize
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c c r l c c c r}
 \toprule
-\textbf{規模} & \textbf{全探索空間} & \textbf{有効解数} & \textbf{評価手法} & \textbf{充足率} & \textbf{最良値 $f_{\mathrm{best}}$} & \textbf{厳密解 $f(\bm{x}^*)$} & \textbf{計算時間} & \textbf{探索結果・実測挙動} \\
+\textbf{規模 $N$} & \textbf{サイト $M$} & \textbf{全空間 $2^N$} & \textbf{評価手法} & \textbf{充足率} & \textbf{最良値 $f_{\mathrm{best}}$} & \textbf{厳密解 $f^*$} & \textbf{平均時間} \\
 \midrule
-\textbf{$N=20$} & 1,048,576 & 1,024 & \textbf{FMQA (SA)} & 100.0\% & \textbf{-5.99 $\pm$ 0.86} & -5.99 $\pm$ 0.86 & 0.10 秒 & 全10インスタンスで最適解到達 \\
-(5サイト) & ($1.05 \times 10^6$) & (0.10\%) & \textbf{Std QAOA} & 0.03\% & 壊滅 & -5.99 $\pm$ 0.86 & 2.76 秒 & 充足率0\%多発で実質機能停止 \\
-& & & \textbf{FM-XY (提案)} & \textbf{100.0\%} & \textbf{-5.64 $\pm$ 1.03} & -5.99 $\pm$ 0.86 & 0.10 秒 & \textbf{制約100\%・最適解の94\%水準を捕捉} \\
+\multirow{3}{*}{$N=20$} & \multirow{3}{*}{$M=5$} & 1,048,576 & FMQA (古典SA) & 100.0\% & \textbf{-5.99 $\pm$ 0.86} & -5.99 $\pm$ 0.86 & 0.10 秒 \\
+& & (有効 1,024) & Standard QAOA & 0.03\% & 壊滅 (解取得不能) & -5.99 $\pm$ 0.86 & 2.76 秒 \\
+& & & \textbf{FM-XY-QAOA (提案)} & \textbf{100.0\%} & \textbf{-5.64 $\pm$ 1.03} & -5.99 $\pm$ 0.86 & \textbf{0.10 秒} \\
 \midrule
-\textbf{$N=24$} & 16,777,216 & 4,096 & \textbf{FMQA (SA)} & 100.0\% & \textbf{-8.63 $\pm$ 0.97} & -8.63 $\pm$ 0.97 & 0.11 秒 & 最適解に到達 \\
-(6サイト) & ($1.68 \times 10^7$) & (0.02\%) & \textbf{Std QAOA} & \textbf{0.10\%} & +0.70 & -8.63 $\pm$ 0.97 & 23.11 秒 & \textbf{探索完全崩壊（正のゴミ解へ脱線）} \\
-& & & \textbf{FM-XY (提案)} & \textbf{100.0\%} & \textbf{-7.94 $\pm$ 0.87} & -8.63 $\pm$ 0.97 & 0.32 秒 & \textbf{制約100\%・厳密最適解の直近を捕捉} \\
+\multirow{3}{*}{$N=24$} & \multirow{3}{*}{$M=6$} & 16,777,216 & FMQA (古典SA) & 100.0\% & \textbf{-8.63 $\pm$ 0.97} & -8.63 $\pm$ 0.97 & 0.11 秒 \\
+& & (有効 4,096) & Standard QAOA & 0.10\% & +0.70 (正値へ脱線) & -8.63 $\pm$ 0.97 & 23.11 秒 \\
+& & & \textbf{FM-XY-QAOA (提案)} & \textbf{100.0\%} & \textbf{-7.94 $\pm$ 0.87} & -8.63 $\pm$ 0.97 & \textbf{0.32 秒} \\
 \midrule
-\textbf{$N=28$} & 268,435,456 & 16,384 & \textbf{FMQA (SA)} & 100.0\% & \textbf{-10.13 $\pm$ 1.19} & -10.13 $\pm$ 1.19 & 0.14 秒 & 最適解に到達 \\
-(7サイト) & ($2.68 \times 10^8$) & (0.006\%) & \textbf{FM-XY (部分空間)} & \textbf{100.0\%} & \textbf{-9.54 $\pm$ 1.71} & -10.13 $\pm$ 1.19 & \textbf{1.31 秒} & \textbf{2.68億次元を1.31秒で解破} \\
+\multirow{2}{*}{$N=28$} & \multirow{2}{*}{$M=7$} & 268,435,456 & FMQA (古典SA) & 100.0\% & \textbf{-10.13 $\pm$ 1.19} & -10.13 $\pm$ 1.19 & 0.14 秒 \\
+& & (有効 16,384) & \textbf{FM-XY-QAOA (部分空間)} & \textbf{100.0\%} & \textbf{-9.54 $\pm$ 1.71} & -10.13 $\pm$ 1.19 & \textbf{1.31 秒} \\
 \midrule
-\textbf{$N=32$} & 4,294,967,296 & 65,536 & \textbf{FMQA (SA)} & 99.96\% & \textbf{-12.49 $\pm$ 0.97} & -12.49 $\pm$ 0.97 & 0.18 秒 & \textbf{制約違反ゴミ解混入（2件で99.8\%）} \\
-(8サイト) & (\textbf{42.9億通り}) & (0.0015\%) & \textbf{FM-XY (部分空間)} & \textbf{100.0\%} & \textbf{-10.29 $\pm$ 0.93} & -12.49 $\pm$ 0.97 & \textbf{7.33 秒} & \textbf{43億通りを手元PCで7.33秒実証！} \\
+\multirow{2}{*}{$N=32$} & \multirow{2}{*}{$M=8$} & \textbf{42億9,496万} & FMQA (古典SA) & 99.96 $\pm$ 0.08\%$^\dagger$ & \textbf{-12.49 $\pm$ 0.97} & -12.49 $\pm$ 0.97 & 0.18 秒 \\
+& & (有効 65,536) & \textbf{FM-XY-QAOA (部分空間)} & \textbf{100.0\%} & \textbf{-10.29 $\pm$ 0.93} & -12.49 $\pm$ 0.97 & \textbf{7.33 秒} \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
+\vspace{1.5mm}
+\parbox{\linewidth}{\scriptsize
+$^\dagger$ FMQA ($N=32$)：固定ペナルティ（$\lambda=5.0$）が目的関数の強い相関に負け，10インスタンス中2インスタンスで制約違反ゴミ解が混入（充足率99.8\%）．\\
+注：各規模とも乱数シードを変えた10インスタンスの統計値（平均 $\pm 1\sigma$）．Standard QAOAは $N \ge 28$ でメモリ超過（OOM）のため除外．
+}
 \end{table}
 
 \vspace{-2mm}
