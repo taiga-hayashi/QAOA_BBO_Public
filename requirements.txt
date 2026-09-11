@@ -1,0 +1,8 @@
+torch
+numpy
+qiskit
+qiskit-aer
+qiskit-optimization
+qiskit-algorithms
+matplotlib
+PyYAML
