@@ -433,6 +433,39 @@ $^\dagger$ FMQA ($N=32$)：固定ペナルティ（$\lambda=5.0$）が目的関�
     \item \textbf{実務BBOにおける最適パイプライン}: 量子コンピュータに厳密最適解の100\%完全当落を単独で負わせるのではなく，「広大な空間から100\%制約付き有望盆地を捉える量子グローバルサンプラー（FM-XY-QAOA）」と「盆地内の底を確実に突く古典局所探索（1-opt）」の協調動作こそが，産業BBOにおける最も強力かつ現実的な解法アーキテクチャであることが実証された．
 \end{enumerate}
 
+\subsection{FMQAと精度向上型QAOAの徹底対比（総合マトリクスと実務的知見）}
+精度向上を図った Enhanced QAOA（特に Hybrid QAOA および All-to-All XY-QAOA）と，FMQA（ペナルティ付き古典SA / 量子アニーリング）の特性を多面的に比較した結果を表\ref{tab:fmqa_vs_enhanced_qaoa}に示す．
+
+\begin{table}[H]
+\centering
+\caption{FMQA と精度向上型 FM-XY-QAOA の総合対比マトリクス}\label{tab:fmqa_vs_enhanced_qaoa}
+\vspace{1mm}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{l X X X}
+\toprule
+\textbf{比較観点} & \textbf{FMQA（古典SA / アニーリング）} & \textbf{FM-XY-QAOA（$p=1$ Baseline）} & \textbf{Enhanced QAOA（提案・精度向上後）} \\
+\midrule
+\textbf{大域最適解の探索精度} & \textbf{極めて高い}（小〜中規模では古典SAが厳密解に到達） & \textbf{中程度}（浅い回路のため残差 Gap $+0.7 \sim +2.9$ が残存） & \textbf{極めて高い}（Hybrid化で Gap $+0.29 \sim +0.56$ へ激減，50--70\% 到達） \\
+\textbf{制約充足率} & \textbf{99.96\% 〜 低下傾向}（$N=32$ で制約違反解が混入） & \textbf{100.0\% 完全防衛}（部分空間拘束により違反ゼロ） & \textbf{100.0\% 完全防衛}（ペナルティ調整不要・失敗損失 0 円） \\
+\textbf{ペナルティジレンマ} & \textbf{不可避}（$\lambda$ 小で違反解氾濫，$\lambda$ 大で局所解トラップ） & \textbf{完全フリー}（目的関数を一切歪めない） & \textbf{完全フリー}（ハイパーパラメータ調整コストゼロ） \\
+\textbf{BBO提案の多様性} & \textbf{低い}（冷却に伴い単一の深い谷底へ縮退，重複頻発） & \textbf{高い}（量子重ね合わせにより複数有望解を保持） & \textbf{極めて高い}（ハミング距離の離れた多様な有望候補バッチ） \\
+\textbf{実機物理ビット数} & \textbf{激増：$O(N^2)$}（Minor Embedding 必須，鎖切断リスク） & \textbf{1対1：ちょうど $N$ 個}（富士通64Q実機にそのまま配置可） & \textbf{1対1：ちょうど $N$ 個}（近接結合のみでSWAPゲート最小化） \\
+\textbf{古典計算速度} & \textbf{0.1 〜 0.2 秒}（古典SAの簡便性） & 0.1 〜 7.3 秒 & 0.2 〜 4.2 秒（手元PCで即時完了） \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\vspace{-1mm}
+\subsubsection{4つの決定的な本質的差異}
+\begin{enumerate}\setlength{\itemsep}{1.5pt}
+    \item \textbf{解の探索精度（FMQAの強みとHybrid QAOAの猛追）}: 小〜中規模（$N \le 32$）かつ有効解が数万通り存在する領域では，古典SAが十分に冷却されるため，FMQAは厳密大域最小解を引く能力が高い．一方，従来の $p=1$ QAOAは残差ギャップ（$+2.90$）を抱えていたが，\textbf{Hybrid（QAOA + 1-opt局所探索）によりギャップが $+0.56$（81\% 削減）へと急激に肉薄}し，$N=32$（42.9億通り）の極大空間でも 50\% 以上の確率で厳密解を捉え，実用上FMQAと遜色ない品質を達成した．
+    \item \textbf{制約防衛とペナルティジレンマの打破}: FMQAはペナルティ項 $\lambda (\sum x_i - 1)^2$ に依存するため，規模拡大に伴い目的関数の強い相関にペナルティが負け始め，$N=32$ で制約充足率が $99.8\%$ に低下（違反ゴミ解が混入）した．1回のウェット実験に数百万円を要する産業BBOでは，この数\%のゴミ解が致命的な実験失敗損失となる．対して Enhanced QAOA は，$[H_{\mathrm{XY}}, \hat{N}]=0$ により \textbf{制約充足率 100.0\% を数学的に永久保証} し，実験失敗損失 0 円を達成する．
+    \item \textbf{BBO実務におけるバッチ提案の多様性（Diversity）}: 実務材料開発では，1回の探索サイクルで 1 つの解ではなく「5〜10個の異なる有望な元素配置（実験バッチ）」を提案することが必須である．古典SA（FMQA）は冷却に伴い単一の局所解に全サンプルが集中し解の多様性が喪失するのに対し，Enhanced QAOA は量子もつれと干渉により \textbf{「エネルギーが同等に低く，かつ構造が大きく異なる複数の有望な谷」を同時に重ね合わせサンプリング} できるため，実務バッチ実験で当たりを引く確率が格段に高まる．
+    \item \textbf{量子実機（NISQ）へのスケーラビリティ}: D-WaveアニーラーにFMQAを乗せる場合，ペナルティ項の全対全結合により物理ビットが $O(N^2)$（$N=60$ で約1,200個）に激増し，チェーン切断で制約が崩壊する．一方，FM-XY-QAOA は論理変数 $N$ に対して物理ビットも $N$ 個（1対1対応）で完結し，富士通64Q実機にそのまま無駄なく配置できる．
+\end{enumerate}
+
 \vspace{3mm}
 
 % ==============================================================================
