@@ -232,6 +232,7 @@ def solve_enhanced_subspace_xy_qaoa(
         "opt_objective": res.fun,
         "qaoa_best_energy": qaoa_best_energy,
         "final_best_energy": final_best_energy,
+        "final_best_x": final_best_x,
         "exact_min_energy": exact_min,
         "success_probability": probs[best_idx],
         "feasibility_rate": 1.0,
