@@ -1,569 +1,283 @@
 \documentclass[11pt,a4paper]{ltjsarticle}
 
-\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{bm}
 \usepackage{geometry}
-\geometry{top=20mm,bottom=20mm,left=20mm,right=20mm}
+\geometry{top=16mm,bottom=16mm,left=16mm,right=16mm}
 \usepackage{booktabs}
 \usepackage{tabularx}
-\usepackage{subcaption}
+\usepackage{float}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue!70!black,
-    citecolor=green!50!black,
-    urlcolor=magenta!70!black
-}
-\usepackage{tcolorbox}
-\tcbuselibrary{skins,breakable}
-
-% 定理環境
-\theoremstyle{definition}
-\newtheorem{definition}{定義}[section]
-\theoremstyle{plain}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{lemma}[theorem]{補題}
-\newtheorem{proposition}[theorem]{命題}
-
-% 装飾ボックス（考察・要点整理用）
-\newtcolorbox{summarybox}[1][]{
-    colback=blue!2!white,
-    colframe=blue!65!black,
-    title={#1},
-    fonttitle=\gtfamily\bfseries,
-    arc=1.2mm,
-    boxrule=0.8pt,
-    top=1.5mm, bottom=1.5mm, left=2mm, right=2mm
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
 }
 
-\newtcolorbox{highlightbox}[1][]{
-    colback=green!2!white,
-    colframe=green!50!black,
-    title={#1},
-    fonttitle=\gtfamily\bfseries,
-    arc=1.2mm,
-    boxrule=0.8pt,
-    top=1.5mm, bottom=1.5mm, left=2mm, right=2mm
-}
-
-\newtcolorbox{alertbox}[1][]{
-    colback=red!2!white,
-    colframe=red!60!black,
-    title={#1},
-    fonttitle=\gtfamily\bfseries,
-    arc=1.2mm,
-    boxrule=0.8pt,
-    top=1.5mm, bottom=1.5mm, left=2mm, right=2mm
-}
-
-% ブラケット記法マクロ
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\bra}[1]{\langle#1|}
-\newcommand{\braket}[2]{\langle#1|#2\rangle}
-
-\title{\LARGE\textbf{実用材料探索・産業ブラックボックス最適化に向けた\\XYミキサー型QAOAの有効性とスケーリング特性の定量的実証と数理解析}\\[3mm]
-\large--- 実験損失予算ゼロと完全ペナルティフリー無人自律化の達成 ---}
-\author{富士通研究所 インターンシップ研究開発プロジェクト}
-\date{2026年9月}
 
 \begin{document}
 
-\maketitle
+% ==============================================================================
+% PAGE 1: 研究背景と提案手法の原理
+% ==============================================================================
+\begin{center}
+\vspace*{-7mm}
+{\LARGE\textbf{One-Hot制約付きブラックボックス最適化における\\[1.5mm]FM-XY-QAOAの実証評価・実験結果レポート}}\\[2mm]
+{\large--- 標準量子OSS（Qiskit）による厳密実証・計算限界とBBOにおける独自の立ち位置 ---}\\[1.5mm]
+{\normalsize 富士通研究所 インターンシップ研究開発プロジェクト \quad / \quad 2026年9月}
+\vspace{-1mm}
+\end{center}
 
-\begin{abstract}
-本報告書は，実産業における材料探索・触媒設計などのブラックボックス最適化（BBO）において，カテゴリカル変数（One-Hot制約）を扱うゲート型量子近似最適化アルゴリズム（QAOA）および量子アニーリング（FMQA）の探索性能・スケーリング特性・経済的損失予算を定量的に比較検証した技術実証レポートである．
-従来の標準QAOA（Standard QAOA）が不可避としていた「ペナルティ項による制約充足」は，量子ビット数 $N$ の増大に伴って制約充足率が $1.6\%$（$N=12$）から $0.00\%$（$N \ge 16$）へと指数関数的に崩壊し，15回の材料探索において14回（累計140万円相当）の実験失敗を招いて破綻することを実証した．
-これに対し，ハミング重み保存則に基づくブロック直和型XYミキサーとW状態初期化を導入した提案手法（FM-XY-QAOA）は，全探索空間 $1,677$ 万次元・有効解比率わずか $0.024\%$ に達する極限設定（$N=24$）に至るまで，数学的に \textbf{100.0\% 制約を厳密に保存（違反ゼロ）} し，一様ランダム比 4.0 倍の量子確率濃縮を発揮して真の最適解を獲得することに成功した．
-さらに，ペナルティ項全対全結合の完全排除によってNISQ実機での2量子ビットゲート数を大幅削減し，ペナルティ再調整が一切不要な完全無人自律運用を達成できることを数理的・実証的に解明した．
-\end{abstract}
+\section{研究背景と3手法の基本原理}
+\label{sec:overview}
 
-\vspace{2mm}
-\hrule
-\vspace{4mm}
-
-\section{実験対象と評価手法の数理的定式化}
-\label{sec:formulation}
-
-本報告書で扱う実験問題の設定，数理モデル，および評価指標の厳密な定義を論理の飛躍なく整理する．
-
-\subsection{One-Hot制約付きBBOとFactorization MachineのQUBOマッピング}
-ブラックボックス目的関数を $f: \mathcal{X} \to \mathbb{R}$ とする．探索空間 $\mathcal{X}$ は $M$ 個のカテゴリ変数ブロックから構成され，各ブロック $m \in \{1, \dots, M\}$ は $d_m$ 個の選択肢を持つ．総量子ビット数は $N = \sum_{m=1}^M d_m$ であり，各ブロックには「ちょうど1つの選択肢のみを選ぶ」という \textbf{One-Hot制約} が課される：
+材料探索や分子設計などの実産業ブラックボックス最適化（BBO）では，真の目的関数（BB関数 $y = f_{\mathrm{true}}(\bm{x})$）の数式が未知であり，1回の評価に多大なコスト（合成実験やDFT計算）を要する．このため，少数の実験データから機械学習サロゲートモデル（Factorization Machine: FM）を学習し，その予測重みから構築されたハミルトニアン $H_C$ を最小化する有望な実験候補 $\bm{x}_{\mathrm{next}}$ をサンプラーで探索する．この際，「各ブロックからちょうど1つの選択肢を選ぶ」One-Hot制約が課される：
 \begin{equation}
 \mathcal{X} = \left\{ \bm{x} \in \{0, 1\}^N \;\middle|\; \sum_{j=1}^{d_m} x_{m, j} = 1, \quad \forall m \in \{1, \dots, M\} \right\}
-\label{eq:onehot_space}
 \end{equation}
-全状態空間のサイズは $2^N$ であるのに対し，有効解の総数は $|\mathcal{X}| = \prod_{m=1}^M d_m$ である．したがって，全状態空間に対する有効解の存在割合は
-\begin{equation}
-R_{\mathrm{space}} = \frac{|\mathcal{X}|}{2^N} = \frac{\prod_{m=1}^M d_m}{2^{\sum_{m=1}^M d_m}} = \prod_{m=1}^M \frac{d_m}{2^{d_m}}
-\label{eq:ratio_space}
-\end{equation}
-と表される．$d_m \ge 2$ において常に $d_m / 2^{d_m} \le 2/4 = 0.5$（$d_m=4$ のときは $4/16 = 0.25$）であるため，ブロック数 $M$ の増加に伴って有効解比率は指数関数的に $0$ へ激減する．
+ここで全量子ビット数は $N = \sum_{m=1}^M d_m$ であり，全空間 $2^N$ に対し有効解比率 $|\mathcal{X}|/2^N$ は指数関数的に極小化するため，制約違反解による実験予算の廃棄をいかに防ぐかが最大の課題となる．
 
-観測データから学習される二次の Factorization Machine（FM）\cite{rendle2010factorization} の予測モデルは，バイアス $w_0 \in \mathbb{R}$，一次の重み $w_i \in \mathbb{R}$，および $k$ 次元の潜在因子ベクトル $\bm{v}_i = (v_{i, 1}, \dots, v_{i, k})^T \in \mathbb{R}^k$ を用いて次式で定義される：
-\begin{equation}
-\hat{f}(\bm{x}) = w_0 + \sum_{i=1}^N w_i x_i + \sum_{i=1}^N \sum_{j=i+1}^N \langle \bm{v}_i, \bm{v}_j \rangle x_i x_j
-\label{eq:fm_model}
-\end{equation}
-ここで $\langle \bm{v}_i, \bm{v}_j \rangle = \sum_{r=1}^k v_{i, r} v_{j, r}$ である．$x_i \in \{0, 1\}$ は二値変数であるため $x_i^2 = x_i$ が恒等的に成り立つ．したがって，QUBO（Quadratic Unconstrained Binary Optimization）行列の上三角成分を
-\begin{equation}
-Q_{ii} = w_i, \quad Q_{ij} = \langle \bm{v}_i, \bm{v}_j \rangle \quad (i < j)
-\end{equation}
-と定義することで，式(\ref{eq:fm_model})は厳密に $\hat{f}(\bm{x}) = \bm{x}^T Q \bm{x} + w_0$ という二次形式へ等価変換される．
+本研究では，以下の3手法のアプローチを比較評価した：
+\begin{itemize}\setlength{\itemsep}{0.5pt}
+    \item \textbf{1. 先行研究 FMQA（量子アニーリング / SA）}:
+    One-Hot制約をペナルティ項 $\lambda \sum_m (\sum_j x_{m, j} - 1)^2$ として埋め込む（QUBO表現）．D-Wave実機等で扱える変数は多いが，制約違反解を出力するリスクが常に存在し，ペナルティ係数 $\lambda$ の事前調整が不可欠となる．
 
-\subsection{従来のペナルティ法における全対全反発結合の数理的導出}
-従来のFMQA \cite{kitai2020designing} および Standard FM-QAOA では，制約条件 $\sum_{j=1}^{d_m} x_{m, j} = 1$ を目的関数に組み込むため，ペナルティ係数 $\lambda_m > 0$ を掛けた二次ペナルティ項を加算する：
-\begin{equation}
-H_{\mathrm{penalty}}^{(m)} = \lambda_m \left( \sum_{j=1}^{d_m} x_{m, j} - 1 \right)^2
-\end{equation}
-この二乗項の展開を論理の飛躍なく記述する．まず二乗を展開すると，
-\begin{align}
-\left( \sum_{j=1}^{d_m} x_{m, j} - 1 \right)^2 &= \left( \sum_{j=1}^{d_m} x_{m, j} \right)^2 - 2\sum_{j=1}^{d_m} x_{m, j} + 1 \nonumber \\
-&= \left( \sum_{j=1}^{d_m} x_{m, j}^2 + 2\sum_{1 \le j < k \le d_m} x_{m, j} x_{m, k} \right) - 2\sum_{j=1}^{d_m} x_{m, j} + 1
-\label{eq:penalty_step1}
-\end{align}
-ここで二値変数の性質 $x_{m, j}^2 = x_{m, j}$ を代入すると，一次項が相殺される：
-\begin{align}
-\left( \sum_{j=1}^{d_m} x_{m, j} - 1 \right)^2 &= \sum_{j=1}^{d_m} x_{m, j} + 2\sum_{j < k} x_{m, j} x_{m, k} - 2\sum_{j=1}^{d_m} x_{m, j} + 1 \nonumber \\
-&= 1 - \sum_{j=1}^{d_m} x_{m, j} + 2\sum_{1 \le j < k \le d_m} x_{m, j} x_{m, k}
-\label{eq:penalty_expansion}
-\end{align}
-式(\ref{eq:penalty_expansion})から以下の重大な数学的帰結が導かれる：
-\begin{enumerate}
-    \item \textbf{全対全反発相互作用の発生}: 同一ブロック内のすべてのペア $(j, k)$ 間に $+2\lambda_m x_{m, j} x_{m, k}$ という正の相互作用（反発項）が人工的に付加される．結合数は各ブロックあたり $\binom{d_m}{2} = \frac{d_m(d_m-1)}{2}$ 個の全対全結合となり，本来の目的関数には存在しなかった高密度な相互作用網が形成される．
-    \item \textbf{エネルギー障壁の形成}: 実行可能解（ハミング重み 1）ではペナルティ値が厳密に $0$ となるが，ハミング重み 0（全選択なし）では $+1\lambda_m$，ハミング重み 2（二重選択）では $+1\lambda_m$，ハミング重み 3 では $+4\lambda_m$ と急激に増大する．これにより，実行可能解の周囲に極めて急峻な人工的エネルギー障壁が構築される．
-\end{enumerate}
+    \item \textbf{2. ゲート型従来法（Standard QAOA）}:
+    全空間を励起する標準の横磁場ミキサー $H_M = \sum_i X_i$ を用い，制約をペナルティ項で付加する（初期状態 $\ket{+}^{\otimes N}$）．有効空間の外側を無差別に探索するため，変数の増大とともにサンプルの大半が制約違反ゴミ解で埋め尽くされる．
 
-\subsection{提案手法: ブロック直和型XYミキサーと部分空間保存の厳密証明}
-提案手法 \textbf{FM-XY-QAOA} では，ペナルティ項を完全に排除し（$\lambda_m = 0$），量子回路の幾何学的対称性によって状態を実行可能部分空間 $\mathcal{H}_{\mathrm{feas}}$ に永久拘束する．
-
-各ブロック $m$ における励起数演算子（ハミング重み演算子） $\hat{K}_m$ は，パウリ演算子 $Z_{m, j} = \ket{0}\bra{0} - \ket{1}\bra{1}$ を用いて次のように定義される：
-\begin{equation}
-\hat{K}_m = \sum_{j=1}^{d_m} \frac{I - Z_{m, j}}{2} = \sum_{j=1}^{d_m} \hat{n}_{m, j}, \quad \hat{n}_{m, j} = \ket{1}\bra{1}_{m, j}
-\end{equation}
-ブロック直和型XYミキサー $H_M = \sum_{m=1}^M H_M^{(m)}$ は以下のように定義される：
-\begin{equation}
-H_M^{(m)} = \frac{1}{2}\sum_{j=1}^{d_m} \sum_{k=j+1}^{d_m} \left( X_{m, j} X_{m, k} + Y_{m, j} Y_{m, k} \right)
-\label{eq:xy_mixer_def}
-\end{equation}
-
-\begin{theorem}[XYミキサーによるハミング重み保存の厳密証明]
-任意のブロック $m \in \{1, \dots, M\}$ に対し，ミキサーハミルトニアン $H_M$ とハミング重み演算子 $\hat{K}_m$ は厳密に可換である：
-\begin{equation}
-[H_M, \hat{K}_m] = 0 \quad (\forall m \in \{1, \dots, M\})
-\end{equation}
-\end{theorem}
-\begin{proof}
-異なるブロックに属する演算子同士は自明に可換であるため，同一ブロック内での可換性 $[H_M^{(m)}, \hat{K}_m] = 0$ を示せば十分である．
-スピン上昇演算子 $S^+ = \ket{0}\bra{1} = \frac{X + iY}{2}$ および下降演算子 $S^- = \ket{1}\bra{0} = \frac{X - iY}{2}$ を導入する．これらのかけ算を計算すると，
-\begin{align}
-S_j^+ S_k^- + S_j^- S_k^+ &= \left(\frac{X_j + iY_j}{2}\right)\left(\frac{X_k - iY_k}{2}\right) + \left(\frac{X_j - iY_j}{2}\right)\left(\frac{X_k + iY_k}{2}\right) \nonumber \\
-&= \frac{1}{4}\left( X_j X_k - i X_j Y_k + i Y_j X_k + Y_j Y_k + X_j X_k + i X_j Y_k - i Y_j X_k + Y_j Y_k \right) \nonumber \\
-&= \frac{1}{2}\left( X_j X_k + Y_j Y_k \right)
-\end{align}
-となり，XY相互作用はスピン励起のフリップフロップ（交換）演算子 $S_j^+ S_k^- + S_j^- S_k^+$ に等しい．
-次に，この交換演算子と総励起数 $\hat{K}_m$ の交換関係を計算する．$\hat{K}_m$ のうちサイト $j$ と $k$ に依存する部分は $\hat{n}_j + \hat{n}_k$ である：
-\begin{equation}
-\left[ S_j^+ S_k^-, \hat{n}_j + \hat{n}_k \right] = \left[ S_j^+, \hat{n}_j \right] S_k^- + S_j^+ \left[ S_k^-, \hat{n}_k \right]
-\label{eq:comm_step}
-\end{equation}
-ここで，パウリ基底における定義から直接計算すると，
-\begin{align}
-\left[ S_j^+, \hat{n}_j \right] &= (\ket{0}\bra{1})(\ket{1}\bra{1}) - (\ket{1}\bra{1})(\ket{0}\bra{1}) = \ket{0}\bra{1} - 0 = S_j^+ \cdot 1 - 0 = - S_j^+ \\
-\left[ S_k^-, \hat{n}_k \right] &= (\ket{1}\bra{0})(\ket{1}\bra{1}) - (\ket{1}\bra{1})(\ket{1}\bra{0}) = 0 - \ket{1}\bra{0} = - S_k^- \cdot (-1) = + S_k^-
-\end{align}
-これらを式(\ref{eq:comm_step})に代入すると，
-\begin{equation}
-\left[ S_j^+ S_k^-, \hat{n}_j + \hat{n}_k \right] = (-S_j^+) S_k^- + S_j^+ (+S_k^-) = - S_j^+ S_k^- + S_j^+ S_k^- = 0
-\end{equation}
-同様にしてエルミート共役をとれば $[S_j^- S_k^+, \hat{n}_j + \hat{n}_k] = 0$ も成立する．各ペアの総和をとることで，$[H_M^{(m)}, \hat{K}_m] = 0$ が厳密に証明された．
-\end{proof}
-
-初期状態として，各ブロックでハミング重み 1 の一様重ね合わせ状態である \textbf{W状態} $\ket{W_{d_m}}$ の直積を採用する：
-\begin{equation}
-\ket{\psi_0} = \bigotimes_{m=1}^M \ket{W_{d_m}}, \quad \ket{W_{d_m}} = \frac{1}{\sqrt{d_m}} \sum_{j=1}^{d_m} \ket{0 \dots 0 \underbrace{1}_{j\text{-番目}} 0 \dots 0}
-\end{equation}
-この初期状態は $\hat{K}_m \ket{\psi_0} = 1 \ket{\psi_0}$ を満たす．
-コストハミルトニアン $H_C$ は対角演算子 $Z$ のみの関数であるため $[H_C, \hat{K}_m] = 0$ は自明である．
-したがって，時間発展ユニタリ演算子 $U(\bm{\gamma}, \bm{\beta}) = \prod_{l=1}^p e^{-i\beta_l H_M} e^{-i\gamma_l H_C}$ の全作用の下で，状態ベクトルは常に有効部分空間 $\mathcal{H}_{\mathrm{feas}}$ に厳密に拘束され続ける．
-
-\subsection{比較対象の3手法の仕様}
-本報告書で比較検証する3手法の仕様を表\ref{tab:methods}にまとめる．
-QAOAのレイヤー数は $p=1$（NISQ想定の最小深度），古典最適化には COBYLA を使用した．FMQAは D-Wave の Simulated Annealing 実装（\texttt{neal.SimulatedAnnealingSampler}，1000ショット）を用いた．
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{比較対象の3手法の仕様詳細}
-\label{tab:methods}
-\vspace{1.5mm}
-\begin{tabularx}{\textwidth}{l p{2.4cm} p{2.4cm} p{2.6cm} X}
-\toprule
-\textbf{手法名} & \textbf{ソルバー種別} & \textbf{制約の扱い} & \textbf{初期状態 $\ket{\psi_0}$} & \textbf{ミキサー / 探索遷移機構} \\
-\midrule
-\textbf{1. FMQA} & 擬似アニーリング (\texttt{neal}) & $\lambda = 5.0$ (ペナルティ法) & 古典ランダム二値列 & 連続マルコフ連鎖モンテカルロ（SA） \\
-\textbf{2. Standard QAOA} & ゲート型QAOA (\texttt{Aer}) & $\lambda = 5.0$ (ペナルティ法) & 一様重ね合わせ $\ket{+}^{\otimes N}$ & 標準横磁場ミキサー $H_M = \sum_i X_i$ \\
-\textbf{3. FM-XY (提案)} & ゲート型QAOA (\texttt{Aer}) & \textbf{$\lambda = 0$ (完全フリー)} & W状態直積 $\bigotimes \ket{W_{d_m}}$ & ブロック直和型XYミキサー $\sum H_M^{(m)}$ \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\subsection{評価指標の定量的定義}
-アルゴリズムの性能を評価するため，以下の指標を数学的に定義する：
-\begin{enumerate}
-    \item \textbf{制約充足率 ($R_{\mathrm{feas}}$)}: 測定によって得られた全状態ベクトルのうち，One-Hot制約を満たす有効解 $\bm{x} \in \mathcal{X}$ が得られる確率の総和：
-    \begin{equation}
-    R_{\mathrm{feas}} = \sum_{\bm{x} \in \mathcal{X}} |\braket{\bm{x}}{\psi}|^2 \times 100 \quad [\%]
-    \end{equation}
-    \item \textbf{最適解到達確率 ($P(\bm{x}^*)$)}: 全有効解の中で真の最小エネルギーを与える大域的最適解 $\bm{x}^* = \arg\min_{\bm{x} \in \mathcal{X}} f(\bm{x})$ がサンプリングされる確率：
-    \begin{equation}
-    P(\bm{x}^*) = |\braket{\bm{x}^*}{\psi}|^2 \times 100 \quad [\%]
-    \end{equation}
-    \item \textbf{一様ランダム比濃縮倍率 ($\mathrm{Boost}$)}: 有効解空間内の一様ランダムサンプリング確率 $P_{\mathrm{uniform}} = 1/|\mathcal{X}|$ に対し，量子干渉によって最適解の測定確率が何倍に増幅（濃縮）されたかを示す無次元比率：
-    \begin{equation}
-    \mathrm{Boost} = \frac{P(\bm{x}^*)}{P_{\mathrm{uniform}}} = P(\bm{x}^*) \times |\mathcal{X}|
-    \label{eq:boost_def}
-    \end{equation}
-    $\mathrm{Boost} > 1.0$ は，アルゴリズムが単なるランダム探索を超えて有意に最適解へ振幅を集中させていることを証明する．
-    \item \textbf{累計損失予算 ($\mathrm{Loss}_T$)}: 1回の実験・シミュレーション費用を $C_{\mathrm{exp}}$（円）としたとき，全 $T$ 回のBBOサイクルにおいて制約違反の無効候補を提案した回数に起因する無駄金：
-    \begin{equation}
-    \mathrm{Loss}_T = C_{\mathrm{exp}} \sum_{t=1}^T \mathbb{I}(\bm{x}^{(t)} \notin \mathcal{X}), \quad \mathbb{I}(\text{条件}) = \begin{cases} 1 & (\text{条件が真}) \\ 0 & (\text{条件が偽}) \end{cases}
-    \end{equation}
-\end{enumerate}
-
-\section{結果と考察 1: 基本スケーリング特性とペナルティ法の破綻 ($N=4 \sim 12$)}
-\label{sec:scaling}
-
-\subsection{スケーリング実測結果}
-表\ref{tab:scaling_results}に，小規模から中規模に至る7段階の問題スケールにおける実測データ（3独立乱数シード平均）を示す．
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{スケーリング実験における各手法の性能比較実測値（3シード平均）}
-\label{tab:scaling_results}
-\vspace{1.5mm}
-\begin{tabularx}{\textwidth}{l c c r r r r r}
-\toprule
-\textbf{スケール} & \textbf{ブロック構成} & \textbf{ビット $N$} & \textbf{全状態数} & \textbf{有効解数} & \textbf{有効解比率} & \multicolumn{2}{c}{\textbf{制約充足率 $R_{\mathrm{feas}}$ (\%)}} \\
-\cmidrule(lr){7-8}
-& & & $2^N$ & $|\mathcal{X}|$ & $|\mathcal{X}|/2^N$ & \textbf{Std QAOA} & \textbf{FM-XY (提案)} \\
-\midrule
-\texttt{N4\_2x2}   & $[2, 2]$          & 4  & 16   & 4  & 25.000\% & 55.5\% & \textbf{100.0\%} \\
-\texttt{N6\_3x3}   & $[3, 3]$          & 6  & 64   & 9  & 14.062\% & 19.8\% & \textbf{100.0\%} \\
-\texttt{N8\_4x4}   & $[4, 4]$          & 8  & 256  & 16 & 6.250\%  & 15.4\% & \textbf{100.0\%} \\
-\texttt{N9\_3x3x3} & $[3, 3, 3]$       & 9  & 512  & 27 & 5.273\%  & 7.6\%  & \textbf{100.0\%} \\
-\texttt{N10\_5x5}  & $[5, 5]$          & 10 & 1024 & 25 & 2.441\%  & 12.7\% & \textbf{100.0\%} \\
-\texttt{N12\_3x4}  & $[3, 3, 3, 3]$    & 12 & 4096 & 81 & 1.978\%  & 6.7\%  & \textbf{100.0\%} \\
-\texttt{N12\_4x3}  & $[4, 4, 4]$       & 12 & 4096 & 64 & 1.562\%  & \textbf{1.6\%}  & \textbf{100.0\%} \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/scaling_feasibility.pdf}
-    \caption{制約充足率の推移}
-    \label{fig:scale_feas}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/scaling_success_prob.pdf}
-    \caption{最適解到達確率 (対数スケール)}
-    \label{fig:scale_opt}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.32\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/scaling_concentration_boost.pdf}
-    \caption{一様有効解比濃縮倍率}
-    \label{fig:scale_boost}
-\end{subfigure}
-\caption{7段階の問題スケールにおける性能スケーリング比較。(a) Standard QAOAは指数関数的に崩壊するが提案手法は数学的必然として100.0\%を完全維持。(b) 最適解到達確率において提案手法はStandard QAOAを最大80倍以上凌駕。(c) 有効解空間内の一様乱数探索を上回る量子濃縮効果を発揮。}
-\label{fig:scaling_summary}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/dist_N6.pdf}
-    \caption{難易度A ($N=6$, 3択 $\times$ 2カテゴリ)}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/dist_N8.pdf}
-    \caption{難易度B ($N=8$, 4択 $\times$ 2カテゴリ)}
-\end{subfigure}
-\caption{全状態サンプリング確率分布の直接比較（$\lambda=5.0$）。Standard QAOA（橙）は大半の確率振幅が無効解（右端領域）へ流出しているのに対し，提案手法（緑）は無効解への流出が厳密にゼロであり，大域的最適解 $\bm{x}^*$（黒枠）に高い振幅が集中している．}
-\label{fig:dist_comparison}
-\end{figure}
-
-\subsection{スケーリング特性に関する数理的考察}
-
-\paragraph{1. Standard QAOAにおけるペナルティ破綻のメカニズム}
-図\ref{fig:scale_feas}および表\ref{tab:scaling_results}に示す通り，Standard QAOAの制約充足率は $N=4$ で $55.5\%$ であったものが，$N=12$（\texttt{N12\_4x3}）ではわずか \textbf{1.6\%} まで激減した．測定サンプルの実に \textbf{98.4\% が制約違反の無効解} である．
-この物理的理由は，標準Xミキサー $H_M = \sum_i X_i$ がヒルベルト空間全体の任意の基底状態間に遷移を引き起こす性質を持つためである．式(\ref{eq:ratio_space})で示したように，$N=12$ では有効解の空間比率はわずか $1.56\%$（4096状態中64状態）に過ぎない．浅い $p=1$ の回路では，ペナルティ項による位相回転 $e^{-i\gamma H_{\mathrm{penalty}}}$ だけでは $98.44\%$ を占める広大な無効解空間への波束の散逸を抑制できず，確率の大部分が無効空間へ漏れ出すことが図\ref{fig:dist_comparison}からも明確に裏付けられる．
-
-\paragraph{2. 提案手法における 100\% 制約保存と 82.7倍の最適解獲得能力}
-対照的に，提案手法 FM-XY-QAOA はすべてのスケールにおいて \textbf{100.0\% の制約充足率を完全に堅持} した．
-さらに，大域的最適解の到達確率（図\ref{fig:scale_opt}）において，$N=12$（\texttt{N12\_4x3}）における Standard QAOA の到達確率が $0.07\%$ であるのに対し，提案手法は \textbf{5.79\%} を達成し，\textbf{82.7倍の圧倒的な探索優位性} を実証した．
-図\ref{fig:dist_comparison}(b)（$N=8$）においては，提案手法の最適解到達率は \textbf{17.97\%} に達し，Standard QAOA（0.20\%）のみならず，古典アニーリング手法である FMQA（15.60\%）をも凌駕する最高到達率を記録した．
-
-\paragraph{3. 量子濃縮倍率の数理的検証}
-図\ref{fig:scale_boost}に示す濃縮倍率 $\mathrm{Boost}$ は，式(\ref{eq:boost_def})に基づき $P(\bm{x}^*) \times |\mathcal{X}|$ で算出される．
-$N=12$（\texttt{N12\_4x3}）において有効解数は $|\mathcal{X}| = 64$ であるため，一様ランダムサンプリング確率は $1/64 = 1.5625\%$ である．提案手法の到達確率 $5.79\%$ は，濃縮倍率にして
-\begin{equation}
-\mathrm{Boost} = \frac{5.79\%}{1.5625\%} \approx 3.71 \quad [\text{倍}]
-\end{equation}
-に相当する．これは，浅い $p=1$ の量子ゲート回路であっても，XY交換相互作用による部分空間内の量子干渉効果によって，有効解空間全体の中から目的関数を最小化する最適基底状態へと確率振幅を有意に集中させていることを論理的に証明している．
-
-\section{結果と考察 2: ペナルティ係数 \texorpdfstring{$\lambda$}{lambda} 依存性と探索ロバスト性}
-\label{sec:lambda_sensitivity}
-
-\subsection{感度分析とBBO探索推移の実測結果}
-ペナルティ係数 $\lambda$ を $0.2$ から $20.0$ まで連続的に変化させたときの制約充足率と最適解到達確率の推移，および10サイクルのBBO探索シミュレーション結果を図\ref{fig:lambda_and_bbo}に示す．
-
-\begin{figure}[htbp]
-\centering
-\begin{subfigure}[b]{0.46\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/lambda_N8.pdf}
-    \caption{難易度B ($N=8$) における $\lambda$ 感度推移}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.46\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/bbo_N8.pdf}
-    \caption{BBO探索ループ推移 ($N=8$)}
-\end{subfigure}
-\caption{(a) FMQA（青）は $\lambda$ の値に応じて制約未充足または局所解トラップに陥り性能が乱高下するが，提案手法（緑水平破線）は $\lambda$ フリー（$\lambda=0$）で常に最高到達率を維持する．(b) 提案手法は制約違反解による評価回数の浪費がゼロでスムーズに最適値に収束する．}
-\label{fig:lambda_and_bbo}
-\end{figure}
-
-\subsection{ペナルティ法のジレンマに関する考察}
-
-\paragraph{1. FMQAにおける $\lambda$ 設定のトレードオフ}
-図\ref{fig:lambda_and_bbo}(a)の実測データより，ペナルティ法を採用する古典アニーリング（FMQA）には不可避のジレンマが存在することが判明した：
-\begin{itemize}
-    \item \textbf{$\lambda$ が小さすぎる領域 ($\lambda \le 1.0$)}: ペナルティの重みが目的関数のスケールに対して相対的に不足し，制約充足率は $0.0\% \sim 1.0\%$ に急落する．アルゴリズムはOne-Hot制約を一切解くことができない．
-    \item \textbf{$\lambda$ が大きすぎる領域 ($\lambda \ge 10.0$)}: 式(\ref{eq:penalty_expansion})で導いたように，全対全の巨大な反発障壁 $+2\lambda$ が形成されるため，マルコフ連鎖モンテカルロのスピン反転が局所エネルギー障壁にトラップされる．最適解到達確率は $\lambda=5.0$ の $44.5\%$ から $\lambda=20.0$ では $8.4\%$ へと壊滅的に激減する．
+    \item \textbf{3. ゲート型提案手法（FM-XY-QAOA）}:
+    ペナルティ項を完全に排除し（$\lambda = 0$），W状態直積 $\bigotimes_{m} \ket{W_{d_m}}$ とブロック直和型XYハミルトニアン $H_M^{\mathrm{XY}}$ により，量子状態を有効部分空間 $\mathcal{H}_{\mathcal{X}}$ 内に物理的に完全拘束する．標準量子OSSである \textbf{Qiskit} の公式フレームワーク（\texttt{qiskit\_algorithms.QAOA}）に完全準拠して実装されている．
 \end{itemize}
 
-\paragraph{2. 提案手法の完全 $\lambda$ フリーによる自律運用の確立}
-提案手法 FM-XY-QAOA はハイパーパラメータ $\lambda$ そのものがアルゴリズム中に存在しない（数学的に恒等的に $\lambda=0$）．
-図\ref{fig:lambda_and_bbo}(a)の緑水平破線に示す通り，事前の $\lambda$ チューニングを一切必要とせず，常に最高の最適解到達率（$17.97\%$）を安定して出力する．
-BBOループではイテレーションごとにサロゲートFMモデルが再学習され，目的関数のスケールやパラメータ分布が激しく変動する．ペナルティ法ではイテレーションごとに $\lambda$ を探索し直すメタ最適化が必須となるが，提案手法はその煩雑な作業を完全に撤廃し，実産業における「無人完全自動BBO」を具現化する．
-
-\section{結果と考察 3: FMQAとの境界領域 (Regime) 切り分け解析}
-\label{sec:regimes}
-
-先行研究の標準的ベースラインである FMQA（Simulated Annealing）に対し，提案手法が原理的優位に立つ物理的・数理的境界を特定するため，過酷な3つの難関設定を設計して性能を切り分けた．
-
-\subsection{境界1: マルチスケール不均衡結合におけるFMQAの完全崩壊}
-実問題の材料探索では，変数の寄与度の差によりブロック間で相互作用の強さが大きく乖離する．ブロック間の結合強度スケール比を 1.0倍 から 20.0倍 に拡大した際の比較結果を図\ref{fig:boundary_multiscale}に示す．
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/multiscale_comp.pdf}
-\caption{マルチスケール不均衡結合における耐性比較．固定ペナルティ $\lambda=5.0$ のFMQA（青）はスケール比10倍以上で制約充足率がゼロへ完全崩壊するが，提案手法（緑）は完全ペナルティフリーのため常に100\%充足と安定サンプリングを維持する．}
-\label{fig:boundary_multiscale}
-\end{figure}
-
-\paragraph{マルチスケール不均衡下での考察}
-固定ペナルティ $\lambda=5.0$ を適用したFMQAは，スケール比が 10.0倍 に達した時点で制約充足率が \textbf{1.7\%}，20.0倍では \textbf{0.0\%} へと完全崩壊した．
-目的関数の結合が局所的に強大化すると，スピン反転の判定において単一の固定 $\lambda$ では相対的なペナルティの高さが負けてしまい，制約違反状態が低エネルギーとして誤認されるためである．
-対照的に，提案手法はミキサー演算子の対称性によって制約を保存しているため，目的関数の結合強度スケール比が20倍に乖離しても \textbf{制約充足率 100.0\% を完全に維持} した．
-
-\subsection{境界2: 欺瞞的局所解 (Deceptive Landscape) とペナルティ障壁}
-大域的最適解 $\bm{x}^*$ の周囲にペナルティ壁を配置し，引力圏の広い魅力的な偽の局所解 $\bm{x}_{\mathrm{loc}}$ を設けた欺瞞的問題における到達率を図\ref{fig:boundary_deceptive}に示す．
-
-\begin{figure}[htbp]
-\centering
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/deceptive_comp.pdf}
-    \caption{欺瞞的ランドスケープでの到達確率}
-    \label{fig:boundary_deceptive}
-\end{subfigure}
-\hfill
-\begin{subfigure}[b]{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{figures/layer_boost.pdf}
-    \caption{レイヤー深度 $p=2$ による量子濃縮ブースト}
-    \label{fig:boundary_layer}
-\end{subfigure}
-\caption{(a) 欺瞞的ランドスケープにおいてFMQAは狭小な $\lambda \approx 5$ 以外で到達率が崩壊するが，提案手法はペナルティ壁の影響を受けず安定到達。(b) レイヤー数 $p=2$ の提案手法は多粒子量子干渉の深化により到達確率が最大50\%超へ跳ね上がる．}
-\label{fig:boundary_figs}
-\end{figure}
-
-\paragraph{ペナルティ障壁のトンネリング抑制に関する考察}
-図\ref{fig:boundary_deceptive}に示す通り，FMQAは $\lambda \le 2.0$ では制約違反（到達率0\%）となり，$\lambda \ge 20.0$ ではペナルティ障壁が高すぎるために極小値間をつなぐ実効的トンネリング結合 $J_{\mathrm{eff}} \propto \Gamma^2 / \lambda$（$\Gamma$ は横磁場強度）が抑制され，到達率が $10\%$ 前後へ急落する．
-これに対し，FM-XY-QAOA は実行可能部分空間内を $S_j^+ S_k^- + S_j^- S_k^+$ によって直接ホッピングするため，部分空間外のペナルティ障壁の影響を全く受けず，$p=1$ で $33.8\%$，$p=2$ で \textbf{40.7\%} という極めて高い到達確率を安定して維持した．
-
-\subsection{境界3: 量子レイヤー深度 $p=2$ による性能跳躍}
-図\ref{fig:boundary_layer}に示す通り，レイヤー数を $p=1 \to p=2$ に深化させると，有効部分空間内での量子多粒子干渉（Feynman経路の建設的干渉）が大幅に強化される．難関インスタンスにおいて最適解到達確率は $20\% \sim 50\%$ 超へと急激に増大し，1000回のアニーリングサンプリングを行うFMQAを明確に上回る量子優位性を発揮することが実証された．
-
-\section{結果と考察 4: 極限スケール探究と解法限界の解明 (\texorpdfstring{$N=12 \sim 24$}{N=12 - 24})}
-\label{sec:extreme_scaling}
-
-状態空間が最大 $1,677$ 万次元（$N=24$）に爆発する極限環境において各解法が示す振る舞いと限界性能の実測結果を表\ref{tab:extreme_scaling}および図\ref{fig:extreme_scale_limit}に示す．
-
-\begin{table}[htbp]
-\centering
-\caption{極限スケールベンチマーク実測結果 ($N=12 \sim 24$)}
-\label{tab:extreme_scaling}
-\vspace{1.5mm}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{ccccccccccc}
+\vspace{-1.5mm}
+\begin{center}
+\captionof{table}{比較評価した3手法の仕様対比}\label{tab:methods}
+\vspace{0.5mm}
+\small
+\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{l p{3.2cm} p{2.8cm} p{2.8cm} X}
 \toprule
-\textbf{スケール} & \textbf{ブロック構成} & \textbf{ビット $N$} & \textbf{全空間 $2^N$} & \textbf{有効解数} & \textbf{有効解比率} & \multicolumn{2}{c}{\textbf{制約充足率 (\%)}} & \multicolumn{3}{c}{\textbf{最適解到達率 (\%)}} \\
-\cmidrule(lr){7-8} \cmidrule(lr){9-11}
-& & & & $|\mathcal{X}|$ & $|\mathcal{X}|/2^N$ & FMQA & Std / \textbf{XY (提案)} & FMQA & Std QAOA & \textbf{FM-XY (一様比)} \\
+\textbf{手法名} & \textbf{ソルバー種別} & \textbf{制約の扱い} & \textbf{初期状態 $\ket{\psi_0}$} & \textbf{探索機構 / ミキサー} \\
 \midrule
-N12\_3x4 & $[3,3,3,3]$ & 12 & 4,096 & 81 & 1.978\% & 100.0\% & 1.86\% / \textbf{100.0\%} & 13.80\% & 0.000\% & \textbf{1.07\%} (0.9x) \\
-N14\_4x2\_3x2 & $[4,4,3,3]$ & 14 & 16,384 & 144 & 0.879\% & 100.0\% & 1.46\% / \textbf{100.0\%} & 9.20\% & 0.000\% & \textbf{2.15\%} (\textbf{3.1x}) \\
-N16\_4x4 & $[4,4,4,4]$ & 16 & 65,536 & 256 & 0.391\% & 100.0\% & 0.49\% / \textbf{100.0\%} & 8.30\% & 0.000\% & \textbf{0.39\%} (1.0x) \\
-N18\_4x3\_3x2 & $[4,4,4,3,3]$ & 18 & 262,144 & 576 & 0.220\% & 100.0\% & 0.10\% / \textbf{100.0\%} & 7.70\% & 0.000\% & \textbf{0.20\%} (1.1x) \\
-N20\_4x5 & $[4,4,4,4,4]$ & 20 & 1,048,576 & 1,024 & 0.098\% & 100.0\% & 0.10\% / \textbf{100.0\%} & 5.40\% & 0.000\% & \textbf{近傍解獲得} \\
-N22\_4x4\_3x2 & $[4,4,4,4,3,3]$ & 22 & 4,194,304 & 2,304 & 0.055\% & 100.0\% & 破綻 / \textbf{100.0\%} & 9.00\% & 0.000\% & \textbf{近傍解獲得} \\
-N24\_4x6 & $[4,4,4,4,4,4]$ & 24 & \textbf{16,777,216} & 4,096 & \textbf{0.024\%} & 100.0\% & 破綻 / \textbf{100.0\%} & 6.40\% & 0.000\% & \textbf{0.098\%} (\textbf{4.0x}) \\
+\textbf{1. FMQA} & 擬似アニーリング (\texttt{neal}) & $\lambda = 5.0$ (ペナルティ法) & 古典ランダム二値列 & 連続マルコフ連鎖モンテカルロ \\
+\textbf{2. Standard QAOA} & ゲート型QAOA (\texttt{Aer}) & $\lambda = 5.0$ (ペナルティ法) & 一様重ね合わせ $\ket{+}^{\otimes N}$ & 横磁場ミキサー $H_M = \sum_i X_i$ \\
+\textbf{3. FM-XY (提案)} & ゲート型QAOA (\texttt{Aer}) & \textbf{$\lambda = 0$ (完全フリー)} & W状態直積 $\bigotimes \ket{W_{d_m}}$ & ブロック直和型XYミキサー \\
 \bottomrule
-\end{tabular}
-}
-\end{table}
+\end{tabularx}
+\end{center}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.92\textwidth]{figures/extreme_scale_limit.pdf}
-\caption{極限スケール ($N=12 \sim 24$) における性能推移。(a) Standard QAOAは有効解比率の減少に伴い制約充足率がゼロに墜落するが，提案手法は 100.0\% を完全維持。(b) 状態空間が 1,677万次元に爆発し有効解が 0.024\%（約4000個に1個）に極小化しても，提案手法は一様ランダム比4.0倍の量子濃縮を発揮して真の最適値に到達する．}
-\label{fig:extreme_scale_limit}
-\end{figure}
+\clearpage
 
-\subsection{極限スケールにおける解法限界の考察}
+% ==============================================================================
+% PAGE 2: Qiskit公式スケーリング実測と計算・メモリ限界
+% ==============================================================================
+\section{Qiskit公式OSSによるスケーリング実測と計算・メモリ限界 ($N=4 \sim 24$)}
+\label{sec:result_scaling}
 
-\paragraph{1. Standard QAOAのアルゴリズム的死 ($N \ge 16$)}
-実測データ（表\ref{tab:extreme_scaling}）から明らかなように，Standard QAOAは有効解比率が $1\%$ を下回る $N \ge 12$ において充足率が $1.86\%$ 以下に崩壊し，$N=16$（有効解比率 $0.391\%$）では充足率 $0.49\%$，最適解到達率は厳密に $0.0000\%$ となった．
-$N \ge 16$ において Standard QAOA は解探索アルゴリズムとしての機能を完全に喪失（アルゴリズム的死）しており，中大規模のOne-Hot制約付き最適化に標準Xミキサーを用いることは根本的に不可能であると結論づけられる．
-
-\paragraph{2. 提案手法の極限耐性と 4.0倍の量子濃縮}
-これに対し，提案手法 FM-XY-QAOA は，全状態空間 $2^{24} = 16,777,216$ 通りに対して有効解がわずか $4,096$ 通り（$0.024\%$，約4,095個に1個の極小多様体）しか存在しない $N=24$ の超極限設定においても，\textbf{制約充足率 100.0\% を完全堅持} した．
-さらに，浅い $p=1$ 回路でありながら，有効解内の一様ランダムサンプリング確率 $P_{\mathrm{uniform}} = 1/4096 \approx 0.0244\%$ に対し，到達確率 $0.0977\%$（\textbf{4.0倍の量子濃縮}）を記録し，真の大域的最適解（エネルギー $-8.2339$）をピンポイントで引き当てることに成功した．
-
-\paragraph{3. 古典シミュレータの物理限界（メモリ壁）と実機ゲート効率}
-本実験において，Mac CPU上の Qiskit Aer 状態ベクトルシミュレータを用いた $N=24$（複素振幅 $2^{24} \times 16\text{ byte} = 256\text{ MB}$）の反復最適化（15ステップ）の総計算時間は \textbf{51.38秒} を要した．$N=26$（1GB）では1回の回路評価に約30秒を要し，$N \ge 28$（4GB以上）は古典計算機のメモリ壁となる．
-一方，提案手法が要求するリングXYミキサーの2量子ビットゲート総数は，各ブロックあたり $d_m$ 個，全ブロック合計で $\sum_{m=1}^M d_m = N$ 個に過ぎない．$N=24$ の場合でもわずか \textbf{24個の2量子ビットゲート} で構成でき，近年の100+量子ビットNISQ実機において余裕を持って物理実行可能な卓越したゲート効率を持つ．
-
-\section{結果と考察 5: 産業材料探索実証と損失予算解析 (\texorpdfstring{$N=16$}{N=16})}
-\label{sec:practical_deployment}
-
-\subsection{多元触媒探索ケーススタディの設定と実測結果}
-現実の触媒材料探索実務（Kitai et al., 2020 \cite{kitai2020designing} 等）を模した検証として，4サイト $\times$ 4元素の多元触媒組成探索問題（$N=16$，全空間 $65,536$ 通り，有効解数 $4^4 = 256$ 通り，有効解比率 $0.3906\%$）を構築した．
-実験・第一原理計算コストを 1回あたり \textbf{10万円}，BBO探索サイクル数を15回（総実験予算150万円相当）と設定し，制約違反候補を提案した場合は「合成不能またはシミュレーションクラッシュ」として10万円が即座にドブに捨てられる経済的損失シミュレーションを実施した．
-実測結果を図\ref{fig:practical_cost}に示す．
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/practical_bbo_cost.pdf}
-\caption{4サイト $\times$ 4元素多元材料探索（$N=16$, 6.5万通り）におけるBBO実証結果。(a) 歴代最良材料のエネルギー推移。(b) 無効解提案による実験失敗回数と損失予算の累積推移。Standard QAOAは14回連続で合成不能（140万円の損失）となり探索破綻するが，提案手法は15回中15回すべてで有効材料を提案し，損失ゼロ（0円）で最適材料へ到達した．}
-\label{fig:practical_cost}
-\end{figure}
-
-\subsection{材料探索能動ループと経済損失に関する考察}
-
-\paragraph{1. Standard QAOAの産業的完全破綻}
-図\ref{fig:practical_cost}(b)に示す通り，Standard QAOAは有効解比率が $0.39\%$ にまで希薄化した空間において，15サイクルのうち \textbf{14回で制約違反（合成不能解）を提案} した．
-累計損失予算は \textbf{140万円（予算の93.3\%のドブ捨て）} に達し，得られた材料物性値は初期ランダムサンプルの水準から一度も改善できずに探索が破綻した．1回の失敗が数十万円〜数百万円の損失となる産業現場において，制約違反率が9割を超えるペナルティ法アルゴリズムの採用は論外である．
-
-\paragraph{2. FMQAの限界（極小値への過剰トラップ）}
-古典アニーリング手法である FMQA は $\lambda=5.0$ の設定により制約自体は満たしたものの，Cycle 1, 4, 5, 7, 9, 13 において \textbf{全く同一の材料（予測エネルギー -12.17）を重複サンプリング} した．同一解の再評価に貴重な実験予算が消費され，新しい化学空間を開拓（Exploration）する能力が著しく阻害されている．
-
-\paragraph{3. 提案手法の損失予算ゼロ達成}
-提案手法 FM-XY-QAOA は，ハミング重み保存則により \textbf{15回の探索すべてにおいて100.0\% 有効な材料構造のみを提案} した．
-無駄になった実験回数は \textbf{0回（損失予算0円）} であり，投じた150万円の全予算が有効な物性データとしてサロゲートFMモデルの学習に寄与した．結果としてスムーズに真の大域的最適材料へ収束した．
-
-\section{結果と考察 6: NISQハードウェアコンパイル負荷解析}
-\label{sec:hardware}
-
-\subsection{2量子ビットゲート負荷の実測比較}
-$N=16$（4サイト $\times$ 4元素）におけるNISQプロセッサ上の2量子ビットゲート負荷の比較を図\ref{fig:practical_hardware}に示す．
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.55\textwidth]{figures/practical_bbo_hardware.pdf}
-\caption{NISQハードウェアにおける2量子ビットゲート負荷の比較 ($N=16$)。Standard QAOAは各ブロック内の全対全結合により24個のペナルティ $ZZ$ ゲートを強いられるが，提案手法はペナルティゲートが完全消滅（ゼロ）であり，最近接リングXYミキサー（16ゲート）のみで極めて浅い回路を実現する．}
-\label{fig:practical_hardware}
-\end{figure}
-
-\subsection{ハードウェア実装効率の数理解析}
-
-\paragraph{1. ペナルティ $ZZ$ ゲートの爆発的オーバーヘッド}
-Standard QAOAでは，式(\ref{eq:penalty_expansion})で導出した通り，各ブロック $m$ において $\binom{d_m}{2}$ 個の反発結合 $+2\lambda x_{m, j} x_{m, k}$ を回路として実装しなければならない．
-4サイト $\times$ 4元素（$d_m=4, M=4$）の場合，ペナルティ項だけで
-\begin{equation}
-N_{\mathrm{gate}}^{\mathrm{penalty}} = M \times \binom{d_m}{2} = 4 \times \frac{4 \times 3}{2} = 4 \times 6 = 24 \quad [\text{個}]
-\end{equation}
-の全対全 $ZZ$ ゲートが不可避となる．近接格子結合しか持たない超伝導量子チップ上では，非近接量子ビット間の結合に多数のSWAPゲート（1つのSWAPあたり3個のCNOT）が挿入され，回路深度とゲートエラーが致命的に増大する．
-
-\paragraph{2. 提案手法におけるペナルティゲートの完全消滅}
-提案手法 FM-XY-QAOA では，ペナルティ項そのものが存在しないため，\textbf{ペナルティ $ZZ$ ゲート数は厳密に 0 個（完全消滅）} となる．
-さらに，ブロック直和XYミキサーは完全結合ではなく最近接リングトポロジー（$1-2-3-4-1$）を採用することで，各ブロック $d_m$ 個，4ブロック全体でわずか
-\begin{equation}
-N_{\mathrm{gate}}^{\mathrm{XY}} = M \times d_m = 4 \times 4 = 16 \quad [\text{個}]
-\end{equation}
-の $XX+YY$ ゲートのみで十分な部分空間探索を担保できる．
-超伝導トランスモンやリュードベリ原子系において，励起交換相互作用 $R_{XX+YY}(\theta)$ はネイティブゲート（iSWAP / fSim）として物理的に直接駆動可能であり，SWAPゲートのオーバーヘッドを伴わない．
-
-\section{総合考察: 産業実務投入に向けた4大提言と結論}
-\label{sec:conclusion}
-
-本研究で得られた定量的実証結果および数理的知見を統合し，FM-XY-QAOA を実産業の材料・創薬BBOパイプラインに投入するための \textbf{「4大提言」} をまとめる：
-
-\begin{summarybox}[産業実務投入を決定づける4大提言]
-\begin{enumerate}\setlength{\itemsep}{2pt}
-    \item \textbf{高額な実験予算の完全保全（無効解提案ゼロ）}:
-    ウェットラボでの合成実験や大規模第一原理計算（DFT）において，1回の失敗コスト（数十万円，数日）を100\%回避．全探索予算を新材料・高活性分子のデータ獲得に完全集中できる．
-    \item \textbf{BBOプロセスの完全無人自律化（ハイパーパラメータ $\lambda$ 完全ゼロ）}:
-    サロゲートFMモデルのオンライン再学習によって目的関数のスケールが激しく変動しても，ペナルティ再調整の手間が皆無であり，無人で自律探索ループを回し続けられる．
-    \item \textbf{NISQ実機への卓越した親和性（ペナルティ $ZZ$ 全廃と浅い回路深度）}:
-    高密度な全対全ペナルティ相互作用（24ゲート）を完全に撤廃し，物理的にネイティブなリングXY相互作用（16ゲート）のみを用いるため，近未来のNISQ実機でもノイズ耐性の高い浅い回路で実行可能である．
-    \item \textbf{量子干渉による多様な並列バッチ提案能力}:
-    古典アニーリングのように同一の局所解に固執することなく，量子多粒子干渉（$p=2$）により，同時に複数の有望な材料候補を並列合成・並列計算ラインへ供給できる．
-\end{enumerate}
-\end{summarybox}
-
-\paragraph{結論}
-本報告書では，One-Hot制約付き実産業ブラックボックス最適化において，従来のペナルティ法（Standard QAOA）が抱えるスケーリング崩壊（$N \ge 12$ での制約充足率 1.6\% への墜落，140万円の実験予算浪費）を解明した．
-そして，提案手法 FM-XY-QAOA が，数学的必然として \textbf{全スケールで 100.0\% 制約を厳密保存（損失予算ゼロ）} し，極限 $N=24$（1,677万状態）においても一様乱数比4.0倍の量子濃縮効果を発揮して真の最適解を獲得できることを実証した．
-ペナルティ項全廃によるNISQゲート数削減と無人自律化の達成により，本手法は材料科学・創薬などの高コスト産業BBOを革新する極めて強力かつ実用的な量子古典ハイブリッド基盤技術であると結論づけられる．
+量子コンピューティングの標準OSSである \textbf{Qiskit}（\texttt{qiskit\_algorithms.QAOA}）の公式フレームワークを用い，全6段階（$N=4 \sim 24$，最大 $1.68 \times 10^7$ 次元）における完全実測ベンチマークを実施した．
 
 \vspace{-1mm}
-{\small
-\begin{thebibliography}{99}\setlength{\itemsep}{-1pt}
-\bibitem{kitai2020designing}
-K.~Kitai, J.~Guo, S.~Ju, S.~Tanaka, K.~Tsuda, J.~Shiomi, and R.~Tamura,
-``Designing metamaterials with quantum annealing and factorization machines,''
-\textit{Physical Review Research}, vol.~2, no.~1, p.~013319, 2020.
+\begin{center}
+\includegraphics[width=0.92\textwidth]{figures/extreme_scale_limit.pdf}
+\vspace{-2.5mm}
+\captionof{figure}{Qiskit公式OSS実装によるスケーリング実測とメモリ限界推移。(a) Standard QAOAは $N \ge 16$ で充足率が 0\% へ死滅するが，提案手法は全域で 100.0\% を完全堅持。(b) Qiskitシミュレーション実行時間推移。(c) 状態ベクトル理論RAM使用量（赤実線）と有効部分空間RAM（緑破線）の対比。手元PC（16〜32GB）では $N=24$ (268MB) が実用限界である．大容量計算サーバー（128GB RAM）を活用する場合，古典状態ベクトルの絶対到達可能境界は $N=32$ (68.7GB) となる（$N \ge 33$ で128GBサーバーでもOOM）。一方，FMQA原著論文スケール $N=60$ は 18.4 EB に達し古典全状態保持は原理的に不可能となる．}
+\label{fig:extreme_scale_limit}
+\end{center}
 
-\bibitem{hadfield2019quantum}
-S.~Hadfield, Z.~Wang, B.~O'Gorman, E.~G.~Rieffel, D.~Venturelli, and R.~Biswas,
-``From the quantum approximate optimization algorithm to a quantum alternating operator ansatz,''
-\textit{Algorithms}, vol.~12, no.~2, p.~34, 2019.
+\vspace{-2mm}
+\begin{center}
+\captionof{table}{Qiskit公式OSSフレームワークによる実測性能と理論メモリ所要量の推移}
+\label{tab:extreme_scaling}
+\vspace{1mm}
+\scriptsize
+\setlength{\tabcolsep}{3.6pt}
+\begin{tabular}{l c r r r c c r}
+\toprule
+\textbf{規模} & \textbf{構成} & \textbf{全空間 $2^N$} & \textbf{全状態RAM} & \textbf{部分空間RAM} & \multicolumn{2}{c}{\textbf{制約充足率 (\%)}} & \textbf{Qiskit時間} \\
+\cmidrule(lr){6-7}
+& & & ($2^N \times 16$B) & ($|\mathcal{X}| \times 16$B) & \textbf{Std QAOA} & \textbf{FM-XY (提案)} & \textbf{(手元実測)} \\
+\midrule
+\texttt{N4\_4x1}   & $[4]$         & 16                  & 256 B    & 64 B        & 11.3\%          & \textbf{100.0\%} & \textbf{0.04 秒} \\
+\texttt{N8\_4x2}   & $[4,4]$       & 256                 & 4.0 KB   & 256 B       & 4.4\%           & \textbf{100.0\%} & \textbf{0.07 秒} \\
+\texttt{N12\_4x3}  & $[4\times 3]$ & 4,096               & 64.0 KB  & 1.0 KB      & 1.9\%           & \textbf{100.0\%} & \textbf{0.13 秒} \\
+\texttt{N16\_4x4}  & $[4\times 4]$ & 65,536              & 1.05 MB  & 4.1 KB      & 0.3\%           & \textbf{100.0\%} & \textbf{0.36 秒} \\
+\texttt{N20\_4x5}  & $[4\times 5]$ & 1,048,576           & 16.78 MB & 16.4 KB     & 0.1\%           & \textbf{100.0\%} & \textbf{2.93 秒} \\
+\texttt{N24\_4x6}  & $[4\times 6]$ & 16,777,216          & 268.4 MB & 65.5 KB     & \textbf{0.0\% (破綻)} & \textbf{100.0\%} & \textbf{34.29 秒} \\
+\midrule
+\multicolumn{8}{p{16.8cm}}{\scriptsize ※ 理論RAM限界: $N=28$ (4.29 GB: 一般PC限界), $N=32$ (\textbf{68.72 GB: 128GBサーバー上限境界}), $N=33$ (\textbf{137.4 GB: 128GBサーバー超過・OOM}), $N=60$ (\textbf{18.44 EB: 人類全ストレージ超過})} \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-\bibitem{farhi2014quantum}
-E.~Farhi, J.~Goldstone, and S.~Gutmann,
-``A quantum approximate optimization algorithm,''
-\textit{arXiv preprint arXiv:1411.4028}, 2014.
+\vspace{-1.5mm}
+\paragraph{本実験から得られた核心的知見：}
+\begin{enumerate}\setlength{\itemsep}{1.5pt}
+    \item \textbf{Qiskit公式OSS上での 100.0\% 制約充足の完全実証}:
+    Standard QAOAは $N \ge 16$ で充足率が 0.3\% $\to$ 0.0\% へと激減しアルゴリズムとして完全に死滅するが，提案手法は全域（$N=4 \sim 24$）において \textbf{制約充足率 100.0\% を完全堅持} した．
+    \item \textbf{古典シミュレータの物理限界（手元PC限界 $N=24$，128GBサーバー限界 $N=32$）}:
+    全状態ベクトルの保持には $2^N \times 16\text{ B}$ が必要であり，手元PC（16〜32GB）では $N=24$ (268MB) が実用実測の限界となる．128GB RAM搭載の計算サーバーを活用した場合でも，古典状態ベクトルシミュレーションの絶対到達限界は $N=32$ (68.7GB) であり，$N \ge 33$（137.4GB以上）ではサーバー環境であってもOOMクラッシュに至る．
+    \item \textbf{先行研究FMQA原著論文（$N=60$）との本質的相違}:
+    FMQAの $N=60$ は全状態保持に \textbf{18.4 EB（エクサバイト）} を要し，128GBサーバー約1.4億台分に相当するため古典全状態保持は原理的に不可能である．FMQAが $N=60$ を扱えたのは物理スピン系（D-Waveアニーリング実機）だからであり，ゲート型シミュレーションとは根本的な計算パラダイムが異なる．
+\end{enumerate}
 
-\bibitem{rendle2010factorization}
-S.~Rendle,
-``Factorization machines,''
-in \textit{2010 IEEE International Conference on Data Mining}, pp.~995--1000, 2010.
+\clearpage
+
+% ==============================================================================
+% PAGE 3: FMQAにおけるペナルティ係数の挙動解明
+% ==============================================================================
+\section{FMQAにおけるペナルティ係数 $\lambda$ の挙動解明とペナルティジレンマ}
+\label{sec:result_lambda}
+
+先行研究 FMQA（量子アニーリング / SA）において，One-Hot制約項のペナルティ係数 $\lambda$ が探索性能に与える影響を解明するため，$\lambda \in [0.1, 100.0]$ にわたる網羅的スイープ実測（$N=8 \sim 20$），およびBBOサイクル進行に伴う目的関数スケール変動実験（$N=12$）を実施した．
+
+\vspace{-1mm}
+\begin{center}
+\begin{minipage}{0.485\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/fmqa_penalty_sweep_4panel.pdf}
+    \vspace{-1mm}
+    {\footnotesize (a) FMQAペナルティスイープ実測 ($N=8 \sim 20$)}
+\end{minipage}
+\hfill
+\begin{minipage}{0.485\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/fmqa_lambda_vs_obj_scale.pdf}
+    \vspace{-1mm}
+    {\footnotesize (b) 目的関数スケール変動と最適 $\lambda$ シフト ($N=12$)}
+\end{minipage}
+\vspace{1mm}
+\captionof{figure}{FMQAにおけるペナルティ係数 $\lambda$ の挙動特性。(a) 過小ペナルティ（$\lambda < 1.0$）での制約崩壊，および過大ペナルティ（$\lambda \ge 20$）での最適解到達率急落。(b) 目的関数の結合が強くなると最適 $\lambda$ が右へシフトし，固定運用（$\lambda=5.0$）は破綻する．}
+\label{fig:fmqa_lambda_all}
+\end{center}
+
+\vspace{-1mm}
+\paragraph{実験結果から判明した「ペナルティジレンマ」と固定運用の限界：}
+\begin{enumerate}\setlength{\itemsep}{2.5pt}
+    \item \textbf{過小ペナルティ域での制約完全崩壊（Feasibility Collapse：$\lambda < 1.0 \sim 2.0$）}:
+    $\lambda \le 0.5$ では全スケールで制約充足率が \textbf{0.0\%}（全サンプルが制約違反ゴミ解）となる．変数の増大に伴い目的関数の相互作用総和が $O(N^2)$ で増大するため，制約充足に必要な最小 $\lambda$ の閾値が右（大）へシフトする（$N=16$ では $\lambda=2.0$ でも充足率 71.1\% にとどまる）．
+
+    \item \textbf{過大ペナルティ域での一様ランダム化（Random Degeneration：$\lambda \ge 20$）}:
+    $\lambda$ を過剰に大きくすると制約充足率は100\%に達するが，目的関数のエネルギー差がペナルティ項に圧倒されて微小化し，最適解到達確率が一様ランダム水準まで暴落する（$N=12$ で 87.5\% $\to$ 1.9\%）．
+
+    \item \textbf{BBO実務における固定ペナルティ運用の致命的破綻}:
+    BBOではサロゲートモデル（FM）の逐次更新に伴い，目的関数の重みスケールが刻々と変動する．従来のBBOで一般的な「固定 $\lambda=5.0$」を採用した場合，モデル重みが大きくなった局面（$10\times$）では制約充足率が \textbf{0.0\%} となり探索が停止する．
+
+    \item \textbf{FM-XY-QAOA の Zero-Tuning 圧倒的頑健性}:
+    提案手法は $\lambda$ というハイパーパラメータ自体が存在しないため，目的関数のスケールがどのように変動しようと，\textbf{常に制約充足率 100.0\% を完全堅持} し，一切の手動調整なしで完全自律的なBBOループを実行できる．
+\end{enumerate}
+
+\clearpage
+
+\section{産業材料探索BBO実証と経済的価値 ($N=16$)}
+\label{sec:result_practical}
+
+\vspace{-1.5mm}
+\paragraph{取り扱ったBB関数（多元触媒組成探索のグラウンドトゥルース）：}
+本実証では，4サイト $\times$ 4元素の多元触媒組成探索（$N=16$，全空間 65,536 通り，有効解 256 通り）を対象とした．真の実験評価値を与えるBB関数 $f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x}$ は，単一元素の基礎化学ポテンシャル $Q_{ii} \in [-2.0, 1.0]$ とサイト間相互作用 $Q_{ij}$ からなる二次結合行列として定義した．特に，特定サイト間に通常の5〜8倍の強力な協同触媒シナジー結合（$Q_{ij} \in [-6.0, 2.0]$）を導入し，特定元素ペアの結合でエネルギーが急降下する実材料の複雑な非線形ランドスケープを模倣している．
+
+実験1回あたり10万円，15サイクルのBBO探索（総予算150万円）を実行した経済損失シミュレーション結果を図\ref{fig:practical_cost}および表\ref{tab:practical_cost}に示す．
+
+\vspace{-2mm}
+\begin{center}
+\includegraphics[width=0.76\textwidth]{figures/practical_bbo_cost.pdf}
+\vspace{-2.5mm}
+\captionof{figure}{多元材料探索（$N=16$, 6.5万通り）におけるBBO実証結果。(a) 歴代最良材料の推移。(b) 実験失敗回数と損失予算の累積推移。Standard QAOAは14回失敗（140万円浪費）で破綻するが，提案手法は損失ゼロ（0円）で最良材料へ最速到達．}
+\label{fig:practical_cost}
+\end{center}
+
+\vspace{-3mm}
+\begin{center}
+\captionof{table}{15サイクルの多元材料探索BBOにおける経済損失・探索性能の直接対比}
+\label{tab:practical_cost}
+\vspace{0.5mm}
+\small
+\renewcommand{\arraystretch}{0.92}
+\begin{tabularx}{\textwidth}{l c c c X}
+\toprule
+\textbf{手法名} & \textbf{実験失敗回数} & \textbf{ドブに捨てた累計損失額} & \textbf{サンプリング重複} & \textbf{探索結果} \\
+\midrule
+\textbf{Standard QAOA} & \textbf{14 回 / 15回中} & \textbf{140 万円 (予算の93.3\%)} & 評価不能 & 初期値から改善ゼロ（探索破綻） \\
+\textbf{FMQA (アニーリング)} & 0 回 & 0 円 & \textbf{6 回重複} & 局所解で足踏み（探索停滞） \\
+\textbf{FM-XY (提案手法)} & \textbf{0 回 (失敗ゼロ)} & \textbf{0 円 (全予算保全)} & \textbf{0 回 (高多様性)} & \textbf{最速で真の大域的最適材料へ到達} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{-2mm}
+\paragraph{本実証から得られた産業的価値：}
+\begin{enumerate}\setlength{\itemsep}{1pt}
+    \item \textbf{高額実験予算の完全保全（損失予算 0 円）}:
+    1回の評価コストが高価なウェットラボ実験において，Standard QAOAは15回中14回無効配合を提案して140万円をドブに捨てたが，提案手法は15回中15回すべて有効材料を提案し，\textbf{実験失敗損失 0 円（全予算150万円を100\%有効活用）} を達成した．
+
+    \item \textbf{FMQAの探索停滞（局所解重複トラップ）の打破}:
+    FMQAはアニーリングの物理的緩和特性により同一解を6回も重複サンプリングして実験機会を浪費したが，提案手法は多粒子量子干渉により多様な化学空間を開拓し，最速で大域最適材料へ収束した．
+
+    \item \textbf{NISQハードウェア親和性と浅い回路}:
+    ペナルティ相互作用を完全に撤廃したことで，Standard QAOAで必要だった24個の全対全 $ZZ$ ゲートが \textbf{完全消滅（0個）} し，最近接リングXYミキサー（16ゲート）のみで実装可能となった．実機における回路深さを大幅に削減し，NISQノイズ耐性を飛躍的に高めている．
+\end{enumerate}
+
+\clearpage
+
+% ==============================================================================
+% PAGE 5: 技術的課題の克服と総合考察
+% ==============================================================================
+\section{技術的課題の克服・総合考察・まとめ}
+\label{sec:summary}
+
+\vspace{-1mm}
+\paragraph{1. 開発過程で直面した技術的課題と克服記録（うまくいかなかったこと）：}
+\begin{itemize}\setlength{\itemsep}{1.5pt}
+    \item \textbf{古典シミュレータにおけるメモリ爆発（$N \ge 28$ での $2^N$ 限界と128GBサーバー上限）}:
+    QiskitのStatevectorシミュレータで $N \ge 28$ を試行した際，理論所要メモリが $N=28$ で 4.3 GB，$N=32$ で 68.7 GB へと指数爆発し，手元PC（16〜32GB）で \texttt{OOM Killer} による強制終了が発生した．大容量128GB RAMサーバーを活用すれば $N=32$ まではシミュレーション可能境界となるが，$N \ge 33$ (137.4GB) でサーバー環境でも物理メモリ枯渇する．
+    $\to$ \textbf{打開策}: 独自コードに逃げず \textbf{Qiskit公式フレームワーク（\texttt{qiskit\_algorithms.QAOA}）を堅持} し，手元PC環境での厳密実測の対象を $N \le 24$（1,677万次元, 268MB）と誠実に定義して完全実証を遂行した．
+
+    \item \textbf{Standard QAOAのアルゴリズム的死滅}:
+    横磁場ミキサーでは有効解比率の指数縮小に伴い $N \ge 16$ で有効解が全く得られなくなった．
+    $\to$ \textbf{打開策}: ブロック直和XYミキサーを導入し，状態ベクトルをOne-Hot部分空間内に完全拘束することで 100.0\% 充足を達成した．
+
+    \item \textbf{FMQAにおけるペナルティ調整の破綻}:
+    BBOループでの目的関数重み変動により，固定 $\lambda$ では探索停止や性能低下が不可避となった．
+    $\to$ \textbf{打開策}: ペナルティ項不要（Zero-Tuning）な提案手法により，完全無人での自律BBOループを確立した．
+\end{itemize}
+
+\vspace{-1mm}
+\begin{center}
+\captionof{table}{本研究で得られた定量的評価の総合対比マトリクス}
+\label{tab:final_summary}
+\vspace{1mm}
+\footnotesize
+\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}p{3.8cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{評価軸} & \textbf{Standard QAOA} & \textbf{FMQA (量子アニーリング)} & \textbf{FM-XY-QAOA (本提案手法)} \\
+\midrule
+\textbf{実装・基盤} & Qiskit公式 (\texttt{qiskit\_algorithms}) & D-Wave実機 / SA (\texttt{neal}) & \textbf{Qiskit公式 (\texttt{qiskit\_algorithms})} \\
+\textbf{制約充足率} & $N \ge 16$ で $0.3\% \to 0\%$ へ死滅 & 小〜中規模でも 15〜30\% 違反 & \textbf{Qiskit上で全域 100.0\% 完全堅持} \\
+\textbf{最適解探索能力} & 到達率 $0.00\%$（探索破綻） & 局所解重複トラップ & \textbf{最大82.7倍凌駕 / 4.0倍量子濃縮} \\
+\textbf{ハイパーパラメータ} & $\lambda$ 調整が必要 & $\lambda$ 調整失敗で制約崩壊 & \textbf{$\lambda=0$ (完全パラメータフリー)} \\
+\textbf{BBO経済損失} & 15回中14回失敗 (140万円損) & 局所解重複で足踏み & \textbf{損失 0 円（失敗回数 0 回・全予算保全）} \\
+\textbf{Qiskit計算時間} & $N=20$ で 4.62秒 ($N=24$ 破綻) & $0.05 \sim 0.32$ 秒 & \textbf{$N=16$ で 0.36秒 / $N=20$ で 2.93秒} \\
+\textbf{NISQゲート負荷} & ペナルティ $ZZ$ 24ゲート & 疎結合チェーン切断リスク & \textbf{ペナルティ 0 ゲート / リング 16 ゲート} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{-2mm}
+\paragraph{2. BBOにおけるゲート型QAOAの真の立ち位置と産業応用への提言：}
+変数の絶対数ではアニーリング（数百変数）や古典手法（数千変数）に及ばないゲート型QAOAであるが，本実証により\textbf{「1回数百万円を要する超高コストな精密探索段階（$N \le 20$）において，制約違反による実験予算廃棄を完全にゼロにし，パラメータ調整レスで確実に有望候補を出力する高信頼サンプラー」} という唯一無二の確固たる存在意義が確立された．産業実務においては，第1段階（粗スクリーニング）にアニーリングや古典手法を用い，最終選抜（精密探索）に本提案手法を用いる二段階ハイブリッドBBOモデルを提言する．今後は超伝導量子プロセッサ（IBM Quantum / Fujitsu QPU）での実機検証を推進する．
+
+\vspace{1mm}
+{\scriptsize
+\begin{thebibliography}{9}\setlength{\itemsep}{-2pt}
+\bibitem{kitai2020} K.~Kitai, et al., ``Designing metamaterials with quantum annealing and factorization machines,'' \textit{Phys. Rev. Research}, 2, 013319 (2020).
+\bibitem{hadfield2019} S.~Hadfield, et al., ``From the QAOA to a quantum alternating operator ansatz,'' \textit{Algorithms}, 12(2), 34 (2019).
+\bibitem{farhi2014} E.~Farhi, et al., ``A quantum approximate optimization algorithm,'' \textit{arXiv:1411.4028} (2014).
 \end{thebibliography}
 }
 
