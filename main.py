@@ -32,8 +32,10 @@ def main():
     import matplotlib.pyplot as plt
     import yaml
 
-    # config.yaml から設定を読み込む
-    with open("config.yaml", "r", encoding="utf-8") as f:
+    # config.yaml から設定を読み込む (カレントディレクトリに依存しない絶対パス解決)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(base_dir, "config.yaml")
+    with open(config_path, "r", encoding="utf-8") as f:
         config = yaml.safe_load(f)
 
     # シードの固定
