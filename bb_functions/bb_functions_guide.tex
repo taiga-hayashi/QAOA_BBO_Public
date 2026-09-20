@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{top=16mm,bottom=16mm,left=16mm,right=16mm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{../report/figures/}{../report/figures/basic_scaling/}{../report/figures/penalty_sensitivity/}{../report/figures/landscape_and_depth/}{../report/figures/large_scale_and_enhancement/}{../report/figures/practical_materials_bbo/}}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\tcbuselibrary{skins,breakable}
+\tcbset{
+    mybox/.style={
+        enhanced,
+        colback=blue!3!white,
+        colframe=blue!65!black,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.5pt,
+        arc=1.2mm,
+        left=2.5mm,right=2.5mm,top=2mm,bottom=2mm
+    },
+    alertbox/.style={
+        enhanced,
+        colback=red!3!white,
+        colframe=red!65!black,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.5pt,
+        arc=1.2mm,
+        left=2.5mm,right=2.5mm,top=2mm,bottom=2mm
+    },
+    keybox/.style={
+        enhanced,
+        colback=green!3!white,
+        colframe=green!50!black,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.5pt,
+        arc=1.2mm,
+        left=2.5mm,right=2.5mm,top=2mm,bottom=2mm
+    }
+}
+
+\newtcolorbox{mybox}[1]{mybox, title=#1}
+\newtcolorbox{alertbox}[1]{alertbox, title=#1}
+\newtcolorbox{keybox}[1]{keybox, title=#1}
+
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+
+\begin{document}
+
+\begin{center}
+\vspace*{-6mm}
+{\LARGE\textbf{One-Hot制約付きブラックボックス最適化における\\[1.5mm]真の目的関数（BB関数）の数理定式化と設計仕様書}}\\[2.0mm]
+{\large--- 多元触媒材料モデル・極限ランダム相互作用・難関景観の体系的解説 ---}\\[1.5mm]
+{\normalsize 富士通研究所 インターンシップ研究開発プロジェクト \quad / \quad 2026年9月}
+\vspace{1mm}
+\end{center}
+
+\begin{abstract}
+\noindent
+本仕様書は，One-Hot制約（カテゴリカル選択制約）を伴うブラックボックス最適化（Black-Box Optimization: BBO）において，アルゴリズム評価の真の基準（Ground Truth）となる「真の目的関数（以下，BB関数 $y = f_{\mathrm{true}}(\bm{x})$）」の数理モデル，物理・材料探索の背景，および実装仕様を体系的にまとめたものである．本プロジェクトでは，(1) 特定吸着サイト間の協同触媒効果を模したマルチスケール強相互作用モデル（$Q_{\mathrm{materials}}$），(2) アルゴリズムの基礎スケーリング限界および状態空間スパース性を検証する全結合ランダム相互作用モデル（$Q_{\mathrm{random}}$），(3) 欺瞞的景観や結合強度変動を検証する境界条件モデル，の3系統を実装・運用している．本稿では，これらの数理構造，One-Hot制約下での有効部分空間の幾何学的性質，BBO閉ループにおける評価プロトコル，およびソースコードとの対応関係を網羅的に解説する．
+\end{abstract}
+
+\vspace{-1mm}
+
+% ==============================================================================
+\section{はじめに：BBOパラダイムと真の目的関数の役割}
+\label{sec:intro}
+% ==============================================================================
+材料探索，分子構造設計，あるいは配合最適化などの実産業課題では，目的とする物性値（例：触媒反応の過電圧，バンドギャップ，生成熱，結合自由エネルギー）を得るために高価な物理実験や長時間の量子化学計算（DFT計算）を要する．このような系は，陽な解析的関数形が未知であり評価コストが極めて高い \textbf{ブラックボックス最適化（BBO）} として定式化される．
+
+BBOでは，以下の閉ループ（Closed Loop）によって最適化が進められる：
+\begin{enumerate}\setlength{\itemsep}{1.5pt}
+    \item \textbf{初期サンプリング}: 少数の正当な候補群 $\mathcal{D}_0 = \{(\bm{x}^{(k)}, y^{(k)})\}_{k=1}^{B_0}$ を真の物理実験・シミュレーションで評価する．
+    \item \textbf{サロゲートモデル学習}: 観測データから機械学習モデル（本研究では Factorization Machine: FM）を学習し，未観測空間の物性ランドスケープを多項式QUBOとして推定する．
+    \item \textbf{候補探索（Acquisition）}: 推定されたサロゲートハミルトニアン $H_C$ を最小化する候補 $\bm{x}_{\mathrm{next}}$ をサンプラー（FMQA または FM-XY-QAOA）で探索する．
+    \item \textbf{真の評価とデータ蓄積}: 提案された候補を真の物理系（BB関数 $y_{\mathrm{next}} = f_{\mathrm{true}}(\bm{x}_{\mathrm{next}})$）に入力して評価し，データセットを更新する．
+\end{enumerate}
+
+\begin{mybox}{BBOベンチマークにおけるBB関数の重要性}
+BBOアルゴリズム（特に量子ソルバー）の優位性を検証するコンピュータ実験では，実実験の代わりに \textbf{数学的に厳密制御可能でありながら，実材料の物理的複雑性（強相関・フラストレーション・マルチスケール性）を忠実に再現した「人工BB関数」} を設定することが不可欠である．
+真の目的関数 $f_{\mathrm{true}}(\bm{x})$ の大域最小解 $\bm{x}^*$ やその関数値 $f^* = f_{\mathrm{true}}(\bm{x}^*)$ が厳密に既知であることで初めて，各手法が「どれだけ少ない評価回数で真の最適解に到達できるか」「無駄な制約違反解による実験予算の浪費をどれだけ抑制できるか」を定量評価できる．
+\end{mybox}
+
+% ==============================================================================
+\section{One-Hot制約と状態空間の幾何構造}
+\label{sec:one_hot_geometry}
+% ==============================================================================
+材料探索や触媒設計において，変数は連続値ではなく離散的な選択肢として現れる．例えば，「吸着サイト1に金属元素 $\{A, B, C, D\}$ のいずれか1つを配置する」という離散選択は，ワンホット（One-Hot）二値ベクトルによって表現される．
+
+\subsection{部分空間の数学的定義}
+全系が $M$ 個のサイト（ブロック）から構成され，各サイト $m \in \{1, \dots, M\}$ に $d_m$ 個の選択肢が存在する場合，全論理バイナリ変数数は $N = \sum_{m=1}^M d_m$ となる（本研究では標準として全ブロック共通のサイズ $d_m = d = 4$ を採用，したがって $N = 4M$）．
+解ベクトル $\bm{x} = (x_1, \dots, x_N)^T \in \{0, 1\}^N$ に課される One-Hot 制約は以下のように記述される：
+\begin{equation}
+\mathcal{X} = \left\{ \bm{x} \in \{0, 1\}^N \;\middle|\; \sum_{j=1}^{d} x_{m, j} = 1, \quad \forall m \in \{1, \dots, M\} \right\}
+\end{equation}
+
+\subsection{指数関数的状態スパース性（有効解比率の崩壊）}
+量子ビット系全体のヒルベルト空間 $\mathcal{H}_{\mathrm{all}} = (\mathbb{C}^2)^{\otimes N}$ の次元は $2^N$ であるのに対し，One-Hot 制約を満たす物理的に意味のある状態の総数（有効部分空間 $\mathcal{H}_{\mathcal{X}}$ の次元）は $|\mathcal{X}| = d^M$ である．
+したがって，全状態空間に対する有効解の比率 $\rho(N)$ は以下のように表される：
+\begin{equation}
+\rho(N) = \frac{|\mathcal{X}|}{2^N} = \frac{d^M}{2^{d M}} = \left( \frac{d}{2^d} \right)^M = \left( \frac{4}{16} \right)^M = \left( \frac{1}{4} \right)^{N/4} = 2^{-N/2}
+\end{equation}
+表\ref{tab:dimension_scaling}に，本研究で扱っている問題規模（$N=4 \sim 60$）における状態空間諸元の推移を示す．
+
+\begin{table}[H]
+\centering
+\caption{One-Hot制約下における探索空間の次元諸元と有効解比率の指数的推移 ($d=4$)}\label{tab:dimension_scaling}
+\vspace{1mm}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ccccc}
+\toprule
+\textbf{変数数 $N$} & \textbf{サイト数 $M$} & \textbf{全ヒルベルト空間 ($2^N$)} & \textbf{有効材料構造 ($|\mathcal{X}| = 4^M$)} & \textbf{有効解比率 $\rho(N)$} \\
+\midrule
+$N=4$  & 1  & 16 & 4 & $25.0\%$ \\
+$N=8$  & 2  & 256 & 16 & $6.25\%$ \\
+$N=12$ & 3  & 4,096 & 64 & $1.5625\%$ \\
+$N=16$ & 4  & 65,536 & 256 & $0.3906\%$ \\
+$N=20$ & 5  & $1.05 \times 10^6$ & 1,024 & $0.0977\%$ \\
+$N=24$ & 6  & $1.68 \times 10^7$ & 4,096 & $0.0244\%$ \\
+$N=28$ & 7  & $2.68 \times 10^8$ & 16,384 & $0.0061\%$ \\
+$N=32$ & 8  & $4.29 \times 10^9$ & 65,536 & $0.0015\%$ \\
+\midrule
+$N=40$ & 10 & $1.10 \times 10^{12}$ & $1.05 \times 10^6$ & $9.54 \times 10^{-5}\%$ \\
+$N=48$ & 12 & $2.81 \times 10^{14}$ & $1.68 \times 10^7$ & $5.96 \times 10^{-6}\%$ \\
+$N=60$ & 15 & $1.15 \times 10^{18}$ (100京) & $1.07 \times 10^9$ (10億) & $9.31 \times 10^{-8}\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+この指数関数的なスパース性は，制約を目的関数へのペナルティ項で処理する古典アプローチ（FMQA）や従来型ゲートQAOA（Standard QAOA）にとって致命的な障害となる．$N=24$ を超えると全空間の $99.97\%$ 以上が無効解で埋め尽くされるため，ランダムサンプリングや浅いアニーリングでは有効解の生成自体が極めて困難となる．
+
+% ==============================================================================
+\section{BB関数モデル1: 多元触媒・機能性材料設計モデル (\texorpdfstring{$Q_{\mathrm{materials}}$}{Q\_materials})}
+\label{sec:model_materials}
+% ==============================================================================
+本プロジェクトの実用検証の柱となるのが，多元触媒・高分子設計における非線形相互作用を忠実に模擬した **多元触媒強相互作用モデル** である．
+
+\subsection{物理的・化学的背景}
+排ガス浄化触媒（NOx還元触媒）や燃料電池電極触媒（ORR触媒）などの高機能多元触媒では，表面上の隣接する活性金属サイトに特定の元素がペアで吸着した際，電子軌道の混成（$d$ 軌道相互作用など）によって中間体の吸着エネルギーが劇的に安定化する「協同触媒効果（Catalytic Synergy）」が広く知られている．
+
+このような系では，以下の2種類の相互作用が混在する「マルチスケール性」を示す：
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{強相関協同相互作用 ($|Q_{ij}| \gg 1$)}: 特定の隣接活性サイト間で同時に特定の元素が選択された際に生じる強力な結合エネルギー．
+    \item \textbf{微弱な長距離相互作用 ($|Q_{ij}| \approx 1$)}: 静電相互作用やファンデルワールス力に起因する一般的な相互作用．
+\end{itemize}
+
+\subsection{数理定式化}
+$M$ サイト系における二値選択ベクトル $\bm{x} \in \mathcal{X}$ に対する物性値（エネルギー） $y = f_{\mathrm{mat}}(\bm{x})$ は，二次形式として定式化される：
+\begin{equation}
+y = f_{\mathrm{mat}}(\bm{x}) = \bm{x}^T Q_{\mathrm{materials}} \bm{x} = \sum_{i=1}^N Q_{ii} x_i + \sum_{i < j}^N Q_{ij} x_i x_j
+\end{equation}
+行列 $Q_{\mathrm{materials}} \in \mathbb{R}^{N \times N}$ の各成分は以下のように構成される：
+\begin{equation}
+Q_{ij} = \begin{cases}
+\mathrm{Uniform}(-2.0, 1.0) & (i = j: \text{元素単体の化学ポテンシャル・固有活性}) \\
+\mathrm{Uniform}(-6.0, 2.0) & (i < j, \; \text{サイトペア } (b_i, b_j) \text{ が協同触媒活性中心のとき}) \\
+\mathrm{Uniform}(-1.0, 1.0) & (i < j, \; \text{その他の通常サイト間相互作用})
+\end{cases}
+\end{equation}
+ここで $b_i = \lfloor i / d \rfloor \in \{0, \dots, M-1\}$ は変数 $i$ が属するサイト番号である．
+協同触媒活性中心は，隣接ブロックペア $(2k, 2k+1)$，すなわちサイト $(0,1), (2,3), (4,5), \dots$ 間に体系的に配置される．
+
+\subsection{FMQAにおけるペナルティ崩壊のメカニズム}
+先行研究 FMQA \cite{kitai2020} では，One-Hot制約をペナルティ項：
+\begin{equation}
+H_{\mathrm{penalty}} = \lambda \sum_{m=1}^M \left( \sum_{j=1}^d x_{m, j} - 1 \right)^2
+\end{equation}
+として目的関数に加算する（標準設定 $\lambda = 5.0$）．
+しかし，$Q_{\mathrm{materials}}$ においては強相関結合が $Q_{ij} \in [-6.0, 2.0]$ に達するため，2つのサイトで同時に複数の変数をオン（$x_{m, j} = x_{m, j'} = 1$）にすることで得られるエネルギー利得（最大 $|-6.0| = 6.0$）が，ペナルティによるペナルティコスト（$\lambda = 5.0$）を上回ってしまう．
+その結果，\textbf{ソルバーは制約を違反して複数の元素を選択した方がエネルギーが低いと誤判定し，制約充足率が 0\% に急落する「ペナルティ崩壊現象」} が生じる．
+
+\begin{alertbox}{ペナルティ崩壊の実験的実証}
+多元触媒モデル $Q_{\mathrm{materials}}$ を用いた実測ベンチマーク（$N=16 \sim 32$）において，固定ペナルティ $\lambda=5.0$ を用いた FMQA は全スケールで制約充足率が $0.0\% \sim 0.6\%$ へと完全崩壊した．
+これを回避するには $\lambda \in [10.0, 15.0]$ への適応的調整（スイートスポット）が必要となるが，後述するように $\lambda$ を大きくしすぎると局所解トラップが生じるジレンマに直面する．
+これに対し，提案手法 FM-XY-QAOA は $\lambda = 0$（ペナルティ項そのものを完全排除）であり，物理対称性により全領域で 100.0\% の充足率を数学的に堅持する．
+\end{alertbox}
+
+% ==============================================================================
+\section{BB関数モデル2: 全結合ランダム相互作用モデル (\texorpdfstring{$Q_{\mathrm{random}}$}{Q\_random})}
+\label{sec:model_random}
+% ==============================================================================
+特定構造のバイアスを排し，量子アルゴリズムの純粋なスケーリング極限やハードウェア計算限界を評価するために用いるのが，**全結合ランダム相互作用モデル（Kitai 2020 スケールモデル）** である．
+
+\subsection{数理定式化}
+$N$ 変数の上三角行列 $Q_{\mathrm{random}} \in \mathbb{R}^{N \times N}$ の全要素を独立同分布から生成する：
+\begin{equation}
+Q_{ii} \sim \mathrm{Uniform}(-1.5, 1.5), \qquad Q_{ij} \sim \mathrm{Uniform}(-1.0, 1.0) \quad (i < j)
+\end{equation}
+あるいは，ガウス型フラストレーション系として：
+\begin{equation}
+Q_{ij} \sim \mathcal{N}(0, 1) \quad (i < j)
+\end{equation}
+を採用する．全変数ペア間に均一な確率で相互作用が存在するため，全ての One-Hot ブロック間が強く結合し，スピン系における典型的なスピングラス（Sherrington-Kirkpatrick 模型様）の複雑多峰性ランドスケープを形成する．
+
+\subsection{極限スケーリングベンチマーク (\texorpdfstring{$N=4 \sim 60$}{N=4 to 60})}
+本モデルは，$N=4$ から FMQA 原著論文 \cite{kitai2020} が扱った極限スケール $N=60$（15サイト $\times$ 4候補，全 $2^{60} \approx 1.15 \times 10^{18}$ 状態）までの計算限界検証に使用されている．
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{全状態ベクトル限界}: 古典計算機において全ヒルベルト空間の状態ベクトルを保持する場合，$N=32$ で 68.7 GB（128GB RAM サーバーの上限境界），$N=60$ では 18.4 EB（エクサバイト）に達し物理的に保持不可能となる．
+    \item \textbf{有効部分空間法（FM-XY）の優位性}: One-Hot 部分空間（$4^{N/4} = 2^{N/2}$ 次元）に閉じたテンソル積ユニタリ計算を行うことで，$N=60$（100京次元）の極限問題に対しても，有効状態空間 10.7 億次元（約 17.2 GB）へと大幅縮約され，単一の128GBサーバー上で厳密状態ベクトル計算が実行可能となる．
+\end{itemize}
+
+% ==============================================================================
+\section{BB関数モデル3: 難関景観・境界条件検証モデル}
+\label{sec:model_landscape}
+% ==============================================================================
+アルゴリズムの探索特性（量子トンネル効果 vs 古典熱揺らぎ）を深掘りするために，特定の境界条件を組み込んだ2つの派生BB関数を運用している．
+
+\subsection{Deceptive Landscape（欺瞞的景観モデル）}
+古典局所探索（SA）を欺くための人工的難関ポテンシャルエネルギー面：
+\begin{equation}
+f_{\mathrm{dec}}(\bm{x}) = f_{\mathrm{base}}(\bm{x}) + \Delta V_{\mathrm{deceptive}}(\bm{x})
+\end{equation}
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{局所解トラップ}: 解空間の広範囲（約 95\% の探索経路）が，エネルギー $-8.0$ 程度の幅広く深い偽の極小値（Local Trap）へと収束するように勾配が設計されている．
+    \item \textbf{孤立した真の大域解}: 真の大域最適解 $\bm{x}^*$（エネルギー $-14.0$）は，局所解から高いエネルギー障壁で隔てられた極めて狭い領域に孤立して存在する．
+    \item \textbf{検証結果}: 古典SA（FMQA）はペナルティ係数をどのように調整しても局所解に捕縛され成功率が $10\% \sim 15\%$ に低迷するのに対し，FM-XY-QAOA は $p=2$（2層）において \textbf{40.7\% の大域最適解到達率} を達成し，量子優位性（トンネル効果による障壁貫通）が確認された．
+\end{itemize}
+
+\subsection{マルチスケール結合比率検証モデル}
+ブロック内の結合強度に対するブロック間結合強度の比率（スケール因子 $\alpha \in [0.1, 10.0]$）を連続走査するモデル：
+\begin{equation}
+Q_{ij}(\alpha) = \begin{cases}
+Q_{ij}^{\mathrm{intra}} & (b_i = b_j) \\
+\alpha \cdot Q_{ij}^{\mathrm{inter}} & (b_i \neq b_j)
+\end{cases}
+\end{equation}
+目的関数の全体スケールが大きく変動するBBO進行過程において，固定ペナルティ法の破綻点と適応ペナルティの有効境界を明確に切り分ける目的で使用される．
+
+% ==============================================================================
+\section{BBO閉ループ評価プロトコルと実験コストモデル}
+\label{sec:bbo_protocol}
+% ==============================================================================
+
+\subsection{BBO最適化ループの実験プロトコル}
+多元触媒BBOシミュレーション（\texttt{src/practical\_materials\_bbo.py}）では，15サイクルの獲得・評価ループを実行する：
+\begin{enumerate}\setlength{\itemsep}{2pt}
+    \item 初期観測データとして，One-Hot制約を満たすランダムな正当候補 5 点を生成し，BB関数 $f_{\mathrm{mat}}$ で評価する（大域最適解は初期データから除外）．
+    \item 各サイクル $t \in \{1, \dots, 15\}$ において：
+    \begin{itemize}
+        \item 蓄積データ $\mathcal{D}_{t-1}$ を用いてサロゲートモデル $\hat{f}_t(\bm{x})$（FM: 潜在次元 $k=2$）を学習．
+        \item 各手法のソルバーにより，サロゲートを最小化する提案候補 $\bm{x}_{\mathrm{prop}}^{(t)}$ を決定．
+        \item 提案候補をBB関数で評価し，$\mathcal{D}_t = \mathcal{D}_{t-1} \cup \{(\bm{x}_{\mathrm{prop}}^{(t)}, y_{\mathrm{prop}}^{(t)})\}$ に追加．
+    \end{itemize}
+\end{enumerate}
+
+\subsection{実験失敗と経済損失（Financial Loss）の数理モデル}
+実産業の材料開発において，One-Hot制約を満たさない無効な候補（例：触媒サイトに元素が配置されていない，あるいは2重に配置された物理的に合成不可能な組成）を実験現場に発注した場合，試作失敗となり \textbf{材料費・人件費・機器使用料の全額が純粋な損失（ドブ捨て）} となる．
+
+本研究では，実務的評価指標として以下の損失金額モデルを導入している：
+\begin{equation}
+\mathrm{Cost}_{\mathrm{wasted}}(T) = C_{\mathrm{exp}} \times \sum_{t=1}^T \mathbb{I}(\bm{x}_{\mathrm{prop}}^{(t)} \notin \mathcal{X})
+\end{equation}
+ここで $C_{\mathrm{exp}} = 100,000 \text{ 円/回}$（1実験あたりの試作・評価単価）であり，$\mathbb{I}(\cdot)$ は条件が真のとき 1，偽のとき 0 をとる指示関数である．
+\begin{keybox}{15サイクルBBO実証結果}
+$N=16$（多元触媒モデル，全65,536通り）における実証実験の結果：
+\begin{itemize}
+    \item \textbf{Standard QAOA}: 15サイクル中 14回で制約違反解を出力し，\textbf{140万円の予算を浪費} して最良値 $-9.45$ で停止（開発破綻）．
+    \item \textbf{FMQA (固定 $\lambda=5.0$)}: 第1サイクルで大域最適解（$-12.17$）へ最速到達し損失 0 円を達成した一方，同一解を6回重複サンプリングした．
+    \item \textbf{FM-XY-QAOA (提案手法)}: \textbf{15サイクル全域で損失 0 円（100\% 正当材料）} を維持し，重複なく多様な化学空間を開拓しながら第11サイクルで真の大域最適解（$-12.17$）に到達した．
+\end{itemize}
+\end{keybox}
+
+% ==============================================================================
+\section{実装アーキテクチャとソースコード対応表}
+\label{sec:code_reference}
+% ==============================================================================
+本仕様書で解説したBB関数群は，リポジトリ内の以下のモジュールに実装されている：
+
+\begin{table}[H]
+\centering
+\caption{BB関数モジュールと実装関数の完全対応リファレンス}\label{tab:code_mapping}
+\vspace{1mm}
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{p{4.4cm} p{6.0cm} X}
+\toprule
+\textbf{ソースファイル} & \textbf{関数名 / クラス名} & \textbf{解説・数理機能} \\
+\midrule
+\texttt{src/bb\_function.py} & \texttt{create\_random\_qubo\_bb} & ランダム二次形式行列 $Q_{\mathrm{random}}$（上三角）の生成 \\
+& \texttt{evaluate\_bb} & ベクトル $\bm{x}$ に対する二次形式 $\bm{x}^T Q \bm{x}$ の高速 einsum 評価 \\
+& \texttt{get\_feasible\_patterns} & One-Hot制約を満たす全有効パターンの直積生成（$d^M$ 個） \\
+& \texttt{is\_feasible\_one\_hot} & ビット列の One-Hot 制約充足判定（True/False） \\
+& \texttt{get\_exact\_minimum\_categorical\_bb} & 有効部分空間内の厳密大域最小解 $\bm{x}^*, f^*$ の全探索取得 \\
+\midrule
+\texttt{src/practical\_materials\_bbo.py} & \texttt{create\_materials\_design\_ground\_truth} & 多元触媒モデル $Q_{\mathrm{materials}}$（4サイト×4元素，強相関） \\
+& \texttt{run\_materials\_bbo\_experiment} & 15サイクルの実用BBOシミュレーションと経済損失評価 \\
+\midrule
+\texttt{src/materials\_scaling\_benchmark.py} & \texttt{create\_scalable\_materials\_ground\_truth} & 任意スケール（$M$ サイト $\times d$ 元素）の多元触媒モデル生成 \\
+& \texttt{run\_materials\_scaling\_benchmark} & $N=16 \sim 32$（各5インスタンス）の体系的ベンチマーク \\
+\midrule
+\texttt{src/scale\_up\_kitai\_benchmark.py} & \texttt{create\_qubo\_matrix} & 対称ランダムQUBO行列（Kitaiスケール用） \\
+& \texttt{solve\_subspace\_xy\_qaoa} & 有効部分空間テンソル発展による極限スケーリング（$N \le 60$） \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ==============================================================================
+\section{まとめ}
+\label{sec:conclusion}
+% ==============================================================================
+本プロジェクトで構築・運用しているBB関数群は，単なる抽象的なランダム問題にとどまらず，\textbf{「吸着サイトの協同触媒効果」や「マルチスケールな強相互作用」といった実産業・材料開発の物理的実態を厳密に反映した設計} となっている．
+この現実的な難関BB関数の存在により，従来の固定ペナルティ法（FMQA）の限界（ペナルティ崩壊および局所トラップのジレンマ）が明確化され，One-Hot部分空間拘束型の量子アルゴリズム（FM-XY-QAOA）が持つ「チューニングフリーでの100\%制約防衛」および「局所探索融合（Hybrid QAOA）による42.9億次元空間での高精度大域探索」の真の価値が定量的・実証的に証明されている．
+
+\begin{thebibliography}{9}
+\bibitem{kitai2020}
+K.~Kitai, J.~Guo, S.~Ju, S.~Tanaka, K.~Tsuda, J.~Shiomi, and R.~Tamura,
+``Designing Metamaterials with Quantum Annealing and Factorization Machines,''
+\textit{Physical Review Research}, vol.~2, no.~1, p.~013319, 2020.
+\end{thebibliography}
+
+\end{document}

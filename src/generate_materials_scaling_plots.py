@@ -82,7 +82,8 @@ ax2.grid(True, linestyle=':', alpha=0.6)
 ax2.legend(loc='upper left', framealpha=0.92, fontsize=10)
 
 plt.tight_layout()
-fig1_path = "report/figures/materials_scaling_feasibility_and_gap.pdf"
+fig1_path = "report/figures/practical_materials_bbo/materials_scaling_feasibility_and_gap.pdf"
+os.makedirs(os.path.dirname(fig1_path), exist_ok=True)
 plt.savefig(fig1_path, dpi=300)
 plt.close()
 print(f"[SUCCESS] Updated Figure 1 saved to {fig1_path}")
@@ -129,7 +130,8 @@ ax4.grid(True, which='both', linestyle=':', alpha=0.6)
 ax4.legend(loc='lower left', framealpha=0.9, fontsize=9.5)
 
 plt.tight_layout()
-fig2_path = "report/figures/materials_fmqa_penalty_sweet_spot.pdf"
+fig2_path = "report/figures/practical_materials_bbo/materials_fmqa_penalty_sweet_spot.pdf"
+os.makedirs(os.path.dirname(fig2_path), exist_ok=True)
 plt.savefig(fig2_path, dpi=300)
 plt.close()
 print(f"[SUCCESS] Figure 2 (Sweet Spot) saved to {fig2_path}")

@@ -107,6 +107,7 @@ ax3.annotate('FMQA Scale (N=60)\n18.4 EB (Impossible!)', xy=(60, 1.84e10), xytex
 ax3.legend(loc='lower right', frameon=True, facecolor='white', framealpha=0.9, fontsize=9.0)
 
 plt.tight_layout()
-plt.savefig('report/figures/extreme_scale_limit.pdf', dpi=300)
-plt.savefig('report/figures/extreme_scale_limit.png', dpi=300)
+os.makedirs('report/figures/large_scale_and_enhancement', exist_ok=True)
+plt.savefig('report/figures/large_scale_and_enhancement/extreme_scale_limit.pdf', dpi=300)
+plt.savefig('report/figures/large_scale_and_enhancement/extreme_scale_limit.png', dpi=300)
 print("Successfully generated 3-panel Qiskit OSS scaling and memory figures!")

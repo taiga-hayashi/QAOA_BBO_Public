@@ -220,7 +220,8 @@ def run_materials_bbo_experiment():
                  bbox=dict(boxstyle='round,pad=0.3', facecolor='#eafaf1', edgecolor='#2ca02c', alpha=0.9))
 
     plt.tight_layout()
-    plt.savefig("report/figures/practical_bbo_cost.pdf", bbox_inches="tight")
+    os.makedirs("report/figures/practical_materials_bbo", exist_ok=True)
+    plt.savefig("report/figures/practical_materials_bbo/practical_bbo_cost.pdf", bbox_inches="tight")
     plt.savefig("result/pdf/practical_bbo_cost.pdf", bbox_inches="tight")
     plt.savefig("result/png/practical_bbo_cost.png", dpi=300, bbox_inches="tight")
     plt.savefig("/Users/hayashitaiga/.gemini/antigravity-ide/brain/72da51dd-fe34-4f5b-83cd-2b7aa88bade0/practical_bbo_cost.png", dpi=300, bbox_inches="tight")
@@ -251,7 +252,8 @@ def run_materials_bbo_experiment():
         ax_hw.text(i + width/2, v + 0.5, str(v), ha='center', fontweight='bold')
         
     plt.tight_layout()
-    plt.savefig("report/figures/practical_bbo_hardware.pdf", bbox_inches="tight")
+    os.makedirs("report/figures/practical_materials_bbo", exist_ok=True)
+    plt.savefig("report/figures/practical_materials_bbo/practical_bbo_hardware.pdf", bbox_inches="tight")
     plt.savefig("result/pdf/practical_bbo_hardware.pdf", bbox_inches="tight")
     plt.savefig("result/png/practical_bbo_hardware.png", dpi=300, bbox_inches="tight")
     plt.savefig("/Users/hayashitaiga/.gemini/antigravity-ide/brain/72da51dd-fe34-4f5b-83cd-2b7aa88bade0/practical_bbo_hardware.png", dpi=300, bbox_inches="tight")

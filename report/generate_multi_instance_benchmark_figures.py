@@ -117,10 +117,11 @@ def generate_multi_instance_figures():
 
     ax2.legend(loc='upper left', framealpha=0.9)
     
-    plt.savefig("report/figures/large_scale_benchmark_n20_to_n32.pdf", bbox_inches='tight')
-    plt.savefig("report/figures/large_scale_benchmark_n20_to_n32.png", bbox_inches='tight')
+    os.makedirs("report/figures/large_scale_and_enhancement", exist_ok=True)
+    plt.savefig("report/figures/large_scale_and_enhancement/large_scale_benchmark_n20_to_n32.pdf", bbox_inches='tight')
+    plt.savefig("report/figures/large_scale_and_enhancement/large_scale_benchmark_n20_to_n32.png", bbox_inches='tight')
     plt.close()
-    print("Multi-instance benchmark figures generated successfully at report/figures/large_scale_benchmark_n20_to_n32.pdf")
+    print("Multi-instance benchmark figures generated successfully at report/figures/large_scale_and_enhancement/large_scale_benchmark_n20_to_n32.pdf")
 
 if __name__ == "__main__":
     generate_multi_instance_figures()

@@ -12,6 +12,7 @@ result/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+report/tex/*.pdf
 
 # Temporary and backup files
 *.bak
@@ -26,3 +27,4 @@ pdf_images/
 scratch/
 report/scratch/
 report/figures/*.png
+report/figures/**/*.png

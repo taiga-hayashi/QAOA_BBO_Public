@@ -9,6 +9,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{../figures/}{../figures/basic_scaling/}{../figures/penalty_sensitivity/}{../figures/landscape_and_depth/}{../figures/large_scale_and_enhancement/}{../figures/practical_materials_bbo/}}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
 \usepackage{hyperref}
@@ -85,7 +86,7 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 \begin{minipage}[t]{0.45\textwidth}
 \vspace{0pt}
 \centering
-\includegraphics[width=\textwidth]{figures/scaling_opt_n8_to_n24.pdf}
+\includegraphics[width=\textwidth]{../figures/basic_scaling/scaling_opt_n8_to_n24.pdf}
 \vspace{-2.5mm}
 \captionof{figure}{$N=8 \sim 24$ 最適化品質スケーリング。Standard QAOAは $N=24$ で有効解が 0\% に死滅するが，提案手法（緑）は全域 100\% 充足を堅持し大域最適解に肉薄。}\label{fig:scaling_opt_n24}
 \end{minipage}
@@ -103,7 +104,7 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 
 \vspace{-1mm}
 \begin{center}
-\includegraphics[width=0.92\textwidth]{figures/extreme_scale_limit.pdf}
+\includegraphics[width=0.92\textwidth]{../figures/large_scale_and_enhancement/extreme_scale_limit.pdf}
 \vspace{-2.5mm}
 \captionof{figure}{Qiskit公式OSS実装によるスケーリング実測とメモリ限界推移。(a) Standard QAOAは $N \ge 16$ で充足率が 0\% へ死滅するが，提案手法は全域で 100.0\% を完全堅持。(b) Qiskitシミュレーション実行時間推移。(c) 状態ベクトル理論RAM使用量（赤実線）と有効部分空間RAM（緑破線）の対比。手元PC（16〜32GB）では $N=24$ (268MB) が実用限界である．大容量計算サーバー（128GB RAM）を活用する場合，古典状態ベクトルの絶対到達可能境界は $N=32$ (68.7GB) となる（$N \ge 33$ で128GBサーバーでもOOM）。一方，FMQA原著論文スケール $N=60$ は 18.4 EB に達し古典全状態保持は原理的に不可能となる．}
 \label{fig:extreme_scale_limit}
@@ -159,14 +160,14 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 \begin{center}
 \begin{minipage}{0.485\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/fmqa_penalty_sweep_4panel.pdf}
+    \includegraphics[width=\textwidth]{../figures/penalty_sensitivity/fmqa_penalty_sweep_4panel.pdf}
     \vspace{-1mm}
     {\footnotesize (a) FMQAペナルティスイープ実測 ($N=8 \sim 20$)}
 \end{minipage}
 \hfill
 \begin{minipage}{0.485\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/fmqa_lambda_vs_obj_scale.pdf}
+    \includegraphics[width=\textwidth]{../figures/penalty_sensitivity/fmqa_lambda_vs_obj_scale.pdf}
     \vspace{-1mm}
     {\footnotesize (b) 目的関数スケール変動と最適 $\lambda$ シフト ($N=12$)}
 \end{minipage}
@@ -204,9 +205,9 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 
 \vspace{-2mm}
 \begin{center}
-\includegraphics[width=0.76\textwidth]{figures/practical_bbo_cost.pdf}
+\includegraphics[width=0.76\textwidth]{../figures/practical_materials_bbo/practical_bbo_cost.pdf}
 \vspace{-2.5mm}
-\captionof{figure}{多元材料探索（$N=16$, 6.5万通り）におけるBBO実証結果。(a) 歴代最良材料の推移。(b) 実験失敗回数と損失予算の累積推移。Standard QAOAは14回失敗（140万円浪費）で破綻するが，提案手法は損失ゼロ（0円）で最良材料へ最速到達．}
+\captionof{figure}{多元材料探索（$N=16$, 6.5万通り）におけるBBO実証結果。(a) 歴代最良材料の推移（FMQAは第1サイクル，提案手法は第11サイクルで真の大域最適解 $-12.17$ へ到達）。(b) 実験失敗回数と損失予算の累積推移。Standard QAOAは14回失敗（140万円浪費）で破綻するが，提案手法およびFMQAは損失ゼロ（0円）を達成．}
 \label{fig:practical_cost}
 \end{center}
 
@@ -222,8 +223,8 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 \textbf{手法名} & \textbf{実験失敗回数} & \textbf{ドブに捨てた累計損失額} & \textbf{サンプリング重複} & \textbf{探索結果} \\
 \midrule
 \textbf{Standard QAOA} & \textbf{14 回 / 15回中} & \textbf{140 万円 (予算の93.3\%)} & 評価不能 & 初期値から改善ゼロ（探索破綻） \\
-\textbf{FMQA (アニーリング)} & 0 回 & 0 円 & \textbf{6 回重複} & 局所解で足踏み（探索停滞） \\
-\textbf{FM-XY (提案手法)} & \textbf{0 回 (失敗ゼロ)} & \textbf{0 円 (全予算保全)} & \textbf{0 回 (高多様性)} & \textbf{最速で真の大域的最適材料へ到達} \\
+\textbf{FMQA (アニーリング)} & \textbf{0 回} & \textbf{0 円} & 6 回重複 & \textbf{第1サイクルで大域最適解へ到達}（同一解に集中） \\
+\textbf{FM-XY (提案手法)} & \textbf{0 回 (失敗ゼロ)} & \textbf{0 円 (全予算保全)} & \textbf{0 回 (高多様性)} & \textbf{第11サイクルで大域最適材料へ到達}（$\lambda$不要の自律探索） \\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -234,8 +235,8 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
     \item \textbf{高額実験予算の完全保全（損失予算 0 円）}:
     1回の評価コストが高価なウェットラボ実験において，Standard QAOAは15回中14回無効配合を提案して140万円をドブに捨てたが，提案手法は15回中15回すべて有効材料を提案し，\textbf{実験失敗損失 0 円（全予算150万円を100\%有効活用）} を達成した．
 
-    \item \textbf{FMQAの探索停滞（局所解重複トラップ）の打破}:
-    FMQAはアニーリングの物理的緩和特性により同一解を6回も重複サンプリングして実験機会を浪費したが，提案手法は多粒子量子干渉により多様な化学空間を開拓し，最速で大域最適材料へ収束した．
+    \item \textbf{サンプリングの多様性と自律探索（FMQAとの対比）}:
+    FMQAは第1サイクルで真の大域最適解（$-12.17$）へ即座に到達したものの，アニーリングの物理的緩和特性により同一解を6回重複サンプリングした．これに対し，提案手法は多粒子量子干渉により重複なく多様な化学空間を開拓しながら第11サイクルで真の大域最適材料へと到達した．最も重要な差異は，FMQAが事前調整された固定ペナルティ $\lambda=5.0$ に依存しているのに対し，提案手法はペナルティ調整（$\lambda$）を一切必要としない（Zero-Tuning）点にある．
 
     \item \textbf{NISQハードウェア親和性と浅い回路}:
     ペナルティ相互作用を完全に撤廃したことで，Standard QAOAで必要だった24個の全対全 $ZZ$ ゲートが \textbf{完全消滅（0個）} し，最近接リングXYミキサー（16ゲート）のみで実装可能となった．実機における回路深さを大幅に削減し，NISQノイズ耐性を飛躍的に高めている．
@@ -279,7 +280,7 @@ y = f_{\mathrm{true}}(\bm{x}) = \bm{x}^T Q_{\mathrm{true}} \bm{x} = \sum_{i=1}^N
 \textbf{制約充足率} & $N \ge 16$ で $0.3\% \to 0\%$ へ死滅 & 小〜中規模でも 15〜30\% 違反 & \textbf{Qiskit上で全域 100.0\% 完全堅持} \\
 \textbf{最適解探索能力} & 到達率 $0.00\%$（探索破綻） & 局所解重複トラップ & \textbf{最大82.7倍凌駕 / 4.0倍量子濃縮} \\
 \textbf{ハイパーパラメータ} & $\lambda$ 調整が必要 & $\lambda$ 調整失敗で制約崩壊 & \textbf{$\lambda=0$ (完全パラメータフリー)} \\
-\textbf{BBO経済損失} & 15回中14回失敗 (140万円損) & 局所解重複で足踏み & \textbf{損失 0 円（失敗回数 0 回・全予算保全）} \\
+\textbf{BBO経済損失} & 15回中14回失敗 (140万円損) & 損失 0 円 (第1回で最適到達・解重複) & \textbf{損失 0 円（全予算保全・第11回到達）} \\
 \textbf{Qiskit計算時間} & $N=20$ で 4.62秒 ($N=24$ 破綻) & $0.05 \sim 0.32$ 秒 & \textbf{$N=16$ で 0.36秒 / $N=20$ で 2.93秒} \\
 \textbf{NISQゲート負荷} & ペナルティ $ZZ$ 24ゲート & 疎結合チェーン切断リスク & \textbf{ペナルティ 0 ゲート / リング 16 ゲート} \\
 \bottomrule

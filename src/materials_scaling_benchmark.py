@@ -178,7 +178,7 @@ def run_materials_scaling_benchmark(num_instances: int = 5) -> Dict[str, Any]:
         
     return results
 
-def plot_materials_scaling_results(results: Dict[str, Any], output_path: str = "report/figures/materials_scaling_feasibility_and_gap.pdf"):
+def plot_materials_scaling_results(results: Dict[str, Any], output_path: str = "report/figures/practical_materials_bbo/materials_scaling_feasibility_and_gap.pdf"):
     """ベンチマーク結果から制約充足率と残差ギャップの推移グラフ（2パネル）を生成"""
     import matplotlib.pyplot as plt
     plt.rcParams['font.family'] = 'DejaVu Sans'

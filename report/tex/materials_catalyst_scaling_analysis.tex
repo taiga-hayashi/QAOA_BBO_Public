@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{../figures/}{../figures/basic_scaling/}{../figures/penalty_sensitivity/}{../figures/landscape_and_depth/}{../figures/large_scale_and_enhancement/}{../figures/practical_materials_bbo/}}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
 \usepackage{tcolorbox}
@@ -208,7 +209,7 @@ $N=32$ & 8 & $4.29 \times 10^9$ ($4,294,967,296$) & 65,536 & $0.0015\%$ \\
 \begin{figure}[H]
 \centering
 \vspace{-2mm}
-\includegraphics[width=0.96\textwidth]{figures/materials_scaling_feasibility_and_gap.pdf}
+\includegraphics[width=0.96\textwidth]{../figures/practical_materials_bbo/materials_scaling_feasibility_and_gap.pdf}
 \vspace{-2mm}
 \caption{多元触媒モデルにおけるスケーリング特性の比較（更新版）：(a) One-Hot 制約充足率（固定ペナルティ $\lambda=5.0$ の破綻 vs 適応型FMQAおよびQAOAの100\%完全防衛），(b) 真の大域最適解に対するエネルギー残差ギャップの推移（Hybrid QAOA による劇的な高精度化とSAへの肉薄）．}\label{fig:materials_scaling_plot}
 \vspace{-2mm}
@@ -273,7 +274,7 @@ $N=32$ & 8 & $4.29 \times 10^9$ ($4,294,967,296$) & 65,536 & $0.0015\%$ \\
 \begin{figure}[H]
 \centering
 \vspace{-2mm}
-\includegraphics[width=0.96\textwidth]{figures/materials_fmqa_penalty_sweet_spot.pdf}
+\includegraphics[width=0.96\textwidth]{../figures/practical_materials_bbo/materials_fmqa_penalty_sweet_spot.pdf}
 \vspace{-2mm}
 \caption{FMQA におけるペナルティ係数 $\lambda$ のスイートスポット解析：(a) 制約充足率の立ち上がり（崩壊ゾーン vs 充足ゾーン），(b) 真の大域最適解到達率の山型変化（スイートスポット $[10, 15]$ と過大ペナルティによる探索性能劣化）．}\label{fig:sweet_spot}
 \vspace{-2mm}

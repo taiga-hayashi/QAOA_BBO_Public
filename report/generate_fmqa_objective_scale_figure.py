@@ -57,6 +57,7 @@ ax2.annotate('Sweet Spot Shifts Right\nwith Objective Scale', xy=(20.0, 87.5), x
              fontweight='bold', color='#333333', fontsize=10, ha='center')
 
 plt.tight_layout()
-plt.savefig("report/figures/fmqa_lambda_vs_obj_scale.pdf", dpi=300)
-plt.savefig("report/figures/fmqa_lambda_vs_obj_scale.png", dpi=300)
-print("Saved report/figures/fmqa_lambda_vs_obj_scale.pdf!")
+os.makedirs("report/figures/penalty_sensitivity", exist_ok=True)
+plt.savefig("report/figures/penalty_sensitivity/fmqa_lambda_vs_obj_scale.pdf", dpi=300)
+plt.savefig("report/figures/penalty_sensitivity/fmqa_lambda_vs_obj_scale.png", dpi=300)
+print("Saved report/figures/penalty_sensitivity/fmqa_lambda_vs_obj_scale.pdf!")

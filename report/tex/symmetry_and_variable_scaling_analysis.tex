@@ -10,6 +10,7 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\graphicspath{{../figures/}{../figures/basic_scaling/}{../figures/penalty_sensitivity/}{../figures/landscape_and_depth/}{../figures/large_scale_and_enhancement/}{../figures/practical_materials_bbo/}}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
 \usepackage{tcolorbox}
@@ -226,7 +227,7 @@ Standard QAOA で採用される横磁場ミキサー $H_M = \sum_i X_i$ は，�
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/symmetry_scaling_explanation.pdf}
+\includegraphics[width=\textwidth]{../figures/large_scale_and_enhancement/symmetry_scaling_explanation.pdf}
 \caption{対称性によるスケーリング限界突破とハードウェア・変数比較の徹底対比。(a) シミュレーション所要メモリ推移。全空間（赤）は $N \ge 32$ でサーバー限界を突破し $N=60$ で 18.4 EB に達するが，部分空間（緑）は $N=60$ でも 17.2 GB に抑えられ 128GB サーバーで実行可能。(b) 有効解比率と制約充足率。Standard QAOAは 0\% へ死滅するが，提案手法は全域で 100.0\% を完全堅持。(c) ハードウェア物理量子ビット数。FMQA（アニーリング）は Minor Embedding により $O(N^2)$ で激増するが，提案手法は 1対1（$Q_{\mathrm{phys}} = N$）で極めて省リソース．}\label{fig:symmetry_scaling_all}
 \end{figure}
 
@@ -361,7 +362,7 @@ $^\dagger$ FMQA ($N=32$)：固定ペナルティ（$\lambda=5.0$）が目的関�
 \vspace{-2mm}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/large_scale_benchmark_n20_to_n32.pdf}
+\includegraphics[width=\textwidth]{../figures/large_scale_and_enhancement/large_scale_benchmark_n20_to_n32.pdf}
 \caption{初期データを変えた10インスタンスにおける大規模直接対決実測結果（$N=20 \sim 32$、Mean $\pm 1\sigma$）。(a) 最良目的関数値推移。Standard QAOAは $N \ge 24$ で正の値に脱線し完全破綻するが，FM-XY-QAOAは浅い $p=1$ で厳密最適解の近傍を確実に捕捉。(b) シミュレーション実行時間。Qiskit全空間では $N=24$ で 71秒を要したが，部分空間ソルバーにより $N=24$ で 0.32秒（230倍高速化），$N=32$（42.9億次元）でもわずか 7.33秒で完了した．}\label{fig:large_scale_benchmark}
 \end{figure}
 
@@ -421,7 +422,7 @@ $^\dagger$ FMQA ($N=32$)：固定ペナルティ（$\lambda=5.0$）が目的関�
 \vspace{-2mm}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/qaoa_accuracy_enhancement_comparison.pdf}
+\includegraphics[width=\textwidth]{../figures/large_scale_and_enhancement/qaoa_accuracy_enhancement_comparison.pdf}
 \caption{QAOA精度向上策の実測比較結果（$N=20 \sim 32$、各10インスタンス）。(a) 厳密最適解との残差ギャップ推移。Hybrid局所探索により $N=32$（42.9億通り）でもギャップが $2.90 \to 0.56$ へと 81\% 激減。(b) 厳密大域最適解到達率（Hit Rate）。Baselineが規模拡大で 0\% に低下する中，全結合ミキサーやHybrid手法は極大スケールでも 40--50\% の高い成功率を堅持した．}\label{fig:accuracy_enhancement}
 \end{figure}
 

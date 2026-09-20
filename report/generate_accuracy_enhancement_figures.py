@@ -96,10 +96,11 @@ def generate_accuracy_figures():
                  
     ax2.legend(loc='lower left', framealpha=0.95)
     
-    plt.savefig("report/figures/qaoa_accuracy_enhancement_comparison.pdf", bbox_inches='tight')
-    plt.savefig("report/figures/qaoa_accuracy_enhancement_comparison.png", bbox_inches='tight')
+    os.makedirs("report/figures/large_scale_and_enhancement", exist_ok=True)
+    plt.savefig("report/figures/large_scale_and_enhancement/qaoa_accuracy_enhancement_comparison.pdf", bbox_inches='tight')
+    plt.savefig("report/figures/large_scale_and_enhancement/qaoa_accuracy_enhancement_comparison.png", bbox_inches='tight')
     plt.close()
-    print("Accuracy enhancement figures generated at report/figures/qaoa_accuracy_enhancement_comparison.pdf")
+    print("Accuracy enhancement figures generated at report/figures/large_scale_and_enhancement/qaoa_accuracy_enhancement_comparison.pdf")
 
 if __name__ == "__main__":
     generate_accuracy_figures()

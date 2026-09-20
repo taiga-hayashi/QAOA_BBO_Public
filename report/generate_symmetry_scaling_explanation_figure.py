@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 出力先
-OUT_DIR = "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/report/figures"
+OUT_DIR = "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/report/figures/large_scale_and_enhancement"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # フォント設定

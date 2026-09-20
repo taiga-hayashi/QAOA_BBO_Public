@@ -5,7 +5,14 @@ import matplotlib.pyplot as plt
 
 # 出力先ディレクトリ
 OUT_DIR = "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/report/figures"
-os.makedirs(OUT_DIR, exist_ok=True)
+BASIC_SCALING_DIR = os.path.join(OUT_DIR, "basic_scaling")
+PENALTY_DIR = os.path.join(OUT_DIR, "penalty_sensitivity")
+LANDSCAPE_DIR = os.path.join(OUT_DIR, "landscape_and_depth")
+LARGE_SCALE_DIR = os.path.join(OUT_DIR, "large_scale_and_enhancement")
+PRACTICAL_DIR = os.path.join(OUT_DIR, "practical_materials_bbo")
+
+for d in [BASIC_SCALING_DIR, PENALTY_DIR, LANDSCAPE_DIR, LARGE_SCALE_DIR, PRACTICAL_DIR]:
+    os.makedirs(d, exist_ok=True)
 
 # 共通フォント設定
 plt.rcParams['font.family'] = 'DejaVu Sans'
@@ -48,7 +55,7 @@ def generate_scaling_figures():
     ax.legend(loc='upper right', framealpha=0.95, fontsize=9.5)
     ax.grid(axis='y', linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "scaling_feasibility.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(BASIC_SCALING_DIR, "scaling_feasibility.pdf"), bbox_inches='tight')
     plt.close()
     
     # 2. scaling_success_prob.pdf
@@ -71,7 +78,7 @@ def generate_scaling_figures():
     ax.grid(True, which='both', linestyle='--', alpha=0.6)
     ax.legend(loc='lower left', framealpha=0.95, fontsize=9.5)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "scaling_success_prob.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(BASIC_SCALING_DIR, "scaling_success_prob.pdf"), bbox_inches='tight')
     plt.close()
     
     # 3. scaling_concentration_boost.pdf
@@ -88,7 +95,7 @@ def generate_scaling_figures():
     ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     ax.grid(True, linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "scaling_concentration_boost.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(BASIC_SCALING_DIR, "scaling_concentration_boost.pdf"), bbox_inches='tight')
     plt.close()
     print("Scaling figures saved successfully.")
 
@@ -120,7 +127,7 @@ def generate_distribution_figures():
     ax.legend(loc='upper left', framealpha=0.95, fontsize=9.5)
     ax.grid(axis='y', linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "dist_N6.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(BASIC_SCALING_DIR, "dist_N6.pdf"), bbox_inches='tight')
     plt.close()
     
     fig, ax = plt.subplots(figsize=(9.2, 3.4))
@@ -142,7 +149,7 @@ def generate_distribution_figures():
     ax.legend(loc='upper right', framealpha=0.95, fontsize=10.5)
     ax.grid(axis='y', linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "dist_N8.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(BASIC_SCALING_DIR, "dist_N8.pdf"), bbox_inches='tight')
     plt.close()
     print("Distribution figures saved successfully.")
 
@@ -168,7 +175,7 @@ def generate_lambda_and_bbo_figures():
     ax.grid(True, which='both', linestyle='--', alpha=0.6)
     ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "lambda_N8.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(PENALTY_DIR, "lambda_N8.pdf"), bbox_inches='tight')
     plt.close()
     
     bbo_json = "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/result/json/bbo_comparison_N8_20260904_221814.json"
@@ -191,7 +198,7 @@ def generate_lambda_and_bbo_figures():
     ax.grid(True, linestyle='--', alpha=0.6)
     ax.legend(loc='upper right', framealpha=0.95, fontsize=10)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "bbo_N8.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(PRACTICAL_DIR, "bbo_N8.pdf"), bbox_inches='tight')
     plt.close()
     print("Lambda and BBO figures saved successfully.")
 
@@ -227,7 +234,7 @@ def generate_boundary_figures():
     ax2.legend(loc='upper right', framealpha=0.95, fontsize=10.5)
     
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "multiscale_comp.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(LANDSCAPE_DIR, "multiscale_comp.pdf"), bbox_inches='tight')
     plt.close()
     
     dec = data["deceptive_experiment"]
@@ -247,7 +254,7 @@ def generate_boundary_figures():
     ax.grid(True, which='both', linestyle='--', alpha=0.6)
     ax.legend(loc='lower left', framealpha=0.95, fontsize=9.5)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "deceptive_comp.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(LANDSCAPE_DIR, "deceptive_comp.pdf"), bbox_inches='tight')
     plt.close()
     
     lay = data["layer_depth_experiment"]
@@ -270,7 +277,7 @@ def generate_boundary_figures():
     ax.grid(axis='y', linestyle='--', alpha=0.6)
     ax.legend(loc='upper right', framealpha=0.95, fontsize=9.5)
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "layer_boost.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(LANDSCAPE_DIR, "layer_boost.pdf"), bbox_inches='tight')
     plt.close()
     print("Boundary figures saved successfully.")
 
@@ -335,7 +342,7 @@ def generate_extreme_scale_figure():
     ax2.legend(lines_1 + lines_2, labels_1 + labels_2, loc='lower left', bbox_to_anchor=(0.02, 0.05), framealpha=0.95, fontsize=9.0)
     
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "extreme_scale_limit.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(LARGE_SCALE_DIR, "extreme_scale_limit.pdf"), bbox_inches='tight')
     plt.close()
     print("Extreme scale figure saved successfully.")
 
@@ -386,7 +393,7 @@ def generate_practical_figures():
     ax2.legend(loc='upper left', framealpha=0.95, fontsize=10)
     
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "practical_bbo_cost.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(PRACTICAL_DIR, "practical_bbo_cost.pdf"), bbox_inches='tight')
     plt.close()
     
     fig_hw, ax_hw = plt.subplots(figsize=(6.8, 4.5))
@@ -413,7 +420,7 @@ def generate_practical_figures():
         ax_hw.text(i + width/2, v + 0.5, str(v), ha='center', fontweight='bold', fontsize=12)
         
     plt.tight_layout()
-    plt.savefig(os.path.join(OUT_DIR, "practical_bbo_hardware.pdf"), bbox_inches='tight')
+    plt.savefig(os.path.join(PRACTICAL_DIR, "practical_bbo_hardware.pdf"), bbox_inches='tight')
     plt.close()
     print("Practical figures saved successfully.")
 
