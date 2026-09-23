@@ -1,0 +1,16 @@
+[project]
+name = "qaoa-bbo"
+version = "0.1.0"
+description = "Factorization Machine + QAOA for Black-Box Optimization (BBO)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "numpy",
+    "matplotlib",
+    "openqarp",
+    "pyyaml",
+]
+
+[tool.uv]
+package = false

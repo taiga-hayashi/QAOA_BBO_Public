@@ -46,3 +46,16 @@ python main.py
 | **[`CODE_STRUCTURE.md`](./CODE_STRUCTURE.md)** | **【詳細仕様書】パイプラインの数理背景、全モジュールの関数仕様、データフローの徹底解説** |
 
 より詳細な各モジュールの内部実装・数理解説は [CODE_STRUCTURE.md](./CODE_STRUCTURE.md) をご参照ください。
+
+---
+
+## 富士通インターンシップ研究パッケージ (`intern/`)
+
+本リポジトリの [`intern/`](./intern/) ディレクトリには、富士通インターンシップにて実施された **OpenQARP を用いた FM-XY-QAOA および制約付きブラックボックス最適化（BBO）の大規模ベンチマーク実験パッケージ** が収録されています。
+
+- **主要手法**: FMQA, Standard QAOA (X-mixer + Penalty), FM-XY-QAOA (XY-mixer, 厳密制約保持)
+- **実験検証**: 100サイクルBBOスケーリング（$N=8 \sim 20$）、ペナルティ係数感度分析、ビット数スケーリング
+- **自己完結設計**: ソースコード、実行結果（JSON/Checkpoints）、統合図および独立パネル図（PDF/PNG）、TeXレポート一式を内包
+
+詳細な仕様および実行方法については、[`intern/README.md`](./intern/README.md) および [`intern/agent.md`](./intern/agent.md) をご参照ください。
+
