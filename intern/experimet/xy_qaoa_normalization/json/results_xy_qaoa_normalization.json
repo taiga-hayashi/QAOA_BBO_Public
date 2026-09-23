@@ -1,0 +1,880 @@
+{
+  "metadata": {
+    "backend": "OpenQARP/qarpx exact statevector",
+    "mixer": "current complete-graph within-block RXX/RYY XY mixer",
+    "objective_evaluation": "always the original, unnormalized QUBO objective",
+    "normalization_meaning": "only the QUBO passed to the cost Hamiltonian is divided by the reported positive scale",
+    "scope": "N <= 20; all entries are executed simulations, without shot noise.",
+    "p2_warning": "p=2 uses the current fixed-seed candidate search, not continuous parameter optimization."
+  },
+  "settings": [
+    {
+      "id": "p1_grid_49",
+      "label": "p=1, 7x7 grid",
+      "reps": 1,
+      "maxiter": 49
+    },
+    {
+      "id": "p2_random_49",
+      "label": "p=2, 49 candidates",
+      "reps": 2,
+      "maxiter": 49
+    }
+  ],
+  "normalizations": [
+    {
+      "id": "none",
+      "label": "No normalization"
+    },
+    {
+      "id": "max_abs",
+      "label": "max |Q_ij| = 1"
+    },
+    {
+      "id": "rms",
+      "label": "RMS(nonzero Q_ij) = 1"
+    }
+  ],
+  "results": {
+    "BB1_materials": {
+      "8": {
+        "n_qubits": 8,
+        "block_sizes": [
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.3,
+                0.675
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.013190887930787272,
+              "expected_objective_raw": -3.093743354072232,
+              "expected_gap_raw": 3.225933450016708,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.004437625000718981
+            },
+            "max_abs": {
+              "normalization_scale": 5.522576827123453,
+              "selected_parameters": [
+                0.8,
+                0.675
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.006860093357731319,
+              "expected_objective_raw": -2.9826726870703446,
+              "expected_gap_raw": 3.337004117018595,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.0023442909587174654
+            },
+            "rms": {
+              "normalization_scale": 2.4561306701596086,
+              "selected_parameters": [
+                0.8,
+                0.675
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.015787415984158358,
+              "expected_objective_raw": -3.0960194953791706,
+              "expected_gap_raw": 3.223657308709769,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 0.0023682500468567014
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.768919409931084,
+                0.41172757770717516,
+                0.6370514204377147,
+                0.11204749994182893
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.13233336500358225,
+              "expected_objective_raw": -3.0553507814757945,
+              "expected_gap_raw": 3.264326022613145,
+              "feasibility_rate": 0.9999999999999999,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 0.004102708015125245
+            },
+            "max_abs": {
+              "normalization_scale": 5.522576827123453,
+              "selected_parameters": [
+                0.37632279500227844,
+                0.7942816730418778,
+                0.7187579496911854,
+                0.6114560145927119
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.10823417364665965,
+              "expected_objective_raw": -3.0889202146792383,
+              "expected_gap_raw": 3.2307565894097015,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.004188125021755695
+            },
+            "rms": {
+              "normalization_scale": 2.4561306701596086,
+              "selected_parameters": [
+                0.6401932831266038,
+                0.5486381424440241,
+                0.5788740339697513,
+                0.6355467732664759
+              ],
+              "exact_minimum_raw": -6.31967680408894,
+              "p_opt": 0.1822229211892462,
+              "expected_objective_raw": -3.192224627979651,
+              "expected_gap_raw": 3.127452176109289,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.004147999978158623
+            }
+          }
+        }
+      },
+      "12": {
+        "n_qubits": 12,
+        "block_sizes": [
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.175,
+                0.675
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.008174760970312429,
+              "expected_objective_raw": -3.9322579995662297,
+              "expected_gap_raw": 4.799963205088578,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.029743707971647382
+            },
+            "max_abs": {
+              "normalization_scale": 5.522576827123453,
+              "selected_parameters": [
+                0.8,
+                0.675
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.007306194482192356,
+              "expected_objective_raw": -3.9370923570463807,
+              "expected_gap_raw": 4.795128847608427,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.028765209019184113
+            },
+            "rms": {
+              "normalization_scale": 1.5745556983106797,
+              "selected_parameters": [
+                0.175,
+                0.675
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.0063397672590102755,
+              "expected_objective_raw": -3.9353920058476675,
+              "expected_gap_raw": 4.79682919880714,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.029245874960906804
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.7314355180307053,
+                0.5747803503580622,
+                0.2494024710946397,
+                0.7768822830107929
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.13132232073005157,
+              "expected_objective_raw": -5.169986103732205,
+              "expected_gap_raw": 3.562235100922603,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.054595666006207466
+            },
+            "max_abs": {
+              "normalization_scale": 5.522576827123453,
+              "selected_parameters": [
+                0.6401932831266038,
+                0.5486381424440241,
+                0.5788740339697513,
+                0.6355467732664759
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.0714867216599832,
+              "expected_objective_raw": -4.441975321524623,
+              "expected_gap_raw": 4.290245883130185,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 0.0545651669963263
+            },
+            "rms": {
+              "normalization_scale": 1.5745556983106797,
+              "selected_parameters": [
+                0.6401932831266038,
+                0.5486381424440241,
+                0.5788740339697513,
+                0.6355467732664759
+              ],
+              "exact_minimum_raw": -8.732221204654808,
+              "p_opt": 0.11924447755381652,
+              "expected_objective_raw": -5.1358780294596675,
+              "expected_gap_raw": 3.5963431751951402,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.054678167041856796
+            }
+          }
+        }
+      },
+      "16": {
+        "n_qubits": 16,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.8,
+                0.8
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.0005806770366303857,
+              "expected_objective_raw": -8.131864228999335,
+              "expected_gap_raw": 7.641707595867924,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.7231373750255443
+            },
+            "max_abs": {
+              "normalization_scale": 5.2631604804393985,
+              "selected_parameters": [
+                0.05,
+                0.05
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.003656812337716182,
+              "expected_objective_raw": -7.244185690409894,
+              "expected_gap_raw": 8.529386134457365,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 0.7195743749616668
+            },
+            "rms": {
+              "normalization_scale": 1.720026481238103,
+              "selected_parameters": [
+                0.8,
+                0.8
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.000266592266838495,
+              "expected_objective_raw": -7.391789783369839,
+              "expected_gap_raw": 8.38178204149742,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.7253337919828482
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.05697041694734228,
+              "expected_objective_raw": -10.395381272393236,
+              "expected_gap_raw": 5.378190552474024,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 1.3652659169747494
+            },
+            "max_abs": {
+              "normalization_scale": 5.2631604804393985,
+              "selected_parameters": [
+                0.6304670364169725,
+                0.37915882981403926,
+                0.6939484399335368,
+                0.5730260217945229
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.0276231358296513,
+              "expected_objective_raw": -9.553177023796627,
+              "expected_gap_raw": 6.220394801070633,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 1.362690666981507
+            },
+            "rms": {
+              "normalization_scale": 1.720026481238103,
+              "selected_parameters": [
+                0.4661393520436125,
+                0.3281917128968291,
+                0.6723423073493099,
+                0.6561886040482263
+              ],
+              "exact_minimum_raw": -15.77357182486726,
+              "p_opt": 0.04712048075437632,
+              "expected_objective_raw": -10.412420123715268,
+              "expected_gap_raw": 5.361151701151991,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 1.3403860409744084
+            }
+          }
+        }
+      },
+      "20": {
+        "n_qubits": 20,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.0005424163461935528,
+              "expected_objective_raw": -7.253762726362574,
+              "expected_gap_raw": 8.798264638893045,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 0.9999999999999997,
+              "runtime_sec": 28.727908625034615
+            },
+            "max_abs": {
+              "normalization_scale": 5.253386317041434,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.0005727492755520796,
+              "expected_objective_raw": -7.270329592917591,
+              "expected_gap_raw": 8.781697772338028,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 30.32941804197617
+            },
+            "rms": {
+              "normalization_scale": 1.2420538660401368,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.0005507471697881875,
+              "expected_objective_raw": -7.25834957800448,
+              "expected_gap_raw": 8.793677787251138,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 22.864645958004985
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.01681883359586278,
+              "expected_objective_raw": -8.752941823791282,
+              "expected_gap_raw": 7.299085541464336,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 40.06848383304896
+            },
+            "max_abs": {
+              "normalization_scale": 5.253386317041434,
+              "selected_parameters": [
+                0.6185658050640304,
+                0.3158944760974013,
+                0.7780235182961774,
+                0.7198408409916482
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.0025077152032709827,
+              "expected_objective_raw": -7.357264158499193,
+              "expected_gap_raw": 8.694763206756425,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 39.698479041981045
+            },
+            "rms": {
+              "normalization_scale": 1.2420538660401368,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -16.05202736525562,
+              "p_opt": 0.01316466192501978,
+              "expected_objective_raw": -8.642893922164365,
+              "expected_gap_raw": 7.409133443091253,
+              "feasibility_rate": 1.0000000000000002,
+              "feasible_probability_sum": 1.0000000000000002,
+              "runtime_sec": 46.96345683396794
+            }
+          }
+        }
+      }
+    },
+    "BB2_random": {
+      "8": {
+        "n_qubits": 8,
+        "block_sizes": [
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.15561866169734212,
+              "expected_objective_raw": -0.9896512127607647,
+              "expected_gap_raw": 1.4085565617375941,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.004978584009222686
+            },
+            "max_abs": {
+              "normalization_scale": 1.3466566117599998,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.15768251912824122,
+              "expected_objective_raw": -1.0044464705292282,
+              "expected_gap_raw": 1.3937613039691308,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.003468042006716132
+            },
+            "rms": {
+              "normalization_scale": 0.6722151621885856,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.15166567581443804,
+              "expected_objective_raw": -0.9612909328860648,
+              "expected_gap_raw": 1.4369168416122942,
+              "feasibility_rate": 1.0000000000000002,
+              "feasible_probability_sum": 1.0000000000000002,
+              "runtime_sec": 0.0032472090097144246
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.7314355180307053,
+                0.5747803503580622,
+                0.2494024710946397,
+                0.7768822830107929
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.121867626594357,
+              "expected_objective_raw": -0.884315612362357,
+              "expected_gap_raw": 1.513892162136002,
+              "feasibility_rate": 0.9999999999999999,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.006385790999047458
+            },
+            "max_abs": {
+              "normalization_scale": 1.3466566117599998,
+              "selected_parameters": [
+                0.7314355180307053,
+                0.5747803503580622,
+                0.2494024710946397,
+                0.7768822830107929
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.1316313277747992,
+              "expected_objective_raw": -0.8484308428175548,
+              "expected_gap_raw": 1.549776931680804,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.007295540999621153
+            },
+            "rms": {
+              "normalization_scale": 0.6722151621885856,
+              "selected_parameters": [
+                0.32135945791504283,
+                0.11573743948707575,
+                0.13850442659038648,
+                0.7714232484121359
+              ],
+              "exact_minimum_raw": -2.398207774498359,
+              "p_opt": 0.09870093982062998,
+              "expected_objective_raw": -0.7247846444381627,
+              "expected_gap_raw": 1.6734231300601963,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0000000000000002,
+              "runtime_sec": 0.006550708960276097
+            }
+          }
+        }
+      },
+      "12": {
+        "n_qubits": 12,
+        "block_sizes": [
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.01331733772704931,
+              "expected_objective_raw": -2.2914674523199188,
+              "expected_gap_raw": 1.713983479443439,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.04385187500156462
+            },
+            "max_abs": {
+              "normalization_scale": 1.4834336486291928,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.01286132189449087,
+              "expected_objective_raw": -2.2937632419683105,
+              "expected_gap_raw": 1.7116876897950473,
+              "feasibility_rate": 1.0000000000000002,
+              "feasible_probability_sum": 1.0000000000000002,
+              "runtime_sec": 0.04507274995557964
+            },
+            "rms": {
+              "normalization_scale": 0.6888115057933027,
+              "selected_parameters": [
+                0.05,
+                0.8
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.013939633874659107,
+              "expected_objective_raw": -2.285431290602694,
+              "expected_gap_raw": 1.7200196411606639,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 0.04358195798704401
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.32135945791504283,
+                0.11573743948707575,
+                0.13850442659038648,
+                0.7714232484121359
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.02367064937138072,
+              "expected_objective_raw": -1.8924674067157532,
+              "expected_gap_raw": 2.1129835250476043,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.08690458396449685
+            },
+            "max_abs": {
+              "normalization_scale": 1.4834336486291928,
+              "selected_parameters": [
+                0.32135945791504283,
+                0.11573743948707575,
+                0.13850442659038648,
+                0.7714232484121359
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.02330132345729376,
+              "expected_objective_raw": -2.0644702824877803,
+              "expected_gap_raw": 1.9409806492755775,
+              "feasibility_rate": 1.0000000000000002,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 0.08453016699058935
+            },
+            "rms": {
+              "normalization_scale": 0.6888115057933027,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -4.005450931763358,
+              "p_opt": 0.021558099908298847,
+              "expected_objective_raw": -1.895872346530798,
+              "expected_gap_raw": 2.1095785852325597,
+              "feasibility_rate": 0.9999999999999999,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 0.08579604100668803
+            }
+          }
+        }
+      },
+      "16": {
+        "n_qubits": 16,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.004502577419929189,
+              "expected_objective_raw": -0.8337362275444529,
+              "expected_gap_raw": 4.97529716141611,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 1.3543567919987254
+            },
+            "max_abs": {
+              "normalization_scale": 1.4057124429397971,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.004901783232301652,
+              "expected_objective_raw": -0.8828543934899862,
+              "expected_gap_raw": 4.926178995470576,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 1.252170208026655
+            },
+            "rms": {
+              "normalization_scale": 0.6346917455758266,
+              "selected_parameters": [
+                0.05,
+                0.55
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.003783249458506387,
+              "expected_objective_raw": -0.7350256856560873,
+              "expected_gap_raw": 5.074007703304476,
+              "feasibility_rate": 0.9999999999999999,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 1.201197125017643
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.002131038818470369,
+              "expected_objective_raw": -1.2418171848117305,
+              "expected_gap_raw": 4.567216204148832,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 2.024276583979372
+            },
+            "max_abs": {
+              "normalization_scale": 1.4057124429397971,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.0013560395345962313,
+              "expected_objective_raw": -0.8376609858799579,
+              "expected_gap_raw": 4.971372403080605,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 2.025101375009399
+            },
+            "rms": {
+              "normalization_scale": 0.6346917455758266,
+              "selected_parameters": [
+                0.37918359522878503,
+                0.06620905991024782,
+                0.6697189431457684,
+                0.7221205788798251
+              ],
+              "exact_minimum_raw": -5.809033388960563,
+              "p_opt": 0.003613100032817096,
+              "expected_objective_raw": -1.7328791142549724,
+              "expected_gap_raw": 4.0761542747055906,
+              "feasibility_rate": 0.9999999999999998,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 2.1011507919756696
+            }
+          }
+        }
+      },
+      "20": {
+        "n_qubits": 20,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "results": {
+          "p1_grid_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.8,
+                0.8
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0010314131550147566,
+              "expected_objective_raw": -1.1065603494530751,
+              "expected_gap_raw": 6.344044656629771,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 31.52014258300187
+            },
+            "max_abs": {
+              "normalization_scale": 1.2740808548356883,
+              "selected_parameters": [
+                0.8,
+                0.8
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0009187113012256422,
+              "expected_objective_raw": -0.9331630743388621,
+              "expected_gap_raw": 6.517441931743985,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 27.960367166029755
+            },
+            "rms": {
+              "normalization_scale": 0.6192646593462292,
+              "selected_parameters": [
+                0.675,
+                0.8
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0007544851778394352,
+              "expected_objective_raw": -1.1971037211668336,
+              "expected_gap_raw": 6.2535012849160125,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 32.93521162500838
+            }
+          },
+          "p2_random_49": {
+            "none": {
+              "normalization_scale": 1.0,
+              "selected_parameters": [
+                0.4659385902618761,
+                0.0978629420781315,
+                0.6707233789944366,
+                0.5237482993415487
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0018051210852350742,
+              "expected_objective_raw": -2.577709725346741,
+              "expected_gap_raw": 4.872895280736106,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 1.0,
+              "runtime_sec": 56.873828209005296
+            },
+            "max_abs": {
+              "normalization_scale": 1.2740808548356883,
+              "selected_parameters": [
+                0.4659385902618761,
+                0.0978629420781315,
+                0.6707233789944366,
+                0.5237482993415487
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0011666965241710675,
+              "expected_objective_raw": -2.42898341905482,
+              "expected_gap_raw": 5.021621587028027,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999999,
+              "runtime_sec": 59.76639712502947
+            },
+            "rms": {
+              "normalization_scale": 0.6192646593462292,
+              "selected_parameters": [
+                0.4659385902618761,
+                0.0978629420781315,
+                0.6707233789944366,
+                0.5237482993415487
+              ],
+              "exact_minimum_raw": -7.450605006082847,
+              "p_opt": 0.0026589758225954462,
+              "expected_objective_raw": -2.415197388710842,
+              "expected_gap_raw": 5.035407617372004,
+              "feasibility_rate": 1.0,
+              "feasible_probability_sum": 0.9999999999999998,
+              "runtime_sec": 65.09037087502657
+            }
+          }
+        }
+      }
+    }
+  }
+}

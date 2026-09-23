@@ -1,0 +1,21 @@
+# 実験用パラメータ設定
+
+# 全般設定
+seed: 42
+
+# 問題設定
+d: 20                   # 変数の数 (次元数) ※d=20(100万通り)のテスト対応済み
+
+# BBO (ブラックボックス最適化) の設定
+num_initial_samples: 20 # BBOの初期データ数
+num_bbo_cycles: 20       # BBOのサイクル数
+
+# FM (Factorization Machine) の設定
+k: 3                    # 相互作用ベクトルの次元数
+epochs: 150             # 学習エポック数
+lr: 0.1                 # FMの学習率
+
+# QAOAの設定
+qaoa_reps: 1            # QAOAのレイヤー数 (p)。増やすと表現力が上がりますが、計算コストが増えます
+qaoa_optimizer: "COBYLA" # QAOAのパラメータ最適化に使う古典オプティマイザ (COBYLA, SPSA, SLSQP など)
+qaoa_maxiter: 50        # 古典オプティマイザの最大イテレーション数

@@ -1,0 +1,577 @@
+{
+  "metadata": {
+    "experiment": "OpenQARP FM-XY-QAOA parameter-search and qubit scaling",
+    "backend": "OpenQARP/qarpx exact statevector",
+    "mixer": "complete-graph RXX/RYY within each One-Hot block",
+    "initial_state": "uniform superposition over One-Hot feasible patterns",
+    "shots": null,
+    "seed_policy": {
+      "BB1_materials": 123,
+      "BB2_random": 42,
+      "p2_candidate_search": 42
+    },
+    "measurement_scope": "N <= 20 only; every reported result is an executed full-state simulation.",
+    "warning": "p=2 uses the current fixed-seed random candidate policy, not a continuous optimizer; it is an implementation baseline, not an optimized p=2 result."
+  },
+  "settings": [
+    {
+      "id": "p1_grid_25",
+      "label": "p=1, 5x5 grid",
+      "reps": 1,
+      "maxiter": 25,
+      "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]"
+    },
+    {
+      "id": "p1_grid_49",
+      "label": "p=1, 7x7 grid",
+      "reps": 1,
+      "maxiter": 49,
+      "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]"
+    },
+    {
+      "id": "p2_random_49",
+      "label": "p=2, 49 candidates",
+      "reps": 2,
+      "maxiter": 49,
+      "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)"
+    }
+  ],
+  "results": {
+    "BB1_materials": {
+      "8": {
+        "n_qubits": 8,
+        "block_sizes": [
+          4,
+          4
+        ],
+        "feasible_dimension": 16,
+        "full_state_dimension": 256,
+        "statevector_bytes": 4096,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.425,
+              0.6125
+            ],
+            "exact_minimum": -6.31967680408894,
+            "number_of_optima": 1,
+            "p_opt": 0.04971492249053759,
+            "expected_objective": -3.0878305187327477,
+            "expected_gap": 3.231846285356192,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 0.9999999999999999,
+            "runtime_sec": 0.004023417015559971
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.3,
+              0.675
+            ],
+            "exact_minimum": -6.31967680408894,
+            "number_of_optima": 1,
+            "p_opt": 0.013190887930787272,
+            "expected_objective": -3.093743354072232,
+            "expected_gap": 3.225933450016708,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.0025820000446401536
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.768919409931084,
+              0.41172757770717516,
+              0.6370514204377147,
+              0.11204749994182893
+            ],
+            "exact_minimum": -6.31967680408894,
+            "number_of_optima": 1,
+            "p_opt": 0.13233336500358225,
+            "expected_objective": -3.0553507814757945,
+            "expected_gap": 3.264326022613145,
+            "feasibility_rate": 0.9999999999999999,
+            "feasible_probability_sum": 0.9999999999999998,
+            "runtime_sec": 0.00481262500397861
+          }
+        }
+      },
+      "12": {
+        "n_qubits": 12,
+        "block_sizes": [
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 64,
+        "full_state_dimension": 4096,
+        "statevector_bytes": 65536,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.6125
+            ],
+            "exact_minimum": -8.732221204654808,
+            "number_of_optima": 1,
+            "p_opt": 0.004441244848618766,
+            "expected_objective": -3.9083567414538667,
+            "expected_gap": 4.823864463200941,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.01904149999609217
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.175,
+              0.675
+            ],
+            "exact_minimum": -8.732221204654808,
+            "number_of_optima": 1,
+            "p_opt": 0.008174760970312429,
+            "expected_objective": -3.9322579995662297,
+            "expected_gap": 4.799963205088578,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.03295650001382455
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.7314355180307053,
+              0.5747803503580622,
+              0.2494024710946397,
+              0.7768822830107929
+            ],
+            "exact_minimum": -8.732221204654808,
+            "number_of_optima": 1,
+            "p_opt": 0.13132232073005157,
+            "expected_objective": -5.169986103732205,
+            "expected_gap": 3.562235100922603,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.061837791989091784
+          }
+        }
+      },
+      "16": {
+        "n_qubits": 16,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 256,
+        "full_state_dimension": 65536,
+        "statevector_bytes": 1048576,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.8,
+              0.8
+            ],
+            "exact_minimum": -15.77357182486726,
+            "number_of_optima": 1,
+            "p_opt": 0.0005806770366303857,
+            "expected_objective": -8.131864228999335,
+            "expected_gap": 7.641707595867924,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.4721910419757478
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.8,
+              0.8
+            ],
+            "exact_minimum": -15.77357182486726,
+            "number_of_optima": 1,
+            "p_opt": 0.0005806770366303857,
+            "expected_objective": -8.131864228999335,
+            "expected_gap": 7.641707595867924,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.8866677920450456
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.37918359522878503,
+              0.06620905991024782,
+              0.6697189431457684,
+              0.7221205788798251
+            ],
+            "exact_minimum": -15.77357182486726,
+            "number_of_optima": 1,
+            "p_opt": 0.05697041694734228,
+            "expected_objective": -10.395381272393236,
+            "expected_gap": 5.378190552474024,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 0.9999999999999999,
+            "runtime_sec": 1.7828523750067689
+          }
+        }
+      },
+      "20": {
+        "n_qubits": 20,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 1024,
+        "full_state_dimension": 1048576,
+        "statevector_bytes": 16777216,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.6125
+            ],
+            "exact_minimum": -16.05202736525562,
+            "number_of_optima": 1,
+            "p_opt": 0.00025117209069142786,
+            "expected_objective": -7.226300007736609,
+            "expected_gap": 8.82572735751901,
+            "feasibility_rate": 1.0000000000000002,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 15.911439499992412
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.55
+            ],
+            "exact_minimum": -16.05202736525562,
+            "number_of_optima": 1,
+            "p_opt": 0.0005424163461935528,
+            "expected_objective": -7.253762726362574,
+            "expected_gap": 8.798264638893045,
+            "feasibility_rate": 0.9999999999999998,
+            "feasible_probability_sum": 0.9999999999999997,
+            "runtime_sec": 35.74894616700476
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.37918359522878503,
+              0.06620905991024782,
+              0.6697189431457684,
+              0.7221205788798251
+            ],
+            "exact_minimum": -16.05202736525562,
+            "number_of_optima": 1,
+            "p_opt": 0.01681883359586278,
+            "expected_objective": -8.752941823791282,
+            "expected_gap": 7.299085541464336,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 58.066117834008764
+          }
+        }
+      }
+    },
+    "BB2_random": {
+      "8": {
+        "n_qubits": 8,
+        "block_sizes": [
+          4,
+          4
+        ],
+        "feasible_dimension": 16,
+        "full_state_dimension": 256,
+        "statevector_bytes": 4096,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.8
+            ],
+            "exact_minimum": -2.398207774498359,
+            "number_of_optima": 1,
+            "p_opt": 0.15561866169734212,
+            "expected_objective": -0.9896512127607647,
+            "expected_gap": 1.4085565617375941,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.006323334004264325
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.8
+            ],
+            "exact_minimum": -2.398207774498359,
+            "number_of_optima": 1,
+            "p_opt": 0.15561866169734212,
+            "expected_objective": -0.9896512127607647,
+            "expected_gap": 1.4085565617375941,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.005288249987643212
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.7314355180307053,
+              0.5747803503580622,
+              0.2494024710946397,
+              0.7768822830107929
+            ],
+            "exact_minimum": -2.398207774498359,
+            "number_of_optima": 1,
+            "p_opt": 0.121867626594357,
+            "expected_objective": -0.884315612362357,
+            "expected_gap": 1.513892162136002,
+            "feasibility_rate": 0.9999999999999999,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.012395917030517012
+          }
+        }
+      },
+      "12": {
+        "n_qubits": 12,
+        "block_sizes": [
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 64,
+        "full_state_dimension": 4096,
+        "statevector_bytes": 65536,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.8
+            ],
+            "exact_minimum": -4.005450931763358,
+            "number_of_optima": 1,
+            "p_opt": 0.01331733772704931,
+            "expected_objective": -2.2914674523199188,
+            "expected_gap": 1.713983479443439,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.038586209004279226
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.8
+            ],
+            "exact_minimum": -4.005450931763358,
+            "number_of_optima": 1,
+            "p_opt": 0.01331733772704931,
+            "expected_objective": -2.2914674523199188,
+            "expected_gap": 1.713983479443439,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.08157308399677277
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.32135945791504283,
+              0.11573743948707575,
+              0.13850442659038648,
+              0.7714232484121359
+            ],
+            "exact_minimum": -4.005450931763358,
+            "number_of_optima": 1,
+            "p_opt": 0.02367064937138072,
+            "expected_objective": -1.8924674067157532,
+            "expected_gap": 2.1129835250476043,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.143535208015237
+          }
+        }
+      },
+      "16": {
+        "n_qubits": 16,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 256,
+        "full_state_dimension": 65536,
+        "statevector_bytes": 1048576,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.425
+            ],
+            "exact_minimum": -5.809033388960563,
+            "number_of_optima": 1,
+            "p_opt": 0.005511735354054167,
+            "expected_objective": -0.7936911780350078,
+            "expected_gap": 5.015342210925555,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 0.8601300000445917
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.05,
+              0.55
+            ],
+            "exact_minimum": -5.809033388960563,
+            "number_of_optima": 1,
+            "p_opt": 0.004502577419929189,
+            "expected_objective": -0.8337362275444529,
+            "expected_gap": 4.97529716141611,
+            "feasibility_rate": 0.9999999999999998,
+            "feasible_probability_sum": 0.9999999999999998,
+            "runtime_sec": 1.914062166993972
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.37918359522878503,
+              0.06620905991024782,
+              0.6697189431457684,
+              0.7221205788798251
+            ],
+            "exact_minimum": -5.809033388960563,
+            "number_of_optima": 1,
+            "p_opt": 0.002131038818470369,
+            "expected_objective": -1.2418171848117305,
+            "expected_gap": 4.567216204148832,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 2.9942207919666544
+          }
+        }
+      },
+      "20": {
+        "n_qubits": 20,
+        "block_sizes": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "feasible_dimension": 1024,
+        "full_state_dimension": 1048576,
+        "statevector_bytes": 16777216,
+        "settings": {
+          "p1_grid_25": {
+            "reps": 1,
+            "maxiter": 25,
+            "search": "deterministic 5x5 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.8,
+              0.8
+            ],
+            "exact_minimum": -7.450605006082847,
+            "number_of_optima": 1,
+            "p_opt": 0.0010314131550147566,
+            "expected_objective": -1.1065603494530751,
+            "expected_gap": 6.344044656629771,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 18.88300704199355
+          },
+          "p1_grid_49": {
+            "reps": 1,
+            "maxiter": 49,
+            "search": "deterministic 7x7 grid on gamma,beta in [0.05, 0.8]",
+            "selected_parameters": [
+              0.8,
+              0.8
+            ],
+            "exact_minimum": -7.450605006082847,
+            "number_of_optima": 1,
+            "p_opt": 0.0010314131550147566,
+            "expected_objective": -1.1065603494530751,
+            "expected_gap": 6.344044656629771,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 36.97287962498376
+          },
+          "p2_random_49": {
+            "reps": 2,
+            "maxiter": 49,
+            "search": "one [0.3,...,0.3] candidate plus 48 fixed-seed (42) uniform candidates in [0.05, 0.8]^(4)",
+            "selected_parameters": [
+              0.4659385902618761,
+              0.0978629420781315,
+              0.6707233789944366,
+              0.5237482993415487
+            ],
+            "exact_minimum": -7.450605006082847,
+            "number_of_optima": 1,
+            "p_opt": 0.0018051210852350742,
+            "expected_objective": -2.577709725346741,
+            "expected_gap": 4.872895280736106,
+            "feasibility_rate": 1.0,
+            "feasible_probability_sum": 1.0,
+            "runtime_sec": 57.98621612502029
+          }
+        }
+      }
+    }
+  }
+}

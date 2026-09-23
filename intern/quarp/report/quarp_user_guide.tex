@@ -1,0 +1,464 @@
+\documentclass[11pt,a4paper]{ltjsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{bm}
+\usepackage{geometry}
+\geometry{top=18mm,bottom=18mm,left=18mm,right=18mm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+% カラーパレット定義
+\definecolor{fujitsured}{RGB}{235, 0, 0}
+\definecolor{qarpblue}{RGB}{20, 50, 120}
+\definecolor{codebg}{RGB}{248, 249, 251}
+\definecolor{codeframe}{RGB}{215, 222, 230}
+\definecolor{codegreen}{RGB}{0, 130, 50}
+\definecolor{codepurple}{RGB}{120, 20, 140}
+\definecolor{codegray}{RGB}{100, 100, 100}
+
+% listings設定
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{blue!80!black}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=7pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    rulecolor=\color{codeframe},
+    xleftmargin=12pt,
+    framexleftmargin=8pt
+}
+\lstset{style=pythonstyle}
+
+% tcolorboxスタイル
+\tcbuselibrary{skins,breakable}
+\tcbset{
+    mybox/.style={
+        enhanced,
+        colback=blue!2!white,
+        colframe=qarpblue,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.6pt,
+        arc=1.5mm,
+        left=3mm,right=3mm,top=2.5mm,bottom=2.5mm
+    },
+    keybox/.style={
+        enhanced,
+        colback=green!2!white,
+        colframe=green!50!black,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.6pt,
+        arc=1.5mm,
+        left=3mm,right=3mm,top=2.5mm,bottom=2.5mm
+    },
+    alertbox/.style={
+        enhanced,
+        colback=red!2!white,
+        colframe=fujitsured,
+        fonttitle=\bfseries\sffamily,
+        coltitle=white,
+        boxrule=0.6pt,
+        arc=1.5mm,
+        left=3mm,right=3mm,top=2.5mm,bottom=2.5mm
+    }
+}
+
+\newtcolorbox{mybox}[1]{mybox, title=#1}
+\newtcolorbox{keybox}[1]{keybox, title=#1}
+\newtcolorbox{alertbox}[1]{alertbox, title=#1}
+
+\title{
+    \vspace{-10mm}
+    \Huge\textbf{OpenQARP (Quarp) 実践導入・活用ガイド}\\[3mm]
+    \Large 富士通量子アプリケーション研究開発基盤のアーキテクチャと\\
+    QAOA / XY-QAOA 実装プロトコル
+    \vspace{-2mm}
+}
+\author{
+    \textbf{富士通インターンシップ研究プロジェクト} \\[1mm]
+    量子コンピューティング・ブラックボックス最適化 (BBO) チーム
+}
+\date{2026年9月（OpenQARP v0.1.0 公式公開版準拠）}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本技術ガイドは，富士通株式会社が2026年9月15日にオープンソースソフトウェア（OSS）として世界に一般公開した次世代量子アプリケーション開発基盤 \textbf{OpenQARP}（Open Quantum Application Research Package，モジュール名: \texttt{qarp}）のアーキテクチャ，モジュール構成，および量子近似最適化アルゴリズム（QAOA）の実践的プログラミング手法を包括的にまとめた技術解説書である．OpenQARP は，70種以上の構成要素（Composable Blocks）と20種以上の既成アルゴリズムを標準搭載し，C++ 超高速コアエンジン（\texttt{qarpx}）による卓越したシミュレーション性能を備える．本稿では，OpenQARP の基本思想から環境構築，演算子定義，回路合成，標準QAOAの実行方法に加え，本研究の中核である1-hot制約保存型 \textbf{FM-XY-QAOA} への拡張実装手順までを完全なコード例とともに詳解する．
+\end{abstract}
+
+\vspace{2mm}
+\hrule
+\vspace{4mm}
+
+\tableofcontents
+
+\vspace{6mm}
+\hrule
+\vspace{6mm}
+
+% ==============================================================================
+\section{はじめに：OpenQARP 公開の意義と本研究での位置づけ}
+% ==============================================================================
+
+\subsection{富士通によるオープンソース公開の概要}
+2026年9月15日，富士通株式会社は産業界および学術界における量子アルゴリズムの実用化研究を劇的に加速させるため，量子アプリケーション開発フレームワーク \textbf{OpenQARP}（Open Quantum Application Research Package）を GitHub 上でオープンソース（Apache License 2.0）として公開した\footnote{プレスリリース: \url{https://global.fujitsu/ja-JP/pr/news/2026/09/15-01}，GitHub: \url{https://github.com/OpenQARP/openqarp}}．
+
+従来の量子ソフトウェアフレームワーク（Qiskit, PennyLane, Cirq 等）は，低レイヤの量子回路記述や抽象的な量子化学計算には優れている一方，産業課題特有のハイブリッド量子・古典アルゴリズム（VQA/QAOA）の構築，回路ブロックのモジュール的再構成，および古典シミュレーションの大規模化において，コード記述の冗長化や実行速度のボトルネックが存在していた．OpenQARP はこれらの課題を打破すべく開発された．
+
+\begin{keybox}{OpenQARP のコアバリュー}
+\begin{itemize}\setlength{\itemsep}{1mm}
+    \item \textbf{モジュール型構成（Composable Blocks）}: 70種以上のビルディングブロックをレゴブロックのように組み合わせ，独自の変分回路やミキサー回路を数行で合成可能．
+    \item \textbf{C++ バックエンドによる超高速実行（\texttt{qarpx}）}: 内部の基底ベクトル演算やパウリ代数は，高精度・高並列化された C++ コアモジュール \texttt{qarpx} によって直接実行され，Python オーバーヘッドを完全排除．
+    \item \textbf{ハイブリッド基盤親和性}: NVIDIA \textbf{CUDA-Q} プラットフォームや富士通の高性能量子シミュレータ，将来の超伝導・中性原子実機へのシームレスな移行をサポート．
+\end{itemize}
+\end{keybox}
+
+\subsection{本研究（触媒材料BBO・FM-XY-QAOA）における採用意義}
+現在進めている「Factorization Machine と量子近似最適化を融合した材料ブラックボックス最適化（FM-QAOA）」において，OpenQARP を採用することは以下の決定的なメリットを持つ：
+\begin{enumerate}\setlength{\itemsep}{1mm}
+    \item \textbf{インターン成果としての完璧なシナジー}: 富士通の最新成果である OpenQARP を，材料設計という極めて実用性の高いドメインにいち早く適用した「世界初の先駆的実証事例」となる．
+    \item \textbf{XYミキサーの実装容易性}: OpenQARP の \texttt{CompositeBlock} アーキテクチャにより，従来の Qiskit では複雑な回路手組みが必要だった「部分空間保存スワップ演算子（XYミキサー）」を，ネイティブなブロックとして極めてエレガントに定義できる．
+    \item \textbf{BBOサイクルの劇的高速化}: 各サイクルで反復されるオンラインサンプリングにおいて，C++ コアによる高速処理がシミュレーション時間を大幅に短縮する．
+\end{enumerate}
+
+% ==============================================================================
+\section{システムアーキテクチャとディレクトリ構造}
+% ==============================================================================
+
+OpenQARP は，クリーンで階層的なモジュール設計を採用している．主要なサブパッケージとその役割を表\ref{tab:qarp_packages}に示す．
+
+\begin{table}[H]
+\centering
+\caption{OpenQARP の主要パッケージ構成と役割}
+\label{tab:qarp_packages}
+\vspace{1mm}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{サブパッケージ名} & \textbf{インポートパス} & \textbf{主要な役割・機能} \\
+\midrule
+\texttt{algorithms} & \texttt{qarp.algorithms} & QAOA, VQE, VQD, QPE, Grover などの完成アルゴリズム \\
+\texttt{blocks} & \texttt{qarp.blocks} & 量子回路の最小構成単位（単一ゲート，H層，Cost層，Mixer層，Ansatz） \\
+\texttt{operators} & \texttt{qarp.operators} & OpenFermion互換・C++高速パウリ演算子（\texttt{QubitOperator}） \\
+\texttt{engines} & \texttt{qarp.engines} & 実行エンジン（高速C++シミュレータ \texttt{QarpEngine}，\texttt{CUDA-Q Engine}） \\
+\texttt{optimizers} & \texttt{qarp.optimizers} & パラメータ最適化器（ScipyOptimizer, 解析的勾配対応） \\
+\texttt{graphs} & \texttt{qarp.graphs} & NetworkXグラフとハミルトニアンの相互変換・トポロジ解析 \\
+\texttt{devices} & \texttt{qarp.devices} & 実機トポロジ，カップリングマップ，ノイズモデルの定義 \\
+\texttt{plotting} & \texttt{qarp.plotting} & エネルギー収束履歴，ブロッホ球，状態分布の可視化 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{alertbox}{重要：パッケージ名とインポート名の相違}
+配布パッケージ名は \textbf{\texttt{openqarp}} ですが，Python コード内でインポートする際のトップレベルモジュール名は \textbf{\texttt{qarp}} となります．
+\begin{lstlisting}[language=bash]
+$ pip install openqarp    # インストール時
+\end{lstlisting}
+\begin{lstlisting}[language=python]
+import qarp               # Pythonスクリプト内での使用時
+\end{lstlisting}
+\end{alertbox}
+
+% ==============================================================================
+\section{インストールと環境設定}
+% ==============================================================================
+
+\subsection{動作要件}
+\begin{itemize}\setlength{\itemsep}{1mm}
+    \item \textbf{Python バージョン}: Python 3.11, 3.12, 3.13, 3.14
+    \item \textbf{対応プラットフォーム}: macOS（Apple Silicon M1/M2/M3/M4, Intel x86\_64），Linux（Ubuntu/RHEL, x86\_64, aarch64），Windows
+    \item \textbf{前提ライブラリ}: NumPy ($\ge 1.24$), SciPy ($\ge 1.10$), SymPy ($\ge 1.12$), NetworkX ($\ge 3.0$), Matplotlib
+\end{itemize}
+
+\subsection{インストール手順}
+本研究の仮想環境（\texttt{.venv}）下において，以下のコマンドでインストールを行います．
+
+\begin{lstlisting}[language=bash]
+# 仮想環境のアクティベート
+source .venv/bin/activate
+
+# OpenQARP のインストール
+pip install openqarp
+\end{lstlisting}
+
+\subsection{インポートと ABI 適合性検証}
+OpenQARP は，C++ バックエンド（\texttt{qarpx}）と Python レイヤ（\texttt{qarp}）のバージョン整合性を保証するため，インポート時に自動的に ABI（Application Binary Interface）チェックを実行します．
+正しくセットアップされているか，以下のワンライナーで検証できます：
+
+\begin{lstlisting}[language=bash]
+python -c "import qarp; print('OpenQARP version:', qarp.__version__)"
+# 出力例: OpenQARP version: 0.1.0
+\end{lstlisting}
+
+% ==============================================================================
+\section{コア機能と API リファレンス}
+% ==============================================================================
+
+\subsection{ハミルトニアン定義：\texttt{QubitOperator}}
+OpenQARP の \texttt{QubitOperator} は，オープンソースの量子化学標準である OpenFermion と高い互換性を持ちつつ，内部計算がすべて C++ コア（\texttt{qarpx}）で実装されています．パウリ文字列と結合定数を直感的に定義できます．
+
+\begin{lstlisting}[language=python, caption={QubitOperator による目的関数ハミルトニアンの定義}]
+from qarp.operators import QubitOperator
+
+# 相互作用 Z_0 Z_1 (重み -2.5) と 局所磁場 Z_2 (重み 1.0) の定義
+H_cost = QubitOperator("Z0 Z1", -2.5) + QubitOperator("Z2", 1.0)
+
+# 定数項の追加（エネルギーオフセット）
+H_cost += QubitOperator("", 0.75)
+
+print("コストハミルトニアン:")
+print(H_cost)
+
+# スパース行列（scipy.sparse.csc_matrix）としての取り出しも瞬時に可能
+H_sparse = H_cost.sparse_matrix(n_qubits=3)
+print("行列サイズ:", H_sparse.shape)
+\end{lstlisting}
+
+\subsection{回路ビルディングブロック：\texttt{Block} と \texttt{CompositeBlock}}
+OpenQARP では，量子ゲートの集合を \textbf{\texttt{Block}} として扱います．
+複数のブロックを直列に連結することで \textbf{\texttt{CompositeBlock}} を構築します．
+
+\begin{lstlisting}[language=python, caption={CompositeBlock による回路のモジュール的組み立て}]
+from qarp.blocks import CompositeBlock
+from qarp.blocks._primitives import HnBlock, MixedOperatorBlock
+
+n_qubits = 4
+
+# 1. 全ビットへのアダマール初期化ブロック
+init_block = HnBlock(n_qubits=n_qubits, target_qubits=list(range(n_qubits)))
+
+# 2. Xミキサー層（回転角 beta_0 をシンボルに持つ標準ミキサー）
+mixer_block = MixedOperatorBlock(n_qubits=n_qubits, symbol_idx=0)
+
+# 3. 2つのブロックを合成
+my_circuit = CompositeBlock(
+    n_qubits=n_qubits,
+    blocks=[init_block, mixer_block],
+    name="MyCustomCircuit"
+)
+
+print("含まれるシンボルパラメータ:", my_circuit.symbols)
+\end{lstlisting}
+
+\subsection{測定プリミティブと実行エンジン}
+アルゴリズムの実行形態（理論シミュレーションか，ショット数有限のサンプリングか）は，\texttt{primitive} オブジェクトによって切り替えます．
+
+\begin{itemize}\setlength{\itemsep}{1mm}
+    \item \textbf{\texttt{StateVector()}}: 無雑音の厳密状態ベクトル計算（ショット数 $\infty$ の極限）．理論検証や勾配計算に最適．
+    \item \textbf{\texttt{Sampler(n\_shots=1000)}}: 実機測定を模したモンテカルロサンプリング．
+    \item \textbf{\texttt{Engine}}: デフォルトの C++ エンジンに加え，\texttt{CudaqEngine} を指定することで GPU 高速化が可能．
+\end{itemize}
+
+% ==============================================================================
+\section{OpenQARP による標準 QAOA の実装}
+% ==============================================================================
+
+OpenQARP の \texttt{qarp.algorithms.QAOA} は，変分量子アルゴリズム（VQA）フレームワークを継承しており，目的関数の定義から古典最適化ループの実行，最適パラメータの探索までを包括します．
+
+\subsection{QUBO 問題からの QAOA 実行}
+組合せ最適化問題を行列 $Q$（QUBO）から解く場合の最小完全コードを以下に示します．
+
+\begin{lstlisting}[language=python, caption={OpenQARP を用いた標準 QAOA の実行スクリプト}]
+import numpy as np
+from qarp.algorithms import QAOA
+from qarp.operators import QubitOperator
+from qarp.optimizers import ScipyOptimizer
+from qarp.algorithms._primitives import StateVector
+
+# 1. 3量子ビットのQUBO問題を定義: min x^T Q x
+# H = -1.5 Z0 Z1 + 0.8 Z1 Z2 - 1.0 Z0
+H_problem = (
+    QubitOperator("Z0 Z1", -1.5)
+    + QubitOperator("Z1 Z2", 0.8)
+    + QubitOperator("Z0", -1.0)
+)
+
+# 2. QAOA アルゴリズムインスタンスの生成 (p=1 レイヤー)
+# optimizer には Scipy の BFGS や COBYLA, CG が利用可能
+qaoa = QAOA(
+    problem=H_problem,
+    n_layers=1,
+    optimizer=ScipyOptimizer("COBYLA", options={"maxiter": 50}),
+    primitive=StateVector(),
+    save_energy_history=True,
+    verbose=True
+)
+
+# 3. 最適化の実行 (古典オプティマイザが gamma, beta を探索)
+result = qaoa.run()
+
+print("================ 最適化結果 ================")
+print(f"最小期待エネルギー: {result.optimal_value:.4f}")
+print(f"最適パラメータ (gamma, beta): {result.optimal_parameters}")
+
+# 4. 最適状態からの測定確率分布の抽出
+state_probs = qaoa.get_statevector()
+print("基底状態ベクトルの次元:", len(state_probs))
+\end{lstlisting}
+
+% ==============================================================================
+\section{発展：制約付き最適化と「XY-QAOA」のカスタム構築}
+% ==============================================================================
+
+本研究の核心である「1-hot 制約付き材料最適化」を解くため，標準の X ミキサーではなく，励起数（粒子数）を保存する \textbf{XY ミキサー}（$e^{-i\beta(X_i X_j + Y_i Y_j)}$）を用いた \textbf{FM-XY-QAOA} を OpenQARP 上に構築します．
+
+\subsection{XY ミキサーブロックの設計数理}
+ブロックサイズ $K=4$（4元素選択，各1-hot）の場合，ミキサーは各ブロック内で最近接リング状にスワップ演算子を適用します：
+\begin{equation}
+    H_M^{\mathrm{XY}} = \sum_{k=1}^M \sum_{j=1}^{K} \left( \sigma_{k, j}^x \sigma_{k, j+1}^x + \sigma_{k, j}^y \sigma_{k, j+1}^y \right)
+\end{equation}
+OpenQARP の \texttt{CompositeBlock} を用いることで，このカスタムミキサーを数行で自作ブロックとして登録できます．
+
+\begin{lstlisting}[language=python, caption={OpenQARP 上での XY-QAOA カスタム実装}]
+from typing import List
+import numpy as np
+from qarp.blocks import CompositeBlock
+from qarp.blocks._primitives import CostOperatorBlock
+from qarp.operators import QubitOperator
+from qarp.algorithms._composite.vqa import VQA
+from qarp.algorithms._primitives import StateVector
+from qarp.optimizers import ScipyOptimizer
+import sympy as sp
+
+def build_xy_mixer_block(block_sizes: List[int], symbol_idx: int) -> CompositeBlock:
+    """各ブロック内で粒子数を保存するXYミキサーブロックを生成"""
+    beta = sp.Symbol(f"beta_{symbol_idx}")
+    n_qubits = sum(block_sizes)
+    
+    # XX + YY 相互作用演算子を定義
+    H_xy = QubitOperator()
+    offset = 0
+    for sz in block_sizes:
+        for i in range(sz):
+            j = (i + 1) % sz  # リング結合
+            q1, q2 = offset + i, offset + j
+            H_xy += QubitOperator(f"X{q1} X{q2}", 0.5)
+            H_xy += QubitOperator(f"Y{q1} Y{q2}", 0.5)
+        offset += sz
+        
+    # パラメータ付きユニタリ発展ブロックとして返す
+    from qarp.blocks._primitives import TimeEvolutionBlock
+    return TimeEvolutionBlock(n_qubits=n_qubits, operator=H_xy, time=beta)
+
+def build_one_hot_initial_state(block_sizes: List[int]) -> CompositeBlock:
+    """各ブロックの先頭ビットを |1> に反転させ、初期正当状態 |1000 1000 ...> を準備"""
+    from qarp.blocks._primitives import XBlock
+    n_qubits = sum(block_sizes)
+    blocks = []
+    offset = 0
+    for sz in block_sizes:
+        # 先頭 qubit (offset) に X ゲートを適用
+        blocks.append(XBlock(n_qubits=n_qubits, target_qubit=offset))
+        offset += sz
+    return CompositeBlock(n_qubits=n_qubits, blocks=blocks, name="OneHotInit")
+\end{lstlisting}
+
+\subsection{XY-QAOA クラスの完成}
+初期状態準備ブロックと各層の CostBlock，XYMixerBlock を連結することで，100\% 制約を堅持する OpenQARP ネイティブな \texttt{XYQAOA} クラスが完成します．
+
+\begin{lstlisting}[language=python, caption={完成した OpenQARP 版 XY-QAOA クラスの全体構造}]
+class OpenQARP_XY_QAOA(VQA):
+    def __init__(self, cost_operator: QubitOperator, block_sizes: List[int], n_layers: int = 1):
+        self.block_sizes = block_sizes
+        self.n_qubits = sum(block_sizes)
+        self.n_layers = n_layers
+        
+        # 1. 1-hot 初期状態 |1000 1000 ...> の準備ブロック
+        circuit_blocks = [build_one_hot_initial_state(block_sizes)]
+        
+        # 2. p 層の (Cost層 + XYミキサー層) の積層
+        for l in range(n_layers):
+            gamma = sp.Symbol(f"gamma_{l}")
+            from qarp.blocks._primitives import TimeEvolutionBlock
+            # Cost ハミルトニアンによる発展
+            circuit_blocks.append(TimeEvolutionBlock(self.n_qubits, cost_operator, time=gamma))
+            # XY ミキサーによる発展
+            circuit_blocks.append(build_xy_mixer_block(block_sizes, symbol_idx=l))
+            
+        full_ansatz = CompositeBlock(
+            n_qubits=self.n_qubits,
+            blocks=circuit_blocks,
+            name="XY_QAOA_Ansatz"
+        )
+        
+        super().__init__(
+            operator=cost_operator,
+            ket=full_ansatz,
+            name="XY-QAOA",
+            optimizer=ScipyOptimizer("COBYLA", options={"maxiter": 30}),
+            primitive=StateVector()
+        )
+\end{lstlisting}
+
+% ==============================================================================
+\section{BBO（触媒・機能性材料探索）への統合と今後の検証計画}
+% ==============================================================================
+
+\subsection{既存 Qiskit 実装からのリプレイス手順}
+本リポジトリの \texttt{src/practical\_materials\_bbo.py} において，従来の Qiskit ソルバー \texttt{solve\_xy\_qaoa} を，上記の OpenQARP 実装 \texttt{solve\_openqarp\_xy\_qaoa} に差し替えます．
+
+\begin{figure}[H]
+\centering
+\begin{tcolorbox}[colback=white, colframe=qarpblue, arc=2mm, width=0.96\textwidth]
+\centering
+\textbf{\Large OpenQARP 移行による BBO ワークフロー}\\[3mm]
+\begin{tabular}{ccccc}
+\fbox{\shortstack{実験データ収集\\(DFT / 合成)}} & $\longrightarrow$ &
+\fbox{\shortstack{FMモデル学習\\(Factorization Machine)}} & $\longrightarrow$ &
+\fbox{\shortstack{\textbf{QUBOハミルトニアン生成}\\(QubitOperator変換)}} \\[4mm]
+& & & & $\boldsymbol{\downarrow}$ \\[2mm]
+\fbox{\shortstack{次期合成候補\\(有効性 100\% 保証)}} & $\longleftarrow$ &
+\fbox{\shortstack{\textbf{OpenQARP C++ Engine}\\(極小値サンプリング)}} & $\longleftarrow$ &
+\fbox{\shortstack{\textbf{OpenQARP XY-QAOA}\\(p=1 浅い回路実行)}} \\
+\end{tabular}
+\end{tcolorbox}
+\caption{OpenQARP を中核とする材料ブラックボックス最適化ループ}
+\label{fig:bbo_workflow}
+\end{figure}
+
+\subsection{性能比較・ベンチマークのロードマップ}
+新規ブランチ \texttt{feature/openqarp-qaoa} において，以下の実証実験を順次進めます：
+\begin{enumerate}\setlength{\itemsep}{1mm}
+    \item \textbf{実行速度比較}: $N=8, 16, 20, 24$ において，Qiskit Aer シミュレータと OpenQARP C++ エンジンの計算時間を実測．
+    \item \textbf{解の等価性検証}: 同一のサロゲートハミルトニアンに対し，得られるエネルギー期待値および最適解出現確率が完全に一致することを検証．
+    \item \textbf{15サイクル触媒BBOの完走}: $N=16$（4サイト$\times$4元素）の多元触媒設計において，損失0円（制約充足率100\%）と真の最適解到達を OpenQARP 上で実証．
+\end{enumerate}
+
+% ==============================================================================
+\section{まとめ}
+% ==============================================================================
+
+富士通が公開した \textbf{OpenQARP} は，研究者が量子アルゴリズムの物理的・数学的本質に集中できるよう，卓越したモジュール性と C++ 高速コアを両立した最先端のフレームワークである．
+本研究で推進してきた FM-XY-QAOA の理論と OpenQARP の構成思想（Composable Blocks）は完全に合致しており，本ガイドに示したアーキテクチャに沿って実装を移行することで，富士通インターンシップにおける研究成果の価値を最高水準へと高めることができる．
+
+\end{document}

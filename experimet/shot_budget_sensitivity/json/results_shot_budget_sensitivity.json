@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "shots": [
+      100,
+      500,
+      1000,
+      5000,
+      10000,
+      50000
+    ],
+    "initial_seed": 42,
+    "qaoa_backend": "OpenQARP 0.1.0 (via experimet/optimization/py/run_optimization_experiment.py)"
+  },
+  "problems": {
+    "BB1_materials": {
+      "lambda": 2.89,
+      "single_shot_probability": 1.2087712029968604e-05,
+      "records": [
+        {
+          "shots": 100,
+          "prob_at_least_one_unseen_feasible": 0.0012080482302327944,
+          "expected_unseen_feasible_samples": 0.0012087712029968604
+        },
+        {
+          "shots": 500,
+          "prob_at_least_one_unseen_feasible": 0.006025664965272681,
+          "expected_unseen_feasible_samples": 0.006043856014984302
+        },
+        {
+          "shots": 1000,
+          "prob_at_least_one_unseen_feasible": 0.01201502129227161,
+          "expected_unseen_feasible_samples": 0.012087712029968604
+        },
+        {
+          "shots": 5000,
+          "prob_at_least_one_unseen_feasible": 0.05864874011834931,
+          "expected_unseen_feasible_samples": 0.06043856014984302
+        },
+        {
+          "shots": 10000,
+          "prob_at_least_one_unseen_feasible": 0.11385780551922897,
+          "expected_unseen_feasible_samples": 0.12087712029968604
+        },
+        {
+          "shots": 50000,
+          "prob_at_least_one_unseen_feasible": 0.4535919589122521,
+          "expected_unseen_feasible_samples": 0.6043856014984302
+        }
+      ]
+    },
+    "BB2_random": {
+      "lambda": 1.71,
+      "single_shot_probability": 0.001495735361612101,
+      "records": [
+        {
+          "shots": 100,
+          "prob_at_least_one_unseen_feasible": 0.13902129613153358,
+          "expected_unseen_feasible_samples": 0.14957353616121008
+        },
+        {
+          "shots": 500,
+          "prob_at_least_one_unseen_feasible": 0.5268900879171781,
+          "expected_unseen_feasible_samples": 0.7478676808060505
+        },
+        {
+          "shots": 1000,
+          "prob_at_least_one_unseen_feasible": 0.7761670110889844,
+          "expected_unseen_feasible_samples": 1.495735361612101
+        },
+        {
+          "shots": 5000,
+          "prob_at_least_one_unseen_feasible": 0.9994381498901881,
+          "expected_unseen_feasible_samples": 7.478676808060505
+        },
+        {
+          "shots": 10000,
+          "prob_at_least_one_unseen_feasible": 0.9999996843244541,
+          "expected_unseen_feasible_samples": 14.95735361612101
+        },
+        {
+          "shots": 50000,
+          "prob_at_least_one_unseen_feasible": 1.0,
+          "expected_unseen_feasible_samples": 74.78676808060504
+        }
+      ]
+    }
+  }
+}

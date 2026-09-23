@@ -1,0 +1,416 @@
+{
+  "metadata": {
+    "description": "Multi-scale benchmark. Exact ground-state metrics are reported only where their state-space simulation was actually executed.",
+    "date": "2026-09-20",
+    "qaoa_backend": "OpenQARP 0.1.0 (qarp/qarpx)",
+    "xy_mixer": "Dicke |W> initialization plus complete-graph RXX/RYY mixer",
+    "K_per_block": 4,
+    "scale_configs": [
+      {
+        "M": 2,
+        "N": 8
+      },
+      {
+        "M": 3,
+        "N": 12
+      },
+      {
+        "M": 4,
+        "N": 16
+      },
+      {
+        "M": 5,
+        "N": 20
+      },
+      {
+        "M": 6,
+        "N": 24
+      },
+      {
+        "M": 8,
+        "N": 32
+      },
+      {
+        "M": 10,
+        "N": 40
+      },
+      {
+        "M": 12,
+        "N": 48
+      },
+      {
+        "M": 16,
+        "N": 64
+      }
+    ],
+    "openqarp_scaling_progress": "completed N=[20]"
+  },
+  "data": [
+    {
+      "M": 2,
+      "N": 8,
+      "hilbert_dim": 256,
+      "subspace_dim": 16,
+      "subspace_ratio_percent": 6.25,
+      "ram_bytes_full": 4096.0,
+      "ram_bytes_sub": 256.0,
+      "lambda_adaptive": 5.78,
+      "exact_min": -5.696525841930606,
+      "exact_min_available": true,
+      "FM_XY_QAOA": {
+        "feasibility_rate": 1.0,
+        "p_opt": 0.15406665589314272,
+        "best_energy": -5.696525841930606,
+        "mean_energy": -3.854748077090171,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.01291513442993164,
+        "subspace_dim": 16,
+        "exact_min": -5.696525841930606
+      },
+      "Standard_QAOA": {
+        "feasibility_rate": 0.04842953605971466,
+        "p_opt": 0.0013763255283287363,
+        "best_energy": -5.696525841930606,
+        "mean_energy": -2.394333644169893,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.0019769668579101562,
+        "hilbert_dim": 256
+      },
+      "FMQA": {
+        "feasibility_rate": 0.8066666666666666,
+        "p_opt": 0.08666666666666667,
+        "best_energy": -5.696525841930606,
+        "mean_energy": -3.1134301568683678,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.09182286262512207
+      }
+    },
+    {
+      "M": 3,
+      "N": 12,
+      "hilbert_dim": 4096,
+      "subspace_dim": 64,
+      "subspace_ratio_percent": 1.5625,
+      "ram_bytes_full": 65536.0,
+      "ram_bytes_sub": 1024.0,
+      "lambda_adaptive": 6.76,
+      "exact_min": -11.15315102815999,
+      "exact_min_available": true,
+      "FM_XY_QAOA": {
+        "feasibility_rate": 1.0,
+        "p_opt": 0.0014539960013650905,
+        "best_energy": -11.15315102815999,
+        "mean_energy": -6.296459363110813,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.02301788330078125,
+        "subspace_dim": 64,
+        "exact_min": -11.15315102815999
+      },
+      "Standard_QAOA": {
+        "feasibility_rate": 0.039969804669648584,
+        "p_opt": 0.0001416459710568035,
+        "best_energy": -11.15315102815999,
+        "mean_energy": -3.897242069841482,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.0170440673828125,
+        "hilbert_dim": 4096
+      },
+      "FMQA": {
+        "feasibility_rate": 0.8,
+        "p_opt": 0.041666666666666664,
+        "best_energy": -11.153151028159991,
+        "mean_energy": -5.600451106607376,
+        "opt_gap": -1.7763568394002505e-15,
+        "runtime_sec": 0.1109461784362793
+      }
+    },
+    {
+      "M": 4,
+      "N": 16,
+      "hilbert_dim": 65536,
+      "subspace_dim": 256,
+      "subspace_ratio_percent": 0.390625,
+      "ram_bytes_full": 1048576.0,
+      "ram_bytes_sub": 4096.0,
+      "lambda_adaptive": 7.95,
+      "exact_min": -14.11600183000222,
+      "exact_min_available": true,
+      "FM_XY_QAOA": {
+        "feasibility_rate": 1.0,
+        "p_opt": 0.00651364325468235,
+        "best_energy": -14.11600183000222,
+        "mean_energy": -5.750332078466354,
+        "opt_gap": 0.0,
+        "runtime_sec": 0.6189579963684082,
+        "subspace_dim": 256,
+        "exact_min": -14.11600183000222
+      },
+      "Standard_QAOA": {
+        "feasibility_rate": 0.0072281238964299836,
+        "p_opt": 0.00011059618991750574,
+        "best_energy": -8.63808572215299,
+        "mean_energy": -4.477146393689707,
+        "opt_gap": 5.47791610784923,
+        "runtime_sec": 0.4640529155731201,
+        "hilbert_dim": 65536
+      },
+      "FMQA": {
+        "feasibility_rate": 0.6816666666666666,
+        "p_opt": 0.006666666666666667,
+        "best_energy": -14.116001830002219,
+        "mean_energy": -6.035724062884383,
+        "opt_gap": 1.7763568394002505e-15,
+        "runtime_sec": 0.15964603424072266
+      }
+    },
+    {
+      "M": 5,
+      "N": 20,
+      "hilbert_dim": 1048576,
+      "subspace_dim": 1024,
+      "subspace_ratio_percent": 0.09765625,
+      "ram_bytes_full": 16777216.0,
+      "ram_bytes_sub": 16384.0,
+      "lambda_adaptive": 8.63,
+      "exact_min": -12.362319680717091,
+      "exact_min_available": true,
+      "FM_XY_QAOA": {
+        "feasibility_rate": 1.0,
+        "p_opt": 0.001121135337488987,
+        "best_energy": -12.362319680717091,
+        "mean_energy": -5.562951276696124,
+        "opt_gap": 0.0,
+        "runtime_sec": 21.536104917526245,
+        "subspace_dim": 1024,
+        "exact_min": -12.362319680717091
+      },
+      "Standard_QAOA": {
+        "feasibility_rate": 0.0028082439467204674,
+        "p_opt": 1.9173955756182624e-07,
+        "best_energy": -7.9739720353890355,
+        "mean_energy": -6.294028217786197,
+        "opt_gap": 4.388347645328055,
+        "runtime_sec": 14.7379732131958,
+        "hilbert_dim": 1048576
+      },
+      "FMQA": {
+        "feasibility_rate": 0.5283333333333333,
+        "p_opt": 0.0,
+        "best_energy": -11.639668563762863,
+        "mean_energy": -5.013698283428387,
+        "opt_gap": 0.7226511169542285,
+        "runtime_sec": 0.24594998359680176
+      }
+    },
+    {
+      "M": 6,
+      "N": 24,
+      "hilbert_dim": 16777216,
+      "subspace_dim": 4096,
+      "subspace_ratio_percent": 0.0244140625,
+      "ram_bytes_full": 268435456.0,
+      "ram_bytes_sub": 65536.0,
+      "lambda_adaptive": 9.97,
+      "exact_min": null,
+      "exact_min_available": false,
+      "FM_XY_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "subspace_dim": 4096,
+        "note": "Not simulated: OpenQARP's exact full-state simulator exceeds the configured numerical limit."
+      },
+      "Standard_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "hilbert_dim": 16777216,
+        "note": "Not simulated: full 2^N state-vector simulation exceeds the configured numerical limit."
+      },
+      "FMQA": {
+        "feasibility_rate": 0.2966666666666667,
+        "p_opt": null,
+        "best_energy": -19.455008009263786,
+        "mean_energy": -10.814284827037833,
+        "opt_gap": null,
+        "runtime_sec": 0.23532509803771973
+      }
+    },
+    {
+      "M": 8,
+      "N": 32,
+      "hilbert_dim": 4294967296,
+      "subspace_dim": 65536,
+      "subspace_ratio_percent": 0.00152587890625,
+      "ram_bytes_full": 68719476736.0,
+      "ram_bytes_sub": 1048576.0,
+      "lambda_adaptive": 10.83,
+      "exact_min": null,
+      "exact_min_available": false,
+      "FM_XY_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "subspace_dim": 65536,
+        "note": "Not simulated: OpenQARP's exact full-state simulator exceeds the configured numerical limit."
+      },
+      "Standard_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "hilbert_dim": 4294967296,
+        "note": "Not simulated: full 2^N state-vector simulation exceeds the configured numerical limit."
+      },
+      "FMQA": {
+        "feasibility_rate": 0.09,
+        "p_opt": null,
+        "best_energy": -20.414373522177726,
+        "mean_energy": -9.312074728510787,
+        "opt_gap": null,
+        "runtime_sec": 0.27074599266052246
+      }
+    },
+    {
+      "M": 10,
+      "N": 40,
+      "hilbert_dim": 1099511627776,
+      "subspace_dim": 1048576,
+      "subspace_ratio_percent": 9.5367431640625e-05,
+      "ram_bytes_full": 17592186044416.0,
+      "ram_bytes_sub": 16777216.0,
+      "lambda_adaptive": 14.42,
+      "exact_min": null,
+      "exact_min_available": false,
+      "FM_XY_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "subspace_dim": 1048576,
+        "note": "Not simulated: OpenQARP's exact full-state simulator exceeds the configured numerical limit."
+      },
+      "Standard_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "hilbert_dim": 1099511627776,
+        "note": "Not simulated: full 2^N state-vector simulation exceeds the configured numerical limit."
+      },
+      "FMQA": {
+        "feasibility_rate": 0.021666666666666667,
+        "p_opt": null,
+        "best_energy": -24.753949676301282,
+        "mean_energy": -13.899749178261676,
+        "opt_gap": null,
+        "runtime_sec": 0.2964451313018799
+      }
+    },
+    {
+      "M": 12,
+      "N": 48,
+      "hilbert_dim": 281474976710656,
+      "subspace_dim": 16777216,
+      "subspace_ratio_percent": 5.9604644775390625e-06,
+      "ram_bytes_full": 4503599627370496.0,
+      "ram_bytes_sub": 268435456.0,
+      "lambda_adaptive": 15.43,
+      "exact_min": null,
+      "exact_min_available": false,
+      "FM_XY_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "subspace_dim": 16777216,
+        "note": "Not simulated: OpenQARP's exact full-state simulator exceeds the configured numerical limit."
+      },
+      "Standard_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "hilbert_dim": 281474976710656,
+        "note": "Not simulated: full 2^N state-vector simulation exceeds the configured numerical limit."
+      },
+      "FMQA": {
+        "feasibility_rate": 0.0016666666666666668,
+        "p_opt": null,
+        "best_energy": -8.497373888623015,
+        "mean_energy": -8.497373888623015,
+        "opt_gap": null,
+        "runtime_sec": 0.3726170063018799
+      }
+    },
+    {
+      "M": 16,
+      "N": 64,
+      "hilbert_dim": 18446744073709551616,
+      "subspace_dim": 4294967296,
+      "subspace_ratio_percent": 2.3283064365386963e-08,
+      "ram_bytes_full": 2.9514790517935283e+20,
+      "ram_bytes_sub": 68719476736.0,
+      "lambda_adaptive": 18.76,
+      "exact_min": null,
+      "exact_min_available": false,
+      "FM_XY_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "subspace_dim": 4294967296,
+        "note": "Not simulated: OpenQARP's exact full-state simulator exceeds the configured numerical limit."
+      },
+      "Standard_QAOA": {
+        "available": false,
+        "feasibility_rate": null,
+        "p_opt": null,
+        "best_energy": null,
+        "mean_energy": null,
+        "opt_gap": null,
+        "runtime_sec": null,
+        "hilbert_dim": 18446744073709551616,
+        "note": "Not simulated: full 2^N state-vector simulation exceeds the configured numerical limit."
+      },
+      "FMQA": {
+        "feasibility_rate": 0.0016666666666666668,
+        "p_opt": null,
+        "best_energy": -27.869977108618635,
+        "mean_energy": -27.869977108618635,
+        "opt_gap": null,
+        "runtime_sec": 0.46021199226379395
+      }
+    }
+  ]
+}
