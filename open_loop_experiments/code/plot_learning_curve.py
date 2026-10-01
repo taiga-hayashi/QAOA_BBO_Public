@@ -21,7 +21,7 @@ def generate_initial_dataset(Q_bb, G, num_samples, seed):
     y = np.array([float(val @ Q_bb @ val) for val in X])
     return X, y
 
-def run_learning_curve(N: int, problem_type="bb1", out_dir="plots/learning_curve"):
+def run_learning_curve(N: int, problem_type="bb1", out_dir="../open_loop/4_fm_learning_curve"):
     """
     初期データ数を徐々に増やしながらFMを学習し、
     学習データ(Train)と未知データ(Test)に対する予測誤差(MSE)の推移をプロットする。
@@ -75,8 +75,10 @@ def run_learning_curve(N: int, problem_type="bb1", out_dir="plots/learning_curve
     ax2.set_xlabel("Number of Training Samples")
     ax2.legend()
     
-    os.makedirs(out_dir, exist_ok=True)
-    plt.savefig(f"{out_dir}/fm_learning_curve_{problem_type}_N{N}.png", dpi=150)
+    os.makedirs(f"{out_dir}/png", exist_ok=True)
+    os.makedirs(f"{out_dir}/pdf", exist_ok=True)
+    plt.savefig(f"{out_dir}/png/fm_learning_curve_{problem_type}_N{N}.png", dpi=150)
+    plt.savefig(f"{out_dir}/pdf/fm_learning_curve_{problem_type}_N{N}.pdf")
     plt.close()
 
 if __name__ == "__main__":

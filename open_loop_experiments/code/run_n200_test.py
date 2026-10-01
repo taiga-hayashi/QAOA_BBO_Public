@@ -25,7 +25,7 @@ def generate_initial_dataset(Q_bb, G, num_samples, seed):
     y = np.array([float(val @ Q_bb @ val) for val in X])
     return X, y
 
-def run_n200_test(N: int, problem_type="bb1", out_dir="plots/n200_test"):
+def run_n200_test(N: int, problem_type="bb1", out_dir="../open_loop/5_n200_test/csv"):
     """
     200件の限られた初期データで学習したFMに対して各ソルバーを実行し、
     限られた近似精度の中での「制約充足率」と「最適化性能」を比較する。

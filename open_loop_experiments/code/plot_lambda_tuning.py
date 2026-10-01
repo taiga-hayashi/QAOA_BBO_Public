@@ -27,7 +27,7 @@ def generate_initial_dataset(Q_bb: np.ndarray, G: int, num_samples: int, seed: i
     y = np.array([float(val @ Q_bb @ val) for val in X])
     return X, y
 
-def run_lambda_tuning(N: int, problem_type="bb1", out_dir="plots/lambda_tuning"):
+def run_lambda_tuning(N: int, problem_type="bb1", out_dir="../open_loop/2_lambda_tuning"):
     """
     ペナルティ係数(lambda)を変化させながら各ソルバーを実行し、
     制約充足率(Feasible Rate)と最適化性能(Regret)の推移をプロットする。
@@ -117,8 +117,10 @@ def run_lambda_tuning(N: int, problem_type="bb1", out_dir="plots/lambda_tuning")
     ax2.legend()
     
     plt.tight_layout()
-    os.makedirs(out_dir, exist_ok=True)
-    plt.savefig(f"{out_dir}/lambda_tuning_{problem_type}_N{N}.png", dpi=150)
+    os.makedirs(f"{out_dir}/png", exist_ok=True)
+    os.makedirs(f"{out_dir}/pdf", exist_ok=True)
+    plt.savefig(f"{out_dir}/png/lambda_tuning_{problem_type}_N{N}.png", dpi=150)
+    plt.savefig(f"{out_dir}/pdf/lambda_tuning_{problem_type}_N{N}.pdf")
     plt.close()
 
 if __name__ == "__main__":

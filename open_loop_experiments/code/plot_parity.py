@@ -40,7 +40,7 @@ def plot_parity_ax(ax, y_true_train, y_pred_train, y_true_test, y_pred_test, tit
     ax.grid(True, alpha=0.3)
     ax.legend(loc='upper left')
 
-def run_parity(N: int, problem_type="bb1", out_dir="plots/parity"):
+def run_parity(N: int, problem_type="bb1", out_dir="../open_loop/3_fm_parity"):
     """Plot the parity of the FM predictions to visualize overfitting mitigation."""
     print(f"Generating Parity Plot for {problem_type.upper()} N={N}")
     G = N // 3
@@ -68,8 +68,10 @@ def run_parity(N: int, problem_type="bb1", out_dir="plots/parity"):
     plt.suptitle(f"FM Parity Plot: {problem_type.upper()} N={N}", fontsize=14)
     plt.tight_layout()
     
-    os.makedirs(out_dir, exist_ok=True)
-    plt.savefig(f"{out_dir}/fm_parity_{problem_type}_N{N}.png", dpi=150)
+    os.makedirs(f"{out_dir}/png", exist_ok=True)
+    os.makedirs(f"{out_dir}/pdf", exist_ok=True)
+    plt.savefig(f"{out_dir}/png/fm_parity_{problem_type}_N{N}.png", dpi=150)
+    plt.savefig(f"{out_dir}/pdf/fm_parity_{problem_type}_N{N}.pdf")
     plt.close()
 
 if __name__ == "__main__":

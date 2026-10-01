@@ -1,0 +1,4 @@
+Solver,Feasible,Regret
+Classical-SA,4.133333333333334,0.34839526059706144
+Penalty-QAOA,0.0,1.0
+XY-QAOA,0.0,1.0
