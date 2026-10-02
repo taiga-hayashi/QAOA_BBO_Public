@@ -3,7 +3,7 @@ import os
 import numpy as np
 import time
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../src")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src")))
 try:
     from qarp_backend import OpenQARPXYQAOA, one_hot_patterns
 except ImportError:
