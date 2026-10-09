@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "runs": 30,
+  "failed_or_excluded_runs": 0,
+  "models": 1800,
+  "complete10baseline_reproductions": 15,
+  "XY_independent_angle_checks": 5400,
+  "source_hashes": "passed",
+  "figure_files": 21,
+  "figure_hashes": "passed",
+  "PDF_visual_review": "overview and6native panels rendered,readable axes/legends,no clipping",
+  "py_compile_and_git_diff_check": "passed",
+  "analysis_script_sha256": "c9122daffff1e87966ba75da974becc7d01ec0a7b98bfa68d67764ba575717f1",
+  "summary_sha256": "16417c693ecde85ec250cf7ed6008a63c6ae8eedcdedab07dd16dea54d55e98c"
+}

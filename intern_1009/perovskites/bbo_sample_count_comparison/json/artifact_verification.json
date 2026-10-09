@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "runs": 30,
+  "models": 1800,
+  "XY_independent_angle_checks": 5400,
+  "complete_previous10_reproductions": 15,
+  "checks": "all checkpoint/model/protocol hashes,forward-QUBO,raw selection/alpha/budget/lookup truth,gaps; 15full10trajectories exactly reproduced; fixedFM XY100contains10 and nonworseninggap; no failed or excluded runs"
+}

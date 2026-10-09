@@ -1,0 +1,23 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "dwave-neal": "0.6.0",
+    "dimod": "0.12.22",
+    "torch": "2.13.0"
+  },
+  "code_sha256": {
+    "intern_1009/perovskites/fmqa_penalty_sweep/py/run_sweep.py": "344750727ade68015270178c0368dc6e4e23114407f9b310597af2c8af9d7752",
+    "intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  },
+  "protocol_sha256": "39e34b732b9fbe6276a2d6ab1ea5f59ae6ff62c9610cc92a11712f3d764cbf33",
+  "git_commit": "3cd7a4dd24331a752f77855a3e880a744f987f07",
+  "hardware_model": "unmeasured: sysctl denied by sandbox",
+  "physical_memory_bytes": null,
+  "hardware_metadata_limitation": "hardware model/memory query unavailable; no peak RSS measurement",
+  "analysis_script_sha256": "072acf47b4fb8c59b02abdf4ad5b8ba7e824f2f78d28547fb056161668f3f734"
+}

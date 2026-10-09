@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "code_sha256": {
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  },
+  "first_cycle_10_reproduction_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "penalty_and_selection_tests": "passed",
+  "N6_N9_N23": "inherited passed; no circuit changes"
+}

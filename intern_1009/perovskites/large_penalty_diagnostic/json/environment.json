@@ -1,0 +1,33 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "device": "CPU",
+  "threads": 1,
+  "memory_capacity": "unmeasured",
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.13.0",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1",
+    "dwave-neal": "0.6.0",
+    "dimod": "0.12.22",
+    "openqarp": "0.1.1"
+  },
+  "protocol_sha256": "b834f1cb6946c6a8eca650aa57e3beddc3ed600ad5a3d3da40c55f1d21b282ba",
+  "git_commit": "3cd7a4dd24331a752f77855a3e880a744f987f07",
+  "git_worktree": "preexisting and task changes present; code SHA is authoritative",
+  "backend": "classical Neal SA; no QAOA execution",
+  "original_qubits": 23,
+  "simulator_qubits": 8,
+  "source_sha256": {
+    "intern_1009/perovskites/large_penalty_diagnostic/py/run_penalty.py": "199c04c7a53cd52fb2be93d969553ec9cbe3c7139fdb5126d4bc64ba49eb315f",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  }
+}

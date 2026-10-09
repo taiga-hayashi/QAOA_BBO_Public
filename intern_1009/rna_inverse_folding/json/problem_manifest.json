@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "problem_id": "rna_inverse_folding",
+  "title": "RNA逆折りたたみ",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "simulation",
+  "objective_description": "ViennaRNAによるNormalized Ensemble Defect（NED）の最小化。MFE構造一致率は別の評価指標。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "gc_placement_12nt",
+      "group_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 12,
+      "n_onehot_variables": 48,
+      "provenance": "paper_target",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "stickshift_26nt",
+      "group_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 26,
+      "n_onehot_variables": 104,
+      "provenance": "paper_target",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "rejected",
+      "rejection_reason": "onehot_variable_count_exceeds_100",
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "stickshift_26nt_six_mutable",
+      "group_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 6,
+      "n_onehot_variables": 24,
+      "provenance": "proposed_fixed_position_variant",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "configuration_note": "26塩基目標を維持し、20位置を固定。固定位置・塩基・塩基順は未選択。",
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "論文",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13328549/",
+      "pinned_revision": null,
+      "license_verified": false
+    },
+    {
+      "title": "公開コード",
+      "url": "https://github.com/Shu-Tanaka-Group/fmqa_rna",
+      "pinned_revision": "ad25790e2f1b0e662e3ffa97d15f5b412c9eade0",
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "対象構造・塩基順・パラメータ版未選択",
+    "評価失敗の記録と予算規則未定",
+    "原設定は27量子ビット上限外",
+    "目標構造のdot-bracket文字列を原資料から取得する",
+    "ViennaRNAの版、温度、エネルギーパラメータを凍結する",
+    "公開配列のNEDとMFE構造を照合する",
+    "4択グループ対応を検証する",
+    "27量子ビット以内の部分問題を検討する場合、固定位置・値・生物学的意味を明記する"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "対象構造・塩基順・パラメータ版未選択",
+      "評価失敗の記録と予算規則未定",
+      "原設定は27量子ビット上限外"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": "MIT",
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "reference_code_parameters": {
+    "target_structure": "..((((((((.....)).))))))..",
+    "temperature_celsius": 37.0,
+    "dangles": 2,
+    "base_allocation": null,
+    "pf_scale": 0.0
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

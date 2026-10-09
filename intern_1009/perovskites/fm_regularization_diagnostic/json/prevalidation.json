@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "runner_sha256": "2afdbd0276943996070d5795a2bc295e04780a441fd51a489bf47c5b4d4ba05d",
+  "shared_fm_sha256": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+  "baseline_reproduction_10_max_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "zero_feature_decay_and_invalid_options": "passed",
+  "inherited_N6_N9_23bit_circuit_checks": "passed; no circuit changes"
+}

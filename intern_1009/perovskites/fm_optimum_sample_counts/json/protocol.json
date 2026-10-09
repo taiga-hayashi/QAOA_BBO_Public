@@ -1,0 +1,18 @@
+{
+ "status":"ready",
+ "version":"perovskites_original23_fixedFM_fresh10_100_v1",
+ "seeds":[42,101,2024,7,19],
+ "sample_counts":[10,100],
+ "repetitions":100,
+ "methods":["Adaptive-FMQA","LargePenalty-FMQA","Penalty-FMQAOA","XY-FMQAOA"],
+ "scope":"original23bit_fixedFM_candidate_sampling_not_retraining_BBO",
+ "fixed_conditions":"original20 initial data and frozen FM checkpoints; p1 canonical OpenQARP original exact9point-selected angles/baseS; standard alpha5; XY lambda0",
+ "qaoa_sampling":"fresh categorical IID samples from192 stored feasible basis masses plus one invalid event; invalid states exactly aggregated because all are discarded by candidate rule; do not reconstruct invalid bitstrings or estimate energy. Nested10/100 uniforms SeedSequence([seed,rep,1009,109]); same uniforms for bothQAOA methods. Validate masses against independently recomputed qaoa_shot_accuracy source before run",
+ "sa_sampling":"fresh Neal 1000sweeps geometric; four batches3,3,2,2 for10 and25,25,25,25 for100; adaptive startsalpha1/reset eachrepeat and updates between batches using shared tracker; Largealpha100. seed=modelseed*100+rep*100000+batch+samplecount*1000. Shared SA seed per method,count. Different counts independent SA reruns,not subsamples",
+ "candidate_rule":"1 lowest baseFM unseen feasible unique candidate; tie onehot tuple; no refill; max initial20plus1 cap21",
+ "primary_metrics":["global feasible FM optimum acquired in raw pool","best unseen FM optimum acquired/selected","new feasible candidate success"],
+ "secondary_metrics":["selected FM gap","selected true objective","best initial plus selected","true optimum newly selected","initial true optimum present","raw feasible fraction"],
+ "statistics":"repetition frequencies/conditional means per model; median/IQR over5models. 10vs100 paired Wilcoxon Bonferroni12tests for4methods x3metrics; no exclusion. record defined conditional n. 5seed small sample",
+ "prevalidation":"source pilot and fullstate shot audit passed; N6/N9 and23 XY passed; coarse-grained candidate metrics parity against stored raw full-basis measurements; complete finite probability normalization",
+ "limits":"same output count not same compute; no fresh angle search,statevector,FMtraining ortrueBBcalls; cached probabilities provenance explicit; fresh SA and fresh QAOA draws; ideal noiseless fixed-angle sample diagnostic"
+}

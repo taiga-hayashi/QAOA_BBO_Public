@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "conditions": 3000,
+  "checks": "nested subsets; independent direct ranking; n1000 parity with top1; selected FM value monotone with n; initial/model/checkpoint identity; cap21; complete coverage and all failures retained"
+}

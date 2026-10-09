@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "problem_id": "centroid",
+  "title": "COMBO Centroid",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "analytic_as_black_box",
+  "objective_description": "3つの元モデルから混合モデルへのKL(P_original || P_mixed)の平均を最小化。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "grid_4x4",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 24,
+      "n_onehot_variables": 72,
+      "provenance": "original_benchmark",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "grid_2x2",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 4,
+      "n_onehot_variables": 12,
+      "provenance": "proposed_smaller_grid",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "grid_2x3",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 7,
+      "n_onehot_variables": 21,
+      "provenance": "proposed_smaller_grid",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "COMBO",
+      "url": "https://github.com/QUVA-Lab/COMBO",
+      "pinned_revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "license_verified": false
+    },
+    {
+      "title": "評価関数",
+      "url": "https://raw.githubusercontent.com/QUVA-Lab/COMBO/master/COMBO/experiments/test_functions/multiple_categorical.py",
+      "pinned_revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "公開関数インターフェース不整合の移植未検証",
+    "格子・辺順・生成Seed・結合値未固定",
+    "3つの元モデルの生成Seed、結合値、格子を固定する",
+    "辺順序、結合の配置、分配関数と相関行列を原実装と照合する",
+    "古いtorch APIを評価関数の意味を変えずに移植する",
+    "縮小格子では全スピン状態からKL計算を照合する",
+    "縮小版のProblem IDと原標準版との差を記録する"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "公開関数インターフェース不整合の移植未検証",
+      "格子・辺順・生成Seed・結合値未固定"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": "BSD-style (see saved LICENSE)",
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "reference_parameters": {
+    "ising_exponent_factor": 2,
+    "model_seed": null,
+    "edge_order": null,
+    "couplings": null
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

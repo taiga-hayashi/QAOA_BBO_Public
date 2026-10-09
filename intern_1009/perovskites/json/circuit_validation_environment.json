@@ -1,0 +1,20 @@
+{
+  "time_utc": "2026-10-09T00:51:35.730811+00:00",
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "executable": "/Users/hayashitaiga/.venvs/fas/bin/python",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "openqarp": "0.1.1",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1"
+  },
+  "command": "/Users/hayashitaiga/.venvs/fas/bin/python intern_1009/perovskites/py/validate_xy_ring.py",
+  "code_sha256": {
+    "src/qarp_backend.py": "4b8c030800cd6633dee29db7eae2c43b3783071ed322f336d0d79853efba3db8",
+    "src/qaoa_solver.py": "3220f528916ef03531f0834051c643c7ef812a68f2152e1f4992bb488cf10541",
+    "intern_1009/perovskites/py/validate_xy_ring.py": "7045061d1d0941922941581c9af37b020d3e303d4e72829b47647864ae3f48a5",
+    "intern_1009/perovskites/py/test_xy_ring.py": "334ad067c746c7cbffed6c57e36fd2d0fdb90f42b9346a624c34b6d7792462bb"
+  },
+  "initial_state_vector_bytes_n23": 134217728,
+  "no_full_2_to_n_by_n_bit_matrix": true
+}

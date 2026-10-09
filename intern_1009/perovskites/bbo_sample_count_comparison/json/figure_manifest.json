@@ -1,0 +1,89 @@
+{
+  "summary_sha256": "16417c693ecde85ec250cf7ed6008a63c6ae8eedcdedab07dd16dea54d55e98c",
+  "files": [
+    {
+      "path": "pdf/FM_gap.pdf",
+      "sha256": "beaffece2f57266dc9b24fcf021f7113397222095aef4a6c863170471bb1f090"
+    },
+    {
+      "path": "pdf/best_cycles.pdf",
+      "sha256": "ac693b8cb441dade945fee153c2fabf3293b70485c7cf36bff68e7758dc48628"
+    },
+    {
+      "path": "pdf/best_evaluations.pdf",
+      "sha256": "051fc41616f735e18412da201b69f3f0aeeb457b3b39e77b4143b7018a62577f"
+    },
+    {
+      "path": "pdf/candidate_shortfall.pdf",
+      "sha256": "6e983260fbfca62d68e3ef9cdc670d7b41b14a3aa0cd4f0d21c2cde47e5634f1"
+    },
+    {
+      "path": "pdf/first_hit.pdf",
+      "sha256": "326fbfb3f2228e2c3209412e70ff9d8e0b472da8bc346f3395f71ecd4b311d54"
+    },
+    {
+      "path": "pdf/fixed_FM_XY.pdf",
+      "sha256": "6a4cefc878d074993740ed221904d42823bf2d5d760c3024ac829a8ae812a0ce"
+    },
+    {
+      "path": "pdf/sample_count_overview.pdf",
+      "sha256": "67afe0494ccb776cf5233eadc0d447e10f21400b81cceebc0f81952fbb6ceb4f"
+    },
+    {
+      "path": "svg/FM_gap.svg",
+      "sha256": "d49b04da326628b5991dc100704d2c6fb1e357b2ddb8777afccd8ff73496bd1e"
+    },
+    {
+      "path": "svg/best_cycles.svg",
+      "sha256": "8431e48fd7917872cbd3f6080e946d4dc9e6feed0a94035ef4b69d520a557e18"
+    },
+    {
+      "path": "svg/best_evaluations.svg",
+      "sha256": "abac990aa609928ff97cafc5ba24346a5089ebb555a1c80e80f6fc590388035e"
+    },
+    {
+      "path": "svg/candidate_shortfall.svg",
+      "sha256": "73f7c0a35402d424628c51fab4a824fa23da0cd917284177a40ff441d34e778b"
+    },
+    {
+      "path": "svg/first_hit.svg",
+      "sha256": "c097dbae4af16d42c2030f741cafca186050a10472a534f18c4f0846b8660aa5"
+    },
+    {
+      "path": "svg/fixed_FM_XY.svg",
+      "sha256": "368f636ee657d4c45454c3c91fa7b8ef6d5098b79f5f62ed679d5aa926766266"
+    },
+    {
+      "path": "svg/sample_count_overview.svg",
+      "sha256": "b658d481d8e1fc7436d348aeb3dbeb7dfa5306b1d4e1ad1f23062536a2dca834"
+    },
+    {
+      "path": "png/FM_gap.png",
+      "sha256": "9d61277f063a14e18c90a36d68519609d07a0cc032333e6aa67be75f8e150b38"
+    },
+    {
+      "path": "png/best_cycles.png",
+      "sha256": "2748335dd5edb42d22da36b46d15be405560f636d451eae69821069d8bde2a06"
+    },
+    {
+      "path": "png/best_evaluations.png",
+      "sha256": "298c72cd57f21875c111ab4a0b646c2873be3c6f40dc246230093b03eeaef746"
+    },
+    {
+      "path": "png/candidate_shortfall.png",
+      "sha256": "37bf94be140f49c0d176fb6fc54aa7baa9cbe8760dfd305d7c73b5965648f541"
+    },
+    {
+      "path": "png/first_hit.png",
+      "sha256": "c3065ec154e080386a9e0c3fb408074b376e7fc8894519f2e2c0b6c9284f70de"
+    },
+    {
+      "path": "png/fixed_FM_XY.png",
+      "sha256": "7eddb26c6a7aafbc2a12d53098d28a89d88bb0863312b4bf550da2df960d42f0"
+    },
+    {
+      "path": "png/sample_count_overview.png",
+      "sha256": "4f8a2f0d0d6a87640d9889aed7e62865c13c93834c6469fbc2593bf8c9012d19"
+    }
+  ]
+}

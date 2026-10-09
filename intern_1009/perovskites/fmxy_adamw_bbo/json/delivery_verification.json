@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "XY_runs": 5,
+  "cycles": 300,
+  "independent_angle_checks": 2700,
+  "source_hashes": "passed",
+  "source_mirror_equality": "passed",
+  "figure_files": 12,
+  "figure_hashes": "passed",
+  "PDF_visual_review": "overview and3standalone panels rendered/readable/no clipping",
+  "existing_ring_regression_tests": 7,
+  "intern_README_quick_source_check": "passed",
+  "excluded_or_failed_optimization_runs": 0,
+  "summary_sha256": "058a995a78db55225a238050c223b27ce26aa1b54388517a675535aae79eb153"
+}

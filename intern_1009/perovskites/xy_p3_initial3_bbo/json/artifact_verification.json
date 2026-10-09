@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "models": 1155,
+  "runs": 15,
+  "XY_saved_angles_regenerated": 98560,
+  "XY_independent_best_state_checks": 770,
+  "raw_candidates_verified": 115500,
+  "failed_or_dropped": 0,
+  "checks": "source/protocol/checkpoint/model SHA,all FM/QUBO predictions,commoninitial3,raw filters/selection/truth/BB budgets,angles regenerated andbestminchecked,chosenstate independentreference,CDF shots,SAalpha1000lambda=Salpha"
+}

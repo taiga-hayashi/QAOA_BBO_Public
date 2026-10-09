@@ -1,0 +1,17 @@
+{
+ "status":"ready",
+ "version":"fixed_initial20_FM_learning_diagnostic_v1",
+ "seeds":[42,101,2024,7,19],
+ "initial_data":"exact original pilot20 records perseed,unchanged; trainseed=dataseed; same172 test across configurations; no validation split",
+ "grid":{"ranks":[0,1,2,4],"learning_rates":[0.1,0.01],"epochs":[120,1000],"target_scaling":"none"},
+ "additional_standardized_configs":[{"rank":2,"learning_rate":0.1,"epochs":120},{"rank":2,"learning_rate":0.01,"epochs":1000}],
+ "scaling":"mean/std from training20 only; populationstd; predictions and QUBO rescaled to original eV",
+ "implementation":"reuse src.fm.train_factorization_machine and src.fm_to_qubo.fm_to_qubo. k0 means no pairwise term,additive categorical model. CPUfloat32 singlethread; original initialization/Adam/MSE,no weight decay",
+ "metrics":["train RMSE","independent test RMSE","test Spearman","true value and test regret of exact predicted best unseen material","test oracle regret","negative prediction count","error for heldout seen versus unseen organic categories","category coverage","FM-to-QUBO parity"],
+ "selection":"exact lowest rescaled QUBO prediction among172unseen,tuple tie break; truevalues never used in fit or ranking",
+ "statistics":"5seed median/IQR and paired differences versus original rank2 lr0.1 epochs120 raw; Wilcoxon Bonferroni51tests (17contrasts x3metrics: testRMSE,Spearman,selected truevalue). Keep failures/no exclusion",
+ "prevalidation":"original checkpoint baseline prediction parity,shared training baseline reproducibility,FM-to-QUBO original eV parity for every trained model; existing passed N6/N9 and23 source validation. No new circuit or BBO",
+ "interpretation":"exploratory screening on the already inspected172 test candidates,not a fresh unbiased test for a selected winner. No automated hyperparameter promotion. Future freeze/repetitions or nested assessment before confirmatory claims",
+ "budget":"90model fits:18configurations x5seeds; no new BB evaluations,no QAOA/SA,original23bits",
+ "limits":"no regularization or alternate initial sampling in this stage; trainrandomness not independently replicated; rank/learning-rate/epochs factors measured separately and coupled settings labeled"
+}

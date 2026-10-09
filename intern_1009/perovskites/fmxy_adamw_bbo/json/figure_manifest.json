@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "path": "pdf/best_cycles.pdf",
+      "sha256": "9b628f6ccec50331817fe451cd652cf5ae6283c4c7b9e110f0fc2b017e27482b"
+    },
+    {
+      "path": "pdf/best_evaluations.pdf",
+      "sha256": "08bbbfad66e66c2e5fae1986a5635e0f767e4b922831c9566c34614e3de46841"
+    },
+    {
+      "path": "pdf/evaluations_cycles.pdf",
+      "sha256": "11635737d52e1758770127efd37c31ec2bf6c029d6caec74a13a672103f2482a"
+    },
+    {
+      "path": "pdf/fmxy_bbo_overview.pdf",
+      "sha256": "89ae31b516c5446ced887521ee9a8354855a0be8dc009e3f91c94d3223b6a709"
+    },
+    {
+      "path": "svg/best_cycles.svg",
+      "sha256": "a35673f0a93c4648d63477db561cfd4f3f1905728c1eca3dcb5da074bc4f373d"
+    },
+    {
+      "path": "svg/best_evaluations.svg",
+      "sha256": "dc32af74708fe66cddc297b1f8134a3f9d6f7e4dfd7f4c0bf075db39974e9aab"
+    },
+    {
+      "path": "svg/evaluations_cycles.svg",
+      "sha256": "e75e1a992442f2e4038da80768e149f2657ecb8f753308e2eaf9096975a608d2"
+    },
+    {
+      "path": "svg/fmxy_bbo_overview.svg",
+      "sha256": "09f993ede127a2503f0205d0d4e2565dfc59e0258bfc1c707de333d2978da853"
+    },
+    {
+      "path": "png/best_cycles.png",
+      "sha256": "64b5f0c4ffd030be6f4a50df45fccc75321d80f7e15628715f24a6bf14799ea1"
+    },
+    {
+      "path": "png/best_evaluations.png",
+      "sha256": "fe9d513a36eefbf77d666db02c5d9e14c7e8730893415ed36406e3b25954b121"
+    },
+    {
+      "path": "png/evaluations_cycles.png",
+      "sha256": "dc350f0e269708f4da947ea2fd9437f4fed26887f71ddc743b703fc5f59b9ee3"
+    },
+    {
+      "path": "png/fmxy_bbo_overview.png",
+      "sha256": "65c174dd67941b6e01571e85423156ecadc3877ff6af0930127787eabeed2ba6"
+    }
+  ]
+}

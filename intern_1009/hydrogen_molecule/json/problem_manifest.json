@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "problem_id": "hydrogen_molecule",
+  "title": "水素分子の基底状態エネルギー",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "analytic_as_black_box",
+  "objective_description": "E(phi)=phi^T H phi/(phi^T phi) の最小化。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "two_coefficients_q8",
+      "group_sizes": [
+        8,
+        8
+      ],
+      "n_design_variables": 2,
+      "n_onehot_variables": 16,
+      "provenance": "paper_setting",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "two_coefficients_q64",
+      "group_sizes": [
+        64,
+        64
+      ],
+      "n_design_variables": 2,
+      "n_onehot_variables": 128,
+      "provenance": "paper_setting",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "rejected",
+      "rejection_reason": "onehot_variable_count_exceeds_100",
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "six_coefficients_q64",
+      "group_sizes": [
+        64,
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "n_design_variables": 6,
+      "n_onehot_variables": 384,
+      "provenance": "paper_setting",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "rejected",
+      "rejection_reason": "onehot_variable_count_exceeds_100",
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "two_coefficients_q12",
+      "group_sizes": [
+        12,
+        12
+      ],
+      "n_design_variables": 2,
+      "n_onehot_variables": 24,
+      "provenance": "proposed_integer_choice_variant",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "configuration_note": "整数12値の集合は未選択。元Q=64の精度・範囲と異なる。",
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "論文",
+      "url": "https://arxiv.org/abs/2209.01016",
+      "pinned_revision": null,
+      "license_verified": false
+    },
+    {
+      "title": "Sec. IV–VI／Fig. 3・5",
+      "url": "https://arxiv.org/pdf/2209.01016",
+      "pinned_revision": null,
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "数値H・基底・積分・単位が未再現",
+    "Q=8値集合と全ゼロ係数の扱い未選択",
+    "電子ハミルトニアン、基底、結合長、積分の単位と生成法を再現する",
+    "Q=8の整数範囲とインデックス対応を原論文と照合する",
+    "ゼロベクトルの除外と再サンプル、評価予算カウントを全手法で統一する",
+    "固有値を参照し、整数化された有限候補の最適値とは区別する",
+    "8択グループへの拡張と状態ベクトル係数のデコードを検証する"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "数値H・基底・積分・単位が未再現",
+      "Q=8値集合と全ゼロ係数の扱い未選択"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": null,
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "additional_constraint": "coefficient_vector_nonzero",
+  "reference_parameters": {
+    "bond_length_angstrom": 0.7414,
+    "hamiltonian_matrix": null,
+    "basis_order": null,
+    "q8_integer_choices": null,
+    "q64_integer_choices": [
+      -32,
+      -31,
+      -30,
+      -29,
+      -28,
+      -27,
+      -26,
+      -25,
+      -24,
+      -23,
+      -22,
+      -21,
+      -20,
+      -19,
+      -18,
+      -17,
+      -16,
+      -15,
+      -14,
+      -13,
+      -12,
+      -11,
+      -10,
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ]
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

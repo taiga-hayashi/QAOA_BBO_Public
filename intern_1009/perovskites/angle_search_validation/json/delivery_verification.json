@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "figure_exports": 27,
+  "markdown_local_links": "passed",
+  "json_parse": "passed",
+  "visual_review": [
+    "overview PDF rendered to PNG",
+    "N9 penalty heatmap PDF rendered to PNG"
+  ],
+  "package_versions": {
+    "numpy": "1.26.4",
+    "torch": "2.13.0",
+    "openqarp": "0.1.1",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1",
+    "dimod": "0.12.22",
+    "dwave-neal": "0.6.0"
+  },
+  "analysis_sha256": "f92522a5620deabb3ae0bf674eb8a5f8a663f7b5e077cf0ab14d196c3e095591",
+  "files_sha256": {
+    "pdf/feasibility_N6.pdf": "5109edb2aadaf675861280787b19f92de54e78de4a0d48a0c1029df798b2604e",
+    "pdf/penalty_scale_feasibility_N6.pdf": "6c88f970b6023c3c0723c61deaba695906556fdaac16775a160a6ff269c69d0d",
+    "pdf/optimum_capture_N9.pdf": "311c36c63bd30a457b211c91d5358406ab41d772a0f2e89a0a24f3d86239c3ad",
+    "pdf/candidate_quality_N9.pdf": "df3507cc97908755ebdb0b6dbd9e93d88667b97d274124ed9c68393ac32e4d9e",
+    "pdf/angle_search_validation_overview.pdf": "b66fee6d5f9f45d88144ea4b32d125cf12e84f82c52dd6fcd372000d7ab6dfd2",
+    "pdf/candidate_quality_N6.pdf": "371d1029d69f3c0cc2d537b27380609ac0a0ce2bb9ae8cb6861ac57b2cf4a172",
+    "pdf/penalty_scale_feasibility_N9.pdf": "84d68e86df0b45b8db94043a9dc3d8a072f6df7098ff0a95d2f3908eb16aaf77",
+    "pdf/optimum_capture_N6.pdf": "998f185243fe7830a36938ce424c06732bebdf6192a98a3e195d7393a003b4e0",
+    "pdf/feasibility_N9.pdf": "0511622cfbb6c58c8d395d0a9fa30bc62fe642a0a2f21631da35cc2a50935438",
+    "svg/candidate_quality_N9.svg": "8bc6b7f8f68f05b12f6361756df196fb498f143a36a12e83d51498971f9402fb",
+    "svg/penalty_scale_feasibility_N6.svg": "772ab4f8a091655d0b1b2f0cd519706d648b2dcc88b04198dbc394d376e8c10a",
+    "svg/optimum_capture_N9.svg": "ff06cfbe0105bffc292e6becc94422b21037b1d8695a13a714b284bab6643593",
+    "svg/feasibility_N6.svg": "0f267dce25f9dee5cbbd39a0d9fdba47bd29ad79e91beeb644a38a5317bd5269",
+    "svg/feasibility_N9.svg": "fb55f37d694acb3d7e5d2e2bc7bf5a2977c6a7a1a82b1077b11b84c6d90f4cdc",
+    "svg/penalty_scale_feasibility_N9.svg": "efc13e334208dd13085a4f59d871e15adbd87f10751c19c30a3c4f28dbd3f0a6",
+    "svg/optimum_capture_N6.svg": "0dc4b096fa0da4e49b0ca4a1390d3838e4426acb3a5d2fac45a40dc2773be6b1",
+    "svg/candidate_quality_N6.svg": "6e332413b6f675b4a8f49dae53e74a853b9862ec5ef245943b32b7949ffbce97",
+    "svg/angle_search_validation_overview.svg": "ebb8c77f37cf4664516b529844042153bb93e16cdce1f9a87f8e03e70edf9074",
+    "png/feasibility_N6.png": "91ced1002d344fc843196db2253531d9eca203dac156ad150dd951ab4810eb38",
+    "png/optimum_capture_N9.png": "90255523a44458b05d91d77c11159d2ff51fa0f3619ad6a8e55aa8e373278417",
+    "png/penalty_scale_feasibility_N6.png": "f917bd0c1d3bfa7cf7e332bee1380fb01b52ca7f6f55bf0ade6d7cd5ec35e215",
+    "png/candidate_quality_N9.png": "92dd52eb3f6ef8bd71262d24117c63bc6c204de058dba90a51a9873ccf5ffa0a",
+    "png/angle_search_validation_overview.png": "7aa5e221f32ac524f88424c26d46faf5d81958703d6ff25f3f65e49c1fb63339",
+    "png/candidate_quality_N6.png": "12f620a128e8c5aa90c14f2aaaf8ed33f04acb6c80e5f1d4ac1533000b636df5",
+    "png/optimum_capture_N6.png": "49b82c928d9c85d5ca9e6f777175e3ba2f8a39a430ae2cf530877e5be8273fcf",
+    "png/penalty_scale_feasibility_N9.png": "e621c351f265beaa24f6b57d47914f0170d6ff425c738e1038f6fcbef8ca11ab",
+    "png/feasibility_N9.png": "386409c1f5bcf83f07cf3036e028d7a1792171e6c8e5953c161ab34653d5c53f"
+  }
+}

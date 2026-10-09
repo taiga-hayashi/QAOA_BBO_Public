@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "runner_sha256": "7f76eb59e79d84f5e1f802408ec3ec68ae3a47b203ec9fbf6288323173eb31fb",
+  "baseline_reproduction_max_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "source_N6_N9_and23_validation": "passed"
+}

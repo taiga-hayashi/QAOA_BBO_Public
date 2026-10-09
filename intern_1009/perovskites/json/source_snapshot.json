@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "src/olympus/datasets/dataset_perovskites/config.json",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/config.json",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/config.json",
+      "sha256": "460139af0c635df4ec6b28161facc64d66980843d1d244230b16c927a1b8d0bd",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "src/olympus/datasets/dataset_perovskites/description.txt",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/description.txt",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/description.txt",
+      "sha256": "ceec3edd0cfa847d2239d3fba8b7f6ef21b317e85fc6463467a4f8640fd1783f",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/LICENSE",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/LICENSE.txt",
+      "sha256": "954c5cce3c2e24556ac14b940dfb071bc15947b03e9eb62acf4c7e7d1946f3f1",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "src/olympus/datasets/dataset_perovskites/data.csv",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_perovskites/data.csv",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/data.csv",
+      "sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+      "retrieved_on": "2026-10-09",
+      "executed": false,
+      "loaded_for_evaluator_validation": true
+    }
+  ]
+}

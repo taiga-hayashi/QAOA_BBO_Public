@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "settings": 440,
+  "circuit_evaluations": 47080,
+  "checks": "restriction parity,all selected norms,independent X cost-phase/RX parity,XY no-penalty/feasible preservation,exact batch10 quality formula,grid minimum selection,nested refinement expectation monotonicity,complete5seed coverage"
+}

@@ -1,0 +1,21 @@
+{
+  "executed_at_utc": "2026-10-09T00:43:53.660668+00:00",
+  "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "packages": {
+    "numpy": "2.4.6",
+    "torch": null,
+    "qarpx": null
+  },
+  "repo_head": "3cd7a4dd24331a752f77855a3e880a744f987f07",
+  "working_tree_is_not_frozen_by_head": true,
+  "command": "python3 intern_1009/perovskites/py/validate_evaluator.py",
+  "code_sha256": {
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f",
+    "intern_1009/perovskites/py/validate_evaluator.py": "c2a7eae4f2a20acf451707dba5d55205cb0c8feed5d782c8369585e77c12eb4d",
+    "intern_1009/perovskites/py/test_perovskites_evaluator.py": "28ac2eb261b814b09e0fcb14ab37e63da5628b4fb10f77b660d1bfc15392cc40",
+    "src/qarp_backend.py": "fffa65fc35544841da472dfcc1a111212fe472f3811e6b2fe19b9bc566e24f32"
+  }
+}

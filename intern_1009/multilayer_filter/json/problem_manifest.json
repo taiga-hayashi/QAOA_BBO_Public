@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "problem_id": "multilayer_filter",
+  "title": "多層光学フィルター",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "simulation",
+  "objective_description": "論文v3 Eq.(6)と公開コードのFOMが異なる。採用版未選択。いずれも最小化。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "three_layers",
+      "group_sizes": [
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 3,
+      "n_onehot_variables": 12,
+      "provenance": "small_original_family",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "six_layers",
+      "group_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 6,
+      "n_onehot_variables": 24,
+      "provenance": "original_family",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    },
+    {
+      "variant_id": "five_layers",
+      "group_sizes": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "n_design_variables": 5,
+      "n_onehot_variables": 20,
+      "provenance": "proposed_layer_count_variant",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "configuration_note": null,
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "論文",
+      "url": "https://arxiv.org/html/2407.20212v3",
+      "pinned_revision": null,
+      "license_verified": false
+    },
+    {
+      "title": "公開コード",
+      "url": "https://github.com/Seongmin-Kim-ornl/DQAOA",
+      "pinned_revision": "9ed1842760fee1f20e2e25c8eabd97c841a51233",
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "論文式と公開コード式の再現対象が未選択",
+    "層厚設定が未選択",
+    "光学データと利用条件・依存版未確認",
+    "TMMコード、屈折率、太陽光スペクトルの版・利用条件を確認する",
+    "層厚、全厚、基板、入射条件、波長グリッドを凍結する",
+    "公開構造で透過率とFOMを照合する",
+    "4択W-state／Ringと材料へのデコードを検証する"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "論文式と公開コード式の再現対象が未選択",
+      "層厚設定が未選択",
+      "光学データと利用条件・依存版未確認"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": null,
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "objective_definition_options": [
+    "paper_v3_eq6_as_printed",
+    "pinned_code_squared_residual"
+  ],
+  "material_order": [
+    "SiO2",
+    "Si3N4",
+    "Al2O3",
+    "TiO2"
+  ],
+  "reference_code_parameters": {
+    "layer_thickness_nm": 50,
+    "wavelength_nm": [
+      300,
+      2500,
+      1
+    ],
+    "incidence_deg": 0,
+    "polarization": "p",
+    "upper_refractive_index": 1.4,
+    "lower_refractive_index": 1.45
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

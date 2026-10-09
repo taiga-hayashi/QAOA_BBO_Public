@@ -1,0 +1,11 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "torch": "2.13.0",
+  "numpy": "1.26.4",
+  "threads": 1,
+  "device": "CPU",
+  "protocol_sha256": "d2603ff377469d2fdf1f2a33311b39c5cd122d2688b4fba614024c69771204be",
+  "runner_sha256": "2afdbd0276943996070d5795a2bc295e04780a441fd51a489bf47c5b4d4ba05d",
+  "shared_fm_sha256": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+  "conversion_sha256": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57"
+}

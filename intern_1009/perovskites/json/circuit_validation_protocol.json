@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "status": "ready_for_circuit_prevalidation_only",
+  "backend": "OpenQARP qarpx ideal full-statevector",
+  "python": "/Users/hayashitaiga/.venvs/fas/bin/python",
+  "cases": [[3, 3], [3, 3, 3], [16, 3, 4]],
+  "qubo_seeds": [42, 101],
+  "qubo_kind": "diagnostic upper-triangular random QUBO, not trained FM or material objective",
+  "angle_pairs": [[0.0, 0.0], [0.31, 0.27], [-0.43, 0.61]],
+  "depth": 1,
+  "onehot_penalty_lambda": 0,
+  "initialization": "product of W states via ideal initial_state vector injection; no preparation gate synthesis",
+  "mixer_topology": "ring per group; increasing neighboring edges then closing edge; 2-choice single undirected edge; singleton no edge",
+  "mixer_evolution": "ordered per-edge RXX(beta) RYY(beta), exp[-i beta(XX+YY)/2] per edge; not exact exp of full ring sum",
+  "bit_order": "q0 first; basis index sum(bits[q]*2**q)",
+  "tolerances": {"feasibility": 1e-10, "raw_norm": 1e-10, "reference_amplitude": 1e-10, "energy": 1e-10},
+  "checks": ["W initialization support and fidelity", "Ring edges and closing edge", "XX+YY two-qubit rotation coefficient", "QUBO-Ising offset and phase", "small-case penalties on all basis states", "full-state feasible probability without renormalization", "independent analytic edge-product reference", "nonuniform diagnostic evolution"],
+  "resource_scope": "full 2**N statevector; reference restricted to feasible basis only and used for validation",
+  "fm_training_or_bbo_allowed": false
+}

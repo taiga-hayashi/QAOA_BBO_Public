@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "fits": 30,
+  "failure_or_exclusion_count": 0,
+  "independent_all_metrics_recomputation": "passed",
+  "Adam_AdamW_zero_decay_10_prediction_vectors": "exactly equal",
+  "plot_files": 12,
+  "figure_hashes": "passed",
+  "PDF_render_visual_review": "integrated overview and all3 native panels; axes legends readable and no clipping",
+  "shared_default_baselines": 10,
+  "source_py_compile": "passed; main and intern mirror plus experiment scripts and intern README quick check",
+  "git_diff_check": "passed"
+}

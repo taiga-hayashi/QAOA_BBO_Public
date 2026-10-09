@@ -1,0 +1,18 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "openqarp": "0.1.1",
+    "dwave-neal": "0.6.0",
+    "matplotlib": "3.11.1"
+  },
+  "protocol_sha256": "229e8a3a800786f527ce2afca090b0b86443e4159b680a2ea0bc6b72cdaf23b3",
+  "code_sha256": {
+    "intern_1009/perovskites/fm_optimum_sample_counts/py/experiment.py": "b89e5978f26969caecf20ed1ada14e6b5ac818e22ebf49f7d10df3c972381040",
+    "intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "src/qarp_backend.py": "77eb7d4153b57d29334a40f4b4d3ae50dcf2789977517611f8fde4a934351f2c",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "runs": 20,
+  "models_checked": 1200,
+  "checks": "initial/protocol/checkpoint hashes, all model hashes, Torch/QUBO parity, all raw sample filters and ranking, accumulated training ids and lookup values, budget accounting, adaptive alpha and lambda; all runs retained"
+}

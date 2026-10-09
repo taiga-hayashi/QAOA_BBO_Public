@@ -1,0 +1,22 @@
+{
+ "status":"ready",
+ "scope":"local_lookup_initial_data_count_sensitivity; no final benchmark promotion",
+ "data_sha256":"ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+ "problem":"pinnedOlympus440b6b58 Perovskites192 candidates,23onehotbits,minimize hse_gap eV; repositoryMIT verified,original external terms unresolved",
+ "initial_counts":[5,10,20],
+ "seeds":[42,101,2024,7,19],
+ "methods":["Adaptive-FMQA","LargePenalty-FMQA","XY-FMQAOA"],
+ "initial_selection":"original20 saved order prefixes; nested5subset10subset20; same data across methods perinitialcount/seed; no new coverage design",
+ "fm":"rank1,AdamW wd0.01,lr0.1,120epochs,rawtarget/fullbatch/fresh model eachcycle; same modelseed=seed+100000*(cycle-1)",
+ "raw_outputs_per_cycle":100,
+ "bb_budget_cap":80,
+ "cycles":"80-initial_count:75/70/60. Fixed logical evaluation cap,not equal circuit/SA compute budget. Candidate shortfall yields fewer actual evaluations; no refill/early optimum stop",
+ "candidate":"lowest FM unseen feasible unique max1,tuple tie; invalid/evaluated/poolduplicates rejected",
+ "sa":"unchanged1000sweeps geometric,automaticNeal betarange; seed*100000+cycle*1000; Adaptive shared tracker initial1,min.01,max100; LargePenalty alpha100;lambda=Salpha",
+ "xy":"unchangedp1 W Ring orderededge product lambda0,9ideal FM expectation anglepairs gamma.05/.4/.8 beta.1/.4/.8,baseIsingS normalization; exact sharedOpenQARP encoded simulator original23bits/sim8bits;100finalshots,not finite-shot angle search",
+ "prevalidation":"unchanged hashes and passed N6/N9/N23 full-circuit parity; nested initialsets/evaluatorSHA/FM-QUBO; reproduce firstcycle20 of15prior100output runs; independent complete20reproduction and budgetaudit after run",
+ "metrics":"best-sofar vs actualBB evaluations andcycles; initial/categorycoverage; finalregret global192 range; successnew vs initialoptimum; firsthit score81 nonhit(code not actualcall); candidate-none fraction; perrun acceptedcycle median unseenFMgap",
+ "statistics":"5seed median/IQR; firsthit matchedcommon noninitialoptimum seeds42/2024/7/19 (4),retain101 separately/allfinal metrics; paired5minus20 and10minus20 for eachmethod x(finalregret,firsthit_score81,candidate_none_fraction,median_unseenFMgap),Bonferroni24;retain failures/nulls",
+ "budget":"45fresh runs,3075cycles/model fits,307500rawoutputs,9225XYideal angle evaluations;20control reproduced not modified",
+ "limits":"same upper BB budget but different model/circuit cycle budgets; coverage decreases withinitialcount,not isolated train-size-only effect; unchangeddataset already explored; standardX-QAOA and grid49not run"
+}

@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "fits": 30,
+  "checks": "same dataset/init per rank-seed; 30 checkpoint hashes and forward/QUBO parity; independently recomputed test RMSE and exact predicted selection; no dropped fits"
+}

@@ -1,0 +1,66 @@
+{
+  "summary_sha256": "6316fe43460db636b48444316ac569daa7c2c6d629f1810df863874490d801a9",
+  "files": [
+    {
+      "path": "pdf/exact_random_BBO_overview.pdf",
+      "sha256": "7c43ba7f233d8a3fa97a6d33ca58d455ea64439efcd696b2bcf657bb3ff2bb5e"
+    },
+    {
+      "path": "svg/exact_random_BBO_overview.svg",
+      "sha256": "d674b5f2e1d46d2b3319acfae2f04247d4eb407c44233b636a391a6b5d26b317"
+    },
+    {
+      "path": "png/exact_random_BBO_overview.png",
+      "sha256": "c1440cc770f1147815f875fe9f843aed61f74cece0caac02b06385aa289e402e"
+    },
+    {
+      "path": "pdf/curve.pdf",
+      "sha256": "371d2680bff510cf8abe81893448a05e4b4554b61426fb015edd0d1159073f7d"
+    },
+    {
+      "path": "svg/curve.svg",
+      "sha256": "2f2677da8774440117464dcfa16cbb14f80868615bca96046a53c1010e278c45"
+    },
+    {
+      "path": "png/curve.png",
+      "sha256": "ac15b6208ef9f913335caf6bb4bde2b23c0cc2172d9a75574429c2a3d8be814b"
+    },
+    {
+      "path": "pdf/firsthit_score81.pdf",
+      "sha256": "868462c1e25b55e3055bd035d00ccbd2c4bc2102db1f975632936bc949108a35"
+    },
+    {
+      "path": "svg/firsthit_score81.svg",
+      "sha256": "e869c98a215e4ffe0788cfee1a71ebc8ad6ac90a072bc8179ef7deaf7c5bb756"
+    },
+    {
+      "path": "png/firsthit_score81.png",
+      "sha256": "b5cf559c591402bdc3ea889e9539b0873024bc0d8adf4a0ece0798888a784eb7"
+    },
+    {
+      "path": "pdf/final_regret.pdf",
+      "sha256": "e0b879139b2226020691a8906c43f5c71aa5d930efad7a74e7b51e70488517ad"
+    },
+    {
+      "path": "svg/final_regret.svg",
+      "sha256": "b1ca751e3d892aced326865f68e851ef453f1227943e01c48f7455743a4ba29b"
+    },
+    {
+      "path": "png/final_regret.png",
+      "sha256": "6bdcf8f3bcbeee210b068d8d8074bfc76a0ef475c4d58af4894a386813ec0b84"
+    },
+    {
+      "path": "pdf/generation_seconds.pdf",
+      "sha256": "2c172f1108ebb112df34ca48128a558a8cef20243298f9a0e08e47953711db3c"
+    },
+    {
+      "path": "svg/generation_seconds.svg",
+      "sha256": "6f1940286cd597a8479d9fb2c6f489cd26a6b3e31651847af17f438a91a0f539"
+    },
+    {
+      "path": "png/generation_seconds.png",
+      "sha256": "046aaf9129dc3352c7b3dbb0338292df1eb873da4d08c6dda2750ef1ba6c385a"
+    }
+  ],
+  "visual_QA": "pending next interactive review"
+}

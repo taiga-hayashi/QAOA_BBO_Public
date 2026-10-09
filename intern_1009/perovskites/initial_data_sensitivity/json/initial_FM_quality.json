@@ -1,0 +1,365 @@
+{
+  "scope": "offline audit on common172 not in original20,no training/ranking use; first FM identical across methods",
+  "rows": [
+    {
+      "seed": 42,
+      "initial_count": 5,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 2.1464818002584973,
+      "organic_coverage": 5,
+      "train_rmse": 0.0031331240456582855
+    },
+    {
+      "seed": 101,
+      "initial_count": 5,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.8530732819089875,
+      "organic_coverage": 5,
+      "train_rmse": 0.0022499282471727215
+    },
+    {
+      "seed": 2024,
+      "initial_count": 5,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.4930831648869427,
+      "organic_coverage": 4,
+      "train_rmse": 0.008742305757041753
+    },
+    {
+      "seed": 7,
+      "initial_count": 5,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.7810072449599232,
+      "organic_coverage": 4,
+      "train_rmse": 0.006385130547986207
+    },
+    {
+      "seed": 19,
+      "initial_count": 5,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 2.0286206474324513,
+      "organic_coverage": 4,
+      "train_rmse": 0.003662378905926558
+    },
+    {
+      "seed": 42,
+      "initial_count": 10,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.2135272635820893,
+      "organic_coverage": 8,
+      "train_rmse": 0.0073773158610719375
+    },
+    {
+      "seed": 101,
+      "initial_count": 10,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.4418835272069577,
+      "organic_coverage": 7,
+      "train_rmse": 0.005519573497617509
+    },
+    {
+      "seed": 2024,
+      "initial_count": 10,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.1255284834275656,
+      "organic_coverage": 8,
+      "train_rmse": 0.007438714718349359
+    },
+    {
+      "seed": 7,
+      "initial_count": 10,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.7369219359329235,
+      "organic_coverage": 7,
+      "train_rmse": 0.006944094926964662
+    },
+    {
+      "seed": 19,
+      "initial_count": 10,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.7637158242455868,
+      "organic_coverage": 7,
+      "train_rmse": 0.0032752796710655454
+    },
+    {
+      "seed": 42,
+      "initial_count": 20,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 0.8716543801031916,
+      "organic_coverage": 13,
+      "train_rmse": 0.032311191847429435
+    },
+    {
+      "seed": 101,
+      "initial_count": 20,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 0.790980797377955,
+      "organic_coverage": 12,
+      "train_rmse": 0.008428051801940267
+    },
+    {
+      "seed": 2024,
+      "initial_count": 20,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.095630043277496,
+      "organic_coverage": 10,
+      "train_rmse": 0.012246738273920648
+    },
+    {
+      "seed": 7,
+      "initial_count": 20,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 0.8756663095039467,
+      "organic_coverage": 12,
+      "train_rmse": 0.02028598920030019
+    },
+    {
+      "seed": 19,
+      "initial_count": 20,
+      "method": "Adaptive-FMQA",
+      "common172_test_rmse": 1.1437554551659623,
+      "organic_coverage": 10,
+      "train_rmse": 0.07873197856429325
+    },
+    {
+      "seed": 42,
+      "initial_count": 5,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 2.1464818002584973,
+      "organic_coverage": 5,
+      "train_rmse": 0.0031331240456582855
+    },
+    {
+      "seed": 101,
+      "initial_count": 5,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.8530732819089875,
+      "organic_coverage": 5,
+      "train_rmse": 0.0022499282471727215
+    },
+    {
+      "seed": 2024,
+      "initial_count": 5,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.4930831648869427,
+      "organic_coverage": 4,
+      "train_rmse": 0.008742305757041753
+    },
+    {
+      "seed": 7,
+      "initial_count": 5,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.7810072449599232,
+      "organic_coverage": 4,
+      "train_rmse": 0.006385130547986207
+    },
+    {
+      "seed": 19,
+      "initial_count": 5,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 2.0286206474324513,
+      "organic_coverage": 4,
+      "train_rmse": 0.003662378905926558
+    },
+    {
+      "seed": 42,
+      "initial_count": 10,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.2135272635820893,
+      "organic_coverage": 8,
+      "train_rmse": 0.0073773158610719375
+    },
+    {
+      "seed": 101,
+      "initial_count": 10,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.4418835272069577,
+      "organic_coverage": 7,
+      "train_rmse": 0.005519573497617509
+    },
+    {
+      "seed": 2024,
+      "initial_count": 10,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.1255284834275656,
+      "organic_coverage": 8,
+      "train_rmse": 0.007438714718349359
+    },
+    {
+      "seed": 7,
+      "initial_count": 10,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.7369219359329235,
+      "organic_coverage": 7,
+      "train_rmse": 0.006944094926964662
+    },
+    {
+      "seed": 19,
+      "initial_count": 10,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.7637158242455868,
+      "organic_coverage": 7,
+      "train_rmse": 0.0032752796710655454
+    },
+    {
+      "seed": 42,
+      "initial_count": 20,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 0.8716543801031916,
+      "organic_coverage": 13,
+      "train_rmse": 0.032311191847429435
+    },
+    {
+      "seed": 101,
+      "initial_count": 20,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 0.790980797377955,
+      "organic_coverage": 12,
+      "train_rmse": 0.008428051801940267
+    },
+    {
+      "seed": 2024,
+      "initial_count": 20,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.095630043277496,
+      "organic_coverage": 10,
+      "train_rmse": 0.012246738273920648
+    },
+    {
+      "seed": 7,
+      "initial_count": 20,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 0.8756663095039467,
+      "organic_coverage": 12,
+      "train_rmse": 0.02028598920030019
+    },
+    {
+      "seed": 19,
+      "initial_count": 20,
+      "method": "LargePenalty-FMQA",
+      "common172_test_rmse": 1.1437554551659623,
+      "organic_coverage": 10,
+      "train_rmse": 0.07873197856429325
+    },
+    {
+      "seed": 42,
+      "initial_count": 5,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 2.1464818002584973,
+      "organic_coverage": 5,
+      "train_rmse": 0.0031331240456582855
+    },
+    {
+      "seed": 101,
+      "initial_count": 5,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.8530732819089875,
+      "organic_coverage": 5,
+      "train_rmse": 0.0022499282471727215
+    },
+    {
+      "seed": 2024,
+      "initial_count": 5,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.4930831648869427,
+      "organic_coverage": 4,
+      "train_rmse": 0.008742305757041753
+    },
+    {
+      "seed": 7,
+      "initial_count": 5,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.7810072449599232,
+      "organic_coverage": 4,
+      "train_rmse": 0.006385130547986207
+    },
+    {
+      "seed": 19,
+      "initial_count": 5,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 2.0286206474324513,
+      "organic_coverage": 4,
+      "train_rmse": 0.003662378905926558
+    },
+    {
+      "seed": 42,
+      "initial_count": 10,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.2135272635820893,
+      "organic_coverage": 8,
+      "train_rmse": 0.0073773158610719375
+    },
+    {
+      "seed": 101,
+      "initial_count": 10,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.4418835272069577,
+      "organic_coverage": 7,
+      "train_rmse": 0.005519573497617509
+    },
+    {
+      "seed": 2024,
+      "initial_count": 10,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.1255284834275656,
+      "organic_coverage": 8,
+      "train_rmse": 0.007438714718349359
+    },
+    {
+      "seed": 7,
+      "initial_count": 10,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.7369219359329235,
+      "organic_coverage": 7,
+      "train_rmse": 0.006944094926964662
+    },
+    {
+      "seed": 19,
+      "initial_count": 10,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.7637158242455868,
+      "organic_coverage": 7,
+      "train_rmse": 0.0032752796710655454
+    },
+    {
+      "seed": 42,
+      "initial_count": 20,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 0.8716543801031916,
+      "organic_coverage": 13,
+      "train_rmse": 0.032311191847429435
+    },
+    {
+      "seed": 101,
+      "initial_count": 20,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 0.790980797377955,
+      "organic_coverage": 12,
+      "train_rmse": 0.008428051801940267
+    },
+    {
+      "seed": 2024,
+      "initial_count": 20,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.095630043277496,
+      "organic_coverage": 10,
+      "train_rmse": 0.012246738273920648
+    },
+    {
+      "seed": 7,
+      "initial_count": 20,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 0.8756663095039467,
+      "organic_coverage": 12,
+      "train_rmse": 0.02028598920030019
+    },
+    {
+      "seed": 19,
+      "initial_count": 20,
+      "method": "XY-FMQAOA",
+      "common172_test_rmse": 1.1437554551659623,
+      "organic_coverage": 10,
+      "train_rmse": 0.07873197856429325
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+ "status":"ready",
+ "scope":"local_pinned_lookup_closed_loop_XY_FMQAOA_pilot",
+ "seeds":[42,101,2024,7,19],
+ "problem":"Olympus Perovskites 16x3x4,23 One-Hot variables; pinned SHA ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518; minimize hse_gap eV; local repository MIT, original external terms unresolved,parent remains draft",
+ "fm":{"rank":1,"optimizer":"AdamW","weight_decay":0.01,"epochs":120,"learning_rate":0.1,"raw_eV":true,"fullbatch":true,"warm_start":false,"seed":"seed+100000*(cycle-1),same as SA pilot"},
+ "initial":"exact original pilot20; same as completed SA proposed models",
+ "cycles":60,
+ "bb_budget_cap":80,
+ "candidate":"10shots, max1 lowest base-FM unseen feasible unique; tuple tie; no refill; no early stop after optimum",
+ "qaoa":{"p":1,"lambda":0,"initial":"product W","mixer":"ordered per-group Ring RXX(beta)RYY(beta),same as canonical full circuit","gammas":[0.05,0.4,0.8],"betas":[0.1,0.4,0.8],"angles":"minimum ideal expected FM among9 common grid points; no true objective; no finite-shot angle search","normalization":"divide base QUBO by S=max abs base Ising h,J; S0 divisor1","shots":10,"shot_seed":"seed*100000+cycle*1000","sampling":"CDF in original23bit LSB basis order to preserve streaming measurement mapping"},
+ "backend":"src.qarp_backend.OpenQARPCompactXYQAOA; OpenQARP cost diagonal and exact ordered mixer unitary synthesized on 8 simulator bits for192 feasible states; problem/original circuit stays23bits; full-statevector probabilities validated at N6,N9,N23 first; not historical exponential-of-summed-mixer",
+ "prevalidation":"fresh full OpenQARP probability/norm/feasibility/amplitude parity at N6,N9 and N23 all9 grid pairs, plus independent ordered-edge reference and initial-FM reproduction; preserve all failures",
+ "statistics":"5seed median/IQR; XY minus each proposed SA for final regret and actual evaluations,Wilcoxon Bonferroni4; same budgets not equal compute cost",
+ "artifacts":"300model checkpoints;2700ideal angle evaluations;3000shots; percycle data/probabilities/candidates; sources/environment/protocol hash; PDF SVG PNG; independent audit",
+ "limits":"ideal statevector with ideal W injection; simulator compression gives no physical8qubit resource claim; selected FM came from explored test; no standard X-QAOA here; no angle-global-optimality claim"
+}

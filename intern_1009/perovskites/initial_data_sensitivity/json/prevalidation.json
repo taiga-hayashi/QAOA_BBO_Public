@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "initial_models": [
+    {
+      "seed": 42,
+      "initial_count": 5,
+      "parity_max_error": 8.344650268554688e-07,
+      "organic_coverage": 5
+    },
+    {
+      "seed": 42,
+      "initial_count": 10,
+      "parity_max_error": 8.940696716308594e-07,
+      "organic_coverage": 8
+    },
+    {
+      "seed": 42,
+      "initial_count": 20,
+      "parity_max_error": 5.550682544708252e-07,
+      "organic_coverage": 13
+    },
+    {
+      "seed": 101,
+      "initial_count": 5,
+      "parity_max_error": 5.438923835754395e-07,
+      "organic_coverage": 5
+    },
+    {
+      "seed": 101,
+      "initial_count": 10,
+      "parity_max_error": 3.948807716369629e-07,
+      "organic_coverage": 7
+    },
+    {
+      "seed": 101,
+      "initial_count": 20,
+      "parity_max_error": 4.6938657760620117e-07,
+      "organic_coverage": 12
+    },
+    {
+      "seed": 2024,
+      "initial_count": 5,
+      "parity_max_error": 4.731118679046631e-07,
+      "organic_coverage": 4
+    },
+    {
+      "seed": 2024,
+      "initial_count": 10,
+      "parity_max_error": 6.556510925292969e-07,
+      "organic_coverage": 8
+    },
+    {
+      "seed": 2024,
+      "initial_count": 20,
+      "parity_max_error": 6.891787052154541e-07,
+      "organic_coverage": 10
+    },
+    {
+      "seed": 7,
+      "initial_count": 5,
+      "parity_max_error": 5.364418029785156e-07,
+      "organic_coverage": 4
+    },
+    {
+      "seed": 7,
+      "initial_count": 10,
+      "parity_max_error": 5.811452865600586e-07,
+      "organic_coverage": 7
+    },
+    {
+      "seed": 7,
+      "initial_count": 20,
+      "parity_max_error": 7.450580596923828e-07,
+      "organic_coverage": 12
+    },
+    {
+      "seed": 19,
+      "initial_count": 5,
+      "parity_max_error": 9.462237358093262e-07,
+      "organic_coverage": 4
+    },
+    {
+      "seed": 19,
+      "initial_count": 10,
+      "parity_max_error": 7.450580596923828e-07,
+      "organic_coverage": 7
+    },
+    {
+      "seed": 19,
+      "initial_count": 20,
+      "parity_max_error": 4.628673195838928e-07,
+      "organic_coverage": 10
+    }
+  ],
+  "first_cycle20_15_reproduction": "passed",
+  "inherited_N6_N9_N23_full_circuit_parity": "passed,unchanged hashes",
+  "source_sha256": {
+    "intern_1009/perovskites/initial_data_sensitivity/py/initial_experiment.py": "2db95b64186518e8f44886b8f4a6eac80c4b8c99b21876108028181efc2b2079",
+    "intern_1009/perovskites/bbo_sample_count_comparison/py/experiment.py": "e6dc3ea1d6e1c9bb14720a52c865e7e1940a46578b282463ffb365a8a412a98d",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  }
+}

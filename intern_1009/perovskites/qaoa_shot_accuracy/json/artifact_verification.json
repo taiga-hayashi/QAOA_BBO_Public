@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "conditions": 6000,
+  "checks": "raw samples decoded; direct FM ranking and truth parity; full seed/method/shot/rep coverage; state norm,original exact probability/expectation parity and independent measured-energy checks in runner",
+  "source_sha256": {
+    "42": "3c911dd0470dcc9e722a528260c17e881d10ddbea2acb803f8014e7b1335f592",
+    "101": "4ab0e308e1af3454408b2d6273521340be480087e7dadff78e86916cee5eee2e",
+    "2024": "b7c525044aa7cc06e34c29a355f6927b5e480b7249b22060567d49accc7744ea",
+    "7": "a60d3b638e710dc326e6e16b9383a19f864d3b77a2fc0755f0add1cea742a9eb",
+    "19": "327043c2622ec148ca3f63465a63cfa4e6945fe0e49350c6358112d5cd5ab2e2"
+  }
+}

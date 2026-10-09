@@ -1,0 +1,9 @@
+# 実行前監査
+
+ユーザー指定で初期3件、XYp3最適化、LargePenaltyは候補品質悪化が観測されたalpha1000を採用。比較用XYp1も同じ初期集合/FМ設定/評価上限で再実行。LargePenalty既定alpha100とは別variantで、alpha固定とlambda固定を混同しない。初期10固定FMでの悪化を初期3へ一般化しない。
+
+共有fit/select、QUBO、ペナルティBQM、Neal、OpenQARPを再利用。新規コードはcycle orchestrationとp1/3共通128候補探索。XYlambda0とW/Ringを維持。既定p1をユーザー指定で拡張。source変更はない。
+
+p3は旧9p1候補をゼロ層で埋め込んだ9候補＋119ランダム角度。補助p1/p2探索は使わず128total。直前固定FMの段階別warmsearchとは角度予算の配分が違う。比較用p1も9候補＋119角度。128statecallsは同じだがp3の層/gate数は多い。
+
+N6/N9/N23の直前p3検証をhashで継承、初期3の5FMを新たに検証。最終監査では全checkpoint、全候補規則と予算、XY全best state770件を独立referenceで照合する。全98560角度の独立再計算は今回の監査範囲ではない。

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "independent_angle_checks": 3840,
+  "measurement_batches": 300,
+  "shots_verified": 30000,
+  "completed_searches": 30,
+  "failed_or_dropped": 0,
+  "checks": "source/protocol/frozenFM hashes,all candidateangles and expectedenergies/feasibility,chosen probabilities independently,all CDFdraws/selection/gaps,exact ideal mass/capture formula,warm-start monotonic search objective",
+  "source_hashes": "passed",
+  "figure_files": 21,
+  "figure_hashes": "passed",
+  "rendered_visual_QA": "passed: all seven PDFs,overview and six individual figures",
+  "python_syntax": "passed",
+  "git_diff_check": "passed",
+  "summary_sha256": "7d384c02e309bbc98ac4d4ef13ef344a426ca596acdee8670d08c1e3a9d1a74e",
+  "analysis_source_sha256": "aad57dbc91ec64936dca9786e041e283815e1be019d57ab1b198dd92526bb20d"
+}

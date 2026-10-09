@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "BBO_models": 2450,
+  "fixed_models": 5,
+  "fixed_batches": 700,
+  "previous_alpha100_complete_reproductions": 5,
+  "failed_or_dropped_runs": 0,
+  "checks": "protocol/source/checkpoint/model hashes,FM/QUBO parity,raw candidate filters,alpha/S/lambda,truth/initial/budgets,all70cycles reference parity"
+}

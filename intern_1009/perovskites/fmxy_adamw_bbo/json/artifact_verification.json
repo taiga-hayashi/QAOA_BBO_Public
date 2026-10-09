@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "models": 300,
+  "independent_angle_reference_checks": 2700,
+  "checks": "checkpoint/hash/FM-QUBO parity; independent XY ordered-edge probabilities and chosen angles; shot RNG; candidate ranking; truth/train/evaluation budget; same initialdata and first FM as SA; no failures or exclusions"
+}

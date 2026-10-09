@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "fits": 90,
+  "checks": "complete18config x5seeds,source/checkpoint SHA,independent QUBO predictions/ranking/RMSE parity; perfit Torch/QUBO parity"
+}

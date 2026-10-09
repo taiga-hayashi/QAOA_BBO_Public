@@ -1,0 +1,24 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "executable": "/Users/hayashitaiga/.venvs/fas/bin/python",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.13.0",
+    "scipy": "1.17.1",
+    "openqarp": "0.1.1",
+    "dwave-neal": "0.6.0",
+    "dimod": "0.12.22"
+  },
+  "protocol_sha256": "5d8ea321e6db79b6019e3e193838926a4fb0d0e8650221dc075a2491160650e4",
+  "code_sha256": {
+    "intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "src/fm.py": "37567eb9935d6b938edd88b06c233400e6dff577bb3d87fc711fc7a13c167703",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "src/qarp_backend.py": "77eb7d4153b57d29334a40f4b4d3ae50dcf2789977517611f8fde4a934351f2c",
+    "intern_0924/src/solvers.py": "19836297a9c50917accef38df1f111a3271239d3732f167c23846ddb3e4fdfc2",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  }
+}

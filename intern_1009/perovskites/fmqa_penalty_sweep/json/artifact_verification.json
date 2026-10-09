@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "verified_repetitions": 600,
+  "checks": "all raw samples independently decoded and metrics recomputed; five source/checkpoint/initial/model identities; lambda=S alpha; full alpha/seed/rep coverage; no failed or excluded runs",
+  "seed_files_sha256": {
+    "42": "bd4b43b7f437bb2aa860761854910174ebf5b9417daed89ec90bc5e8f8ca5f48",
+    "101": "8d80c3e797108a156fd30736de444d8ad69dc578220c4c326844b66c4fff3bf4",
+    "2024": "d57f23713ca5d4a804134ae87bf61f5b84d8645f0cef6d75ddd0f90aec05deac",
+    "7": "b572247c2a8320e679bab9a812915cb618531ff639fc83ea45e982c7a706b127",
+    "19": "9933f5809c5fa9b4d4c37ca929fb87b8118ec56b8ea42076d6b5e91220ec85c0"
+  }
+}

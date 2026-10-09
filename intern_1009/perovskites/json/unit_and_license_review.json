@@ -1,0 +1,32 @@
+{
+  "reviewed_on": "2026-10-09",
+  "objective": "hse_gap",
+  "adopted_unit": "eV",
+  "unit_basis": {
+    "original_publication": "A hybrid organic-inorganic perovskite dataset",
+    "doi": "10.1038/sdata.2017.57",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5423391/",
+    "evidence_location": "Data Records: material data header explicitly labels Bandgap, HSE06 (eV)",
+    "original_header_unit_verified": true,
+    "olympus_config_or_csv_unit_explicit": false,
+    "olympus_composition_to_original_structure_mapping_verified": false,
+    "note": "単位eVは元データ論文に基づく。Olympusの各組成値を元の1346構造へ一対一照合したものではない。"
+  },
+  "repository_license": {
+    "name": "MIT",
+    "path": "data/reference/LICENSE.txt",
+    "verified": true
+  },
+  "original_article_license": {
+    "name": "CC BY 4.0",
+    "verified": true,
+    "scope": "article; do not infer all external data repository terms"
+  },
+  "original_external_dataset_terms_verified": false,
+  "lineage_reduction_rule_verified": false,
+  "supplementary_pdf_download": {
+    "url": "https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/6464ae0afb40f6b3eebaab70/original/olympus-enhanced-benchmarking-mixed-parameter-and-multi-objective-optimization-in-chemistry-and-materials-science.pdf",
+    "status": "http_403_not_saved",
+    "note": "検索結果の単位記載は補助情報。ローカルPDFの確認済みとは扱わない。"
+  }
+}

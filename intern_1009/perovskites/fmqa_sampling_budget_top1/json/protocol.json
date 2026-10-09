@@ -1,0 +1,20 @@
+{
+  "version": "perovskites_saved_SA_nested_sampling_budget_top1_v1",
+  "status": "ready",
+  "scope": "user_requested_posthoc_nested_subsampling_diagnostic_not_fresh_SA_or_closed_loop_BBO",
+  "seeds": [42, 101, 2024, 7, 19],
+  "alphas": [0, 0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30, 100, 300, 1000],
+  "sample_counts": [10, 30, 100, 300, 1000],
+  "sampling_repetitions": 10,
+  "source": "../fmqa_penalty_sweep/json/seed_*.json",
+  "source_settings": "20 initial points; same five fixed FM models; original SA four250read batches,1000sweeps,automatic geometric beta range; lambda=S*alpha",
+  "subset_rule": "one np.random.default_rng(np.random.SeedSequence([model_seed,repetition,1009])).permutation(1000) shared across alpha; take first n positions; nested n subsets without replacement",
+  "ordering_reason": "random permutation avoids reliance on raw SampleSet row ordering or first SA batch",
+  "selection": "reuse score_candidates, accepted_candidates=1; reject invalid/training/pool duplicates; choose minimum base-FM prediction with original tuple tie-break; no refill",
+  "bb_budget": {"initial": 20, "new_maximum": 1, "total_cap": 21},
+  "metrics": ["empirical raw feasible fraction", "batch any unseen feasible success frequency", "unique unseen candidates", "conditional selected FM gap to full feasible minimum", "FM best-unseen solution capture frequency with prediction tolerance1e-10 and failures counted zero", "conditional selected true gap", "initial-plus-selected normalized regret", "selected true top5pct hit frequency with failures counted zero"],
+  "statistics": "Within model seed mean of 10 repetitions, preserve conditional defined counts; across five models median/IQR. Paired differences vs1000 samples for unseen success,FM minimum hit,and regret at each alpha; two-sided Wilcoxon with Bonferroni144tests. Five model seeds are statistical units, not3000 independent trained models",
+  "audit": "hash source/model/checkpoint; independent direct selection validation; nested subset checks; n1000 parity with prior top1; max1 candidate/cap21; all failures retained",
+  "limitations": "finite saved pools, repeated SA samples not guaranteed IID; no fresh num_reads=n run, no actual smaller-budget runtime measurement, no retraining/BBO; conditional-quality denominators vary",
+  "original_studies": "frozen protocols and prior results unchanged"
+}

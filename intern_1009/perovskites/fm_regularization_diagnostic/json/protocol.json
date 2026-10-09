@@ -1,0 +1,16 @@
+{
+ "status":"ready",
+ "version":"same20_adamw_decay_v1",
+ "seeds":[42,101,2024,7,19],
+ "ranks":[1,2],
+ "optimizers":[{"name":"Adam","weight_decay":0.0},{"name":"AdamW","weight_decay":0.0},{"name":"AdamW","weight_decay":0.01}],
+ "learning_rate":0.1,
+ "epochs":120,
+ "data":"exact original initial20 per seed; all192 stored values used for diagnostic only; remaining172 identical test within seed; no validation; no scaling",
+ "fairness":"same model initialization and original training seed for each rank/seed across3optimizers; shared src.fm trainer; CPU float32 singlethread fullbatch MSE; allparameters including bias decay",
+ "selection":"exact lowest FM prediction among172 unseen feasible candidates; tuple tie break; truth never used in training/ranking",
+ "statistics":"median/IQR5seeds; paired Wilcoxon Bonferroni18 tests: 2ranks x3contrasts(AdamW0-Adam0,AdamW.01-AdamW0,AdamW.01-Adam0) x3metrics(testRMSE,Spearman,selected true value); keep failures",
+ "prevalidation":"10 old rank1/2 baselines reproduced; zero-feature decay check; invalid-options check; inherited passed N6/N9/23 circuit checks; perfit FM/QUBO parity; shared-source mirror equality",
+ "budget":"30 fresh FM fits; no new BB evaluations, no sampler/circuit/BBO",
+ "interpretation":"exploratory comparison on already inspected test set; no hyperparameter promotion or independent confirmatory test; isolates decay at current lr/epochs, not a literature-method reproduction"
+}

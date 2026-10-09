@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "COMBO/experiments/test_functions/multiple_categorical.py",
+      "url": "https://raw.githubusercontent.com/QUVA-Lab/COMBO/9529eabb86365ce3a2ca44fff08291a09a853ca2/COMBO/experiments/test_functions/multiple_categorical.py",
+      "repository": "QUVA-Lab/COMBO",
+      "revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "local_path": "data/reference/multiple_categorical.py.txt",
+      "sha256": "55d85221c1fee41c33dcbaa7f6ac0ee75e858927c6bccca88a9bff39206e4334",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "COMBO/experiments/test_functions/binary_categorical.py",
+      "url": "https://raw.githubusercontent.com/QUVA-Lab/COMBO/9529eabb86365ce3a2ca44fff08291a09a853ca2/COMBO/experiments/test_functions/binary_categorical.py",
+      "repository": "QUVA-Lab/COMBO",
+      "revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "local_path": "data/reference/binary_categorical.py.txt",
+      "sha256": "dc5be01e80fc4b6d0dbfdcc4fecce2e8b39ee6767c56e350dfd03f8045858780",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "COMBO/experiments/test_functions/experiment_configuration.py",
+      "url": "https://raw.githubusercontent.com/QUVA-Lab/COMBO/9529eabb86365ce3a2ca44fff08291a09a853ca2/COMBO/experiments/test_functions/experiment_configuration.py",
+      "repository": "QUVA-Lab/COMBO",
+      "revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "local_path": "data/reference/experiment_configuration.py.txt",
+      "sha256": "13ce82e5af9131e3baf23f5c54b9e953dc9c464c88693ba91a17a9f282e9d6c1",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/QUVA-Lab/COMBO/9529eabb86365ce3a2ca44fff08291a09a853ca2/LICENSE.txt",
+      "repository": "QUVA-Lab/COMBO",
+      "revision": "9529eabb86365ce3a2ca44fff08291a09a853ca2",
+      "local_path": "data/reference/LICENSE.txt",
+      "sha256": "447c65eaa1bbd5a4c9ef81deb294a4a854c5e43108c39a2fb23a9ff63ba047c0",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    }
+  ]
+}

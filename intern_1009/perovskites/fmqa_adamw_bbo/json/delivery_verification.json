@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "runs": 20,
+  "cycles_checked": 1200,
+  "plot_artifacts_checked": 15,
+  "plots": "overview and4native PDFs rendered and visually checked; no clipping/readable legends",
+  "figure_hashes": "passed",
+  "source_hashes": "passed",
+  "compile_and_git_diff_check": "passed",
+  "summary_sha256": "63e8fc2cca8794e5fe1f67b3ccc7c124cea61b7c540d9e3630bf731b849e4550",
+  "excluded_runs": 0
+}

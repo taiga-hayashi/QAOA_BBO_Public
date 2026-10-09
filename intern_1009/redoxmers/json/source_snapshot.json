@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "src/olympus/datasets/dataset_redoxmers/config.json",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_redoxmers/config.json",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/config.json",
+      "sha256": "e417d46ea37fd1f3971d07793c5e5ce9294f24256e6f1b0f760c3423fa7bbf2a",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "src/olympus/datasets/dataset_redoxmers/description.txt",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/src/olympus/datasets/dataset_redoxmers/description.txt",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/description.txt",
+      "sha256": "78bce6029047b60edc5bc9c1a21190877797a3107db107381ef026d0b994abc7",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/440b6b58ebfcaa2391cff7e94b570fb4fda98d68/LICENSE",
+      "repository": "the-matter-lab/olympus",
+      "revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "local_path": "data/reference/LICENSE.txt",
+      "sha256": "954c5cce3c2e24556ac14b940dfb071bc15947b03e9eb62acf4c7e7d1946f3f1",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    }
+  ]
+}

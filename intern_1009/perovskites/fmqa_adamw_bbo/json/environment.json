@@ -1,0 +1,27 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "device": "CPU",
+  "threads": 1,
+  "memory_capacity": "unmeasured",
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.13.0",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1",
+    "dwave-neal": "0.6.0",
+    "dimod": "0.12.22"
+  },
+  "code_sha256": {
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  },
+  "protocol_sha256": "9efaff8acc2dbda4cff69a6a590e8a19a736d316eb12ba6b33dcd1ff4480cde6",
+  "git_commit": "3cd7a4dd24331a752f77855a3e880a744f987f07",
+  "git_worktree": "preexisting and task changes present; code SHA is authoritative"
+}

@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "problem_id": "redoxmers",
+  "title": "Olympus Redoxmers",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "lookup",
+  "objective_description": "公式はabs_lam_diff、ered、gsolの3目的。単一目的を選ぶかスカラー化するか未決定。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "full",
+      "group_sizes": [
+        2,
+        8,
+        8,
+        11
+      ],
+      "n_design_variables": 4,
+      "n_onehot_variables": 29,
+      "provenance": "original_dataset",
+      "within_27_qubits": false,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    },
+    {
+      "variant_id": "fixed_r1",
+      "group_sizes": [
+        8,
+        8,
+        11
+      ],
+      "n_design_variables": 3,
+      "n_onehot_variables": 27,
+      "provenance": "proposed_fixed_variable_variant",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "公式config",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/main/src/olympus/datasets/dataset_redoxmers/config.json",
+      "pinned_revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "license_verified": false
+    },
+    {
+      "title": "データ",
+      "url": "https://github.com/the-matter-lab/olympus/tree/main/src/olympus/datasets/dataset_redoxmers",
+      "pinned_revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "目的列とr1固定値が未選択",
+    "data.csv未取得・網羅性・単位・dataset利用条件未確認",
+    "実CSVの収録組合せ、欠損、重複、3目的の単位を監査する",
+    "評価目的と最小化方向を事前に固定する",
+    "固定版を採る場合r1の固定値と選定理由を事前に記録する",
+    "不均一グループ対応とカテゴリ順序を確認する",
+    "公式データ・コードの版、SHA256、利用条件を保存する"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "目的列とr1固定値が未選択",
+      "data.csv未取得・網羅性・単位・dataset利用条件未確認"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": "MIT",
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "variable_definitions": [
+    {
+      "name": "r1_label",
+      "ordered_choices": [
+        "R1_0",
+        "R1_1"
+      ]
+    },
+    {
+      "name": "r3_label",
+      "ordered_choices": [
+        "R3_0",
+        "R3_1",
+        "R3_2",
+        "R3_3",
+        "R3_4",
+        "R3_5",
+        "R3_6",
+        "R3_7"
+      ]
+    },
+    {
+      "name": "r4_label",
+      "ordered_choices": [
+        "R4_0",
+        "R4_1",
+        "R4_2",
+        "R4_3",
+        "R4_4",
+        "R4_5",
+        "R4_6",
+        "R4_7"
+      ]
+    },
+    {
+      "name": "r5_label",
+      "ordered_choices": [
+        "R5_0",
+        "R5_1",
+        "R5_2",
+        "R5_3",
+        "R5_4",
+        "R5_5",
+        "R5_6",
+        "R5_7",
+        "R5_8",
+        "R5_9",
+        "R5_10"
+      ]
+    }
+  ],
+  "measurement_definitions": {
+    "names": [
+      "abs_lam_diff",
+      "ered",
+      "gsol"
+    ],
+    "directions": [
+      "minimize",
+      "minimize",
+      "minimize"
+    ],
+    "units": null
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

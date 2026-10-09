@@ -1,0 +1,20 @@
+{
+ "status":"ready",
+ "scope":"closed_loop_sample_count_pilot_on_pinned_Perovskites_lookup",
+ "problem":"192 materials,23 One-Hot variables,16/3/4 groups; minimize hse_gap eV; Olympus pinned440b6b58 CSV SHA ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518; repository MIT verified,original external terms unresolved;parent remains draft",
+ "seeds":[42,101,2024,7,19],
+ "counts":[10,100],
+ "methods":["Adaptive-FMQA","LargePenalty-FMQA","XY-FMQAOA"],
+ "fm":{"rank":1,"optimizer":"AdamW","weight_decay":0.01,"epochs":120,"learning_rate":0.1,"raw_target":true,"fullbatch":true,"fresh_every_cycle":true,"model_seed":"seed+100000*(cycle-1)"},
+ "initial":"same exact original20 perseed across methods/counts; unchanged category coverage",
+ "cycles":60,
+ "bb_budget_cap":80,
+ "candidate_rule":"exact raw count,remove invalid/evaluated and poolduplicates; choose lowest FM predicted unseen feasible one; onehot tuple tie; no refill; no early stop after optimum",
+ "sa":{"sweeps":1000,"schedule":"geometric,Neal automatic beta range per BQM","seed":"seed*100000+cycle*1000","adaptive":"same shared tracker start1,min.01,max100;update once per batch using empirical feasibility","large_alpha":100,"lambda":"S*alpha,S=max abs base Ising h,J"},
+ "xy":{"p":1,"lambda":0,"initial":"product W","mixer":"ordered Ring RXX(beta)RYY(beta)","gammas":[0.05,0.4,0.8],"betas":[0.1,0.4,0.8],"angle_selection":"9 ideal expected normalized FM evaluations each cycle; no trueobjective or shot noise for angles","normalization":"divide QUBO by S;zero S divisor1","backend":"shared OpenQARPCompactXYQAOA exact circuit-equivalent encoded simulation,original23bits/simulator8bits","shot_seed":"same seed*100000+cycle*1000","CDF":"original23bitLSB basis order"},
+ "measurement_budget":"30fresh runs,1800fits/cycles; 99000raw outputs total,5400XY ideal angle evaluations; same BB caps but 100 outputs cost more; no SA nested-subset assumption",
+ "prevalidation":"unchanged shared hashes versus passed SA/XY audits including27 N6/N9/N23 full-state parity; first-cycle10 outputs/predictions/selection reproduce all15 prior runs;100-output count and legality checks; then complete10-run trajectory reproduction in analysis",
+ "metrics":"best-so-far versus actual BB evaluations and cycles; final global-table regret; first optimum evaluation and budget81 censor-code for nonhit,initial optimum seed separated; candidate-none cycles; raw feasibility; accepted FM gap versus best currently unseen feasible (primary) and versus global feasible FM min (secondary); perrun gap median over accepted cycles,retained null if none",
+ "statistics":"5seed median/IQR; primary first-hit distribution among4noninitial seeds,unreached retained at81 as censor code (not actual evaluation); paired100minus10 within eachmethod for finalregret,firsthit_censor81(noninitial4),zero_candidate_cycles,median_unseen_FM_gap;Wilcoxon Bonferroni12; retain failures/nulls; no exploratory intermethod tests",
+ "limits":"training trajectories and adaptive alpha diverge with samplecounts,so aggregate FMgap not isolated sampler causality; fixed-FM nested XY diagnostic separately uses10-run saved probabilities/common uniforms for10/100, no new BB truth calls; no standard X-QAOA, finite-shot angle search or physical resource claim"
+}

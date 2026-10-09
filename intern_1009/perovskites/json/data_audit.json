@@ -1,0 +1,81 @@
+{
+  "scope": "pinned_Olympus_lookup_table_only",
+  "status": "passed",
+  "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "config_sha256": "460139af0c635df4ec6b28161facc64d66980843d1d244230b16c927a1b8d0bd",
+  "csv_header": false,
+  "columns": [
+    "organic",
+    "cation",
+    "anion",
+    "hse_gap"
+  ],
+  "row_count": 192,
+  "expected_candidates": 192,
+  "unique_keys": 192,
+  "missing_candidate_count": 0,
+  "duplicate_key_count": 0,
+  "missing_cell_count": 0,
+  "invalid_category_count": 0,
+  "nonfinite_objective_count": 0,
+  "negative_objective_count": 0,
+  "group_sizes": [
+    16,
+    3,
+    4
+  ],
+  "n_onehot_variables": 23,
+  "ordered_choices": {
+    "organic": [
+      "ethylammonium",
+      "propylammonium",
+      "butylammonium",
+      "isopropylammonium",
+      "dimethylammonium",
+      "acetamidinium",
+      "methylammonium",
+      "guanidinium",
+      "hydroxylammonium",
+      "formamidinium",
+      "tetramethylammonium",
+      "hydrazinium",
+      "ammonium",
+      "trimethylammonium",
+      "azetidinium",
+      "imidazolium"
+    ],
+    "cation": [
+      "Ge",
+      "Sn",
+      "Pb"
+    ],
+    "anion": [
+      "F",
+      "Cl",
+      "Br",
+      "I"
+    ]
+  },
+  "unit": "eV",
+  "unit_evidence": "json/unit_and_license_review.json",
+  "reference_extrema": {
+    "scope": "complete finite 192-row lookup; not original 1346-structure dataset or new DFT",
+    "minimum": 1.5249,
+    "maximum": 6.3242,
+    "minimizers": [
+      [
+        "hydrazinium",
+        "Sn",
+        "I"
+      ]
+    ],
+    "maximizers": [
+      [
+        "tetramethylammonium",
+        "Pb",
+        "F"
+      ]
+    ]
+  },
+  "lineage_limit": "Reduction of multiple structures per composition in original publication to one Olympus value not independently reconstructed"
+}

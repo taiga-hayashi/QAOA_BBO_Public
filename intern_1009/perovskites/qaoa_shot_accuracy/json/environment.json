@@ -1,0 +1,24 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "executable": "/Users/hayashitaiga/.venvs/fas/bin/python",
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.13.0",
+    "openqarp": "0.1.1",
+    "dwave-neal": "0.6.0",
+    "scipy": "1.17.1"
+  },
+  "code_sha256": {
+    "intern_1009/perovskites/qaoa_shot_accuracy/py/run_shots.py": "a189c880dfa148c16b6ecf2cb6f8344653a780ec18c1bf598c05eee664308f73",
+    "intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "src/qarp_backend.py": "77eb7d4153b57d29334a40f4b4d3ae50dcf2789977517611f8fde4a934351f2c",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_0924/src/solvers.py": "19836297a9c50917accef38df1f111a3271239d3732f167c23846ddb3e4fdfc2"
+  },
+  "protocol_sha256": "a170c9576412ad9ee0f7e023e2d60070f467bfcd6f27935418e7ce4e7f98f67e",
+  "analysis_script_sha256": "7cbf020e7bce615f8109878745d14a7184d858666de679b8750f5e612a8a56b0",
+  "hardware_model": "unmeasured",
+  "peak_RSS_bytes": null
+}

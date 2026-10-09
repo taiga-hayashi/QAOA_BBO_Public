@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "checked_seed_method_records": [
+    {
+      "seed": 42,
+      "method": "Adaptive-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 42,
+      "method": "LargePenalty-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 42,
+      "method": "Penalty-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 42,
+      "method": "XY-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 101,
+      "method": "Adaptive-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 101,
+      "method": "LargePenalty-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 101,
+      "method": "Penalty-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 101,
+      "method": "XY-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 2024,
+      "method": "Adaptive-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 2024,
+      "method": "LargePenalty-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 2024,
+      "method": "Penalty-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 2024,
+      "method": "XY-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 7,
+      "method": "Adaptive-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 7,
+      "method": "LargePenalty-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 7,
+      "method": "Penalty-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 7,
+      "method": "XY-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 19,
+      "method": "Adaptive-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 19,
+      "method": "LargePenalty-FMQA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 19,
+      "method": "Penalty-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    },
+    {
+      "seed": 19,
+      "method": "XY-FMQAOA",
+      "initial_and_model_match": true,
+      "candidate_values_and_regret_match": true
+    }
+  ],
+  "source_and_checkpoint_hashes_verified": true
+}

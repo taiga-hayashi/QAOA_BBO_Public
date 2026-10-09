@@ -1,0 +1,285 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "N": 6,
+      "gamma": 0.05,
+      "beta": 0.1,
+      "probability_max_error": 2.914335439641036e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 5.266250202865052e-16,
+      "compact_norm": 1.0000000000000018,
+      "compact_feasible_mass": 1.0000000000000018,
+      "full_feasible_mass": 1.000000000000001
+    },
+    {
+      "N": 6,
+      "gamma": 0.05,
+      "beta": 0.4,
+      "probability_max_error": 1.5265566588595902e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.201681141057157e-16,
+      "compact_norm": 1.000000000000001,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.0000000000000004
+    },
+    {
+      "N": 6,
+      "gamma": 0.05,
+      "beta": 0.8,
+      "probability_max_error": 6.661338147750939e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 2.2247786310271853e-16,
+      "compact_norm": 1.0000000000000002,
+      "compact_feasible_mass": 1.0,
+      "full_feasible_mass": 1.000000000000001
+    },
+    {
+      "N": 6,
+      "gamma": 0.4,
+      "beta": 0.1,
+      "probability_max_error": 1.942890293094024e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.8882579728510553e-16,
+      "compact_norm": 1.0000000000000013,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.0000000000000009
+    },
+    {
+      "N": 6,
+      "gamma": 0.4,
+      "beta": 0.4,
+      "probability_max_error": 1.6653345369377348e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 2.633125101432526e-16,
+      "compact_norm": 1.0,
+      "compact_feasible_mass": 1.0,
+      "full_feasible_mass": 1.0000000000000002
+    },
+    {
+      "N": 6,
+      "gamma": 0.4,
+      "beta": 0.8,
+      "probability_max_error": 7.771561172376096e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.510833468576701e-16,
+      "compact_norm": 0.9999999999999997,
+      "compact_feasible_mass": 0.9999999999999997,
+      "full_feasible_mass": 1.0000000000000009
+    },
+    {
+      "N": 6,
+      "gamma": 0.8,
+      "beta": 0.1,
+      "probability_max_error": 3.3306690738754696e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 4.742874840267547e-16,
+      "compact_norm": 1.0000000000000009,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.0000000000000009
+    },
+    {
+      "N": 6,
+      "gamma": 0.8,
+      "beta": 0.4,
+      "probability_max_error": 4.996003610813204e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.433175098891678e-16,
+      "compact_norm": 1.0000000000000004,
+      "compact_feasible_mass": 1.0000000000000007,
+      "full_feasible_mass": 1.0000000000000002
+    },
+    {
+      "N": 6,
+      "gamma": 0.8,
+      "beta": 0.8,
+      "probability_max_error": 8.326672684688674e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 2.7894008272968645e-16,
+      "compact_norm": 0.9999999999999998,
+      "compact_feasible_mass": 0.9999999999999999,
+      "full_feasible_mass": 1.0000000000000009
+    },
+    {
+      "N": 9,
+      "gamma": 0.05,
+      "beta": 0.1,
+      "probability_max_error": 2.0816681711721685e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.244417918960238e-16,
+      "compact_norm": 1.0000000000000036,
+      "compact_feasible_mass": 1.0000000000000036,
+      "full_feasible_mass": 1.0000000000000018
+    },
+    {
+      "N": 9,
+      "gamma": 0.05,
+      "beta": 0.4,
+      "probability_max_error": 1.8041124150158794e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 4.337780026311073e-16,
+      "compact_norm": 1.0000000000000027,
+      "compact_feasible_mass": 1.0000000000000027,
+      "full_feasible_mass": 1.0000000000000002
+    },
+    {
+      "N": 9,
+      "gamma": 0.05,
+      "beta": 0.8,
+      "probability_max_error": 2.7755575615628914e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.217912047936977e-16,
+      "compact_norm": 1.0000000000000009,
+      "compact_feasible_mass": 1.0000000000000009,
+      "full_feasible_mass": 1.0000000000000016
+    },
+    {
+      "N": 9,
+      "gamma": 0.4,
+      "beta": 0.1,
+      "probability_max_error": 9.020562075079397e-17,
+      "reference_amplitude_max_error_up_to_global_phase": 2.5133742693021536e-16,
+      "compact_norm": 1.0000000000000009,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.0
+    },
+    {
+      "N": 9,
+      "gamma": 0.4,
+      "beta": 0.4,
+      "probability_max_error": 2.2898349882893854e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.510833468576701e-16,
+      "compact_norm": 1.0,
+      "compact_feasible_mass": 1.0,
+      "full_feasible_mass": 0.9999999999999988
+    },
+    {
+      "N": 9,
+      "gamma": 0.4,
+      "beta": 0.8,
+      "probability_max_error": 3.0531133177191805e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.8913524882416704e-16,
+      "compact_norm": 0.9999999999999983,
+      "compact_feasible_mass": 0.9999999999999983,
+      "full_feasible_mass": 0.9999999999999999
+    },
+    {
+      "N": 9,
+      "gamma": 0.8,
+      "beta": 0.1,
+      "probability_max_error": 1.249000902703301e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 4.109793864937274e-16,
+      "compact_norm": 1.0000000000000022,
+      "compact_feasible_mass": 1.0000000000000022,
+      "full_feasible_mass": 1.0000000000000013
+    },
+    {
+      "N": 9,
+      "gamma": 0.8,
+      "beta": 0.4,
+      "probability_max_error": 2.220446049250313e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 3.6743392481035993e-16,
+      "compact_norm": 1.0000000000000013,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.0
+    },
+    {
+      "N": 9,
+      "gamma": 0.8,
+      "beta": 0.8,
+      "probability_max_error": 4.163336342344337e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 2.4047046924773687e-16,
+      "compact_norm": 0.9999999999999996,
+      "compact_feasible_mass": 0.9999999999999996,
+      "full_feasible_mass": 1.0000000000000009
+    },
+    {
+      "N": 23,
+      "gamma": 0.05,
+      "beta": 0.1,
+      "probability_max_error": 1.2576745200831851e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 8.41439240709249e-16,
+      "compact_norm": 1.0000000000000013,
+      "compact_feasible_mass": 1.000000000000001,
+      "full_feasible_mass": 1.000000000000004
+    },
+    {
+      "N": 23,
+      "gamma": 0.05,
+      "beta": 0.4,
+      "probability_max_error": 9.71445146547012e-17,
+      "reference_amplitude_max_error_up_to_global_phase": 6.550551057807855e-16,
+      "compact_norm": 0.9999999999999998,
+      "compact_feasible_mass": 0.9999999999999998,
+      "full_feasible_mass": 1.0000000000000007
+    },
+    {
+      "N": 23,
+      "gamma": 0.05,
+      "beta": 0.8,
+      "probability_max_error": 2.255140518769849e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.419102224028673e-16,
+      "compact_norm": 0.9999999999999993,
+      "compact_feasible_mass": 0.9999999999999991,
+      "full_feasible_mass": 1.0000000000000044
+    },
+    {
+      "N": 23,
+      "gamma": 0.4,
+      "beta": 0.1,
+      "probability_max_error": 1.196959198423997e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.919159918457851e-16,
+      "compact_norm": 1.0000000000000013,
+      "compact_feasible_mass": 1.0000000000000013,
+      "full_feasible_mass": 1.000000000000003
+    },
+    {
+      "N": 23,
+      "gamma": 0.4,
+      "beta": 0.4,
+      "probability_max_error": 1.1275702593849246e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 6.81602854186227e-16,
+      "compact_norm": 1.0,
+      "compact_feasible_mass": 1.0,
+      "full_feasible_mass": 1.0000000000000018
+    },
+    {
+      "N": 23,
+      "gamma": 0.4,
+      "beta": 0.8,
+      "probability_max_error": 2.0122792321330962e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.861494254617655e-16,
+      "compact_norm": 0.9999999999999991,
+      "compact_feasible_mass": 0.999999999999999,
+      "full_feasible_mass": 1.0000000000000044
+    },
+    {
+      "N": 23,
+      "gamma": 0.8,
+      "beta": 0.1,
+      "probability_max_error": 1.0234868508263162e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.366429249597501e-16,
+      "compact_norm": 1.0000000000000013,
+      "compact_feasible_mass": 1.0000000000000013,
+      "full_feasible_mass": 1.0000000000000024
+    },
+    {
+      "N": 23,
+      "gamma": 0.8,
+      "beta": 0.4,
+      "probability_max_error": 1.1102230246251565e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 6.858550168736935e-16,
+      "compact_norm": 1.0000000000000007,
+      "compact_feasible_mass": 1.0000000000000004,
+      "full_feasible_mass": 1.0000000000000002
+    },
+    {
+      "N": 23,
+      "gamma": 0.8,
+      "beta": 0.8,
+      "probability_max_error": 1.491862189340054e-16,
+      "reference_amplitude_max_error_up_to_global_phase": 7.289658119872847e-16,
+      "compact_norm": 0.9999999999999997,
+      "compact_feasible_mass": 0.9999999999999996,
+      "full_feasible_mass": 1.0000000000000022
+    }
+  ],
+  "p2_N9": "passed",
+  "source_sha256": {
+    "intern_1009/perovskites/fmxy_adamw_bbo/py/run_xy.py": "c4ba349388dc41f98a775be5c2475acf065c445a9ed6644adffcad2456c8d9e5",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  },
+  "shared_source_mirror": "equal"
+}

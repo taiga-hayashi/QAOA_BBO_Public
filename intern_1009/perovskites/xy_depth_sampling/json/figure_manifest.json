@@ -1,0 +1,89 @@
+{
+  "summary_sha256": "7d384c02e309bbc98ac4d4ef13ef344a426ca596acdee8670d08c1e3a9d1a74e",
+  "files": [
+    {
+      "path": "pdf/XY_depth_overview.pdf",
+      "sha256": "fd9698a2cfe698fb3543212a3ec91c55eb342a98962a81c3676bf7315010991b"
+    },
+    {
+      "path": "svg/XY_depth_overview.svg",
+      "sha256": "bdc1fc25e714cb56ae300d5024d5fd975668e956d93c7e39d073de2fe7c9e028"
+    },
+    {
+      "path": "png/XY_depth_overview.png",
+      "sha256": "f00c9dfeeb1465b634460e21e98ef97ee83af65483f1e5b5ea55cac0e13fb42c"
+    },
+    {
+      "path": "pdf/expected_gap.pdf",
+      "sha256": "e79df632c47c20eacc1c2f00ee10fa6ba8e6f1f8cf7c0bfc07bfdca5623f01ce"
+    },
+    {
+      "path": "svg/expected_gap.svg",
+      "sha256": "88fe687973343292380832ad16f6cd6d9a34ebf82847a1ee8d4df9c988c8f806"
+    },
+    {
+      "path": "png/expected_gap.png",
+      "sha256": "c25210f6a837af8f494e86a0fc0cd242bf84313343c9c63e2c6f9aaecaecd120"
+    },
+    {
+      "path": "pdf/ideal_100shot_capture.pdf",
+      "sha256": "60b74c5e8130c2cd36cb2910562fbec19d09f92f040d872c811593d8d0dea41e"
+    },
+    {
+      "path": "svg/ideal_100shot_capture.svg",
+      "sha256": "8b38e76b52b346f3bfa18ae4ef2bd129d97cc195d7e9f7c3f65bde897fdf42fd"
+    },
+    {
+      "path": "png/ideal_100shot_capture.png",
+      "sha256": "fa69f8acace52092eb17f6e3e043d5dd7a72eca4e120bdf26d8722d7d07620e1"
+    },
+    {
+      "path": "pdf/median_selected_gap.pdf",
+      "sha256": "6380e44b9d21c187635f5886288fc9dd9bd7ee7f50bc2024402eda55d16f8b17"
+    },
+    {
+      "path": "svg/median_selected_gap.svg",
+      "sha256": "286d54f8afa4fe64c3ea5b1d273a899d90d9218f4e3d3ca7f3f3fccddb6981a5"
+    },
+    {
+      "path": "png/median_selected_gap.png",
+      "sha256": "ec721491b67418caca9931cbb3dd3647ad6b0a0ad86950fe82cd710f9b2ae13f"
+    },
+    {
+      "path": "pdf/empirical_capture_fraction.pdf",
+      "sha256": "f1f5f14bd22c51cda0af6f8b4c12edbdc924612930ef596a0d2c6fea5e6e489b"
+    },
+    {
+      "path": "svg/empirical_capture_fraction.svg",
+      "sha256": "71ce4dd6088e2e41b10bac49f1007df320f7c19d0d3cccd7033e6288822a7b97"
+    },
+    {
+      "path": "png/empirical_capture_fraction.png",
+      "sha256": "543bd70b8221f773268a410018be5fa1838adcfae853e022611796094453aa51"
+    },
+    {
+      "path": "pdf/gap_CDF.pdf",
+      "sha256": "90caad5f3b2719a23ccf9f9187e7989db5215f17418eca1773719bc9cb3668b7"
+    },
+    {
+      "path": "svg/gap_CDF.svg",
+      "sha256": "29a95b8124d96d086137b8ef349a33203a2c9a28d1d60b01ebbebcdb244fb053"
+    },
+    {
+      "path": "png/gap_CDF.png",
+      "sha256": "4d44ae2848c756ce406ae89e9f2cdb8bd090fdce800429e046e5829c88f4fe17"
+    },
+    {
+      "path": "pdf/angle_search.pdf",
+      "sha256": "627a94f29e93402c90989ad216dcbb005ab96f1d87c286b527e5ac5f4b504609"
+    },
+    {
+      "path": "svg/angle_search.svg",
+      "sha256": "a2ff8608bfff3e1bd1ebd2bad1f43fcfe7e9995d3894f311c5717deb3b0607fe"
+    },
+    {
+      "path": "png/angle_search.png",
+      "sha256": "5ff714eb90c9804b63078de00c63e92e0a5f09bacefe7972f205a227c3e8bae7"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "ready",
+  "version": "perovskites_fixed_angle_QAOA_shot_accuracy_v1",
+  "scope": "ideal_statevector_fixed_angle_finite_shot_diagnostic_and_four_methods10_not_closed_loop_BBO",
+  "seeds": [42,101,2024,7,19],
+  "shot_counts": [10,30,100,300,1000],
+  "measurement_repetitions": 100,
+  "group_sizes": [16,3,4],
+  "methods": ["Penalty-FMQAOA","XY-FMQAOA"],
+  "fixed_model": "same validated pilot checkpoints, initial20,rank2,120epochs,Adam lr0.1,no retraining",
+  "qaoa": "canonical OpenQARP full23-qubit complex128 statevector,p1; reuse exact-expectation-selected nine-grid pilot angles; recompute selected circuit and verify probabilities/expectation; Standard alpha5,XY lambda0 ordered Ring/productW ideal state injection",
+  "shots": "fresh ideal IID computational-basis measurement draws from full CDF; nested prefixes10,30,100,300,1000 of same1000 uniforms per replicate; RNG SeedSequence([model_seed,rep,1009,73]) shared across methods",
+  "energy_accuracy": "energy is (baseFM+internal_lambda*onehot_penalty)/S with offset; empirical mean minus exact expectation; per-model RMSE over100reps and exact sqrt(variance/n); measured feasible rate versus exact probability; no energy-based angle reoptimization",
+  "candidate_rule": "FM lowest unseen feasible unique candidate1; shared score_candidates; same tie break; no refill; initial20 plus max1 cap21",
+  "sa_10_controls": "fresh Neal read10 in4 batches3,3,2,2;1000sweeps geometric default; Large alpha100; Adaptive starts1 and resets every replicate, updates between batches via shared tracker; sampler seed=model_seed*100+rep*100000+batch; batch adaptation is fixed-FM diagnostic not BBO iteration adaptation",
+  "metrics": ["raw feasibility", "feasible-rate absolute error", "new feasible candidate success", "FM best-unseen minimum capture", "selected FM gap", "selected true objective", "initial-plus-selected regret", "energy estimator RMSE and theoretical SE", "exact probabilities and IID batch success"],
+  "statistics": "mean of repeats within model for candidate metrics and RMSE within model for energy; median/IQR across five paired models; paired Wilcoxon with Bonferroni for each shot vs1000 on two candidate metrics and energyRMSE (24tests across two methods),plus6method pairs on3metrics at10(18tests); preserve conditional n",
+  "fairness_limit": "equal10 output samples/shots,not equal compute; QAOA angles obtained from original exact-expectation9point search,not10shot search; state simulation cost and actualSA times saved separately",
+  "prevalidation": "reuse passed N6/N9/N23 XY checks and pilot artifact verification; new CDF boundary and penalty-energy-versus-independent-formula checks before runner; raw state norm and source parity required",
+  "exclusions": "no hardware noise,finite-shot angle search optimization,BBO convergence or quantum advantage claim"
+}

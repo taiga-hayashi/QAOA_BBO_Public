@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "groups": [
+        3,
+        3
+      ],
+      "p": 1,
+      "reference_probability_error": 3.3306690738754696e-16,
+      "full_compact_probability_error": 3.3306690738754696e-16,
+      "raw_feasible_mass": 1.0000000000000004
+    },
+    {
+      "groups": [
+        3,
+        3
+      ],
+      "p": 2,
+      "reference_probability_error": 7.494005416219807e-16,
+      "full_compact_probability_error": 9.71445146547012e-16,
+      "raw_feasible_mass": 1.0
+    },
+    {
+      "groups": [
+        3,
+        3
+      ],
+      "p": 3,
+      "reference_probability_error": 3.191891195797325e-16,
+      "full_compact_probability_error": 3.3306690738754696e-16,
+      "raw_feasible_mass": 1.000000000000001
+    },
+    {
+      "groups": [
+        3,
+        3,
+        3
+      ],
+      "p": 1,
+      "reference_probability_error": 1.249000902703301e-16,
+      "full_compact_probability_error": 1.249000902703301e-16,
+      "raw_feasible_mass": 1.0000000000000007
+    },
+    {
+      "groups": [
+        3,
+        3,
+        3
+      ],
+      "p": 2,
+      "reference_probability_error": 2.0816681711721685e-16,
+      "full_compact_probability_error": 2.1510571102112408e-16,
+      "raw_feasible_mass": 1.0000000000000016
+    },
+    {
+      "groups": [
+        3,
+        3,
+        3
+      ],
+      "p": 3,
+      "reference_probability_error": 2.7755575615628914e-16,
+      "full_compact_probability_error": 2.7755575615628914e-16,
+      "raw_feasible_mass": 0.9999999999999976
+    },
+    {
+      "groups": [
+        16,
+        3,
+        4
+      ],
+      "p": 1,
+      "reference_probability_error": 1.5612511283791264e-16,
+      "full_compact_probability_error": null,
+      "raw_feasible_mass": 1.0000000000000004
+    },
+    {
+      "groups": [
+        16,
+        3,
+        4
+      ],
+      "p": 2,
+      "reference_probability_error": 1.8214596497756474e-16,
+      "full_compact_probability_error": null,
+      "raw_feasible_mass": 0.9999999999999991
+    },
+    {
+      "groups": [
+        16,
+        3,
+        4
+      ],
+      "p": 3,
+      "reference_probability_error": 2.931682674400804e-16,
+      "full_compact_probability_error": null,
+      "raw_feasible_mass": 1.0000000000000004
+    }
+  ],
+  "old9_p1_reproduction": "passed",
+  "old9_p1_best": {
+    "gammas": [
+      0.05
+    ],
+    "betas": [
+      0.8
+    ],
+    "expected_FM": 2.8769693945233543
+  },
+  "fixed_model_hash": "0e4a895f07ca581449c2de25037c795e35b5aa2229b886d8045dae291765155a",
+  "source_sha256": {
+    "intern_1009/perovskites/xy_depth_sampling/py/run_depth.py": "21b5545a0403d69bc86ff1427931393c5c0f2b3824ecf05cf661394da3e13ac4",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "intern_1009/perovskites/py/validate_xy_ring.py": "7045061d1d0941922941581c9af37b020d3e303d4e72829b47647864ae3f48a5",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  }
+}

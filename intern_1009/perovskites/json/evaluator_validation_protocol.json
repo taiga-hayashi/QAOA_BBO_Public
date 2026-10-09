@@ -1,0 +1,21 @@
+{
+  "protocol_version": 1,
+  "status": "ready_for_evaluator_validation_only",
+  "problem_id": "perovskites_full",
+  "scope": "dataset_audit_and_evaluator_encoding_validation",
+  "source_commit": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+  "data_path": "data/reference/data.csv",
+  "config_path": "data/reference/config.json",
+  "csv_header": false,
+  "columns": ["organic", "cation", "anion", "hse_gap"],
+  "direction": "minimize",
+  "category_order": "config.parameters order and options order",
+  "group_sizes": [16, 3, 4],
+  "bit_vector_order": "q0_first; groups organic[0:16], cation[16:19], anion[19:23]",
+  "basis_index_convention": "sum(bits[q] * 2**q); LSB qubit first",
+  "invalid_input_policy": "raise ValueError; no silent repair, clipping, or worst-value replacement",
+  "required_checks": ["192 rows and unique keys", "four nonempty columns", "allowed categories", "finite nonnegative objective", "full Cartesian coverage", "all 192 roundtrips and exact float CSV parity", "parity with shared qarp_backend.one_hot_patterns", "invalid input rejection", "corrupted data rejection"],
+  "outputs": ["json/data_audit.json", "json/evaluator_validation.json", "json/validated_candidates.json", "json/validation_environment.json", "md/EVALUATOR_REVIEW.md"],
+  "bbo_training_or_qaoa_allowed": false,
+  "benchmark_manifest_remains_draft": true
+}

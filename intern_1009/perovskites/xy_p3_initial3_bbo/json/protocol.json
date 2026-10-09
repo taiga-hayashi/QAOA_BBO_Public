@@ -1,0 +1,46 @@
+{
+  "status": "ready",
+  "scope": "local_lookup_closed_loop_initial3_XY_p3_p1_and_user_alpha1000_SA; not standard4methodbenchmark",
+  "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "methods": [
+    "XY-p1",
+    "XY-p3",
+    "LargePenalty-alpha1000"
+  ],
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    19
+  ],
+  "initial_samples": 3,
+  "initial": "same original20 saved candidate order prefix3 perseed; no re-designed coverage",
+  "cycles": 77,
+  "bb_budget_cap": 80,
+  "raw_outputs": 100,
+  "fm": "shared rank1 AdamW wd0.01 lr0.1 120epochs rawtarget fullbatch, fresh model eachcycle seed+100000*(cycle-1)",
+  "xy": "canonical OpenQARPCompactXYQAOA original23onehotbits/sim8,W/Ringordered,lambda0,p1or3,userdepthextension",
+  "angle_search": "128 exact expectation candidates percycle: first9originalp1grid paddedwithzero layers forp3;remaining119 iiduniform gamma/beta perlayer[0,0.8]; seed=SeedSequence([model_problem_seed,1009,p,cycle,95]); choose minimum baseFM expectation; no previous-cycle or auxiliaryp2search,no finite-shot anglelearning",
+  "search_difference_from_fixed_FM": "previousdepthpilot used128evaluations at each p1/2/3 successively forwarmstart; BBO uses128total andcommon9embeddedanchors,so direct p3 search has no additionaldepth stage budget",
+  "shots": "100 final CDFdraws,physicalLSBintegerorder,rngseed=seed*100000+cycle*1000 same acrossXYdepths",
+  "SA": "alpha1000 user requested bad-sampling setting;lambda=S*alpha,S=maxabsbaseIsingh,J;100reads/1000sweeps/geometric/automaticbeta,seed*100000+cycle*1000;canonical LargePenalty defaultalpha100 differs so explicitly namedvariant",
+  "candidate": "shared select minimum baseFM unseenfeasibleunique max1,tuple tie;no refill;invalid/evaluated/poolduplicates rejected",
+  "budget": "15runs,1155modelcycles,98560XYangleexpectations,77000XYshots,38500SAoutputs;77cyclesrun evenafter optimum;actualBB evals may shortfall ifnone",
+  "regret": "global192min/max,fopt1.5249,worst6.3242 pinneddata; offline fulltruth audit not solveracquisition",
+  "metrics": [
+    "finalbest/regret",
+    "firsthit_score81 fornonhit,notactualcall",
+    "success",
+    "candidate_nonefraction",
+    "perrunacceptedcyclemedian unseenFMgap",
+    "rawfeasibility",
+    "actualBBcalls",
+    "bestbyevaluations/cycles",
+    "angle/sampling/trainingtime"
+  ],
+  "statistics": "5seed median/IQR,paired XYp3-minusXYp1 andXYp3-minusSAalpha1000 forfinalregret/firsthit81/candidate_nonefraction/medianFMgap,8Wilcoxon Bonferroni;retainfailedruns/nulls",
+  "prevalidation": "inheritunchanged N6/N9/N23 multi-layer checks andvalidatedsingleFM p3 code; initial3 fiveFM parity/nesting; shared9anchor p1/p3equality,selectedstateindependentreference",
+  "artifact_audit": "all1155checkpointmodels/FMpreds/filter/budget/selectedtruth;all128XYcandidateanglesregeneratedandbestchoicechecked;independentselectedstate770referencechecks,not all98560angles; normfeasiblecheckedbybackendeverycall",
+  "limits": "initial3differs frombad-qualityinitial10model,alpha1000degradationnotassumeduniversal;originalexternaldataterms unresolved parentdraft;equalBB/anglecallsbutnotgates;standardXQAOAandAdaptiveSAnotrerun;idealnoise-free,noquantumadvantageclaim"
+}

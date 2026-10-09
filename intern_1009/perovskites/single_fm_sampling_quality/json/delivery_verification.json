@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "model_count": 1,
+  "model_seed": 42,
+  "verified_raw_batches": 70,
+  "raw_outputs": 7000,
+  "no_new_training_or_sampling": true,
+  "figure_files": 21,
+  "figure_hashes": "passed",
+  "source_model_hashes": "passed",
+  "rendered_visual_QA": "passed: all seven PDFs,overview and all standalone panels",
+  "python_syntax": "passed",
+  "git_diff_check": "passed",
+  "summary_sha256": "8a701be0f07da664a2ef4aae02f823db4ebcd2ef6cf87b7bc903e7c86d77b7bd",
+  "analysis_source_sha256": "c6ff430225c750a01ce154abd4bd9a2b918077925f7566f727ecdc0acf79e9da",
+  "imported_analysis_sha256": "4ae48fcc23b0410f331c3906d6059807da8313d72ce894a6fb1d8b3922d8f44f"
+}

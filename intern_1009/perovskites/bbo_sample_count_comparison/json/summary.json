@@ -1,0 +1,1000 @@
+{
+  "status": "completed",
+  "runs": 30,
+  "cycles": 1800,
+  "raw_outputs": 99000,
+  "XY_angle_evaluations": 5400,
+  "groups": [
+    {
+      "method": "Adaptive-FMQA",
+      "count": 10,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 59.0,
+          "q1": 57.0,
+          "q3": 61.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 31.0,
+          "q1": 29.0,
+          "q3": 33.75,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 21.0,
+          "q1": 19.0,
+          "q3": 23.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.014223865233361721,
+          "q1": 0.0022176094353199005,
+          "q3": 0.06239606998860836,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 0.8433333333333334,
+          "q1": 0.8366666666666666,
+          "q3": 0.8483333333333333,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 42,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 57,
+          "first_hit_score81": 42,
+          "zero_candidate_cycles": 23,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.8433333333333334
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 63,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 17,
+          "median_unseen_FM_gap": 0.014223865233361721,
+          "raw_feasible_rate": 0.8483333333333333
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 31,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 55,
+          "first_hit_score81": 31,
+          "zero_candidate_cycles": 25,
+          "median_unseen_FM_gap": 0.07884559035301208,
+          "raw_feasible_rate": 0.8333333333333334
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 31,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 61,
+          "first_hit_score81": 31,
+          "zero_candidate_cycles": 19,
+          "median_unseen_FM_gap": 0.06239606998860836,
+          "raw_feasible_rate": 0.88
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 23,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 59,
+          "first_hit_score81": 23,
+          "zero_candidate_cycles": 21,
+          "median_unseen_FM_gap": 0.0022176094353199005,
+          "raw_feasible_rate": 0.8366666666666666
+        }
+      ]
+    },
+    {
+      "method": "Adaptive-FMQA",
+      "count": 100,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 63.0,
+          "q1": 61.0,
+          "q3": 64.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 30.0,
+          "q1": 26.75,
+          "q3": 32.5,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 17.0,
+          "q1": 16.0,
+          "q3": 19.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 0.8503333333333334,
+          "q1": 0.8441666666666666,
+          "q3": 0.855,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 32,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 61,
+          "first_hit_score81": 32,
+          "zero_candidate_cycles": 19,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.855
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 64,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 16,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.8416666666666666
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 34,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 59,
+          "first_hit_score81": 34,
+          "zero_candidate_cycles": 21,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.8503333333333334
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 28,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 64,
+          "first_hit_score81": 28,
+          "zero_candidate_cycles": 16,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.8441666666666666
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 23,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 63,
+          "first_hit_score81": 23,
+          "zero_candidate_cycles": 17,
+          "median_unseen_FM_gap": 0.0,
+          "raw_feasible_rate": 0.872
+        }
+      ]
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "count": 10,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 28.0,
+          "q1": 25.5,
+          "q3": 35.75,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.6809975414071232,
+          "q1": 0.673903317481745,
+          "q3": 0.7400149684399366,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 29,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 29,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.8173568993806839,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.6809975414071232,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 27,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 27,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.673903317481745,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 21,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 21,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.7400149684399366,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 56,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 56,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.4618549247679766,
+          "raw_feasible_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "count": 100,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 32.0,
+          "q1": 27.0,
+          "q3": 36.5,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.042476324597373605,
+          "q1": 0.03499271598411724,
+          "q3": 0.059498618356883526,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 28,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 28,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.059498618356883526,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.042476324597373605,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 38,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 38,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.032435810193419456,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 36,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 36,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.03499271598411724,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 24,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 24,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.07767934404546395,
+          "raw_feasible_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "XY-FMQAOA",
+      "count": 10,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 55.0,
+          "q1": 43.0,
+          "q3": 69.5,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.9737316189566627,
+          "q1": 0.9151099273003638,
+          "q3": 1.1096325577236712,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 40,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 40,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.9151099273003638,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.7775715920133734,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 44,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 44,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.9737316189566627,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 66,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 66,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 1.1379861880996032,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 80,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 80,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 1.1096325577236712,
+          "raw_feasible_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "XY-FMQAOA",
+      "count": 100,
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249,
+          "n": 5
+        },
+        "final_regret": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0,
+          "n": 5
+        },
+        "first_hit_score81": {
+          "median": 39.0,
+          "q1": 35.75,
+          "q3": 44.0,
+          "n": 4
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "n": 5
+        },
+        "median_unseen_FM_gap": {
+          "median": 0.2303037536330521,
+          "q1": 0.19377190014347434,
+          "q3": 0.2936581412432133,
+          "n": 5
+        },
+        "raw_feasible_rate": {
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "n": 5
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_optimum": false,
+          "first_hit": 42,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 42,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.2936581412432133,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 101,
+          "initial_optimum": true,
+          "first_hit": 20,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 20,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.19377190014347434,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 2024,
+          "initial_optimum": false,
+          "first_hit": 35,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 35,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.09684393601492047,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 7,
+          "initial_optimum": false,
+          "first_hit": 36,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 36,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.2303037536330521,
+          "raw_feasible_rate": 1.0
+        },
+        {
+          "seed": 19,
+          "initial_optimum": false,
+          "first_hit": 50,
+          "final_best": 1.5249,
+          "final_regret": 0.0,
+          "actual_evaluations": 80,
+          "first_hit_score81": 50,
+          "zero_candidate_cycles": 0,
+          "median_unseen_FM_gap": 0.2974161244928837,
+          "raw_feasible_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "paired_tests": [
+    {
+      "method": "Adaptive-FMQA",
+      "metric": "final_regret",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "Adaptive-FMQA",
+      "metric": "first_hit_score81",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        -10,
+        3,
+        -3,
+        0
+      ],
+      "median_difference": -1.5,
+      "p_raw": 0.75,
+      "p_bonferroni": 1.0,
+      "n_pairs": 4
+    },
+    {
+      "method": "Adaptive-FMQA",
+      "metric": "zero_candidate_cycles",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        -4,
+        -1,
+        -4,
+        -3,
+        -4
+      ],
+      "median_difference": -4.0,
+      "p_raw": 0.0625,
+      "p_bonferroni": 0.75,
+      "n_pairs": 5
+    },
+    {
+      "method": "Adaptive-FMQA",
+      "metric": "median_unseen_FM_gap",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0.0,
+        -0.014223865233361721,
+        -0.07884559035301208,
+        -0.06239606998860836,
+        -0.0022176094353199005
+      ],
+      "median_difference": -0.014223865233361721,
+      "p_raw": 0.125,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "metric": "final_regret",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "metric": "first_hit_score81",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        -1,
+        11,
+        15,
+        -32
+      ],
+      "median_difference": 5.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 4
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "metric": "zero_candidate_cycles",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "metric": "median_unseen_FM_gap",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        -0.7578582810238004,
+        -0.6385212168097496,
+        -0.6414675072883256,
+        -0.7050222524558194,
+        -0.3841755807225127
+      ],
+      "median_difference": -0.6414675072883256,
+      "p_raw": 0.0625,
+      "p_bonferroni": 0.75,
+      "n_pairs": 5
+    },
+    {
+      "method": "XY-FMQAOA",
+      "metric": "final_regret",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "XY-FMQAOA",
+      "metric": "first_hit_score81",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        2,
+        -9,
+        -30,
+        -30
+      ],
+      "median_difference": -19.5,
+      "p_raw": 0.25,
+      "p_bonferroni": 1.0,
+      "n_pairs": 4
+    },
+    {
+      "method": "XY-FMQAOA",
+      "metric": "zero_candidate_cycles",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0,
+      "n_pairs": 5
+    },
+    {
+      "method": "XY-FMQAOA",
+      "metric": "median_unseen_FM_gap",
+      "contrast": "100 minus10",
+      "seeds": [
+        42,
+        101,
+        2024,
+        7,
+        19
+      ],
+      "paired_differences": [
+        -0.6214517860571505,
+        -0.5837996918698991,
+        -0.8768876829417422,
+        -0.9076824344665511,
+        -0.8122164332307875
+      ],
+      "median_difference": -0.8122164332307875,
+      "p_raw": 0.0625,
+      "p_bonferroni": 0.75,
+      "n_pairs": 5
+    }
+  ],
+  "fixed_FM_XY_nested": [
+    {
+      "seed": 42,
+      "median_gap10": 0.9151099273003638,
+      "median_gap100": 0.10675927624106407,
+      "strictly_better_cycles": 50,
+      "same_cycles": 10,
+      "missing10": 0,
+      "missing100": 0
+    },
+    {
+      "seed": 101,
+      "median_gap10": 0.7775715920133734,
+      "median_gap100": 0.15023750939872116,
+      "strictly_better_cycles": 47,
+      "same_cycles": 13,
+      "missing10": 0,
+      "missing100": 0
+    },
+    {
+      "seed": 2024,
+      "median_gap10": 0.9737316189566627,
+      "median_gap100": 0.21578527940437198,
+      "strictly_better_cycles": 55,
+      "same_cycles": 5,
+      "missing10": 0,
+      "missing100": 0
+    },
+    {
+      "seed": 7,
+      "median_gap10": 1.1379861880996032,
+      "median_gap100": 0.1632515862584114,
+      "strictly_better_cycles": 53,
+      "same_cycles": 7,
+      "missing10": 0,
+      "missing100": 0
+    },
+    {
+      "seed": 19,
+      "median_gap10": 1.1096325577236712,
+      "median_gap100": 0.17131204018369317,
+      "strictly_better_cycles": 53,
+      "same_cycles": 7,
+      "missing10": 0,
+      "missing100": 0
+    }
+  ]
+}

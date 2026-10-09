@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "path": "pdf/best_cycles.pdf",
+      "sha256": "3e5bb65dd5e941fc91c3cba5d6228f9253ebc0d553b0902e88f3764ce426dcbb"
+    },
+    {
+      "path": "pdf/best_evaluations.pdf",
+      "sha256": "84a004213df050fbb2a4c8fc404b8bbadbc11841667deb90f9b27a4cc27b64bb"
+    },
+    {
+      "path": "pdf/evaluations_cycles.pdf",
+      "sha256": "1dfd5d43bf85912471928554706b2507f6629ef631c4c736cfe7af37cc990686"
+    },
+    {
+      "path": "pdf/feasibility_cycles.pdf",
+      "sha256": "1052d5c4cc918b493be2c0d5d5593b3189c89f74361f85285c175fb9fe8674bb"
+    },
+    {
+      "path": "pdf/fmqa_bbo_overview.pdf",
+      "sha256": "149cecaf72f10929b2bfa1d1b25daf9fe5cc8140e3173e302bde1cd3cdf9a1c1"
+    },
+    {
+      "path": "svg/best_cycles.svg",
+      "sha256": "37b0a6fd50d9e679b27a7f7f3c1c70f6121ad0f9f938d23b8e16e6d41822d334"
+    },
+    {
+      "path": "svg/best_evaluations.svg",
+      "sha256": "866d0545d1375caeefe05b138000effc3f96baffecdfbd1a44065c2872538896"
+    },
+    {
+      "path": "svg/evaluations_cycles.svg",
+      "sha256": "a9305e66650b2cc94808f42f036c8c17eb128b7f4dc72d2202083b70820da5c5"
+    },
+    {
+      "path": "svg/feasibility_cycles.svg",
+      "sha256": "119d34584ca4358c83ff047ab8345812ae90b3b49acbff315e0b6c6006faf524"
+    },
+    {
+      "path": "svg/fmqa_bbo_overview.svg",
+      "sha256": "ed1e89bb321a6a816c13c6426eaac1d82d2d629c0dd51ba09ef0cb9b48e1c23e"
+    },
+    {
+      "path": "png/best_cycles.png",
+      "sha256": "e18acee881842165a65c16cacbafac70cf0bfa8a07fa352e431db4d20198263b"
+    },
+    {
+      "path": "png/best_evaluations.png",
+      "sha256": "09cc650bfd20b18468b9e4ae391ab43490bf12db07343108466b502a61b1bd1c"
+    },
+    {
+      "path": "png/evaluations_cycles.png",
+      "sha256": "f2979302be27d639c08caf684ea5f4464e64fe5075a5ffd1c79850bb95fc64f2"
+    },
+    {
+      "path": "png/feasibility_cycles.png",
+      "sha256": "d4d0e21f35286232e8bab1e97ab34bccd4bd8a521c89afab8305a02a99d93045"
+    },
+    {
+      "path": "png/fmqa_bbo_overview.png",
+      "sha256": "46e98aebd35d53aa1c9575f0a1f546ca801b3d0f16ee31c21a1d1837f66c972f"
+    }
+  ],
+  "scope": "median/IQR of5seeds; evaluation curves stop at minimum completed evaluations within each group, never extrapolated"
+}

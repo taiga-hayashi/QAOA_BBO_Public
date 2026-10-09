@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "url": "https://arxiv.org/pdf/2209.01016v1",
+      "retrieved_on": "2026-10-09",
+      "executed": false,
+      "local_path": "data/reference/2209.01016v1.pdf",
+      "sha256": "5524372c3ef0286caf0bb573907cb0b83a678789a8ed3c2a8cdf807cd3d6e56e"
+    }
+  ]
+}

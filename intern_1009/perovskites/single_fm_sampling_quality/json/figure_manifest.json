@@ -1,0 +1,89 @@
+{
+  "summary_sha256": "8a701be0f07da664a2ef4aae02f823db4ebcd2ef6cf87b7bc903e7c86d77b7bd",
+  "files": [
+    {
+      "path": "pdf/single_FM_sampling_overview.pdf",
+      "sha256": "368d6fea30e038b35ce67d9f80865dd44d9641282156254e95fe6fc4f1ab7f28"
+    },
+    {
+      "path": "svg/single_FM_sampling_overview.svg",
+      "sha256": "d9cf9ea8a0093150d1bfbed3ad1475808852526aa24bcbc16cbd4559ee880d34"
+    },
+    {
+      "path": "png/single_FM_sampling_overview.png",
+      "sha256": "091996f123cbd439fd831ee25ead0f87baa733c38c3de85c79c470b6d1af8977"
+    },
+    {
+      "path": "pdf/feasibility.pdf",
+      "sha256": "b77a6e7f2e689d8763c6992fd0acdc68726c819e48a28d8a1064c6c4b854070d"
+    },
+    {
+      "path": "svg/feasibility.svg",
+      "sha256": "5cde8bb7872ee8bcb89566d7f0fe4e3efc09c898ec73b10a94701d6cc63b75c5"
+    },
+    {
+      "path": "png/feasibility.png",
+      "sha256": "76767c4643a031fc301216ca1ca183ea2e8892aaa20d4d7d20654d1218a37dad"
+    },
+    {
+      "path": "pdf/selected_gap.pdf",
+      "sha256": "4cca02fbc32ee1f7f4c0acaacea257ab4e19bb266038860d07c4ca9da27a3303"
+    },
+    {
+      "path": "svg/selected_gap.svg",
+      "sha256": "dcf282f9de96910e66507a29a5cc993c9adc3dbc0a8938e186cfd97d943aa1c3"
+    },
+    {
+      "path": "png/selected_gap.png",
+      "sha256": "cd34cc0e1f1048790a3f0f9dfd7fb1737489fe1ce553043f4fbcac5d02b0e62d"
+    },
+    {
+      "path": "pdf/minimum_capture.pdf",
+      "sha256": "664c6eacaac536b5ac1b20f7c9f30080779ab4aba55e9f5dd71983977fc9faa3"
+    },
+    {
+      "path": "svg/minimum_capture.svg",
+      "sha256": "99f4d557556f6c5ffba65819e1e5ed5df0ce33d0f85267eaf9fe682ecb049c30"
+    },
+    {
+      "path": "png/minimum_capture.png",
+      "sha256": "d30ea6a2d4c8bc37c28eda153799b3f089104085685cfb83cabfb2e4d13833f8"
+    },
+    {
+      "path": "pdf/gap_CDF.pdf",
+      "sha256": "e261060315340e202f5e2b5a6193e9f64b07580dd1d149da52ad7a5f8ba0913e"
+    },
+    {
+      "path": "svg/gap_CDF.svg",
+      "sha256": "1f41bd68595702d39eacb55573ec84afc59f525fcbffa52accecae80d29bc357"
+    },
+    {
+      "path": "png/gap_CDF.png",
+      "sha256": "af513f4b190c86e100482b310882e2da7ac225aec9a703c021d1d27924d39ec6"
+    },
+    {
+      "path": "pdf/FM_rank_frequency.pdf",
+      "sha256": "de4c89eb092644b2c4c57e1aa3e23042235dba65ab2fc5db6a9eff739c5361eb"
+    },
+    {
+      "path": "svg/FM_rank_frequency.svg",
+      "sha256": "4b2c0e613b45463db7a1f23c9a0509648af789aec64a7ff841487cd22005657d"
+    },
+    {
+      "path": "png/FM_rank_frequency.png",
+      "sha256": "b8ff80d16c269a97cf9e06c6a5dea60db454bfd93f8b6f027ef793aaa499ed12"
+    },
+    {
+      "path": "pdf/diversity.pdf",
+      "sha256": "6e6370abe67d6475c86ad2d50048ae1849d9b7e70a590e973f641fd594197e76"
+    },
+    {
+      "path": "svg/diversity.svg",
+      "sha256": "a2c09ec9b5d70ed946201bb41acfc576d0283dddbc0f87b5f752e56b9ee22bc0"
+    },
+    {
+      "path": "png/diversity.png",
+      "sha256": "b5843cb67ff76cd364a1047f2843e4b520ca38e69687db386f691031a507a86a"
+    }
+  ]
+}

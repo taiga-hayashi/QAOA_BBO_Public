@@ -1,0 +1,19 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "device": "CPU",
+  "threads": 1,
+  "versions": {
+    "torch": "2.13.0",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1"
+  },
+  "protocol_sha256": "adc4a00442e2a5aa24170ddedc430765b960c88f92e3eac42a6a7c9bf844d640",
+  "code_sha256": {
+    "intern_1009/perovskites/fm_learning_diagnostic/py/diagnose.py": "7f76eb59e79d84f5e1f802408ec3ec68ae3a47b203ec9fbf6288323173eb31fb",
+    "src/fm.py": "37567eb9935d6b938edd88b06c233400e6dff577bb3d87fc711fc7a13c167703",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57"
+  },
+  "CPU_model_and_peakRSS": "unmeasured"
+}

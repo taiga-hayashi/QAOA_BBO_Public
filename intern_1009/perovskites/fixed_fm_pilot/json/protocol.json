@@ -1,0 +1,110 @@
+{
+  "status": "ready",
+  "protocol_id": "perovskites_fixed_fm_pilot_v1",
+  "scope": "fixed_model_candidate_generation_diagnostic_not_closed_loop_bbo",
+  "problem_id": "perovskites_full_23",
+  "objective": "minimize pinned Olympus hse_gap; no objective change",
+  "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "source_commit": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+  "license_scope": "Olympus repository MIT license; local lookup analysis. Independent original external repository terms and reduction lineage remain unverified; no redistribution or new DFT reproduction claim",
+  "evaluation_manifest": "../../json/problem_manifest.json",
+  "group_sizes": [
+    16,
+    3,
+    4
+  ],
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    19
+  ],
+  "initial_samples": 20,
+  "initial_sampling": "uniform without replacement among 192 config-ordered candidates",
+  "fm": {
+    "implementation": "src.fm.train_factorization_machine",
+    "rank": 2,
+    "epochs": 120,
+    "learning_rate": 0.1,
+    "optimizer": "Adam",
+    "loss": "MSE",
+    "dtype": "float32",
+    "device": "CPU",
+    "target_scaling": "none; raw eV",
+    "validation_split": "none",
+    "train_seed": "same as instance seed",
+    "threads": 1
+  },
+  "model_policy": "one checkpoint per seed, fixed across all four methods; no retraining or hyperparameter selection",
+  "methods": [
+    "Adaptive-FMQA",
+    "LargePenalty-FMQA",
+    "Penalty-FMQAOA",
+    "XY-FMQAOA"
+  ],
+  "sa": {
+    "raw_samples": 1000,
+    "batches": 4,
+    "reads_per_batch": 250,
+    "sweeps_per_read": 1000,
+    "schedule": "neal default geometric beta range, recorded library version",
+    "batch_seed": "instance_seed*100+batch_index"
+  },
+  "adaptive": {
+    "initial_alpha": 1.0,
+    "min_alpha": 0.01,
+    "max_alpha": 100.0,
+    "tracker": "intern_0924.src.penalty.AdaptivePenaltyTracker",
+    "update": "raw feasible rate after each 250-read batch; same fixed FM; not BBO iteration updates"
+  },
+  "large_penalty_alpha": 100.0,
+  "penalty_qaoa_alpha": 5.0,
+  "qaoa": {
+    "backend": "OpenQARP/qarpx ideal full complex128 statevector",
+    "p": 1,
+    "gammas": [
+      0.05,
+      0.4,
+      0.8
+    ],
+    "betas": [
+      0.1,
+      0.4,
+      0.8
+    ],
+    "search_evaluations_per_method": 9,
+    "shots": 1000,
+    "shot_seed": "same instance seed",
+    "objective_for_angle_search": "minimum expected surrogate plus method penalty; no true values",
+    "cost_normalization": "divide base QUBO and offset by base Ising coefficient scale S; add alpha as normalized penalty; internal lambda=S*alpha",
+    "xy": "product-W injection; ordered Ring edge RXX(beta)RYY(beta); lambda=0"
+  },
+  "scale": "S=max(max_i abs(h_i),max_i<j abs(J_ij)) from base FM QUBO; if S=0 use divisor 1 and record zero scale",
+  "accepted_candidates": 5,
+  "proposal_rule": "pool exactly 1000 raw samples; reject invalid, training duplicates, and within-pool duplicates; select up to five unseen valid candidates ranked by FM QUBO prediction with tuple tie-break; no resampling to fill deficit",
+  "bb_budget_per_method": {
+    "initial": 20,
+    "new_maximum": 5,
+    "total_cap": 25,
+    "shortfall": "retain and report unused budget; do not fabricate or remove failure"
+  },
+  "diagnostic_reference": "full-table values used only for independent holdout quality and reference scoring; never passed into FM training or angle search except 20 training values",
+  "metrics": [
+    "train/independent-test RMSE and Spearman",
+    "raw feasibility",
+    "raw unseen feasible fraction",
+    "duplicate fractions",
+    "accepted count and unused budget",
+    "surrogate gap against full feasible FM optimum",
+    "accepted best true gap and normalized regret using audited full-table min/max",
+    "candidate generation wall time",
+    "initial/model hashes and all raw samples",
+    "conditional unseen expected true gap (audit only)",
+    "exact QAOA unseen true-top5% mass; cutoff tenth smallest among full 192 table"
+  ],
+  "statistics": "five paired seeds; median and IQR; paired differences and two-sided Wilcoxon with Bonferroni over 6 pairs; report insufficient small-sample power",
+  "uniform_reference": "exact uniform distribution over the 172 held-out candidates, as diagnostic baseline only",
+  "resume_policy": "completed seed records reused only if protocol, initial data and code hashes match; failed runs retained; protocol changes require new version",
+  "full_benchmark_ready": false
+}

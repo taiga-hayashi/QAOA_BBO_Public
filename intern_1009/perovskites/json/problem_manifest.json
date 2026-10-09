@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "problem_id": "perovskites",
+  "title": "Olympus Perovskites",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "lookup",
+  "objective_description": "HSE06バンドギャップ hse_gap の最小化。",
+  "objective_version": "olympus_440b6b58_data_ba55731336cf",
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "full",
+      "group_sizes": [
+        16,
+        3,
+        4
+      ],
+      "n_design_variables": 3,
+      "n_onehot_variables": 23,
+      "provenance": "original_dataset",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "公式config",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/main/src/olympus/datasets/dataset_perovskites/config.json",
+      "pinned_revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "license_verified": false
+    },
+    {
+      "title": "公式description",
+      "url": "https://raw.githubusercontent.com/the-matter-lab/olympus/main/src/olympus/datasets/dataset_perovskites/description.txt",
+      "pinned_revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "license_verified": false
+    },
+    {
+      "title": "データ",
+      "url": "https://github.com/the-matter-lab/olympus/tree/main/src/olympus/datasets/dataset_perovskites",
+      "pinned_revision": "440b6b58ebfcaa2391cff7e94b570fb4fda98d68",
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": true,
+    "validated": true,
+    "entrypoint": "py/perovskites_evaluator.py:PerovskitesEvaluator",
+    "dependencies": {
+      "runtime": "Python standard library",
+      "validation": "numpy (canonical qarp_backend pattern generation)"
+    },
+    "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+    "validated_variant_id": "full",
+    "validation_report": "json/evaluator_validation.json",
+    "scope": "lookup_and_classical_codec_only"
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null,
+    "xy_mixer_evolution": "ordered_edge_product_RXX(beta)_RYY(beta)"
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": true,
+    "target_group_sizes_passed": true,
+    "feasibility_tolerance": 1e-10,
+    "scope": "ideal_circuit_core_checks_only",
+    "report": "json/circuit_validation.json",
+    "legacy_intern_0924_runner_executed": false,
+    "bbo_budget_accounting_passed": false,
+    "w_state_initialization": "ideal_statevector_injection",
+    "ring_evolution": "ordered_edge_product",
+    "tested_seeds": [
+      42,
+      101
+    ],
+    "tested_angle_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0.31,
+        0.27
+      ],
+      [
+        -0.43,
+        0.61
+      ]
+    ]
+  },
+  "known_optimum": {
+    "value": 1.5249,
+    "unit": "eV",
+    "scope": "complete_pinned_192_candidate_lookup",
+    "proof": "exhaustive Cartesian coverage verified; minimum of all 192 stored values",
+    "minimizers": [
+      [
+        "hydrazinium",
+        "Sn",
+        "I"
+      ]
+    ],
+    "evidence": "json/data_audit.json",
+    "not_new_dft_or_original_1346_structure_optimum": true
+  },
+  "measurement_status": "fixed_FM_diagnostics_and_closed_loop_SA_and_XY_pilots_completed_standard_X_QAOA_BBO_not_run",
+  "open_questions": [
+    "元データの複数構造からOlympusの1組成1値への縮約規則は未照合",
+    "元の外部データ配布元の独立した利用条件を確認する",
+    "採用設定・初期データ・BB予算・Seed・FM条件・重複規則を凍結する",
+    "23変数BBOの全ビット列候補集計とメモリ制約を監査する",
+    "実機用W-state準備ゲートの合成は未実施（今回の対象外）"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "元データの複数構造からOlympusの1組成1値への縮約規則は未照合",
+      "元の外部データ配布元の独立した利用条件を確認する"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": "MIT",
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "variable_definitions": [
+    {
+      "name": "organic",
+      "ordered_choices": [
+        "ethylammonium",
+        "propylammonium",
+        "butylammonium",
+        "isopropylammonium",
+        "dimethylammonium",
+        "acetamidinium",
+        "methylammonium",
+        "guanidinium",
+        "hydroxylammonium",
+        "formamidinium",
+        "tetramethylammonium",
+        "hydrazinium",
+        "ammonium",
+        "trimethylammonium",
+        "azetidinium",
+        "imidazolium"
+      ]
+    },
+    {
+      "name": "cation",
+      "ordered_choices": [
+        "Ge",
+        "Sn",
+        "Pb"
+      ]
+    },
+    {
+      "name": "anion",
+      "ordered_choices": [
+        "F",
+        "Cl",
+        "Br",
+        "I"
+      ]
+    }
+  ],
+  "measurement_definitions": {
+    "names": [
+      "hse_gap"
+    ],
+    "directions": "minimize",
+    "units": [
+      "eV"
+    ],
+    "unit_evidence": "json/unit_and_license_review.json"
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  },
+  "reference_worst": {
+    "value": 6.3242,
+    "scope": "complete_pinned_192_candidate_lookup",
+    "not_yet_selected_regret_denominator": true
+  },
+  "dataset_audit": {
+    "status": "passed",
+    "report": "json/data_audit.json",
+    "full_cartesian_coverage": true
+  },
+  "fixed_fm_pilot": {
+    "protocol": "fixed_fm_pilot/json/protocol.json",
+    "scope": "fixed_model_candidate_generation_only",
+    "status": "completed",
+    "full_bbo_ready": false,
+    "completed_seeds": 5,
+    "report": "fixed_fm_pilot/md/RESULTS.md"
+  },
+  "fmqa_penalty_sweep": {
+    "status": "completed",
+    "scope": "fixed_FM_classical_SA_only",
+    "completed_conditions": 600,
+    "alpha_range": [
+      0,
+      1000
+    ],
+    "protocol": "fmqa_penalty_sweep/json/protocol.json",
+    "report": "fmqa_penalty_sweep/md/RESULTS.md",
+    "full_bbo_ready": false
+  },
+  "current_candidate_selection": {
+    "accepted_candidates": 1,
+    "order": "ascending base-FM prediction",
+    "filter": "unseen feasible unique",
+    "tie_break": "onehot tuple",
+    "no_candidate": "accept zero, no refill",
+    "source": "user_instruction_2026-10-09",
+    "future_comparisons": "apply equally to all methods; freeze separate protocol before BBO"
+  },
+  "fmqa_penalty_sweep_top1": {
+    "status": "completed",
+    "scope": "saved_raw_samples_secondary_reanalysis",
+    "conditions": 600,
+    "protocol": "fmqa_penalty_sweep_top1/json/protocol.json",
+    "report": "fmqa_penalty_sweep_top1/md/RESULTS.md",
+    "new_sampling": false
+  },
+  "fmqa_sampling_budget_top1": {
+    "status": "completed",
+    "scope": "saved_raw_nested_subset_secondary_analysis",
+    "conditions": 3000,
+    "sample_counts": [
+      10,
+      30,
+      100,
+      300,
+      1000
+    ],
+    "accepted_candidates": 1,
+    "new_SA_sampling": false,
+    "protocol": "fmqa_sampling_budget_top1/json/protocol.json",
+    "report": "fmqa_sampling_budget_top1/md/RESULTS.md"
+  },
+  "qaoa_shot_accuracy": {
+    "status": "completed",
+    "scope": "fixed_angle_ideal_shots_plus_fresh_SA10_not_closed_loop_BBO",
+    "conditions": 6000,
+    "shot_counts": [
+      10,
+      30,
+      100,
+      300,
+      1000
+    ],
+    "repetitions": 100,
+    "protocol": "qaoa_shot_accuracy/json/protocol.json",
+    "report": "qaoa_shot_accuracy/md/RESULTS.md",
+    "finite_shot_angle_search": false
+  },
+  "standard_qaoa_penalty_sweep": {
+    "status": "completed",
+    "scope": "fixed_FM_p1_ideal_penalty_and_shot_diagnostic",
+    "model_alpha_settings": 65,
+    "measurement_conditions": 32500,
+    "protocol": "standard_qaoa_penalty_sweep/json/protocol.json",
+    "report": "standard_qaoa_penalty_sweep/md/RESULTS.md",
+    "closed_loop_BBO": false
+  },
+  "angle_search_validation": {
+    "status": "completed",
+    "scope": "N6_N9_restricted_fixed_FM_exact_angle_diagnostic_not_23bit_BBO",
+    "model_seeds": 5,
+    "settings": 440,
+    "circuit_evaluations": 47080,
+    "protocol": "angle_search_validation/json/protocol.json",
+    "report": "angle_search_validation/md/RESULTS.md",
+    "finite_shot_angle_search": false,
+    "closed_loop_BBO": false
+  },
+  "fm_learning_diagnostic": {
+    "status": "completed",
+    "scope": "exploratory_same_initial20_fixed_data_learning_ablation_not_BBO",
+    "model_fits": 90,
+    "configurations": 18,
+    "seeds": 5,
+    "protocol": "fm_learning_diagnostic/json/protocol.json",
+    "report": "fm_learning_diagnostic/md/RESULTS.md",
+    "unseen_parameter_audit": "fm_learning_diagnostic/json/unseen_parameter_audit.json",
+    "hyperparameters_promoted": false
+  },
+  "fm_regularization_diagnostic": {
+    "status": "completed",
+    "scope": "exploratory_same_initial20_optimizer_decay_diagnostic_not_BBO",
+    "model_fits": 30,
+    "configurations": 6,
+    "seeds": 5,
+    "protocol": "fm_regularization_diagnostic/json/protocol.json",
+    "report": "fm_regularization_diagnostic/md/RESULTS.md",
+    "hyperparameters_promoted": false
+  },
+  "fmqa_adamw_bbo": {
+    "status": "completed",
+    "scope": "local_pinned_lookup_closed_loop_SA_pilot",
+    "runs": 20,
+    "cycles_per_run": 60,
+    "initial_data_count": 20,
+    "samples_per_cycle": 10,
+    "bb_budget_cap": 80,
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA"
+    ],
+    "fm_settings": [
+      "rank1_AdamW_wd0.01",
+      "rank2_Adam_wd0"
+    ],
+    "protocol": "fmqa_adamw_bbo/json/protocol.json",
+    "report": "fmqa_adamw_bbo/md/RESULTS.md",
+    "QAOA_BBO_run": false,
+    "full_benchmark_ready": false
+  },
+  "fmxy_adamw_bbo": {
+    "status": "completed",
+    "scope": "local_pinned_lookup_closed_loop_XY_FMQAOA_pilot",
+    "runs": 5,
+    "cycles_per_run": 60,
+    "initial_samples": 20,
+    "shots": 10,
+    "bb_budget_cap": 80,
+    "rank": 1,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "p": 1,
+    "lambda": 0,
+    "original_onehot_bits": 23,
+    "simulator_bits": 8,
+    "backend": "canonical OpenQARP exact encoded simulation,full circuit probability parity verified",
+    "protocol": "fmxy_adamw_bbo/json/protocol.json",
+    "report": "fmxy_adamw_bbo/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "bbo_sample_count_comparison": {
+    "status": "completed",
+    "scope": "same_FM_closed_loop_10_vs100_SA_XY_pilot",
+    "runs": 30,
+    "cycles_per_run": 60,
+    "initial_samples": 20,
+    "counts": [
+      10,
+      100
+    ],
+    "bb_budget_cap": 80,
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "XY-FMQAOA"
+    ],
+    "protocol": "bbo_sample_count_comparison/json/protocol.json",
+    "report": "bbo_sample_count_comparison/md/RESULTS.md",
+    "fixed_FM_XY_nested_cases": 300,
+    "benchmark_promoted": false
+  },
+  "initial_data_sensitivity": {
+    "status": "completed",
+    "scope": "local_pinned_lookup_initial_budget_allocation_pilot",
+    "initial_samples": [
+      5,
+      10,
+      20
+    ],
+    "cycles_by_initial_count": {
+      "5": 75,
+      "10": 70,
+      "20": 60
+    },
+    "bb_budget_cap": 80,
+    "outputs_per_cycle": 100,
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "XY-FMQAOA"
+    ],
+    "runs": 45,
+    "cycles_total": 3075,
+    "protocol": "initial_data_sensitivity/json/protocol.json",
+    "report": "initial_data_sensitivity/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "large_penalty_diagnostic": {
+    "status": "completed",
+    "scope": "local_lookup_classical_SA_fixed_alpha_sensitivity",
+    "alphas": [
+      1,
+      3,
+      10,
+      100,
+      1000,
+      10000,
+      1000000
+    ],
+    "initial_samples": 10,
+    "reads": 100,
+    "sweeps": 1000,
+    "cycles": 70,
+    "bb_budget_cap": 80,
+    "fixed_batches": 700,
+    "BBO_runs": 35,
+    "BBO_models": 2450,
+    "protocol": "large_penalty_diagnostic/json/protocol.json",
+    "report": "large_penalty_diagnostic/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "single_fm_sampling_quality": {
+    "status": "completed",
+    "scope": "one_fixed_FM_measured_sampling_distribution_reanalysis",
+    "model_seed": 42,
+    "model_count": 1,
+    "initial_samples": 10,
+    "reads_per_batch": 100,
+    "sampling_repetitions_per_alpha": 10,
+    "raw_outputs_analyzed": 7000,
+    "new_training": false,
+    "new_sampling": false,
+    "protocol": "single_fm_sampling_quality/json/protocol.json",
+    "report": "single_fm_sampling_quality/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "xy_depth_sampling": {
+    "status": "completed",
+    "scope": "one_fixed_FM_XY_p1_p2_p3_sensitivity",
+    "user_authorized_depth_extension": true,
+    "depths": [
+      1,
+      2,
+      3
+    ],
+    "model_seed": 42,
+    "initial_samples": 10,
+    "lambda": 0,
+    "shots": 100,
+    "angle_candidates_per_search": 128,
+    "search_seeds": 10,
+    "measurement_repetitions_per_search": 10,
+    "angle_evaluations_total": 3840,
+    "measurement_batches": 300,
+    "original_onehot_bits": 23,
+    "exact_encoded_simulator_bits": 8,
+    "protocol": "xy_depth_sampling/json/protocol.json",
+    "report": "xy_depth_sampling/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "xy_p3_initial3_bbo": {
+    "status": "completed",
+    "scope": "initial3_XY_p3_closed_loop_BBO_matched_p1_and_SA_alpha1000",
+    "user_authorized_depth_extension": true,
+    "methods": [
+      "XY-p1",
+      "XY-p3",
+      "LargePenalty-alpha1000"
+    ],
+    "initial_samples": 3,
+    "seeds": [
+      42,
+      101,
+      2024,
+      7,
+      19
+    ],
+    "cycles_per_run": 77,
+    "BB_evaluation_cap": 80,
+    "outputs_per_cycle": 100,
+    "XY_lambda": 0,
+    "SA_alpha": 1000,
+    "SA_lambda_definition": "S * alpha",
+    "angle_candidates_per_cycle": 128,
+    "runs": 15,
+    "cycles_total": 1155,
+    "XY_angle_evaluations_total": 98560,
+    "protocol": "xy_p3_initial3_bbo/json/protocol.json",
+    "report": "xy_p3_initial3_bbo/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "fm_optimum_alignment": {
+    "status": "completed",
+    "scope": "saved_initial3_FM_truth_argmin_alignment_offline_audit",
+    "models": 1155,
+    "runs": 15,
+    "new_training": false,
+    "new_BBO": false,
+    "report": "fm_optimum_alignment/md/RESULTS.md",
+    "benchmark_promoted": false
+  },
+  "exact_random_bbo": {
+    "status": "completed",
+    "new_runs": 10,
+    "initial_samples": 3,
+    "cycles": 77,
+    "BB_cap": 80,
+    "seeds": [
+      42,
+      101,
+      2024,
+      7,
+      19
+    ],
+    "new_methods": [
+      "Exact-FM",
+      "Random-unseen"
+    ],
+    "saved_baselines": [
+      "XY-p3",
+      "LargePenalty-alpha1000"
+    ],
+    "protocol": "exact_random_bbo/json/protocol.json",
+    "queue": "exact_random_bbo/json/queue.json",
+    "benchmark_promoted": false
+  }
+}

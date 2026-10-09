@@ -1,0 +1,101 @@
+{
+  "summary_sha256": "52fbf200ac8fdde257c5c6733175c56f6ffc89dc84b4921b9ebfbd500e4acf60",
+  "files": [
+    {
+      "path": "pdf/initial3_p3_BBO_overview.pdf",
+      "sha256": "1e248f43c325b9298f0ead5fb04a761520f2aba9efdc6480ff3d1d587af484a9"
+    },
+    {
+      "path": "svg/initial3_p3_BBO_overview.svg",
+      "sha256": "552537d704e8a08a869bf4d98f1f5cf64e9577c3b4c796c1eb0be855f5e8f5e5"
+    },
+    {
+      "path": "png/initial3_p3_BBO_overview.png",
+      "sha256": "ee419e109f14cc3e3e710cd98cc98ae79c766c0febc0767884d97d9273eabb54"
+    },
+    {
+      "path": "pdf/best_evaluations.pdf",
+      "sha256": "513e35fccac6e708ca1569881443c626794589dadf17a0c672b2fa81cdc1cc94"
+    },
+    {
+      "path": "svg/best_evaluations.svg",
+      "sha256": "704efe6a407523575096dd9476b96d043de8a9ad2d4b399a61a48cadf580b815"
+    },
+    {
+      "path": "png/best_evaluations.png",
+      "sha256": "f9e0f2e73ee898d86545bbca889daa77ecde5834cd0effb806ccc6494aa7b36f"
+    },
+    {
+      "path": "pdf/firsthit_score81.pdf",
+      "sha256": "39af257da77a87f22a9d66d31de63230880cb8e85ef927898c9b81c850401fb7"
+    },
+    {
+      "path": "svg/firsthit_score81.svg",
+      "sha256": "edfcc2baf4169cef24cc23b1ab4bbcb99fe7c8e63f9aa9ff70b9ab6e99a68963"
+    },
+    {
+      "path": "png/firsthit_score81.png",
+      "sha256": "d904d5df24f0f72495fe59da42a3118fbdf7245e35890742d3da02f66e91ccfb"
+    },
+    {
+      "path": "pdf/final_regret.pdf",
+      "sha256": "d3f12fc520350dbc5111438e4d2ab29b4f6717e18e8ca5dd77dba2181cc760f9"
+    },
+    {
+      "path": "svg/final_regret.svg",
+      "sha256": "a7d0a567376d83762f73bf85a92f045e2b74463b3af4a2f79a986483c204723d"
+    },
+    {
+      "path": "png/final_regret.png",
+      "sha256": "b951646b3aa80d4380b860d4b9fb8f9c4669e679ec2aa1b8cf7737e8a1a176db"
+    },
+    {
+      "path": "pdf/median_FM_gap.pdf",
+      "sha256": "51e5f1be3682ad3c49729f9ced3554577405dcc19caa48f98eb98f8195641e82"
+    },
+    {
+      "path": "svg/median_FM_gap.svg",
+      "sha256": "5eb029a9738df1120327bbc034e318cc0013478c51a86443a4d7cf4f04871782"
+    },
+    {
+      "path": "png/median_FM_gap.png",
+      "sha256": "a7403310a603a48f2021f99878a4fa6e5587e5de06ffb39a70987a933b4e832f"
+    },
+    {
+      "path": "pdf/raw_feasible_fraction.pdf",
+      "sha256": "6ded8dd100ca993bd0692a164190861e677641fe67b6730d56ce8a545c8e172f"
+    },
+    {
+      "path": "svg/raw_feasible_fraction.svg",
+      "sha256": "21c271cb8b0e7b1e60040c49dd94557899dc83e4ce0db484582fc907fc0d00b7"
+    },
+    {
+      "path": "png/raw_feasible_fraction.png",
+      "sha256": "98ef7bca0b917fc6ed298e4f072af4d3ab121b2bd2bcb1f524f25a72de3fa60e"
+    },
+    {
+      "path": "pdf/generation_seconds.pdf",
+      "sha256": "890e9c195b92ec8ed6f771a4d8ac03527fc3f09c35a26e114113dfe5917d0f8c"
+    },
+    {
+      "path": "svg/generation_seconds.svg",
+      "sha256": "6dd1c5e0015165c485336c1e936f20048c45a54be406ba686e494264f2b38edd"
+    },
+    {
+      "path": "png/generation_seconds.png",
+      "sha256": "c2cf91f6278c2648d121696c864adc038417089af6fc5d2ad690885a1f6d733b"
+    },
+    {
+      "path": "pdf/best_cycles.pdf",
+      "sha256": "d8fb3482b328c33a6ef1522c8d23e10223d36dcaea34016b7ccb905e9c0833c7"
+    },
+    {
+      "path": "svg/best_cycles.svg",
+      "sha256": "2a29e7783d829e1f508631da822310a8560667cef7ac77f2b1cae074307e3f8e"
+    },
+    {
+      "path": "png/best_cycles.png",
+      "sha256": "cbd0441a541ed811c33b4970be87f45d9586676f3e567a7b1d83c542de79b677"
+    }
+  ]
+}

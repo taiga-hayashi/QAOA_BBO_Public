@@ -1,0 +1,391 @@
+{
+  "date": "2026-10-09",
+  "target": "taiga-hayashi/QAOA_BBO_Public",
+  "scope": "intern_1009 plus required shared runtime and rules",
+  "copied_source_files": 1272,
+  "omitted_files": [
+    {
+      "path": "multilayer_filter/data/reference/TMM_calculation.py.txt",
+      "reason": "third_party_full_text_without_verified_redistribution_terms"
+    },
+    {
+      "path": "multilayer_filter/data/reference/AL-dqQAOA.py.txt",
+      "reason": "third_party_full_text_without_verified_redistribution_terms"
+    },
+    {
+      "path": "multilayer_filter/data/reference/README.md.txt",
+      "reason": "third_party_full_text_without_verified_redistribution_terms"
+    },
+    {
+      "path": "radiative_cooling/data/reference/1902.06573v1.pdf",
+      "reason": "third_party_full_text_without_verified_redistribution_terms"
+    },
+    {
+      "path": "perovskites/md/circuit_validation_run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/md/circuit_validation_tests.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/md/evaluator_validation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/md/integration_tests.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/angle_search_validation/md/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/angle_search_validation/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/angle_search_validation/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/md/shared_regression.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/md/aggregation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/py/__pycache__/run_pilot.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/py/__pycache__/summarize_pilot.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fixed_fm_pilot/py/__pycache__/plot_pilot.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/exact_random_bbo/json/exact-random-BBO.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/exact_random_bbo/json/exact-random-analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_penalty_sweep/md/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_penalty_sweep/md/startup_failure.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_penalty_sweep/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_penalty_sweep/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_optimum_alignment/json/plot.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_optimum_alignment/json/compute.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_p3_initial3_bbo/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_p3_initial3_bbo/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_p3_initial3_bbo/data/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_p3_initial3_bbo/py/__pycache__/analyze_initial3.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_p3_initial3_bbo/py/__pycache__/run_initial3.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmxy_adamw_bbo/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmxy_adamw_bbo/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmxy_adamw_bbo/data/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmxy_adamw_bbo/py/__pycache__/run_xy.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmxy_adamw_bbo/py/__pycache__/analyze_xy.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_regularization_diagnostic/py/__pycache__/verify.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_regularization_diagnostic/py/__pycache__/report.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_regularization_diagnostic/py/__pycache__/diagnose_regularization.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/large_penalty_diagnostic/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/large_penalty_diagnostic/data/bbo.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/large_penalty_diagnostic/data/fixed.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/large_penalty_diagnostic/py/__pycache__/analyze_penalty.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/large_penalty_diagnostic/py/__pycache__/run_penalty.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/qaoa_shot_accuracy/md/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/qaoa_shot_accuracy/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/qaoa_shot_accuracy/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/bbo_sample_count_comparison/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/bbo_sample_count_comparison/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/bbo_sample_count_comparison/data/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/bbo_sample_count_comparison/py/__pycache__/analyze.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/bbo_sample_count_comparison/py/__pycache__/experiment.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_optimum_sample_counts/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_optimum_sample_counts/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_depth_sampling/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_depth_sampling/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_depth_sampling/data/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_depth_sampling/py/__pycache__/analyze_depth.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/xy_depth_sampling/py/__pycache__/run_depth.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_sampling_budget_top1/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_penalty_sweep_top1/md/reanalysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/py/__pycache__/test_xy_ring.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/py/__pycache__/validate_xy_ring.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/standard_qaoa_penalty_sweep/md/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/standard_qaoa_penalty_sweep/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/standard_qaoa_penalty_sweep/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_learning_diagnostic/md/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_learning_diagnostic/md/standalone.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_learning_diagnostic/md/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_learning_diagnostic/md/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fm_learning_diagnostic/md/unseen_audit.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/single_fm_sampling_quality/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/single_fm_sampling_quality/py/__pycache__/analyze_single.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_adamw_bbo/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_adamw_bbo/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_adamw_bbo/py/__pycache__/run_bbo.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/fmqa_adamw_bbo/py/__pycache__/analyze.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/data/analysis.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/data/run.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/data/prevalidation.log",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/py/__pycache__/initial_experiment.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/py/__pycache__/initial_experiment.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/py/__pycache__/analyze_initial.cpython-313.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "perovskites/initial_data_sensitivity/py/__pycache__/analyze_initial.cpython-314.pyc",
+      "reason": "runtime_cache_or_log"
+    },
+    {
+      "path": "hydrogen_molecule/data/reference/2209.01016v1.pdf",
+      "reason": "third_party_full_text_without_verified_redistribution_terms"
+    }
+  ],
+  "canonical_shared_files": [
+    "src/__init__.py",
+    "src/fm.py",
+    "src/fm_to_qubo.py",
+    "src/fmqa_solver.py",
+    "src/qarp_backend.py",
+    "src/qaoa_solver.py",
+    "src/bb_function.py",
+    "intern_0924/src/__init__.py",
+    "intern_0924/src/penalty.py",
+    "intern_0924/src/solvers.py",
+    "intern_0924/src/problem.py",
+    "intern_0924/calc.md",
+    "report/xy_fmqaoa_candidate_problems.md",
+    "intern_0924/ruru/11_workflow_steps.md",
+    "intern_0924/ruru/09_artifacts_and_metadata.md",
+    "intern_0924/ruru/10_strict_prohibitions.md",
+    "intern_0924/ruru/04_prevalidation_and_code_audit.md",
+    "intern_0924/ruru/03_methods_and_problem_setup.md",
+    "intern_0924/ruru/02_objectives_and_research_questions.md",
+    "intern_0924/ruru/README.md",
+    "intern_0924/ruru/06_experiments_specification.md",
+    "intern_0924/ruru/05_math_definitions_and_metrics.md",
+    "intern_0924/ruru/07_plot_and_visualization_standards.md",
+    "intern_0924/ruru/01_original_prompt.md",
+    "intern_0924/ruru/08_statistical_analysis_guidelines.md"
+  ],
+  "data_license_review": "Olympus MIT notice retained; original Dryad dataset and CC0 usage verified separately; Olympus reduction mapping remains unresolved",
+  "secrets_pattern_scan": "no matching token/key/password indicators in eligible local text files",
+  "historical_absolute_paths": "retained in saved provenance; not portable runtime configuration",
+  "verification": {
+    "unchanged_original_files": 1244,
+    "python_syntax": "passed",
+    "latest_saved_source_hashes": "passed",
+    "latest_figure_summary_hashes": "passed",
+    "files_over100MiB": 0,
+    "secret_pattern_scan": "passed",
+    "launcher_import_check": "passed"
+  },
+  "license_sources": [
+    "https://datadryad.org/dataset/doi:10.5061/dryad.gq3rg",
+    "https://datadryad.org/terms"
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "problem_id": "radiative_cooling",
+  "title": "3材料の平面多層放射冷却構造",
+  "status": "draft",
+  "benchmark_ready": false,
+  "last_reviewed": "2026-10-09",
+  "evaluation_kind": "simulation",
+  "objective_description": "黒体放射で帯域別正規化した放射率FOMを最大化。共通最小化はf=-FOM。温度等未確定。",
+  "objective_version": null,
+  "objective_direction": "minimize",
+  "encoding": "one_hot",
+  "variants": [
+    {
+      "variant_id": "five_layers",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 5,
+      "n_onehot_variables": 15,
+      "provenance": "original_supplement_planar_baseline",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "outside_preferred_range"
+    },
+    {
+      "variant_id": "nine_layers",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 9,
+      "n_onehot_variables": 27,
+      "provenance": "proposed_layer_count_extension",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "size_priority": "preferred"
+    },
+    {
+      "variant_id": "seven_layers",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 7,
+      "n_onehot_variables": 21,
+      "provenance": "proposed_layer_count_extension",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "configuration_note": null,
+      "size_priority": "preferred"
+    },
+    {
+      "variant_id": "eight_layers",
+      "group_sizes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "n_design_variables": 8,
+      "n_onehot_variables": 24,
+      "provenance": "proposed_layer_count_extension",
+      "within_27_qubits": true,
+      "selected": false,
+      "eligibility": "candidate",
+      "rejection_reason": null,
+      "configuration_note": null,
+      "size_priority": "preferred"
+    }
+  ],
+  "selected_variant_id": null,
+  "fixed_variables": null,
+  "sources": [
+    {
+      "title": "関連論文",
+      "url": "https://doi.org/10.1103/PhysRevResearch.2.013319",
+      "pinned_revision": null,
+      "license_verified": false
+    },
+    {
+      "title": "平面多層比較と追加制約",
+      "url": "https://arxiv.org/pdf/1902.06573",
+      "pinned_revision": null,
+      "license_verified": false
+    }
+  ],
+  "evaluator": {
+    "implemented": false,
+    "validated": false,
+    "entrypoint": null,
+    "dependencies": null,
+    "data_sha256": null
+  },
+  "comparison": {
+    "methods": [
+      "Adaptive-FMQA",
+      "LargePenalty-FMQA",
+      "Penalty-FMQAOA",
+      "XY-FMQAOA"
+    ],
+    "qaoa_depth": 1,
+    "xy_mixer": "ring_per_group",
+    "xy_initial_state": "W_state_per_group",
+    "xy_onehot_penalty_lambda": 0,
+    "large_penalty_alpha": 100,
+    "penalty_qaoa_alpha": 5,
+    "bb_budget": null,
+    "initial_dataset_size": null,
+    "seeds": null,
+    "fm_hyperparameters": null,
+    "duplicate_policy": null,
+    "invalid_candidate_policy": null
+  },
+  "prevalidation": {
+    "legacy_n6_n9_passed": false,
+    "target_group_sizes_passed": false,
+    "feasibility_tolerance": 1e-10
+  },
+  "known_optimum": null,
+  "measurement_status": "not_run",
+  "open_questions": [
+    "FOM温度・境界・波長刻み・角度条件未確定",
+    "光学データ・利用条件・RCWAとの照合未完了",
+    "平面多層の層厚、境界媒質、光学定数、温度を決める",
+    "評価関数の波長・角度積分、FOMを明文化する",
+    "TMMで既知の単層・多層例を照合する",
+    "原論文の平面多層比較との対応／変更点を記録する",
+    "3択W-stateとRing、N=6/9の事前検証を行う"
+  ],
+  "definition_review": {
+    "reviewed_on": "2026-10-09",
+    "scope": "literature_and_static_source_review",
+    "status": "reviewed_with_open_items",
+    "document": "md/problem_definition.md",
+    "source_snapshot": "json/source_snapshot.json",
+    "remaining_definition_items": [
+      "FOM温度・境界・波長刻み・角度条件未確定",
+      "光学データ・利用条件・RCWAとの照合未完了"
+    ],
+    "numerical_evaluation_performed": false
+  },
+  "source_artifact_license": {
+    "repository_license": null,
+    "dataset_or_optical_data_terms_verified": false
+  },
+  "source_objective_direction": "maximize",
+  "material_order": [
+    "SiO2",
+    "SiC",
+    "PMMA"
+  ],
+  "reference_parameters": {
+    "layer_thickness_um": 1,
+    "fom_temperature_k": null,
+    "boundary_media": null,
+    "optical_data": null
+  },
+  "selection_policy": {
+    "max_onehot_variables": 100,
+    "boundary": "inclusive",
+    "source": "user_instruction_2026-10-09",
+    "note": "100を超える設定は不採用。100以下は候補継続であり、回路実行可能性や採用決定を意味しない。既定27量子ビット上限の検証は別途必要。",
+    "preferred_onehot_variable_range": [
+      20,
+      30
+    ],
+    "range_policy": "preferred_range_not_hard_exclusion",
+    "legacy_circuit_limit": 27
+  }
+}

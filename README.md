@@ -59,3 +59,7 @@ python main.py
 
 詳細な仕様および実行方法については、[`intern/README.md`](./intern/README.md) および [`intern/agent.md`](./intern/agent.md) をご参照ください。
 
+
+## 2026-10-09 candidate problems and experiments
+
+[intern_1009](intern_1009/README.md) contains candidate-problem reviews and measured Perovskites FMQA/XY-QAOA diagnostics. See [publication and runtime notes](intern_1009/PUBLICATION.md) for included files, dependencies, licenses, and the canonical-module launcher.

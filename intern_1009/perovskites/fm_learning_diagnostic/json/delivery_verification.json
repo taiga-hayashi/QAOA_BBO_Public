@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "figure_exports": 12,
+  "checkpoint_count": 90,
+  "json_parse": "passed",
+  "local_links": "passed",
+  "overview_pdf_visual_review": "passed",
+  "additional_scripts_sha256": {
+    "py/diagnose.py": "7f76eb59e79d84f5e1f802408ec3ec68ae3a47b203ec9fbf6288323173eb31fb",
+    "py/audit_unseen.py": "c10a1211cf34d43e84fae63dfff7ad10f3b1126e6e5af1bc7b5d73bbb40027e6",
+    "py/standalone_panels.py": "0cbf77dffe5135f77ab57e7d75a13e883411b7273c99825fc71fc0958384c6e1"
+  }
+}

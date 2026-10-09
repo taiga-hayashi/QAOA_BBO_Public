@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "calculation_task_id": 35,
+  "analysis_plot_task_id": 36,
+  "dependency": "analysis only after calculation success",
+  "visual_QA": "pending next result review",
+  "calculation_result": "Success",
+  "analysis_plot_result": "Success"
+}

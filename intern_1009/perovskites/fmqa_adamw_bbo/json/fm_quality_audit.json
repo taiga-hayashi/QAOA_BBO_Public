@@ -1,0 +1,8405 @@
+{
+  "scope": "offline all192 lookup truth, not training or proposal ranking or solver BB budget",
+  "rows": [
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 1,
+      "test_rmse": 0.8716543801031916
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 2,
+      "test_rmse": 0.6528837320304851
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 3,
+      "test_rmse": 0.8952197777230884
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 4,
+      "test_rmse": 1.1395737155253916
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 5,
+      "test_rmse": 0.5715100379708223
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 6,
+      "test_rmse": 0.7151734634522158
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 7,
+      "test_rmse": 0.840681546084365
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 8,
+      "test_rmse": 0.7379411444857219
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 9,
+      "test_rmse": 0.9232716496247828
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 10,
+      "test_rmse": 0.7337317523402629
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 11,
+      "test_rmse": 0.8288158579811953
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 12,
+      "test_rmse": 0.7037702919431437
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 13,
+      "test_rmse": 0.5345719915976029
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 14,
+      "test_rmse": 0.5030268290034855
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 15,
+      "test_rmse": 0.7188301224375456
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 16,
+      "test_rmse": 0.6291082098433014
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 17,
+      "test_rmse": 0.848489192644897
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 18,
+      "test_rmse": 1.0134682799209807
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 19,
+      "test_rmse": 0.5628626404514532
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 20,
+      "test_rmse": 0.5525868952364339
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 21,
+      "test_rmse": 1.3575801444768827
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 22,
+      "test_rmse": 0.7020526905301663
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 23,
+      "test_rmse": 0.4933894425191325
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 24,
+      "test_rmse": 0.7008626306768277
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 25,
+      "test_rmse": 0.44625847498196053
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 26,
+      "test_rmse": 0.6439777097843107
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 27,
+      "test_rmse": 0.7312564744705012
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 28,
+      "test_rmse": 0.4886105820036864
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 29,
+      "test_rmse": 0.5339288337952073
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 30,
+      "test_rmse": 0.5582187467520655
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 31,
+      "test_rmse": 0.7760212937833396
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 32,
+      "test_rmse": 0.5750731095445959
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 33,
+      "test_rmse": 0.5444552652402963
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 34,
+      "test_rmse": 0.5149013249691393
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 35,
+      "test_rmse": 0.5101702076431263
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 36,
+      "test_rmse": 0.5815726324673185
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 37,
+      "test_rmse": 1.0959977757029504
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 38,
+      "test_rmse": 0.6622163934110818
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 39,
+      "test_rmse": 0.3691311730999911
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 40,
+      "test_rmse": 0.615071045473269
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 41,
+      "test_rmse": 0.48414590737152685
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 42,
+      "test_rmse": 0.395750489321758
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 43,
+      "test_rmse": 0.4970498874334847
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 44,
+      "test_rmse": 0.5326346632306367
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 45,
+      "test_rmse": 0.5637498281962894
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 46,
+      "test_rmse": 0.4500064570718017
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 47,
+      "test_rmse": 0.6109887405758023
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 48,
+      "test_rmse": 0.5441141238579019
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 49,
+      "test_rmse": 0.4454410425810687
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 50,
+      "test_rmse": 0.5550872964137062
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 51,
+      "test_rmse": 0.5551346183754062
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 52,
+      "test_rmse": 0.5495906596264297
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 53,
+      "test_rmse": 0.5508386943047531
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 54,
+      "test_rmse": 0.43628693514721867
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 55,
+      "test_rmse": 0.4268137325180528
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 56,
+      "test_rmse": 0.6088745212566501
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 57,
+      "test_rmse": 0.41870694684164017
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 58,
+      "test_rmse": 0.633092482131913
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 59,
+      "test_rmse": 0.39464099464369545
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 60,
+      "test_rmse": 0.529485994674826
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 1,
+      "test_rmse": 0.790980797377955
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 2,
+      "test_rmse": 0.7316353779597408
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 3,
+      "test_rmse": 1.1306013448613996
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 4,
+      "test_rmse": 0.8551639628464837
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 5,
+      "test_rmse": 0.5426176826147344
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 6,
+      "test_rmse": 0.7989763952942179
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 7,
+      "test_rmse": 1.252755976614039
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 8,
+      "test_rmse": 0.8090487342163944
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 9,
+      "test_rmse": 1.0369870712335079
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 10,
+      "test_rmse": 0.3600357881357207
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 11,
+      "test_rmse": 0.4977624752554197
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 12,
+      "test_rmse": 0.7819394711325872
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 13,
+      "test_rmse": 0.865653333654161
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 14,
+      "test_rmse": 0.8619915820781022
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 15,
+      "test_rmse": 0.6560866610274513
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 16,
+      "test_rmse": 0.5699310214258388
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 17,
+      "test_rmse": 0.6638096368942115
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 18,
+      "test_rmse": 0.6271708274907262
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 19,
+      "test_rmse": 0.570204731278723
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 20,
+      "test_rmse": 0.5368891513004496
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 21,
+      "test_rmse": 0.5643674262522295
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 22,
+      "test_rmse": 0.3913875838775658
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 23,
+      "test_rmse": 0.5511803685795815
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 24,
+      "test_rmse": 0.4531752412262198
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 25,
+      "test_rmse": 0.4088191912977637
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 26,
+      "test_rmse": 1.1725821882799583
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 27,
+      "test_rmse": 0.6325706071846494
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 28,
+      "test_rmse": 0.525331239415582
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 29,
+      "test_rmse": 0.4293371451380677
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 30,
+      "test_rmse": 0.4812702852219249
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 31,
+      "test_rmse": 0.5449509177840713
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 32,
+      "test_rmse": 0.4902182896555576
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 33,
+      "test_rmse": 0.433938924143968
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 34,
+      "test_rmse": 0.4998075735981486
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 35,
+      "test_rmse": 0.41068216594278906
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 36,
+      "test_rmse": 0.45400459295671003
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 37,
+      "test_rmse": 0.4178358792912223
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 38,
+      "test_rmse": 0.47537549249906713
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 39,
+      "test_rmse": 0.8284786872380494
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 40,
+      "test_rmse": 0.4576159381060253
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 41,
+      "test_rmse": 0.47068624060261294
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 42,
+      "test_rmse": 0.44439363250620917
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 43,
+      "test_rmse": 0.43050337337910377
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 44,
+      "test_rmse": 0.46799979873258124
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 45,
+      "test_rmse": 0.6043293387539054
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 46,
+      "test_rmse": 0.469332410339443
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 47,
+      "test_rmse": 0.4415593067709476
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 48,
+      "test_rmse": 0.47126159345974417
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 49,
+      "test_rmse": 0.47892510987568954
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 50,
+      "test_rmse": 0.4972711925510263
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 51,
+      "test_rmse": 0.5398713594323644
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 52,
+      "test_rmse": 0.41170732922078124
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 53,
+      "test_rmse": 0.4566422129776723
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 54,
+      "test_rmse": 0.5081572284064833
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 55,
+      "test_rmse": 0.4694703958945964
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 56,
+      "test_rmse": 0.4881934650691317
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 57,
+      "test_rmse": 0.6305553258224553
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 58,
+      "test_rmse": 0.6373918831409793
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 59,
+      "test_rmse": 0.5585743851609757
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 60,
+      "test_rmse": 0.444944720077685
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 1,
+      "test_rmse": 1.095630043277496
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 2,
+      "test_rmse": 0.7192883559499
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 3,
+      "test_rmse": 0.8856221406054929
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 4,
+      "test_rmse": 1.1330927897843075
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 5,
+      "test_rmse": 1.18273559379715
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 6,
+      "test_rmse": 0.6727999225089035
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 7,
+      "test_rmse": 0.617070237825628
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 8,
+      "test_rmse": 0.733544057378416
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 9,
+      "test_rmse": 0.7145949113946315
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 10,
+      "test_rmse": 0.7296946827108162
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 11,
+      "test_rmse": 0.46468724888958324
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 12,
+      "test_rmse": 0.6687386935719809
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 13,
+      "test_rmse": 0.43319727320036255
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 14,
+      "test_rmse": 0.4371046123748316
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 15,
+      "test_rmse": 0.7165867740693925
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 16,
+      "test_rmse": 0.5483093859774427
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 17,
+      "test_rmse": 0.5295508528715871
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 18,
+      "test_rmse": 0.793808013440178
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 19,
+      "test_rmse": 0.4984325016149507
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 20,
+      "test_rmse": 0.610604463306521
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 21,
+      "test_rmse": 0.47839866307378953
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 22,
+      "test_rmse": 0.6685356387574386
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 23,
+      "test_rmse": 0.49123986649057005
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 24,
+      "test_rmse": 0.5880317716489405
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 25,
+      "test_rmse": 0.690836270337201
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 26,
+      "test_rmse": 0.5417120445703384
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 27,
+      "test_rmse": 0.45894882412668947
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 28,
+      "test_rmse": 0.585028003434444
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 29,
+      "test_rmse": 0.6717320251032536
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 30,
+      "test_rmse": 0.4767288534220437
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 31,
+      "test_rmse": 0.5281338778106777
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 32,
+      "test_rmse": 0.3935084453304771
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 33,
+      "test_rmse": 0.40146542646287003
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 34,
+      "test_rmse": 0.6444537992681897
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 35,
+      "test_rmse": 0.3583057834770887
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 36,
+      "test_rmse": 0.46434172773208887
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 37,
+      "test_rmse": 0.44700101197067554
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 38,
+      "test_rmse": 0.4914188287529116
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 39,
+      "test_rmse": 0.4758671874174359
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 40,
+      "test_rmse": 0.4348816638091896
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 41,
+      "test_rmse": 0.5478027558998244
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 42,
+      "test_rmse": 0.4786213867526586
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 43,
+      "test_rmse": 0.410437364482521
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 44,
+      "test_rmse": 0.4163708047358607
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 45,
+      "test_rmse": 0.44917652666699526
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 46,
+      "test_rmse": 0.5407443987312711
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 47,
+      "test_rmse": 0.4042498732041719
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 48,
+      "test_rmse": 0.8110452402478673
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 49,
+      "test_rmse": 0.389821494662115
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 50,
+      "test_rmse": 0.46390597696276537
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 51,
+      "test_rmse": 0.8415022364434449
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 52,
+      "test_rmse": 0.46105022750424446
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 53,
+      "test_rmse": 0.3185066421279243
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 54,
+      "test_rmse": 0.370168642757595
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 55,
+      "test_rmse": 0.38907107798723467
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 56,
+      "test_rmse": 1.5473951266156052
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 57,
+      "test_rmse": 1.0951018417659262
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 58,
+      "test_rmse": 0.6530956740883362
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 59,
+      "test_rmse": 0.5336508081759876
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 60,
+      "test_rmse": 0.40717111516019083
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 1,
+      "test_rmse": 0.8756663095039467
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 2,
+      "test_rmse": 1.2361351066716821
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 3,
+      "test_rmse": 0.8843410953780262
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 4,
+      "test_rmse": 0.780264288037598
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 5,
+      "test_rmse": 1.3924453227993574
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 6,
+      "test_rmse": 0.6896498921670344
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 7,
+      "test_rmse": 1.2205604959435747
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 8,
+      "test_rmse": 1.3421372045490574
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 9,
+      "test_rmse": 0.949785428591925
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 10,
+      "test_rmse": 0.8686321687942778
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 11,
+      "test_rmse": 1.2161626358119364
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 12,
+      "test_rmse": 0.9248329067036796
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 13,
+      "test_rmse": 0.6611707427332014
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 14,
+      "test_rmse": 0.7656591618655838
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 15,
+      "test_rmse": 0.6057417883370793
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 16,
+      "test_rmse": 0.8006315498334298
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 17,
+      "test_rmse": 0.6086848646541597
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 18,
+      "test_rmse": 1.0450917377042421
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 19,
+      "test_rmse": 0.7550604758720678
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 20,
+      "test_rmse": 0.6763879261912223
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 21,
+      "test_rmse": 0.790697828485433
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 22,
+      "test_rmse": 0.820118184835876
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 23,
+      "test_rmse": 1.006785982272279
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 24,
+      "test_rmse": 0.5612725661974656
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 25,
+      "test_rmse": 0.5743392822251724
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 26,
+      "test_rmse": 0.8456614591669975
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 27,
+      "test_rmse": 0.46336965873635244
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 28,
+      "test_rmse": 0.5363904807430229
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 29,
+      "test_rmse": 0.6990241058608133
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 30,
+      "test_rmse": 0.8609370488926817
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 31,
+      "test_rmse": 0.6902785506481872
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 32,
+      "test_rmse": 0.45756721801428996
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 33,
+      "test_rmse": 0.6307918106484272
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 34,
+      "test_rmse": 0.4261991589106874
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 35,
+      "test_rmse": 0.6052948505938246
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 36,
+      "test_rmse": 0.7487034654061202
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 37,
+      "test_rmse": 0.6048543770173216
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 38,
+      "test_rmse": 0.5470392378486669
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 39,
+      "test_rmse": 0.4915600594061752
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 40,
+      "test_rmse": 0.5581750997629572
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 41,
+      "test_rmse": 0.5352385864711939
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 42,
+      "test_rmse": 0.42370547368336764
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 43,
+      "test_rmse": 0.40335358866247384
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 44,
+      "test_rmse": 0.6757375031986107
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 45,
+      "test_rmse": 0.5028044730075567
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 46,
+      "test_rmse": 0.594071906151794
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 47,
+      "test_rmse": 0.38574222791838286
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 48,
+      "test_rmse": 0.6614269274162627
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 49,
+      "test_rmse": 0.43466728702556345
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 50,
+      "test_rmse": 0.4350162223171553
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 51,
+      "test_rmse": 0.68984346801533
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 52,
+      "test_rmse": 0.4045665345168434
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 53,
+      "test_rmse": 0.44248800248382625
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 54,
+      "test_rmse": 0.3687180727805659
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 55,
+      "test_rmse": 0.39008116129330833
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 56,
+      "test_rmse": 0.6448844380385589
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 57,
+      "test_rmse": 0.4652856765424976
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 58,
+      "test_rmse": 0.5179300027878687
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 59,
+      "test_rmse": 0.47240349187482233
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 60,
+      "test_rmse": 0.6303797109910395
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 1,
+      "test_rmse": 1.1437554551659623
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 2,
+      "test_rmse": 1.168943889591849
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 3,
+      "test_rmse": 1.095844930262406
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 4,
+      "test_rmse": 1.2143644528658168
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 5,
+      "test_rmse": 1.251757046018744
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 6,
+      "test_rmse": 0.9015871197212086
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 7,
+      "test_rmse": 1.2725048630056512
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 8,
+      "test_rmse": 1.2654222102628936
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 9,
+      "test_rmse": 0.9868046406434697
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 10,
+      "test_rmse": 0.972538343556287
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 11,
+      "test_rmse": 0.8292000635460572
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 12,
+      "test_rmse": 0.7111521539912922
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 13,
+      "test_rmse": 1.005404964855358
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 14,
+      "test_rmse": 0.6413684530431752
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 15,
+      "test_rmse": 0.6743812030110903
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 16,
+      "test_rmse": 0.6252415556847315
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 17,
+      "test_rmse": 0.9033378795739657
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 18,
+      "test_rmse": 1.1141858248040266
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 19,
+      "test_rmse": 0.5856689398060386
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 20,
+      "test_rmse": 0.7197678201766763
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 21,
+      "test_rmse": 0.5618590676063504
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 22,
+      "test_rmse": 0.5632512835488399
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 23,
+      "test_rmse": 1.0011040839246053
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 24,
+      "test_rmse": 1.3091616446218346
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 25,
+      "test_rmse": 0.4743747848808407
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 26,
+      "test_rmse": 0.6979003045558813
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 27,
+      "test_rmse": 0.5893831395952992
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 28,
+      "test_rmse": 0.7573519481091253
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 29,
+      "test_rmse": 0.45031099975074274
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 30,
+      "test_rmse": 0.7678453871929354
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 31,
+      "test_rmse": 0.6364152464352033
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 32,
+      "test_rmse": 0.6464930424946035
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 33,
+      "test_rmse": 0.40020449830547644
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 34,
+      "test_rmse": 0.7282996420623178
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 35,
+      "test_rmse": 0.38209720727987284
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 36,
+      "test_rmse": 0.5183669396407632
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 37,
+      "test_rmse": 0.46556303053967013
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 38,
+      "test_rmse": 0.4841693513659938
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 39,
+      "test_rmse": 0.4559559057123989
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 40,
+      "test_rmse": 0.4233181341265132
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 41,
+      "test_rmse": 0.5327255618545719
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 42,
+      "test_rmse": 0.5746589456859466
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 43,
+      "test_rmse": 0.6411923678050901
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 44,
+      "test_rmse": 0.42738266811414855
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 45,
+      "test_rmse": 0.45355407778657814
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 46,
+      "test_rmse": 0.5155617227023169
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 47,
+      "test_rmse": 0.9523548930649909
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 48,
+      "test_rmse": 0.5635625039671075
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 49,
+      "test_rmse": 0.4509193055930947
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 50,
+      "test_rmse": 0.5306158537400324
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 51,
+      "test_rmse": 0.5552990602124539
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 52,
+      "test_rmse": 0.39155265490515395
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 53,
+      "test_rmse": 0.7061822972436752
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 54,
+      "test_rmse": 0.40981005550733685
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 55,
+      "test_rmse": 0.4917869332437351
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 56,
+      "test_rmse": 0.5721739570005719
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 57,
+      "test_rmse": 0.5905639604621682
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 58,
+      "test_rmse": 0.4895536726372112
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 59,
+      "test_rmse": 0.33993062986699213
+    },
+    {
+      "setting": "proposed",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 60,
+      "test_rmse": 0.3854993574433057
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 1,
+      "test_rmse": 0.8716543801031916
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 2,
+      "test_rmse": 0.7112677964309804
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 3,
+      "test_rmse": 0.8883689059249913
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 4,
+      "test_rmse": 1.230495495093381
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 5,
+      "test_rmse": 0.6177755735737448
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 6,
+      "test_rmse": 0.7570174595093712
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 7,
+      "test_rmse": 0.7955625733447469
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 8,
+      "test_rmse": 0.9685835315212701
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 9,
+      "test_rmse": 0.8864940432518343
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 10,
+      "test_rmse": 1.0746706880803096
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 11,
+      "test_rmse": 0.5217964761579758
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 12,
+      "test_rmse": 1.034246262473098
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 13,
+      "test_rmse": 0.49917837796183595
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 14,
+      "test_rmse": 0.42478497990015357
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 15,
+      "test_rmse": 0.4684653276263237
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 16,
+      "test_rmse": 0.5648277208726719
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 17,
+      "test_rmse": 0.9652324683812341
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 18,
+      "test_rmse": 0.7520141692932591
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 19,
+      "test_rmse": 0.6510150113211174
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 20,
+      "test_rmse": 0.4686244637937888
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 21,
+      "test_rmse": 0.7105034277910538
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 22,
+      "test_rmse": 0.4324356693308177
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 23,
+      "test_rmse": 0.5407191126918278
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 24,
+      "test_rmse": 0.5028536029587481
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 25,
+      "test_rmse": 0.4260616504215082
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 26,
+      "test_rmse": 0.4295086115590764
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 27,
+      "test_rmse": 0.9055092166936282
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 28,
+      "test_rmse": 0.45219222430259726
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 29,
+      "test_rmse": 0.4995140758289273
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 30,
+      "test_rmse": 0.3718319823068024
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 31,
+      "test_rmse": 0.6996870942518523
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 32,
+      "test_rmse": 0.49727613611166954
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 33,
+      "test_rmse": 0.43976154334634904
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 34,
+      "test_rmse": 0.501946871600408
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 35,
+      "test_rmse": 0.7556473101142283
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 36,
+      "test_rmse": 0.44714227681073854
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 37,
+      "test_rmse": 0.7026730801822417
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 38,
+      "test_rmse": 0.7274144641348308
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 39,
+      "test_rmse": 0.534228950678324
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 40,
+      "test_rmse": 0.5625840137303162
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 41,
+      "test_rmse": 0.6252292644392009
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 42,
+      "test_rmse": 0.47957923764465554
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 43,
+      "test_rmse": 0.5334517679151694
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 44,
+      "test_rmse": 0.47466932587550315
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 45,
+      "test_rmse": 0.4817246119504521
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 46,
+      "test_rmse": 0.47185067269711284
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 47,
+      "test_rmse": 0.3972234409161068
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 48,
+      "test_rmse": 0.5144021504358908
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 49,
+      "test_rmse": 0.6444840590302788
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 50,
+      "test_rmse": 0.4379921452108333
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 51,
+      "test_rmse": 0.4483583826841107
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 52,
+      "test_rmse": 0.6553059236764829
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 53,
+      "test_rmse": 0.34850329333662344
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 54,
+      "test_rmse": 0.4027950205641375
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 55,
+      "test_rmse": 0.34334849105938603
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 56,
+      "test_rmse": 0.4599598488606624
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 57,
+      "test_rmse": 0.46408899094336487
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 58,
+      "test_rmse": 0.39004837855144664
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 59,
+      "test_rmse": 0.5104189198913414
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 60,
+      "test_rmse": 0.3932028612134743
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 1,
+      "test_rmse": 0.790980797377955
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 2,
+      "test_rmse": 0.6586338931266811
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 3,
+      "test_rmse": 1.2469025572670922
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 4,
+      "test_rmse": 0.8141856746610706
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 5,
+      "test_rmse": 0.5405332927018421
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 6,
+      "test_rmse": 0.7942503142568204
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 7,
+      "test_rmse": 0.7314160933831646
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 8,
+      "test_rmse": 0.6736480432205499
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 9,
+      "test_rmse": 1.0544268629387807
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 10,
+      "test_rmse": 0.739709770943099
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 11,
+      "test_rmse": 0.5789761546725671
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 12,
+      "test_rmse": 0.6917408990584842
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 13,
+      "test_rmse": 0.7452274596808873
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 14,
+      "test_rmse": 0.7563835173891132
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 15,
+      "test_rmse": 1.0505274101708326
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 16,
+      "test_rmse": 1.1661662984434389
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 17,
+      "test_rmse": 0.8583212519266965
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 18,
+      "test_rmse": 0.8348206806321358
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 19,
+      "test_rmse": 0.7683097980104346
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 20,
+      "test_rmse": 0.4078963378566599
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 21,
+      "test_rmse": 0.3491484490896685
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 22,
+      "test_rmse": 0.5783345615880728
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 23,
+      "test_rmse": 0.6633348544376998
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 24,
+      "test_rmse": 0.7410058833732539
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 25,
+      "test_rmse": 0.5747463264260756
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 26,
+      "test_rmse": 0.9724704776785129
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 27,
+      "test_rmse": 0.5043493040506581
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 28,
+      "test_rmse": 0.7449222529925862
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 29,
+      "test_rmse": 0.4233162715297541
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 30,
+      "test_rmse": 0.4004327120810779
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 31,
+      "test_rmse": 0.5514470210992696
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 32,
+      "test_rmse": 0.6811965140629401
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 33,
+      "test_rmse": 0.6753987747381326
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 34,
+      "test_rmse": 0.49785086182108207
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 35,
+      "test_rmse": 0.4469237846517951
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 36,
+      "test_rmse": 0.4268982629138892
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 37,
+      "test_rmse": 0.40290652310505365
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 38,
+      "test_rmse": 0.5387750561140968
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 39,
+      "test_rmse": 1.136626702069411
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 40,
+      "test_rmse": 0.3770302954214333
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 41,
+      "test_rmse": 0.606249380646456
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 42,
+      "test_rmse": 0.45653822830152124
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 43,
+      "test_rmse": 0.42093072866733333
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 44,
+      "test_rmse": 0.4915096837541526
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 45,
+      "test_rmse": 0.7538426460178064
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 46,
+      "test_rmse": 0.515931033892344
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 47,
+      "test_rmse": 0.37513701382991743
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 48,
+      "test_rmse": 0.3504334296098133
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 49,
+      "test_rmse": 0.4259717029785174
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 50,
+      "test_rmse": 0.9606967811406514
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 51,
+      "test_rmse": 0.6032254664985843
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 52,
+      "test_rmse": 0.44702056292391146
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 53,
+      "test_rmse": 0.492939671856474
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 54,
+      "test_rmse": 0.3770558994988989
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 55,
+      "test_rmse": 0.6224625261095825
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 56,
+      "test_rmse": 0.41884326841561714
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 57,
+      "test_rmse": 0.4284394354095682
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 58,
+      "test_rmse": 0.6101360411395982
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 59,
+      "test_rmse": 0.4439050559014082
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 60,
+      "test_rmse": 0.7236722231985688
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 1,
+      "test_rmse": 1.095630043277496
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 2,
+      "test_rmse": 0.6729075423880354
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 3,
+      "test_rmse": 0.9065548438462566
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 4,
+      "test_rmse": 1.202689019960087
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 5,
+      "test_rmse": 0.6824331826457204
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 6,
+      "test_rmse": 0.6571917676816494
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 7,
+      "test_rmse": 0.6318936555848138
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 8,
+      "test_rmse": 0.8335346878900638
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 9,
+      "test_rmse": 0.6942817499596328
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 10,
+      "test_rmse": 0.9033931665996168
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 11,
+      "test_rmse": 0.6249068999350438
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 12,
+      "test_rmse": 0.7679980383643303
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 13,
+      "test_rmse": 0.618308917118897
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 14,
+      "test_rmse": 0.6673297368268041
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 15,
+      "test_rmse": 0.8367756684893132
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 16,
+      "test_rmse": 0.7359188073629105
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 17,
+      "test_rmse": 0.6193556725281473
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 18,
+      "test_rmse": 0.7562598182849487
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 19,
+      "test_rmse": 0.5009628327422578
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 20,
+      "test_rmse": 0.5767111939227983
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 21,
+      "test_rmse": 0.43653798216560025
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 22,
+      "test_rmse": 0.7388738108384041
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 23,
+      "test_rmse": 0.6725887370033307
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 24,
+      "test_rmse": 0.6749513886354026
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 25,
+      "test_rmse": 0.6436723836016095
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 26,
+      "test_rmse": 0.4957411108890475
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 27,
+      "test_rmse": 0.7104752591997918
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 28,
+      "test_rmse": 0.7055256584025157
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 29,
+      "test_rmse": 0.9476093457084989
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 30,
+      "test_rmse": 0.559656754577805
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 31,
+      "test_rmse": 0.6018222374554647
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 32,
+      "test_rmse": 0.5848744661933801
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 33,
+      "test_rmse": 0.4456401976488686
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 34,
+      "test_rmse": 0.615907272104633
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 35,
+      "test_rmse": 0.3762442002784266
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 36,
+      "test_rmse": 0.7702648503038569
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 37,
+      "test_rmse": 0.4647392688193126
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 38,
+      "test_rmse": 0.4457356101480685
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 39,
+      "test_rmse": 0.5426376730128224
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 40,
+      "test_rmse": 0.5832873658754274
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 41,
+      "test_rmse": 0.5465311423690331
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 42,
+      "test_rmse": 0.5667046032434855
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 43,
+      "test_rmse": 0.5030969054261177
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 44,
+      "test_rmse": 0.4808982101351138
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 45,
+      "test_rmse": 0.6004052361241511
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 46,
+      "test_rmse": 0.4717547999697439
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 47,
+      "test_rmse": 0.6360731892254833
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 48,
+      "test_rmse": 1.2435048306549972
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 49,
+      "test_rmse": 0.3815469832132878
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 50,
+      "test_rmse": 0.5489451488955097
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 51,
+      "test_rmse": 0.5609363833992559
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 52,
+      "test_rmse": 0.43875898708654815
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 53,
+      "test_rmse": 0.34158834920526304
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 54,
+      "test_rmse": 0.5285554069035379
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 55,
+      "test_rmse": 0.616894428023576
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 56,
+      "test_rmse": 0.45893096385356247
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 57,
+      "test_rmse": 1.0478773238663222
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 58,
+      "test_rmse": 0.5357850147589733
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 59,
+      "test_rmse": 0.5662077875859536
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 60,
+      "test_rmse": 0.43488709578371754
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 1,
+      "test_rmse": 0.8756663095039467
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 2,
+      "test_rmse": 1.279419654963295
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 3,
+      "test_rmse": 0.7926864030823308
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 4,
+      "test_rmse": 0.8588359803929119
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 5,
+      "test_rmse": 1.5929536551225192
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 6,
+      "test_rmse": 0.7410136253995779
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 7,
+      "test_rmse": 1.021743337165846
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 8,
+      "test_rmse": 1.193128366825212
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 9,
+      "test_rmse": 0.9201806790198952
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 10,
+      "test_rmse": 0.9645332367221617
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 11,
+      "test_rmse": 0.8888926025279685
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 12,
+      "test_rmse": 0.7231472942086123
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 13,
+      "test_rmse": 0.960652011213071
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 14,
+      "test_rmse": 0.6822338069146515
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 15,
+      "test_rmse": 0.7305861153291467
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 16,
+      "test_rmse": 0.4176972882769891
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 17,
+      "test_rmse": 0.570522659532516
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 18,
+      "test_rmse": 0.8981240461959418
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 19,
+      "test_rmse": 0.846271649681366
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 20,
+      "test_rmse": 0.5821230728781414
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 21,
+      "test_rmse": 0.36224904944788483
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 22,
+      "test_rmse": 0.9504728841875121
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 23,
+      "test_rmse": 0.6369782937541528
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 24,
+      "test_rmse": 0.5121059813644429
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 25,
+      "test_rmse": 0.4246937754967383
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 26,
+      "test_rmse": 0.8813012219934228
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 27,
+      "test_rmse": 0.3742126163829855
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 28,
+      "test_rmse": 0.3573116283227121
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 29,
+      "test_rmse": 0.6257470437032492
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 30,
+      "test_rmse": 0.5482487016764275
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 31,
+      "test_rmse": 0.4235544011375744
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 32,
+      "test_rmse": 0.5155589905292592
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 33,
+      "test_rmse": 0.4957951447651185
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 34,
+      "test_rmse": 0.3322583245274068
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 35,
+      "test_rmse": 0.629516786157908
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 36,
+      "test_rmse": 0.5744189597373281
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 37,
+      "test_rmse": 0.45565434045878916
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 38,
+      "test_rmse": 0.40312680039296866
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 39,
+      "test_rmse": 0.36417739525633785
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 40,
+      "test_rmse": 0.47187755623302485
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 41,
+      "test_rmse": 0.6451249374605104
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 42,
+      "test_rmse": 0.44436998474133915
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 43,
+      "test_rmse": 0.37717511284314936
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 44,
+      "test_rmse": 0.4694083387033611
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 45,
+      "test_rmse": 0.46970934527223507
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 46,
+      "test_rmse": 0.6242939326804048
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 47,
+      "test_rmse": 0.4876695338363156
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 48,
+      "test_rmse": 0.6103033160089523
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 49,
+      "test_rmse": 0.5725407334176158
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 50,
+      "test_rmse": 0.39267001554454345
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 51,
+      "test_rmse": 0.6101536151884347
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 52,
+      "test_rmse": 0.37083226126460456
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 53,
+      "test_rmse": 0.4637787424092024
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 54,
+      "test_rmse": 0.4711630209213802
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 55,
+      "test_rmse": 0.5083098661834631
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 56,
+      "test_rmse": 0.5203633940070315
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 57,
+      "test_rmse": 0.36810799704926905
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 58,
+      "test_rmse": 0.40806195030558345
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 59,
+      "test_rmse": 0.6939483487156388
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 60,
+      "test_rmse": 0.5296741467597019
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 1,
+      "test_rmse": 1.1437554551659623
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 2,
+      "test_rmse": 1.1903805281097686
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 3,
+      "test_rmse": 1.2139255543905374
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 4,
+      "test_rmse": 1.0807121493001297
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 5,
+      "test_rmse": 1.0274154227115357
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 6,
+      "test_rmse": 0.8550369297399849
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 7,
+      "test_rmse": 1.1605281755227639
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 8,
+      "test_rmse": 1.1278520387537505
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 9,
+      "test_rmse": 0.8377816534202738
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 10,
+      "test_rmse": 0.8031551547001479
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 11,
+      "test_rmse": 0.6152118689487684
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 12,
+      "test_rmse": 0.6235643866521742
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 13,
+      "test_rmse": 0.8648599138700859
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 14,
+      "test_rmse": 0.5959786789106393
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 15,
+      "test_rmse": 0.6221205830299066
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 16,
+      "test_rmse": 0.725181754114079
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 17,
+      "test_rmse": 0.926545511878999
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 18,
+      "test_rmse": 0.8760113276731402
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 19,
+      "test_rmse": 0.5948732609492478
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 20,
+      "test_rmse": 0.8350936040966744
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 21,
+      "test_rmse": 0.6326283883783637
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 22,
+      "test_rmse": 0.6841019955522495
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 23,
+      "test_rmse": 0.6826505435906094
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 24,
+      "test_rmse": 1.1024487040741868
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 25,
+      "test_rmse": 0.3957221416804771
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 26,
+      "test_rmse": 0.697819562792262
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 27,
+      "test_rmse": 0.45569270924737576
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 28,
+      "test_rmse": 1.055537752867866
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 29,
+      "test_rmse": 0.385353094359332
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 30,
+      "test_rmse": 0.8185187869437507
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 31,
+      "test_rmse": 0.47384220800417276
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 32,
+      "test_rmse": 0.6955879960143067
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 33,
+      "test_rmse": 0.4764684656965959
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 34,
+      "test_rmse": 0.4873528212476565
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 35,
+      "test_rmse": 0.6189864983490856
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 36,
+      "test_rmse": 0.5396374989125128
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 37,
+      "test_rmse": 0.4968459329208622
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 38,
+      "test_rmse": 0.8099510217199363
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 39,
+      "test_rmse": 0.3606678311397792
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 40,
+      "test_rmse": 0.6814617264122708
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 41,
+      "test_rmse": 0.3891607665982081
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 42,
+      "test_rmse": 0.501851392790088
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 43,
+      "test_rmse": 0.4984391598739988
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 44,
+      "test_rmse": 0.44549982995352927
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 45,
+      "test_rmse": 0.4133154698214734
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 46,
+      "test_rmse": 0.4263830436683712
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 47,
+      "test_rmse": 0.7012242911200406
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 48,
+      "test_rmse": 1.0457306735076477
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 49,
+      "test_rmse": 0.39937530840657925
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 50,
+      "test_rmse": 0.4197534804224031
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 51,
+      "test_rmse": 0.5951488534284713
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 52,
+      "test_rmse": 0.3860693750803068
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 53,
+      "test_rmse": 0.7301556191004602
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 54,
+      "test_rmse": 0.4208627431543754
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 55,
+      "test_rmse": 0.5954561290856404
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 56,
+      "test_rmse": 0.47576206063911486
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 57,
+      "test_rmse": 0.649452258692771
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 58,
+      "test_rmse": 0.3389215548246097
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 59,
+      "test_rmse": 0.40659027108473444
+    },
+    {
+      "setting": "proposed",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 60,
+      "test_rmse": 0.348277720765513
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 1,
+      "test_rmse": 1.7441385385847983
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 2,
+      "test_rmse": 1.3259212073253315
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 3,
+      "test_rmse": 1.3472557322434873
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 4,
+      "test_rmse": 1.1747547353964918
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 5,
+      "test_rmse": 1.1345100895491596
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 6,
+      "test_rmse": 1.346442681877269
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 7,
+      "test_rmse": 1.7307910059768414
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 8,
+      "test_rmse": 1.3806270885737086
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 9,
+      "test_rmse": 1.3886483064610298
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 10,
+      "test_rmse": 1.0065443446326732
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 11,
+      "test_rmse": 1.0776851730397279
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 12,
+      "test_rmse": 1.2720730920637828
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 13,
+      "test_rmse": 1.5854986902983075
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 14,
+      "test_rmse": 0.9378087477653071
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 15,
+      "test_rmse": 0.7540594485846134
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 16,
+      "test_rmse": 1.0886750315012301
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 17,
+      "test_rmse": 0.7788205931680159
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 18,
+      "test_rmse": 0.8809692773551684
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 19,
+      "test_rmse": 0.9047342194808545
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 20,
+      "test_rmse": 1.2119194273114358
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 21,
+      "test_rmse": 0.5203771458182439
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 22,
+      "test_rmse": 1.6945473965597262
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 23,
+      "test_rmse": 0.7794319380091613
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 24,
+      "test_rmse": 0.5642437907123383
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 25,
+      "test_rmse": 0.7312516392923
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 26,
+      "test_rmse": 0.6155411414900739
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 27,
+      "test_rmse": 0.6782116229741021
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 28,
+      "test_rmse": 0.7627871380731795
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 29,
+      "test_rmse": 0.6276973187137388
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 30,
+      "test_rmse": 0.5731577316932454
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 31,
+      "test_rmse": 0.7566493015093184
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 32,
+      "test_rmse": 0.8299916218803902
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 33,
+      "test_rmse": 0.5412989598200046
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 34,
+      "test_rmse": 0.6738355043992896
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 35,
+      "test_rmse": 1.1033904147183828
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 36,
+      "test_rmse": 0.5150308544770363
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 37,
+      "test_rmse": 0.44740951215921326
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 38,
+      "test_rmse": 0.7699511411808095
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 39,
+      "test_rmse": 0.5531862010855486
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 40,
+      "test_rmse": 0.4946992726190954
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 41,
+      "test_rmse": 0.5837436550017987
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 42,
+      "test_rmse": 0.7414810217196796
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 43,
+      "test_rmse": 0.55302380475947
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 44,
+      "test_rmse": 0.48329844542082223
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 45,
+      "test_rmse": 0.4595730305023944
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 46,
+      "test_rmse": 0.6396097735870631
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 47,
+      "test_rmse": 0.7453487524703782
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 48,
+      "test_rmse": 0.9250840405932071
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 49,
+      "test_rmse": 0.5566767473233953
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 50,
+      "test_rmse": 0.5345053861369837
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 51,
+      "test_rmse": 0.6021485854017526
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 52,
+      "test_rmse": 0.5181984850713237
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 53,
+      "test_rmse": 0.6818884644997263
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 54,
+      "test_rmse": 0.3831870664373317
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 55,
+      "test_rmse": 0.49676336758805817
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 56,
+      "test_rmse": 0.6752053209465992
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 57,
+      "test_rmse": 0.5432984586633388
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 58,
+      "test_rmse": 0.7137245028387473
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 59,
+      "test_rmse": 0.43853688246310357
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 42,
+      "cycle": 60,
+      "test_rmse": 0.43702275684188624
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 1,
+      "test_rmse": 1.258494351913125
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 2,
+      "test_rmse": 0.8130752577334944
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 3,
+      "test_rmse": 1.6598381744038515
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 4,
+      "test_rmse": 1.3375162669218774
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 5,
+      "test_rmse": 0.9171531816421932
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 6,
+      "test_rmse": 1.2245789616215592
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 7,
+      "test_rmse": 0.8747622745417155
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 8,
+      "test_rmse": 1.4290931235938076
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 9,
+      "test_rmse": 0.8279493380074925
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 10,
+      "test_rmse": 1.8399291476619677
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 11,
+      "test_rmse": 1.175126833418585
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 12,
+      "test_rmse": 0.661843561696764
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 13,
+      "test_rmse": 0.6459837648346825
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 14,
+      "test_rmse": 1.1949164230115703
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 15,
+      "test_rmse": 0.9874131228576546
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 16,
+      "test_rmse": 0.7956359883484115
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 17,
+      "test_rmse": 0.7900591243389088
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 18,
+      "test_rmse": 1.0306050662353539
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 19,
+      "test_rmse": 0.9212778306101543
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 20,
+      "test_rmse": 0.9160626671893134
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 21,
+      "test_rmse": 0.9696719239872835
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 22,
+      "test_rmse": 0.6269900793110009
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 23,
+      "test_rmse": 0.5867154575327019
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 24,
+      "test_rmse": 1.16402340530313
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 25,
+      "test_rmse": 0.45673768706805107
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 26,
+      "test_rmse": 0.646426253214029
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 27,
+      "test_rmse": 0.5933790935613551
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 28,
+      "test_rmse": 0.5312965882887349
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 29,
+      "test_rmse": 0.9378217286093012
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 30,
+      "test_rmse": 0.6343105661391701
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 31,
+      "test_rmse": 0.5967033136905316
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 32,
+      "test_rmse": 0.9395140578205897
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 33,
+      "test_rmse": 0.42890859637232237
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 34,
+      "test_rmse": 0.7414541664130009
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 35,
+      "test_rmse": 0.6070056679893787
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 36,
+      "test_rmse": 0.7917097871405671
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 37,
+      "test_rmse": 0.47613414580324437
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 38,
+      "test_rmse": 0.7389296183441093
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 39,
+      "test_rmse": 0.8323656013566268
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 40,
+      "test_rmse": 0.6479748414833719
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 41,
+      "test_rmse": 0.5166145000608906
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 42,
+      "test_rmse": 0.649139994920178
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 43,
+      "test_rmse": 0.4258554484796329
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 44,
+      "test_rmse": 0.4433080115913907
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 45,
+      "test_rmse": 0.6819360196965418
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 46,
+      "test_rmse": 0.7043113518070152
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 47,
+      "test_rmse": 0.7426588971258015
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 48,
+      "test_rmse": 0.5541782265145034
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 49,
+      "test_rmse": 0.4519695104441094
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 50,
+      "test_rmse": 0.5927266010741944
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 51,
+      "test_rmse": 0.6544364308464147
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 52,
+      "test_rmse": 0.6173364792885434
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 53,
+      "test_rmse": 0.48136910341802824
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 54,
+      "test_rmse": 0.7651634705278869
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 55,
+      "test_rmse": 0.5458873491713961
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 56,
+      "test_rmse": 0.9441112492384709
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 57,
+      "test_rmse": 0.4317955281454168
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 58,
+      "test_rmse": 0.6851300986860548
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 59,
+      "test_rmse": 0.48865897543483366
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 101,
+      "cycle": 60,
+      "test_rmse": 0.4932986027961818
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 1,
+      "test_rmse": 1.4962522445852198
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 2,
+      "test_rmse": 1.63563629417324
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 3,
+      "test_rmse": 1.457827858774093
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 4,
+      "test_rmse": 1.4348710712620536
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 5,
+      "test_rmse": 1.1247532599985057
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 6,
+      "test_rmse": 0.9592925466369209
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 7,
+      "test_rmse": 1.8711418161500497
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 8,
+      "test_rmse": 1.084765126427466
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 9,
+      "test_rmse": 1.2466427823898536
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 10,
+      "test_rmse": 1.5540555717795157
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 11,
+      "test_rmse": 0.9190573857212773
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 12,
+      "test_rmse": 0.7840657434289537
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 13,
+      "test_rmse": 0.6180149564905185
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 14,
+      "test_rmse": 0.6791125392994735
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 15,
+      "test_rmse": 0.8056530310152065
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 16,
+      "test_rmse": 0.6447666762968527
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 17,
+      "test_rmse": 0.8589930802084551
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 18,
+      "test_rmse": 0.9650644069334496
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 19,
+      "test_rmse": 0.6202454088107852
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 20,
+      "test_rmse": 0.622129173619367
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 21,
+      "test_rmse": 0.6700041512352223
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 22,
+      "test_rmse": 1.2585075556380325
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 23,
+      "test_rmse": 0.8199355729794666
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 24,
+      "test_rmse": 0.7419281971970734
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 25,
+      "test_rmse": 0.5485245350923278
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 26,
+      "test_rmse": 0.7471148459424536
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 27,
+      "test_rmse": 0.5091142569557285
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 28,
+      "test_rmse": 0.757373825982616
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 29,
+      "test_rmse": 0.9304784088262831
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 30,
+      "test_rmse": 0.6603118458646396
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 31,
+      "test_rmse": 0.7354953239533943
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 32,
+      "test_rmse": 1.0904140574578531
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 33,
+      "test_rmse": 0.6948617001241945
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 34,
+      "test_rmse": 0.7182784559595806
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 35,
+      "test_rmse": 0.5921474488274977
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 36,
+      "test_rmse": 0.5724996533271939
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 37,
+      "test_rmse": 0.48560990719419755
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 38,
+      "test_rmse": 0.4422258864958376
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 39,
+      "test_rmse": 0.6271478575997507
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 40,
+      "test_rmse": 0.4188278051101857
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 41,
+      "test_rmse": 0.5762186322481695
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 42,
+      "test_rmse": 0.3762712900509867
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 43,
+      "test_rmse": 0.5050476482136905
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 44,
+      "test_rmse": 0.7239139733114626
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 45,
+      "test_rmse": 0.6841215077809106
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 46,
+      "test_rmse": 0.5367376863179344
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 47,
+      "test_rmse": 0.49615564446168325
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 48,
+      "test_rmse": 0.4349512378981963
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 49,
+      "test_rmse": 0.7869137993480187
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 50,
+      "test_rmse": 0.47710307563523024
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 51,
+      "test_rmse": 0.6478999667042357
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 52,
+      "test_rmse": 0.5453825739838042
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 53,
+      "test_rmse": 0.5262921780466535
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 54,
+      "test_rmse": 0.4955374328357384
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 55,
+      "test_rmse": 0.6288649966794522
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 56,
+      "test_rmse": 0.6176501426614136
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 57,
+      "test_rmse": 0.42739586321860445
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 58,
+      "test_rmse": 0.4419608645347739
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 59,
+      "test_rmse": 0.6790748986427491
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 2024,
+      "cycle": 60,
+      "test_rmse": 0.4265578249678613
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 1,
+      "test_rmse": 1.551882518700965
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 2,
+      "test_rmse": 1.3954289580943757
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 3,
+      "test_rmse": 1.1254952481456655
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 4,
+      "test_rmse": 0.8998077005327189
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 5,
+      "test_rmse": 1.3279826485299004
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 6,
+      "test_rmse": 1.29179480942434
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 7,
+      "test_rmse": 1.4076394858550954
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 8,
+      "test_rmse": 1.4418476513103382
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 9,
+      "test_rmse": 1.1153288166430362
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 10,
+      "test_rmse": 1.4433783756611005
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 11,
+      "test_rmse": 1.1339283278982977
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 12,
+      "test_rmse": 0.7959330239742974
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 13,
+      "test_rmse": 0.7692918310381704
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 14,
+      "test_rmse": 1.2255733455302749
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 15,
+      "test_rmse": 1.084361741479036
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 16,
+      "test_rmse": 0.714646656120771
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 17,
+      "test_rmse": 0.9910191956657504
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 18,
+      "test_rmse": 1.4109543848694888
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 19,
+      "test_rmse": 1.4282124340073379
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 20,
+      "test_rmse": 1.0834419480207034
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 21,
+      "test_rmse": 1.059828338076471
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 22,
+      "test_rmse": 0.8091414676256742
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 23,
+      "test_rmse": 0.7834131798746642
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 24,
+      "test_rmse": 0.9223929228653497
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 25,
+      "test_rmse": 0.5874456196873518
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 26,
+      "test_rmse": 0.9008283535406796
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 27,
+      "test_rmse": 0.8067680303061089
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 28,
+      "test_rmse": 0.6837133835858542
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 29,
+      "test_rmse": 0.6420914733587497
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 30,
+      "test_rmse": 0.819236976350043
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 31,
+      "test_rmse": 0.9388601176639271
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 32,
+      "test_rmse": 0.5229052152728475
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 33,
+      "test_rmse": 0.7763085684750906
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 34,
+      "test_rmse": 0.5912219303811419
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 35,
+      "test_rmse": 0.5269830501161771
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 36,
+      "test_rmse": 0.7060993403011274
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 37,
+      "test_rmse": 0.6302637907581836
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 38,
+      "test_rmse": 0.6633740086640765
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 39,
+      "test_rmse": 0.6077396406226956
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 40,
+      "test_rmse": 0.7173348210881862
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 41,
+      "test_rmse": 0.7607868930540359
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 42,
+      "test_rmse": 0.533070534128801
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 43,
+      "test_rmse": 0.8111388833841326
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 44,
+      "test_rmse": 0.6108489945219001
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 45,
+      "test_rmse": 0.6085676529431404
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 46,
+      "test_rmse": 0.6368880539174904
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 47,
+      "test_rmse": 1.0766031548728519
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 48,
+      "test_rmse": 0.5178553340227112
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 49,
+      "test_rmse": 0.4449292566988876
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 50,
+      "test_rmse": 0.6438442298848545
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 51,
+      "test_rmse": 0.5149540462285639
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 52,
+      "test_rmse": 0.7258636662060154
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 53,
+      "test_rmse": 0.4397876766575727
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 54,
+      "test_rmse": 0.5098127212551774
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 55,
+      "test_rmse": 0.5903541291394829
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 56,
+      "test_rmse": 0.5114608550427334
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 57,
+      "test_rmse": 0.8314963102763622
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 58,
+      "test_rmse": 0.43707581059334155
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 59,
+      "test_rmse": 0.3833900028140138
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 7,
+      "cycle": 60,
+      "test_rmse": 0.4461649787038609
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 1,
+      "test_rmse": 1.1426413218131033
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 2,
+      "test_rmse": 1.2269314489220624
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 3,
+      "test_rmse": 1.2443044815675282
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 4,
+      "test_rmse": 1.3584683181415094
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 5,
+      "test_rmse": 1.23905101961208
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 6,
+      "test_rmse": 1.2215580033245468
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 7,
+      "test_rmse": 0.8864727715936589
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 8,
+      "test_rmse": 0.8838957853609883
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 9,
+      "test_rmse": 0.866989321778023
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 10,
+      "test_rmse": 0.7073074379130911
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 11,
+      "test_rmse": 1.3921908306084236
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 12,
+      "test_rmse": 2.084656469733086
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 13,
+      "test_rmse": 1.1304133173287398
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 14,
+      "test_rmse": 0.9488404588940476
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 15,
+      "test_rmse": 0.8160340404836132
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 16,
+      "test_rmse": 0.9071041583891706
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 17,
+      "test_rmse": 0.7085715741464084
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 18,
+      "test_rmse": 0.7950038981809399
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 19,
+      "test_rmse": 0.6742040063566259
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 20,
+      "test_rmse": 0.7069706162161056
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 21,
+      "test_rmse": 0.8607925311454477
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 22,
+      "test_rmse": 0.8753255542710228
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 23,
+      "test_rmse": 0.6390335338565489
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 24,
+      "test_rmse": 0.6500966883236914
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 25,
+      "test_rmse": 0.677240649916323
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 26,
+      "test_rmse": 0.6460838713042161
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 27,
+      "test_rmse": 0.6677997649271784
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 28,
+      "test_rmse": 0.7253620305038698
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 29,
+      "test_rmse": 0.8511680785526687
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 30,
+      "test_rmse": 0.8738080727805628
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 31,
+      "test_rmse": 0.6091319319010934
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 32,
+      "test_rmse": 0.6798881995674816
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 33,
+      "test_rmse": 0.7851480401848506
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 34,
+      "test_rmse": 0.7959763012597807
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 35,
+      "test_rmse": 0.7331576658036413
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 36,
+      "test_rmse": 0.794767169797993
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 37,
+      "test_rmse": 0.5894959538263008
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 38,
+      "test_rmse": 0.7724876668645
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 39,
+      "test_rmse": 0.8374221863376752
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 40,
+      "test_rmse": 0.6224108612014413
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 41,
+      "test_rmse": 0.5851631687036736
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 42,
+      "test_rmse": 0.8327106936924575
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 43,
+      "test_rmse": 0.6055807238846678
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 44,
+      "test_rmse": 0.456552557723816
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 45,
+      "test_rmse": 0.44161139364198904
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 46,
+      "test_rmse": 0.48068881939421115
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 47,
+      "test_rmse": 0.5641929996439841
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 48,
+      "test_rmse": 0.8511994767440032
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 49,
+      "test_rmse": 0.7505586210689674
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 50,
+      "test_rmse": 0.39424437735076584
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 51,
+      "test_rmse": 0.5352660968109697
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 52,
+      "test_rmse": 0.39358853746887285
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 53,
+      "test_rmse": 0.5477473211414685
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 54,
+      "test_rmse": 0.34291563056342295
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 55,
+      "test_rmse": 0.48862395673389636
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 56,
+      "test_rmse": 0.5712576013388552
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 57,
+      "test_rmse": 0.4304654103538106
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 58,
+      "test_rmse": 0.5952544063913204
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 59,
+      "test_rmse": 0.3760828540852964
+    },
+    {
+      "setting": "original",
+      "method": "Adaptive-FMQA",
+      "seed": 19,
+      "cycle": 60,
+      "test_rmse": 0.4718642980435389
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 1,
+      "test_rmse": 1.7441385385847983
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 2,
+      "test_rmse": 1.323476772832132
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 3,
+      "test_rmse": 1.4462385327794236
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 4,
+      "test_rmse": 1.66319358178669
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 5,
+      "test_rmse": 0.7787232987924295
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 6,
+      "test_rmse": 1.2815524489268375
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 7,
+      "test_rmse": 1.8976526108277336
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 8,
+      "test_rmse": 1.7942525516011425
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 9,
+      "test_rmse": 0.9576419108523705
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 10,
+      "test_rmse": 0.8905280027415714
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 11,
+      "test_rmse": 0.9210792300956997
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 12,
+      "test_rmse": 1.6174779104376518
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 13,
+      "test_rmse": 1.3812948833153211
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 14,
+      "test_rmse": 0.8464954963213038
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 15,
+      "test_rmse": 0.8398457968860209
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 16,
+      "test_rmse": 0.7796215356691335
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 17,
+      "test_rmse": 0.8659138715904269
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 18,
+      "test_rmse": 1.0441842983743919
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 19,
+      "test_rmse": 0.777173515749557
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 20,
+      "test_rmse": 1.1254937108938603
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 21,
+      "test_rmse": 0.714421275404898
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 22,
+      "test_rmse": 0.9376006012925681
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 23,
+      "test_rmse": 0.6998069724914872
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 24,
+      "test_rmse": 0.7363245120091075
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 25,
+      "test_rmse": 0.6049964360576362
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 26,
+      "test_rmse": 0.7486752281727393
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 27,
+      "test_rmse": 0.44458174039393383
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 28,
+      "test_rmse": 0.5234384881113324
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 29,
+      "test_rmse": 0.6326830933729429
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 30,
+      "test_rmse": 0.5203584654719727
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 31,
+      "test_rmse": 0.7432119032270335
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 32,
+      "test_rmse": 0.7370683089604656
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 33,
+      "test_rmse": 0.5879919635133142
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 34,
+      "test_rmse": 0.921116726683135
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 35,
+      "test_rmse": 0.6315681432498934
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 36,
+      "test_rmse": 0.6599469013271041
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 37,
+      "test_rmse": 0.9503827105783902
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 38,
+      "test_rmse": 0.6398608198086815
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 39,
+      "test_rmse": 0.44764730344250375
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 40,
+      "test_rmse": 0.6403129954017782
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 41,
+      "test_rmse": 0.6163159482458118
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 42,
+      "test_rmse": 0.6616326754302381
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 43,
+      "test_rmse": 0.5968011686490619
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 44,
+      "test_rmse": 0.6477904732787051
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 45,
+      "test_rmse": 1.0424454766583775
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 46,
+      "test_rmse": 0.6796488434841866
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 47,
+      "test_rmse": 0.6427578281001718
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 48,
+      "test_rmse": 0.6459551512965801
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 49,
+      "test_rmse": 0.7443744298350717
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 50,
+      "test_rmse": 0.6524518969004591
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 51,
+      "test_rmse": 0.408464832784282
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 52,
+      "test_rmse": 0.5436248858812704
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 53,
+      "test_rmse": 0.6647692608960061
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 54,
+      "test_rmse": 0.4986528648752694
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 55,
+      "test_rmse": 0.3965369880022783
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 56,
+      "test_rmse": 0.5198682436004644
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 57,
+      "test_rmse": 0.4774587390630336
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 58,
+      "test_rmse": 0.7293336145108137
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 59,
+      "test_rmse": 0.4768458039229103
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 42,
+      "cycle": 60,
+      "test_rmse": 0.4720728640160448
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 1,
+      "test_rmse": 1.258494351913125
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 2,
+      "test_rmse": 0.8371293437781329
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 3,
+      "test_rmse": 1.0697027955289855
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 4,
+      "test_rmse": 1.5892733339948504
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 5,
+      "test_rmse": 0.8733454940871984
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 6,
+      "test_rmse": 1.2119684284587964
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 7,
+      "test_rmse": 1.0450992923611768
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 8,
+      "test_rmse": 1.2115143697946529
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 9,
+      "test_rmse": 0.8609293905057143
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 10,
+      "test_rmse": 1.1156561192463728
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 11,
+      "test_rmse": 0.9778505527592039
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 12,
+      "test_rmse": 0.8872351050208414
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 13,
+      "test_rmse": 0.6674267738836516
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 14,
+      "test_rmse": 0.847581995263402
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 15,
+      "test_rmse": 1.1458856586133208
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 16,
+      "test_rmse": 0.9884752745355394
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 17,
+      "test_rmse": 0.8671425113773555
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 18,
+      "test_rmse": 0.6688813373224136
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 19,
+      "test_rmse": 0.7838827341751039
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 20,
+      "test_rmse": 1.808039331651474
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 21,
+      "test_rmse": 0.7813268212104775
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 22,
+      "test_rmse": 0.9773862612547511
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 23,
+      "test_rmse": 0.6758655835695332
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 24,
+      "test_rmse": 1.256468085060664
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 25,
+      "test_rmse": 0.546683046146375
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 26,
+      "test_rmse": 0.5050160083548567
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 27,
+      "test_rmse": 1.4552426429497085
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 28,
+      "test_rmse": 0.7162930703689935
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 29,
+      "test_rmse": 0.8605323525717566
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 30,
+      "test_rmse": 1.1191280279206388
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 31,
+      "test_rmse": 0.471442884397718
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 32,
+      "test_rmse": 1.0550566234144225
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 33,
+      "test_rmse": 0.9872297161918657
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 34,
+      "test_rmse": 0.594809660903003
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 35,
+      "test_rmse": 0.9903271789242986
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 36,
+      "test_rmse": 0.9479689532578096
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 37,
+      "test_rmse": 0.6487362470147358
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 38,
+      "test_rmse": 0.9800965961997348
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 39,
+      "test_rmse": 0.8302395374920436
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 40,
+      "test_rmse": 0.6315136910787399
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 41,
+      "test_rmse": 0.5581262610224446
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 42,
+      "test_rmse": 0.796276136706219
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 43,
+      "test_rmse": 0.5820767212709228
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 44,
+      "test_rmse": 0.8121214324882247
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 45,
+      "test_rmse": 0.4684131413102914
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 46,
+      "test_rmse": 0.5720275900810485
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 47,
+      "test_rmse": 0.7151007490518679
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 48,
+      "test_rmse": 0.5949605453695512
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 49,
+      "test_rmse": 0.5339348331307858
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 50,
+      "test_rmse": 0.3957307136266484
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 51,
+      "test_rmse": 0.4937344320528111
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 52,
+      "test_rmse": 0.5995887886477075
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 53,
+      "test_rmse": 0.6162725666381432
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 54,
+      "test_rmse": 0.44109917065156645
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 55,
+      "test_rmse": 0.5072033314613933
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 56,
+      "test_rmse": 0.6905984562324554
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 57,
+      "test_rmse": 0.45766444576436693
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 58,
+      "test_rmse": 0.6329468126525158
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 59,
+      "test_rmse": 1.0542178218647669
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 101,
+      "cycle": 60,
+      "test_rmse": 0.6090884349864569
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 1,
+      "test_rmse": 1.4962522445852198
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 2,
+      "test_rmse": 1.6396004149177
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 3,
+      "test_rmse": 1.540308331016505
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 4,
+      "test_rmse": 1.211102734870114
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 5,
+      "test_rmse": 1.252895078220955
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 6,
+      "test_rmse": 0.937635754253413
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 7,
+      "test_rmse": 1.195928676920858
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 8,
+      "test_rmse": 1.036407007764673
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 9,
+      "test_rmse": 1.3483850984767671
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 10,
+      "test_rmse": 1.119101628130136
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 11,
+      "test_rmse": 1.0301522890182089
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 12,
+      "test_rmse": 1.0244531861170276
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 13,
+      "test_rmse": 1.0226443436259132
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 14,
+      "test_rmse": 0.9676091075747796
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 15,
+      "test_rmse": 0.6452009896826048
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 16,
+      "test_rmse": 1.2254881636040282
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 17,
+      "test_rmse": 0.9121575252196152
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 18,
+      "test_rmse": 0.999890255503735
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 19,
+      "test_rmse": 0.6430251039024492
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 20,
+      "test_rmse": 0.6341523903969226
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 21,
+      "test_rmse": 1.0552171012387468
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 22,
+      "test_rmse": 1.2862412647571724
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 23,
+      "test_rmse": 0.8045798063615247
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 24,
+      "test_rmse": 0.8093292689641248
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 25,
+      "test_rmse": 1.058359056620557
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 26,
+      "test_rmse": 0.7239810736680463
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 27,
+      "test_rmse": 0.5061812125655916
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 28,
+      "test_rmse": 0.5840004597723991
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 29,
+      "test_rmse": 0.7468819574877736
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 30,
+      "test_rmse": 0.5380639538393337
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 31,
+      "test_rmse": 0.5794541569409676
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 32,
+      "test_rmse": 1.3893764729081786
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 33,
+      "test_rmse": 0.9772611535959675
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 34,
+      "test_rmse": 0.6467548674445961
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 35,
+      "test_rmse": 0.4301531874377172
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 36,
+      "test_rmse": 0.6308055946243293
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 37,
+      "test_rmse": 0.828285700360545
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 38,
+      "test_rmse": 0.5623804020710248
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 39,
+      "test_rmse": 0.8253210414419232
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 40,
+      "test_rmse": 0.37921914819189206
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 41,
+      "test_rmse": 0.6649008441597067
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 42,
+      "test_rmse": 0.4286508572277006
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 43,
+      "test_rmse": 0.7320215662664183
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 44,
+      "test_rmse": 0.5825852515552942
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 45,
+      "test_rmse": 0.5004815319979584
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 46,
+      "test_rmse": 0.6396328577382189
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 47,
+      "test_rmse": 0.795336114105649
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 48,
+      "test_rmse": 0.47469767395467183
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 49,
+      "test_rmse": 0.5076501189643506
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 50,
+      "test_rmse": 0.43439649316877665
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 51,
+      "test_rmse": 0.6200591517972492
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 52,
+      "test_rmse": 0.5575291784548924
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 53,
+      "test_rmse": 0.3585616615562657
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 54,
+      "test_rmse": 0.6072291226260091
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 55,
+      "test_rmse": 0.7275842359290517
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 56,
+      "test_rmse": 0.5330450573854596
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 57,
+      "test_rmse": 0.4330564960592408
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 58,
+      "test_rmse": 0.4917462938822444
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 59,
+      "test_rmse": 0.38578577713534523
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 2024,
+      "cycle": 60,
+      "test_rmse": 0.5925272252787024
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 1,
+      "test_rmse": 1.551882518700965
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 2,
+      "test_rmse": 1.5876739470064163
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 3,
+      "test_rmse": 1.136601751517943
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 4,
+      "test_rmse": 1.142179497151532
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 5,
+      "test_rmse": 1.334650539755546
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 6,
+      "test_rmse": 1.270069537327884
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 7,
+      "test_rmse": 0.9416925236236758
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 8,
+      "test_rmse": 1.2256884512370207
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 9,
+      "test_rmse": 1.040855762806261
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 10,
+      "test_rmse": 1.4815364881277642
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 11,
+      "test_rmse": 1.1395056247694322
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 12,
+      "test_rmse": 0.7872782315901679
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 13,
+      "test_rmse": 0.7756890774252504
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 14,
+      "test_rmse": 0.8967226287798187
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 15,
+      "test_rmse": 1.5824175411855386
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 16,
+      "test_rmse": 0.7260528891687724
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 17,
+      "test_rmse": 1.176772444310389
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 18,
+      "test_rmse": 1.1004588302711817
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 19,
+      "test_rmse": 1.1058085976019356
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 20,
+      "test_rmse": 1.0985462324867057
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 21,
+      "test_rmse": 0.6817248821164082
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 22,
+      "test_rmse": 1.1639892122533098
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 23,
+      "test_rmse": 0.7860742657793083
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 24,
+      "test_rmse": 0.83604991652584
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 25,
+      "test_rmse": 0.6070773383382727
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 26,
+      "test_rmse": 1.3774802204547394
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 27,
+      "test_rmse": 0.821254090485772
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 28,
+      "test_rmse": 0.567299296143412
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 29,
+      "test_rmse": 0.5253779990661834
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 30,
+      "test_rmse": 0.5374470458013255
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 31,
+      "test_rmse": 0.7665024609459831
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 32,
+      "test_rmse": 0.33857888426956256
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 33,
+      "test_rmse": 0.6442270096877777
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 34,
+      "test_rmse": 0.5222241102080234
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 35,
+      "test_rmse": 0.542680273122005
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 36,
+      "test_rmse": 1.2077821992349689
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 37,
+      "test_rmse": 0.648172047819902
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 38,
+      "test_rmse": 0.5564994638749413
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 39,
+      "test_rmse": 0.676991927991569
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 40,
+      "test_rmse": 0.7358184152841531
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 41,
+      "test_rmse": 0.6371766964361575
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 42,
+      "test_rmse": 0.49701919236074527
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 43,
+      "test_rmse": 0.7385827760161082
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 44,
+      "test_rmse": 0.6728228632313871
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 45,
+      "test_rmse": 0.5764973486252819
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 46,
+      "test_rmse": 0.8243965796331472
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 47,
+      "test_rmse": 1.1357928458625255
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 48,
+      "test_rmse": 0.5574759512533325
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 49,
+      "test_rmse": 0.5074547341698061
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 50,
+      "test_rmse": 0.9291939498140186
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 51,
+      "test_rmse": 0.5161868790383951
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 52,
+      "test_rmse": 0.6570185740487267
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 53,
+      "test_rmse": 0.8472424998308772
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 54,
+      "test_rmse": 0.6023846328665557
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 55,
+      "test_rmse": 0.45549331929368186
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 56,
+      "test_rmse": 0.7717968900598113
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 57,
+      "test_rmse": 1.1692953370015808
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 58,
+      "test_rmse": 0.6394218071174468
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 59,
+      "test_rmse": 0.6446327902376845
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 7,
+      "cycle": 60,
+      "test_rmse": 0.8233072882481679
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 1,
+      "test_rmse": 1.1426413218131033
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 2,
+      "test_rmse": 1.4251732938793804
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 3,
+      "test_rmse": 1.2041237550342871
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 4,
+      "test_rmse": 1.3218846386137353
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 5,
+      "test_rmse": 1.3239205429894556
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 6,
+      "test_rmse": 1.0910865057680357
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 7,
+      "test_rmse": 1.0507114157301323
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 8,
+      "test_rmse": 1.125141493014023
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 9,
+      "test_rmse": 1.3156843841187864
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 10,
+      "test_rmse": 1.0150016390201468
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 11,
+      "test_rmse": 1.4574045952389618
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 12,
+      "test_rmse": 1.3212375003907364
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 13,
+      "test_rmse": 0.8746197266868535
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 14,
+      "test_rmse": 1.2383281096284788
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 15,
+      "test_rmse": 1.5354939344555487
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 16,
+      "test_rmse": 0.8915093361077517
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 17,
+      "test_rmse": 0.7324567895188421
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 18,
+      "test_rmse": 0.6180736261518112
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 19,
+      "test_rmse": 0.7775393504232293
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 20,
+      "test_rmse": 0.6894543618618516
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 21,
+      "test_rmse": 1.0736345533247897
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 22,
+      "test_rmse": 0.6387906896632934
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 23,
+      "test_rmse": 0.4904514501217323
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 24,
+      "test_rmse": 0.8359545106072745
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 25,
+      "test_rmse": 0.8644074462640887
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 26,
+      "test_rmse": 0.6076300115517705
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 27,
+      "test_rmse": 0.8021020706396866
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 28,
+      "test_rmse": 0.9827941441613263
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 29,
+      "test_rmse": 0.7457525873708633
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 30,
+      "test_rmse": 0.8861779463603893
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 31,
+      "test_rmse": 0.6301153041379931
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 32,
+      "test_rmse": 0.7785140547904604
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 33,
+      "test_rmse": 0.5297650345394939
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 34,
+      "test_rmse": 1.025355432517867
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 35,
+      "test_rmse": 0.516427846138564
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 36,
+      "test_rmse": 0.7535737700134176
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 37,
+      "test_rmse": 0.7651048502299327
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 38,
+      "test_rmse": 0.8557084263866499
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 39,
+      "test_rmse": 0.5403131714075596
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 40,
+      "test_rmse": 0.4381520837759351
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 41,
+      "test_rmse": 0.6775237806990344
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 42,
+      "test_rmse": 0.6930591290719575
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 43,
+      "test_rmse": 0.5974772776085636
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 44,
+      "test_rmse": 0.4551615448250241
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 45,
+      "test_rmse": 0.6039406107396452
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 46,
+      "test_rmse": 0.5121022778346838
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 47,
+      "test_rmse": 0.8233024638836156
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 48,
+      "test_rmse": 0.8691889237784775
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 49,
+      "test_rmse": 0.9226063274868577
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 50,
+      "test_rmse": 0.976695019665401
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 51,
+      "test_rmse": 0.6249723158296814
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 52,
+      "test_rmse": 0.6622286974895399
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 53,
+      "test_rmse": 0.9254790137452129
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 54,
+      "test_rmse": 0.5039285995031538
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 55,
+      "test_rmse": 0.7021616861706955
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 56,
+      "test_rmse": 0.5038589564411601
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 57,
+      "test_rmse": 0.5496327619667697
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 58,
+      "test_rmse": 0.784534080680815
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 59,
+      "test_rmse": 0.43993420998935645
+    },
+    {
+      "setting": "original",
+      "method": "LargePenalty-FMQA",
+      "seed": 19,
+      "cycle": 60,
+      "test_rmse": 0.7055732847488095
+    }
+  ]
+}

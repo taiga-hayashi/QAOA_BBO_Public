@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "evaluator_and_classical_encoding_only",
+  "protocol_sha256": "87ff4827128c0745a6b881a2d5dccbc22c61b528e1e1cf2706bc56c0dc856295",
+  "checked_candidates": 192,
+  "canonical_patterns_checked": 192,
+  "parity_errors": [],
+  "unit_test_exit_code": 0,
+  "unit_test_log": "md/evaluator_validation.log",
+  "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "all_reference_values_matched_exactly_as_python_float": true,
+  "qaoa_prevalidation_performed": false,
+  "fm_training_performed": false,
+  "bbo_performed": false
+}

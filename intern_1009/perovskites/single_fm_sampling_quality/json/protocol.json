@@ -1,0 +1,37 @@
+{
+  "status": "ready",
+  "scope": "one_fixed_FM_sampling_quality_reanalysis; no new training/sampling/BBO",
+  "model_seed": 42,
+  "model": "rank1 AdamW wd0.01 lr0.1 120epochs,initial10 original20 prefix",
+  "source": "intern_1009/perovskites/large_penalty_diagnostic/json/fixed_seed42.json",
+  "source_sha256": "0c54bfbec65b563a3be8155cd35a18ff034d70d01ce5aaac4a1b5213a1627687",
+  "checkpoint_source": "intern_1009/perovskites/large_penalty_diagnostic/data/checkpoints/fixed_seed42.pt",
+  "checkpoint_sha256": "9dcf0b1e0f6f76ae5c5d6e0e27cae95fa85561163a31d3438bb92ff42a29e7c0",
+  "alphas": [
+    1,
+    3,
+    10,
+    100,
+    1000,
+    10000,
+    1000000
+  ],
+  "schedule": "auto only: geometric Neal beta range peralpha,1000sweeps",
+  "samples": "10 separately seeded batches x100reads peralpha,1000raw outputs peralpha,7000total; reuse completed measured outputs",
+  "sampling_seed": "42*100000+rep*1000+17,rep0..9 paired acrossalpha",
+  "selection": "canonical lowest base-FM unseen feasible unique max1,training10 excluded,no refill",
+  "metrics": [
+    "raw feasible fraction",
+    "unseen raw fraction",
+    "pooled unseen sample mean FM gap to exact unseen minimum",
+    "pooled unseen sample median andIQR gap",
+    "100read batch selected gap median/IQR",
+    "100read batch unseen FM minimum capture frequency",
+    "pooled and perbatch unique unseen count",
+    "pooled unseen empirical frequency andgapCDF",
+    "effective unseen diversity exp Shannon entropy"
+  ],
+  "stats": "singlemodel not population ofFM; 10batches are sampling repetitions, median/IQR acrossbatches; raw sample CDF descriptive not independent draws. Paired alpha-minus100 batch feasible fraction/selected gap/mean unseen gap,6x3=18 two-sided Wilcoxon Bonferroni,missing retained,allzero p1; tests conditional on chosenFM only",
+  "prevalidation": "inherited source FM/QUBO/N6/N9/N23 verification hashes unchanged; copiedraw/model SHA; all70used batches checkpoint FM predictions+canonical raw filters verified before reporting",
+  "limits": "Seed42 chosen as declared default before inspecting singlemodel metrics; already explored lookup,oneFM cannot generalize acrossmodels; auto temperature varies withalpha,not penalty-only at fixed beta; no QAOA/XY rerun"
+}

@@ -1,0 +1,2475 @@
+{
+  "scope": "fixed_model_candidate_generation_diagnostic_not_closed_loop_bbo",
+  "protocol_sha256": "5d8ea321e6db79b6019e3e193838926a4fb0d0e8650221dc075a2491160650e4",
+  "planned_seed_count": 5,
+  "completed_seed_count": 5,
+  "failed_or_missing_seeds": [],
+  "methods": {
+    "Adaptive-FMQA": {
+      "empirical_raw_feasible_rate": {
+        "n": 5,
+        "median": 0.998,
+        "q25": 0.96,
+        "q75": 1.0
+      },
+      "raw_unseen_feasible_fraction": {
+        "n": 5,
+        "median": 0.981,
+        "q25": 0.95,
+        "q75": 0.983
+      },
+      "accepted_count": {
+        "n": 5,
+        "median": 5.0,
+        "q25": 5.0,
+        "q75": 5.0
+      },
+      "unused_new_bb_budget": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "normalized_regret_initial_plus_proposals": {
+        "n": 5,
+        "median": 0.05667493176088179,
+        "q25": 0.0043131289979789055,
+        "q75": 0.06536369887275228
+      },
+      "best_initial_plus_proposals": {
+        "n": 5,
+        "median": 1.7969,
+        "q25": 1.5456,
+        "q75": 1.8386
+      },
+      "proposal_best_hse_gap": {
+        "n": 5,
+        "median": 2.4574,
+        "q25": 1.7969,
+        "q75": 2.5629
+      },
+      "empirical_conditional_unseen_mean_true_gap": {
+        "n": 5,
+        "median": 2.9192916581892168,
+        "q25": 2.8950519877675864,
+        "q75": 3.053642631578946
+      },
+      "generation_seconds": {
+        "n": 5,
+        "median": 0.21180487499805167,
+        "q25": 0.1903310419875197,
+        "q75": 0.2708835839875974
+      },
+      "initial_duplicate_fraction": {
+        "n": 5,
+        "median": 0.015,
+        "q25": 0.01,
+        "q75": 0.019
+      },
+      "within_unseen_pool_duplicate_fraction": {
+        "n": 5,
+        "median": 0.886,
+        "q25": 0.856,
+        "q75": 0.911
+      },
+      "exact_feasible_probability": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "exact_unseen_feasible_probability": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "exact_conditional_unseen_expected_true_gap": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "failed_or_missing_runs": 0
+    },
+    "LargePenalty-FMQA": {
+      "empirical_raw_feasible_rate": {
+        "n": 5,
+        "median": 1.0,
+        "q25": 1.0,
+        "q75": 1.0
+      },
+      "raw_unseen_feasible_fraction": {
+        "n": 5,
+        "median": 0.895,
+        "q25": 0.894,
+        "q75": 0.902
+      },
+      "accepted_count": {
+        "n": 5,
+        "median": 5.0,
+        "q25": 5.0,
+        "q75": 5.0
+      },
+      "unused_new_bb_budget": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "normalized_regret_initial_plus_proposals": {
+        "n": 5,
+        "median": 0.05667493176088179,
+        "q25": 0.0043131289979789055,
+        "q75": 0.06536369887275228
+      },
+      "best_initial_plus_proposals": {
+        "n": 5,
+        "median": 1.7969,
+        "q25": 1.5456,
+        "q75": 1.8386
+      },
+      "proposal_best_hse_gap": {
+        "n": 5,
+        "median": 2.4574,
+        "q25": 1.7969,
+        "q75": 2.5629
+      },
+      "empirical_conditional_unseen_mean_true_gap": {
+        "n": 5,
+        "median": 3.3007044101433283,
+        "q25": 3.2753942696629235,
+        "q75": 3.307205698324023
+      },
+      "generation_seconds": {
+        "n": 5,
+        "median": 0.1450947080156766,
+        "q25": 0.14370745798805729,
+        "q75": 0.17120020801667124
+      },
+      "initial_duplicate_fraction": {
+        "n": 5,
+        "median": 0.105,
+        "q25": 0.098,
+        "q75": 0.106
+      },
+      "within_unseen_pool_duplicate_fraction": {
+        "n": 5,
+        "median": 0.724,
+        "q25": 0.723,
+        "q75": 0.731
+      },
+      "exact_feasible_probability": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "exact_unseen_feasible_probability": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "exact_conditional_unseen_expected_true_gap": {
+        "n": 0,
+        "median": null,
+        "q25": null,
+        "q75": null
+      },
+      "failed_or_missing_runs": 0
+    },
+    "Penalty-FMQAOA": {
+      "empirical_raw_feasible_rate": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "raw_unseen_feasible_fraction": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "accepted_count": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "unused_new_bb_budget": {
+        "n": 5,
+        "median": 5.0,
+        "q25": 5.0,
+        "q75": 5.0
+      },
+      "normalized_regret_initial_plus_proposals": {
+        "n": 5,
+        "median": 0.06536369887275228,
+        "q25": 0.0043131289979789055,
+        "q75": 0.08003250474027464
+      },
+      "best_initial_plus_proposals": {
+        "n": 5,
+        "median": 1.8386,
+        "q25": 1.5456,
+        "q75": 1.909
+      },
+      "proposal_best_hse_gap": {
+        "n": 1,
+        "median": 1.5456,
+        "q25": 1.5456,
+        "q75": 1.5456
+      },
+      "empirical_conditional_unseen_mean_true_gap": {
+        "n": 1,
+        "median": 1.5456,
+        "q25": 1.5456,
+        "q75": 1.5456
+      },
+      "generation_seconds": {
+        "n": 5,
+        "median": 43.989514374989085,
+        "q25": 43.358107374981046,
+        "q75": 46.41119274997618
+      },
+      "initial_duplicate_fraction": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "within_unseen_pool_duplicate_fraction": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "exact_feasible_probability": {
+        "n": 5,
+        "median": 4.8109516218725884e-05,
+        "q25": 4.744633660474835e-05,
+        "q75": 4.811927598981245e-05
+      },
+      "exact_unseen_feasible_probability": {
+        "n": 5,
+        "median": 4.303375299556943e-05,
+        "q25": 4.2519880250404824e-05,
+        "q75": 4.305220116726779e-05
+      },
+      "exact_conditional_unseen_expected_true_gap": {
+        "n": 5,
+        "median": 3.341176462323632,
+        "q25": 3.3294017928402067,
+        "q75": 3.3955818875335853
+      },
+      "failed_or_missing_runs": 0
+    },
+    "XY-FMQAOA": {
+      "empirical_raw_feasible_rate": {
+        "n": 5,
+        "median": 1.0,
+        "q25": 1.0,
+        "q75": 1.0
+      },
+      "raw_unseen_feasible_fraction": {
+        "n": 5,
+        "median": 0.901,
+        "q25": 0.891,
+        "q75": 0.902
+      },
+      "accepted_count": {
+        "n": 5,
+        "median": 5.0,
+        "q25": 5.0,
+        "q75": 5.0
+      },
+      "unused_new_bb_budget": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "normalized_regret_initial_plus_proposals": {
+        "n": 5,
+        "median": 0.05667493176088179,
+        "q25": 0.0043131289979789055,
+        "q75": 0.06536369887275228
+      },
+      "best_initial_plus_proposals": {
+        "n": 5,
+        "median": 1.7969,
+        "q25": 1.5456,
+        "q75": 1.8386
+      },
+      "proposal_best_hse_gap": {
+        "n": 5,
+        "median": 2.3986,
+        "q25": 1.7969,
+        "q75": 2.5629
+      },
+      "empirical_conditional_unseen_mean_true_gap": {
+        "n": 5,
+        "median": 3.2903261503928154,
+        "q25": 3.2858223344556676,
+        "q75": 3.2954620842572075
+      },
+      "generation_seconds": {
+        "n": 5,
+        "median": 47.31469725002535,
+        "q25": 46.6692423329805,
+        "q75": 48.844913791981526
+      },
+      "initial_duplicate_fraction": {
+        "n": 5,
+        "median": 0.099,
+        "q25": 0.098,
+        "q75": 0.109
+      },
+      "within_unseen_pool_duplicate_fraction": {
+        "n": 5,
+        "median": 0.734,
+        "q25": 0.731,
+        "q75": 0.738
+      },
+      "exact_feasible_probability": {
+        "n": 5,
+        "median": 1.0000000000000029,
+        "q25": 1.0000000000000027,
+        "q75": 1.0000000000000049
+      },
+      "exact_unseen_feasible_probability": {
+        "n": 5,
+        "median": 0.8945749781205745,
+        "q25": 0.8791236781436041,
+        "q75": 0.894879588712431
+      },
+      "exact_conditional_unseen_expected_true_gap": {
+        "n": 5,
+        "median": 3.286140665110506,
+        "q25": 3.267894627096101,
+        "q75": 3.2977599576120706
+      },
+      "failed_or_missing_runs": 0
+    }
+  },
+  "fm_quality": {
+    "train_rmse": {
+      "n": 5,
+      "median": 0.008368455398800457,
+      "q25": 0.004703128604950009,
+      "q75": 0.010047473405205223
+    },
+    "test_rmse": {
+      "n": 5,
+      "median": 1.4962522445852198,
+      "q25": 1.258494351913125,
+      "q75": 1.551882518700965
+    },
+    "test_spearman": {
+      "n": 5,
+      "median": 0.4155295912778987,
+      "q25": 0.33462591335022623,
+      "q75": 0.5973063945272842
+    }
+  },
+  "paired_tests": [
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "LargePenalty-FMQA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -0.0020000000000000018
+        ],
+        [
+          101,
+          -0.17500000000000004
+        ],
+        [
+          2024,
+          -0.040000000000000036
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -0.0020000000000000018,
+        "q25": -0.040000000000000036,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 0.25,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.998
+        ],
+        [
+          101,
+          0.824
+        ],
+        [
+          2024,
+          0.96
+        ],
+        [
+          7,
+          1.0
+        ],
+        [
+          19,
+          1.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.998,
+        "q25": 0.96,
+        "q75": 1.0
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -0.0020000000000000018
+        ],
+        [
+          101,
+          -0.17500000000000004
+        ],
+        [
+          2024,
+          -0.040000000000000036
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -0.0020000000000000018,
+        "q25": -0.040000000000000036,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 0.25,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          1.0
+        ],
+        [
+          101,
+          0.999
+        ],
+        [
+          2024,
+          1.0
+        ],
+        [
+          7,
+          1.0
+        ],
+        [
+          19,
+          1.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 1.0,
+        "q25": 1.0,
+        "q75": 1.0
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "empirical_raw_feasible_rate",
+      "first_minus_second": [
+        "Penalty-FMQAOA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -1.0
+        ],
+        [
+          101,
+          -0.999
+        ],
+        [
+          2024,
+          -1.0
+        ],
+        [
+          7,
+          -1.0
+        ],
+        [
+          19,
+          -1.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -1.0,
+        "q25": -1.0,
+        "q75": -1.0
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "LargePenalty-FMQA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          -0.023357572979392845
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          -0.023357572979392845
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          0.0
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "normalized_regret_initial_plus_proposals",
+      "first_minus_second": [
+        "Penalty-FMQAOA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.0
+        ],
+        [
+          101,
+          0.0
+        ],
+        [
+          2024,
+          0.0
+        ],
+        [
+          7,
+          0.023357572979392845
+        ],
+        [
+          19,
+          0.0
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.0,
+        "q25": 0.0,
+        "q75": 0.0
+      },
+      "wilcoxon_two_sided_p": 1.0,
+      "bonferroni_p_six_pairs": 1,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "LargePenalty-FMQA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          0.046623583999462426
+        ],
+        [
+          101,
+          0.13828729203669354
+        ],
+        [
+          2024,
+          0.04060466698138043
+        ],
+        [
+          7,
+          0.1257888759719208
+        ],
+        [
+          19,
+          0.05069595901295543
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": 0.05069595901295543,
+        "q25": 0.046623583999462426,
+        "q75": 0.1257888759719208
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -43.13491016597254
+        ],
+        [
+          101,
+          -48.244530542055145
+        ],
+        [
+          2024,
+          -43.77770949999103
+        ],
+        [
+          7,
+          -43.08722379099345
+        ],
+        [
+          19,
+          -46.237718332966324
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -43.77770949999103,
+        "q25": -46.237718332966324,
+        "q75": -43.13491016597254
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "Adaptive-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -45.20974295801716
+        ],
+        [
+          101,
+          -48.96778204198927
+        ],
+        [
+          2024,
+          -48.633108916983474
+        ],
+        [
+          7,
+          -47.04381366603775
+        ],
+        [
+          19,
+          -46.495767915970646
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -47.04381366603775,
+        "q25": -48.633108916983474,
+        "q75": -46.495767915970646
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "Penalty-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -43.181533749972004
+        ],
+        [
+          101,
+          -48.38281783409184
+        ],
+        [
+          2024,
+          -43.818314166972414
+        ],
+        [
+          7,
+          -43.21301266696537
+        ],
+        [
+          19,
+          -46.28841429197928
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -43.818314166972414,
+        "q25": -46.28841429197928,
+        "q75": -43.21301266696537
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "LargePenalty-FMQA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -45.25636654201662
+        ],
+        [
+          101,
+          -49.10606933402596
+        ],
+        [
+          2024,
+          -48.673713583964854
+        ],
+        [
+          7,
+          -47.16960254200967
+        ],
+        [
+          19,
+          -46.5464638749836
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -47.16960254200967,
+        "q25": -48.673713583964854,
+        "q75": -46.5464638749836
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    },
+    {
+      "metric": "generation_seconds",
+      "first_minus_second": [
+        "Penalty-FMQAOA",
+        "XY-FMQAOA"
+      ],
+      "n_pairs": 5,
+      "seed_differences": [
+        [
+          42,
+          -2.0748327920446172
+        ],
+        [
+          101,
+          -0.723251499934122
+        ],
+        [
+          2024,
+          -4.855399416992441
+        ],
+        [
+          7,
+          -3.956589875044301
+        ],
+        [
+          19,
+          -0.2580495830043219
+        ]
+      ],
+      "difference_summary": {
+        "n": 5,
+        "median": -2.0748327920446172,
+        "q25": -3.956589875044301,
+        "q75": -0.723251499934122
+      },
+      "wilcoxon_two_sided_p": 0.0625,
+      "bonferroni_p_six_pairs": 0.375,
+      "power_note": "five-pair pilot; do not infer equivalence or general superiority from nonsignificance"
+    }
+  ],
+  "per_seed": [
+    {
+      "seed": 42,
+      "status": "completed",
+      "fm_quality": {
+        "train_count": 20,
+        "test_count": 172,
+        "train_rmse": 0.010047473405205223,
+        "test_rmse": 1.7441385385847983,
+        "test_spearman": 0.33462591335022623,
+        "offline_reference_evaluations_not_solver_bb_budget": 192,
+        "all_candidate_predictions": [
+          2.561542224138975,
+          3.2296570539474487,
+          2.8472505807876587,
+          3.780946046113968,
+          1.8908238410949707,
+          2.5127002596855164,
+          2.6151251792907715,
+          3.0170505940914154,
+          3.273348815739155,
+          4.377872467041016,
+          5.386337339878082,
+          5.086688548326492,
+          4.840716321021318,
+          3.0816186368465424,
+          2.2406637966632843,
+          2.408588171005249,
+          5.038403011858463,
+          3.2330669164657593,
+          2.8769434690475464,
+          2.513097792863846,
+          4.933453306555748,
+          3.610764443874359,
+          4.160680949687958,
+          3.0952610671520233,
+          5.553368974477053,
+          3.012593924999237,
+          0.7554776072502136,
+          2.005966991186142,
+          4.918247796595097,
+          2.331234335899353,
+          0.5589494109153748,
+          1.2776687443256378,
+          2.868580922484398,
+          0.7642146944999695,
+          -0.10203027725219727,
+          -0.08488515019416809,
+          5.91032868809998,
+          3.4538609981536865,
+          1.0744972229003906,
+          2.496371179819107,
+          5.1238633301109076,
+          2.621157228946686,
+          0.7266248464584351,
+          1.6167287528514862,
+          2.966207740828395,
+          0.9461488723754883,
+          -0.04234355688095093,
+          0.14618614315986633,
+          1.865464050322771,
+          1.4062715768814087,
+          2.11331045627594,
+          1.326615184545517,
+          2.7403034940361977,
+          2.2348726093769073,
+          3.4267428815364838,
+          2.1082775592803955,
+          4.936861053109169,
+          4.914077401161194,
+          7.011987626552582,
+          4.99194809794426,
+          4.121615907177329,
+          2.165904402732849,
+          0.43956565856933594,
+          1.43428435921669,
+          3.6457323525100946,
+          1.6437824368476868,
+          0.40227508544921875,
+          0.8652237355709076,
+          2.440188543871045,
+          0.9208858609199524,
+          0.5854184627532959,
+          0.34679290652275085,
+          4.382677588611841,
+          2.290079176425934,
+          0.9386444687843323,
+          1.4702363908290863,
+          4.307243846356869,
+          2.1684070229530334,
+          1.301803708076477,
+          1.3016255795955658,
+          3.4808768332004547,
+          1.8246872425079346,
+          1.8641238808631897,
+          1.1623715460300446,
+          3.459051202982664,
+          2.1868355870246887,
+          2.8726651072502136,
+          1.6907449662685394,
+          4.740877479314804,
+          3.4224234521389008,
+          4.593084365129471,
+          2.8793941736221313,
+          6.592155106365681,
+          5.7563483119010925,
+          7.833049178123474,
+          5.417784780263901,
+          5.403954312205315,
+          3.5280544757843018,
+          1.5266473889350891,
+          2.8505750596523285,
+          4.645054791122675,
+          2.722916543483734,
+          1.2063408493995667,
+          1.9984984695911407,
+          3.1531709246337414,
+          1.7136799097061157,
+          1.1031441688537598,
+          1.1937275826931,
+          2.6518253311514854,
+          2.1964138373732567,
+          1.7159267291426659,
+          2.1755176708102226,
+          2.4832139126956463,
+          1.9815640076994896,
+          1.985908292233944,
+          1.9137291833758354,
+          3.309130299836397,
+          3.2901276275515556,
+          4.2005118653178215,
+          3.426758550107479,
+          3.3320618830621243,
+          2.3383427262306213,
+          3.4468830227851868,
+          1.965021699666977,
+          4.83882711827755,
+          3.798869550228119,
+          5.3922412395477295,
+          3.3786098659038544,
+          7.288407139480114,
+          6.731096804141998,
+          9.23050844669342,
+          6.515302866697311,
+          3.7242073602974415,
+          2.549668937921524,
+          2.1299628615379333,
+          2.1566268503665924,
+          3.9853379651904106,
+          2.7645611315965652,
+          2.8296864479780197,
+          2.3245803862810135,
+          4.5977567583322525,
+          3.8596271574497223,
+          4.830792427062988,
+          3.624112159013748,
+          2.4166981913149357,
+          2.4400479793548584,
+          3.3094924092292786,
+          2.600383847951889,
+          3.181375704705715,
+          3.15848708152771,
+          4.512762904167175,
+          3.2718842923641205,
+          5.755969792604446,
+          6.215728402137756,
+          8.476044178009033,
+          6.5335913598537445,
+          4.106781367212534,
+          2.467586576938629,
+          1.838395595550537,
+          1.8459883630275726,
+          4.427422218024731,
+          2.741989016532898,
+          2.597629427909851,
+          2.0734521448612213,
+          4.614463210105896,
+          3.4116772413253784,
+          4.173357605934143,
+          2.9476061165332794,
+          2.9451067205518484,
+          2.1444617826491594,
+          1.193487698212266,
+          1.9688156861811876,
+          2.544590689241886,
+          1.6977073401212692,
+          1.231564648449421,
+          1.4751225858926773,
+          2.690670669078827,
+          2.326434552669525,
+          2.7663318142294884,
+          2.308315545320511,
+          3.6613388769328594,
+          2.0482526645064354,
+          1.5571219250559807,
+          1.4334543272852898,
+          4.089392997324467,
+          2.4300683736801147,
+          2.423769026994705,
+          1.768331378698349,
+          4.446257397532463,
+          3.2695800065994263,
+          4.169320613145828,
+          2.812308758497238
+        ]
+      },
+      "methods": {
+        "Adaptive-FMQA": {
+          "empirical_raw_feasible_rate": 0.998,
+          "raw_unseen_feasible_fraction": 0.983,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.09636822036546998,
+          "best_initial_plus_proposals": 1.9874,
+          "proposal_best_hse_gap": 2.4574,
+          "empirical_conditional_unseen_mean_true_gap": 2.9192916581892168,
+          "generation_seconds": 0.1903310419875197,
+          "initial_duplicate_fraction": 0.015,
+          "within_unseen_pool_duplicate_fraction": 0.886,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "LargePenalty-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.894,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.09636822036546998,
+          "best_initial_plus_proposals": 1.9874,
+          "proposal_best_hse_gap": 2.4574,
+          "empirical_conditional_unseen_mean_true_gap": 3.256589038031318,
+          "generation_seconds": 0.14370745798805729,
+          "initial_duplicate_fraction": 0.106,
+          "within_unseen_pool_duplicate_fraction": 0.723,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "Penalty-FMQAOA": {
+          "empirical_raw_feasible_rate": 0.0,
+          "raw_unseen_feasible_fraction": 0.0,
+          "accepted_count": 0,
+          "unused_new_bb_budget": 5,
+          "normalized_regret_initial_plus_proposals": 0.09636822036546998,
+          "best_initial_plus_proposals": 1.9874,
+          "proposal_best_hse_gap": null,
+          "empirical_conditional_unseen_mean_true_gap": null,
+          "generation_seconds": 43.32524120796006,
+          "initial_duplicate_fraction": 0.0,
+          "within_unseen_pool_duplicate_fraction": 0.0,
+          "exact_feasible_probability": 4.8109516218725884e-05,
+          "exact_unseen_feasible_probability": 4.305220116726779e-05,
+          "exact_conditional_unseen_expected_true_gap": 3.3294017928402067
+        },
+        "XY-FMQAOA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.891,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.09636822036546998,
+          "best_initial_plus_proposals": 1.9874,
+          "proposal_best_hse_gap": 2.3986,
+          "empirical_conditional_unseen_mean_true_gap": 3.2903261503928154,
+          "generation_seconds": 45.40007400000468,
+          "initial_duplicate_fraction": 0.109,
+          "within_unseen_pool_duplicate_fraction": 0.734,
+          "exact_feasible_probability": 1.0000000000000013,
+          "exact_unseen_feasible_probability": 0.875456929418893,
+          "exact_conditional_unseen_expected_true_gap": 3.2458115715353664
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "status": "completed",
+      "fm_quality": {
+        "train_count": 20,
+        "test_count": 172,
+        "train_rmse": 0.0030669998945858793,
+        "test_rmse": 1.258494351913125,
+        "test_spearman": 0.5973063945272842,
+        "offline_reference_evaluations_not_solver_bb_budget": 192,
+        "all_candidate_predictions": [
+          3.081616997718811,
+          2.5886036455631256,
+          2.5077346563339233,
+          2.0034193098545074,
+          2.7326963245868683,
+          2.287122502923012,
+          2.245768129825592,
+          1.730643779039383,
+          3.271987721323967,
+          2.9497741386294365,
+          3.09909275919199,
+          2.594614289700985,
+          4.6467403918504715,
+          3.6960285007953644,
+          2.7971539944410324,
+          2.204607531428337,
+          4.254892453551292,
+          3.351620092988014,
+          2.492260202765465,
+          1.8889047354459763,
+          4.559894688427448,
+          3.779982566833496,
+          3.11129567027092,
+          2.5185860842466354,
+          5.130539640784264,
+          4.296392664313316,
+          3.2621740996837616,
+          2.540615677833557,
+          4.769460067152977,
+          3.9827526211738586,
+          2.9880486726760864,
+          2.2556812465190887,
+          5.050669692456722,
+          4.38732248544693,
+          3.583291530609131,
+          2.8615699857473373,
+          3.460483968257904,
+          2.7043071538209915,
+          2.7122950851917267,
+          2.4037263095378876,
+          3.0546064972877502,
+          2.3458692133426666,
+          2.3933717608451843,
+          2.073993980884552,
+          3.5949869826436043,
+          3.0096099376678467,
+          3.2477854788303375,
+          2.9390535801649094,
+          5.179926693439484,
+          3.4309901148080826,
+          2.6227528154850006,
+          2.545095294713974,
+          4.625642716884613,
+          2.924145668745041,
+          2.1554229855537415,
+          2.0669564604759216,
+          4.890506632626057,
+          3.3123698234558105,
+          2.7343201339244843,
+          2.6564994901418686,
+          5.331682115793228,
+          3.9556065052747726,
+          2.7725548148155212,
+          2.307837814092636,
+          4.872463792562485,
+          3.543827712535858,
+          2.4002906382083893,
+          1.924764633178711,
+          5.075334802269936,
+          3.870058961212635,
+          2.9171948805451393,
+          2.452314756810665,
+          2.507431134581566,
+          1.894620418548584,
+          1.6954742223024368,
+          1.2103035598993301,
+          2.1417438685894012,
+          1.5763726830482483,
+          1.4167411029338837,
+          0.9207614362239838,
+          2.6429842337965965,
+          2.2009732872247696,
+          2.232014700770378,
+          1.7466809153556824,
+          0.9687818884849548,
+          1.5052489191293716,
+          2.337527483701706,
+          1.62317356467247,
+          0.7699054777622223,
+          1.353812038898468,
+          2.225605219602585,
+          1.5004422962665558,
+          1.6111101731657982,
+          2.31837697327137,
+          3.38084314763546,
+          2.666326105594635,
+          -0.002276897430419922,
+          0.3329414874315262,
+          2.299156993627548,
+          2.204358607530594,
+          -0.3062359392642975,
+          0.07642197608947754,
+          2.082152098417282,
+          1.9765447080135345,
+          0.7946765795350075,
+          1.3006947338581085,
+          3.4970978498458862,
+          3.402136340737343,
+          4.277064606547356,
+          3.1026066839694977,
+          1.9594940692186356,
+          1.3924202471971512,
+          3.8552482575178146,
+          2.7282298654317856,
+          1.624631866812706,
+          1.0467490404844284,
+          4.083516381680965,
+          3.0798582285642624,
+          2.166933223605156,
+          1.5996962785720825,
+          5.4756074249744415,
+          4.49161072075367,
+          3.2806268632411957,
+          2.5703137814998627,
+          5.095218479633331,
+          4.158661305904388,
+          2.987192064523697,
+          2.2660699784755707,
+          5.321833319962025,
+          4.508636385202408,
+          3.5278401374816895,
+          2.8173639327287674,
+          1.862845629453659,
+          1.3300895541906357,
+          1.9973880052566528,
+          1.8464949131011963,
+          1.4629155397415161,
+          0.9775989949703217,
+          1.6844120621681213,
+          1.5227099657058716,
+          2.1808052137494087,
+          1.8188489079475403,
+          2.716334968805313,
+          2.5652787536382675,
+          2.9088762402534485,
+          2.422040119767189,
+          2.3732396960258484,
+          1.879384070634842,
+          2.5593211948871613,
+          2.1199246048927307,
+          2.1106387972831726,
+          1.605974167585373,
+          3.1068814173340797,
+          2.790845066308975,
+          2.9722322523593903,
+          2.4782135039567947,
+          5.174993485212326,
+          3.566344901919365,
+          2.1750757098197937,
+          1.7569603621959686,
+          4.681989401578903,
+          3.120780348777771,
+          1.7690257728099823,
+          1.340101420879364,
+          4.8161866292357445,
+          3.3783378154039383,
+          2.2172562330961227,
+          1.7989777624607086,
+          5.44540985673666,
+          3.5621004477143288,
+          1.92194115370512,
+          1.557541899383068,
+          4.91267853230238,
+          3.0768086537718773,
+          1.4761639758944511,
+          1.100955717265606,
+          4.965047731995583,
+          3.2525380924344063,
+          1.8425664082169533,
+          1.4780040308833122,
+          4.340254560112953,
+          3.5838222205638885,
+          2.5967431366443634,
+          1.8497230410575867,
+          3.991759553551674,
+          3.282766744494438,
+          2.3352022767066956,
+          1.5773731768131256,
+          4.290467821061611,
+          3.7048352509737015,
+          2.947943776845932,
+          2.2007605582475662
+        ]
+      },
+      "methods": {
+        "Adaptive-FMQA": {
+          "empirical_raw_feasible_rate": 0.825,
+          "raw_unseen_feasible_fraction": 0.801,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0,
+          "best_initial_plus_proposals": 1.5249,
+          "proposal_best_hse_gap": 2.5629,
+          "empirical_conditional_unseen_mean_true_gap": 3.342576903870164,
+          "generation_seconds": 0.33256895799422637,
+          "initial_duplicate_fraction": 0.024,
+          "within_unseen_pool_duplicate_fraction": 0.706,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "LargePenalty-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.907,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0,
+          "best_initial_plus_proposals": 1.5249,
+          "proposal_best_hse_gap": 2.5629,
+          "empirical_conditional_unseen_mean_true_gap": 3.3007044101433283,
+          "generation_seconds": 0.19428166595753282,
+          "initial_duplicate_fraction": 0.093,
+          "within_unseen_pool_duplicate_fraction": 0.735,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "Penalty-FMQAOA": {
+          "empirical_raw_feasible_rate": 0.001,
+          "raw_unseen_feasible_fraction": 0.001,
+          "accepted_count": 1,
+          "unused_new_bb_budget": 4,
+          "normalized_regret_initial_plus_proposals": 0.0,
+          "best_initial_plus_proposals": 1.5249,
+          "proposal_best_hse_gap": 1.5456,
+          "empirical_conditional_unseen_mean_true_gap": 1.5456,
+          "generation_seconds": 48.57709950004937,
+          "initial_duplicate_fraction": 0.0,
+          "within_unseen_pool_duplicate_fraction": 0.0,
+          "exact_feasible_probability": 4.395161127471631e-05,
+          "exact_unseen_feasible_probability": 3.938782803389083e-05,
+          "exact_conditional_unseen_expected_true_gap": 3.341176462323632
+        },
+        "XY-FMQAOA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.901,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0,
+          "best_initial_plus_proposals": 1.5249,
+          "proposal_best_hse_gap": 2.5629,
+          "empirical_conditional_unseen_mean_true_gap": 3.3799154273029943,
+          "generation_seconds": 49.30035099998349,
+          "initial_duplicate_fraction": 0.099,
+          "within_unseen_pool_duplicate_fraction": 0.73,
+          "exact_feasible_probability": 1.0000000000000053,
+          "exact_unseen_feasible_probability": 0.894879588712431,
+          "exact_conditional_unseen_expected_true_gap": 3.34876242485393
+        }
+      }
+    },
+    {
+      "seed": 2024,
+      "status": "completed",
+      "fm_quality": {
+        "train_count": 20,
+        "test_count": 172,
+        "train_rmse": 0.004703128604950009,
+        "test_rmse": 1.4962522445852198,
+        "test_spearman": 0.4155295912778987,
+        "offline_reference_evaluations_not_solver_bb_budget": 192,
+        "all_candidate_predictions": [
+          0.8486941009759903,
+          1.5843041390180588,
+          2.4520191103219986,
+          1.631460502743721,
+          0.8758752644062042,
+          1.7034519016742706,
+          2.6976167000830173,
+          2.279541105031967,
+          0.7094000577926636,
+          1.040923535823822,
+          1.5724801123142242,
+          1.4839475750923157,
+          5.500307500362396,
+          4.2603122889995575,
+          3.1875549852848053,
+          2.5620153844356537,
+          4.797253683209419,
+          3.6492250710725784,
+          2.702917594462633,
+          2.479861006140709,
+          5.528765290975571,
+          3.884683519601822,
+          2.475767821073532,
+          2.5822542905807495,
+          5.990659832954407,
+          4.703827261924744,
+          3.5702073872089386,
+          2.7799883782863617,
+          5.048104554414749,
+          3.853238582611084,
+          2.846068535000086,
+          2.4583325386047363,
+          5.707661211490631,
+          4.016742080450058,
+          2.5469638109207153,
+          2.4887708723545074,
+          4.295023694634438,
+          4.038870275020599,
+          3.9095196425914764,
+          2.925478160381317,
+          3.6125899106264114,
+          3.448403090238571,
+          3.445502284914255,
+          2.8639438152313232,
+          3.752950295805931,
+          3.092710316181183,
+          2.6272012889385223,
+          2.375185877084732,
+          5.465755999088287,
+          4.154337525367737,
+          2.9949005246162415,
+          2.188097268342972,
+          4.489163190126419,
+          3.2697113156318665,
+          2.236724141985178,
+          1.8324038982391357,
+          5.149424523115158,
+          3.4339194893836975,
+          1.9383240938186646,
+          1.863546907901764,
+          3.1824783384799957,
+          1.3056974560022354,
+          -0.3072272837162018,
+          0.10199281573295593,
+          3.519551031291485,
+          1.7347367480397224,
+          0.24826183542609215,
+          1.0599649474024773,
+          5.075784474611282,
+          2.794917032122612,
+          0.8458338975906372,
+          1.987080067396164,
+          4.580748081207275,
+          3.680058479309082,
+          2.923854261636734,
+          2.07431897521019,
+          3.7531004548072815,
+          2.944377452135086,
+          2.314623061567545,
+          1.8675707876682281,
+          4.22546523809433,
+          2.9206890761852264,
+          1.8283264636993408,
+          1.7108172476291656,
+          0.8402131199836731,
+          0.7057491540908813,
+          0.7728648632764816,
+          0.6535295248031616,
+          1.3533437997102737,
+          1.31084643304348,
+          1.504411969333887,
+          1.7875596433877945,
+          1.9212487041950226,
+          1.3826981782913208,
+          1.1136554926633835,
+          1.7263462245464325,
+          5.279777526855469,
+          4.784902632236481,
+          4.3556067943573,
+          2.6491309106349945,
+          3.530074030160904,
+          3.127165734767914,
+          2.82431972399354,
+          1.520326852798462,
+          3.3680796027183533,
+          2.469118148088455,
+          1.7036639153957367,
+          0.7292141020298004,
+          4.643778920173645,
+          3.5286168456077576,
+          2.585397481918335,
+          2.0264417827129364,
+          4.090421825647354,
+          3.0672263503074646,
+          2.250456813722849,
+          2.0939841270446777,
+          4.808650344610214,
+          3.2894017100334167,
+          2.0100239515304565,
+          2.183094322681427,
+          2.593260705471039,
+          0.4115687608718872,
+          -1.4372267723083496,
+          -0.2730020582675934,
+          3.7689797580242157,
+          1.679254412651062,
+          -0.043091293424367905,
+          1.5236164331436157,
+          5.863052070140839,
+          3.277273565530777,
+          1.0923196375370026,
+          2.988570421934128,
+          3.8162865564227104,
+          2.9246398210525513,
+          2.2249887213110924,
+          1.917757235467434,
+          3.7048597894608974,
+          2.905179653316736,
+          2.3319783806800842,
+          2.427229907363653,
+          4.472282320261002,
+          3.1765490248799324,
+          2.140739530324936,
+          2.5655341148376465,
+          3.309317573904991,
+          2.107756033539772,
+          1.103687271475792,
+          0.8268869966268539,
+          3.0831261947751045,
+          1.9735312536358833,
+          1.0959123186767101,
+          1.2215950563549995,
+          3.99132764339447,
+          2.385679543018341,
+          1.0454523861408234,
+          1.5006781816482544,
+          5.176873087882996,
+          4.029148161411285,
+          3.0407574474811554,
+          2.3347471058368683,
+          4.414270356297493,
+          3.3585120290517807,
+          2.4965711422264576,
+          2.193043813109398,
+          5.064538478851318,
+          3.512726992368698,
+          2.1881778836250305,
+          2.2141936123371124,
+          3.2767931818962097,
+          1.1148110330104828,
+          -0.717705488204956,
+          0.4094759523868561,
+          4.41373610496521,
+          2.343720555305481,
+          0.637653861194849,
+          2.1673183143138885,
+          6.479519426822662,
+          3.9134507179260254,
+          1.744775801897049,
+          3.60398331284523,
+          2.5204080641269684,
+          3.5841516703367233,
+          4.729867190122604,
+          3.3721596002578735,
+          2.006443530321121,
+          3.162153735756874,
+          4.434319082647562,
+          3.4790945053100586,
+          1.412821352481842,
+          2.072478398680687,
+          2.8820355236530304,
+          2.2563540041446686
+        ]
+      },
+      "methods": {
+        "Adaptive-FMQA": {
+          "empirical_raw_feasible_rate": 0.96,
+          "raw_unseen_feasible_fraction": 0.95,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.06536369887275228,
+          "best_initial_plus_proposals": 1.8386,
+          "proposal_best_hse_gap": 2.6172,
+          "empirical_conditional_unseen_mean_true_gap": 3.053642631578946,
+          "generation_seconds": 0.21180487499805167,
+          "initial_duplicate_fraction": 0.01,
+          "within_unseen_pool_duplicate_fraction": 0.856,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "LargePenalty-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.895,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.06536369887275228,
+          "best_initial_plus_proposals": 1.8386,
+          "proposal_best_hse_gap": 2.6172,
+          "empirical_conditional_unseen_mean_true_gap": 3.307205698324023,
+          "generation_seconds": 0.17120020801667124,
+          "initial_duplicate_fraction": 0.105,
+          "within_unseen_pool_duplicate_fraction": 0.724,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "Penalty-FMQAOA": {
+          "empirical_raw_feasible_rate": 0.0,
+          "raw_unseen_feasible_fraction": 0.0,
+          "accepted_count": 0,
+          "unused_new_bb_budget": 5,
+          "normalized_regret_initial_plus_proposals": 0.06536369887275228,
+          "best_initial_plus_proposals": 1.8386,
+          "proposal_best_hse_gap": null,
+          "empirical_conditional_unseen_mean_true_gap": null,
+          "generation_seconds": 43.989514374989085,
+          "initial_duplicate_fraction": 0.0,
+          "within_unseen_pool_duplicate_fraction": 0.0,
+          "exact_feasible_probability": 4.811927598981245e-05,
+          "exact_unseen_feasible_probability": 4.303375299556943e-05,
+          "exact_conditional_unseen_expected_true_gap": 3.3974552050426903
+        },
+        "XY-FMQAOA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.902,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.06536369887275228,
+          "best_initial_plus_proposals": 1.8386,
+          "proposal_best_hse_gap": 2.6172,
+          "empirical_conditional_unseen_mean_true_gap": 3.2954620842572075,
+          "generation_seconds": 48.844913791981526,
+          "initial_duplicate_fraction": 0.098,
+          "within_unseen_pool_duplicate_fraction": 0.731,
+          "exact_feasible_probability": 1.0000000000000027,
+          "exact_unseen_feasible_probability": 0.8945749781205745,
+          "exact_conditional_unseen_expected_true_gap": 3.2977599576120706
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "status": "completed",
+      "fm_quality": {
+        "train_count": 20,
+        "test_count": 172,
+        "train_rmse": 0.010298037344318337,
+        "test_rmse": 1.551882518700965,
+        "test_spearman": 0.31486636035454035,
+        "offline_reference_evaluations_not_solver_bb_budget": 192,
+        "all_candidate_predictions": [
+          5.397114425897598,
+          5.022542268037796,
+          2.942111387848854,
+          4.37820927798748,
+          5.438389204442501,
+          5.469062328338623,
+          3.0264005064964294,
+          5.083262845873833,
+          5.102814272046089,
+          3.3350539803504944,
+          2.580091968178749,
+          3.042774423956871,
+          5.134279057383537,
+          2.825418770313263,
+          2.642352432012558,
+          3.553734138607979,
+          5.351818569004536,
+          3.4482035636901855,
+          2.902906283736229,
+          4.435052439570427,
+          5.704076945781708,
+          2.002028524875641,
+          3.1444310545921326,
+          3.0823973268270493,
+          5.554651156067848,
+          4.0448929369449615,
+          3.103345572948456,
+          4.598812028765678,
+          6.115777648985386,
+          5.0112647116184235,
+          3.707486405968666,
+          5.823717311024666,
+          5.5035178661346436,
+          2.6005715131759644,
+          2.9844930171966553,
+          3.5065440386533737,
+          5.04261326789856,
+          3.4128702133893967,
+          2.548721566796303,
+          3.4281595945358276,
+          4.953205995261669,
+          3.7287082225084305,
+          2.502328634262085,
+          4.002531111240387,
+          5.464370489120483,
+          2.441439300775528,
+          2.9027595221996307,
+          2.8087821155786514,
+          3.556132271885872,
+          3.535803109407425,
+          1.1808292269706726,
+          3.769161030650139,
+          4.7624266520142555,
+          5.147342771291733,
+          2.430137947201729,
+          5.639234200119972,
+          2.344639301300049,
+          0.9311220049858093,
+          -0.09838300943374634,
+          1.5165333598852158,
+          4.977423265576363,
+          2.3029377162456512,
+          2.384419023990631,
+          1.8340788930654526,
+          3.68362670391798,
+          1.414386436343193,
+          1.1336368024349213,
+          1.20406112074852,
+          6.68967878818512,
+          2.6220051050186157,
+          4.028955280780792,
+          2.5051997154951096,
+          2.8151993304491043,
+          3.5919693410396576,
+          0.3705025315284729,
+          1.9499206691980362,
+          2.5599617436528206,
+          3.741977035999298,
+          0.15827928483486176,
+          2.358461871743202,
+          2.1280117630958557,
+          1.5115936398506165,
+          -0.3844043016433716,
+          0.22159840166568756,
+          5.354270778596401,
+          3.9071350395679474,
+          2.8110946342349052,
+          2.975958839058876,
+          4.381982788443565,
+          3.3400923311710358,
+          1.881820984184742,
+          2.66744963824749,
+          6.243543542921543,
+          3.4032196700572968,
+          3.6326481327414513,
+          2.824096903204918,
+          6.7521979957818985,
+          2.8564158976078033,
+          4.119507610797882,
+          3.0007877200841904,
+          5.300928615033627,
+          1.8103917986154556,
+          2.7112525701522827,
+          2.213297128677368,
+          9.180403411388397,
+          3.8914331793785095,
+          6.479993760585785,
+          4.387858435511589,
+          4.515496149659157,
+          3.1583420634269714,
+          2.0532292127609253,
+          3.389192745089531,
+          4.834964193403721,
+          3.8830553889274597,
+          2.415711596608162,
+          4.372439578175545,
+          4.54055780172348,
+          1.7902155816555023,
+          2.010571599006653,
+          2.3731196969747543,
+          2.8922229409217834,
+          2.9324799329042435,
+          0.41006331145763397,
+          1.4508034884929657,
+          2.3199229165911674,
+          2.7654251903295517,
+          -0.11922237277030945,
+          1.5422822535037994,
+          2.7775776386260986,
+          1.4246464967727661,
+          0.22769874334335327,
+          0.29502348601818085,
+          3.340002402663231,
+          3.236658424139023,
+          0.9452869892120361,
+          3.252953514456749,
+          4.261212505400181,
+          4.563113808631897,
+          1.9095114320516586,
+          4.837942406535149,
+          2.3510985672473907,
+          0.8545664548873901,
+          -0.1113361120223999,
+          1.2229149788618088,
+          4.857451155781746,
+          3.0193971991539,
+          2.3132390677928925,
+          2.465110644698143,
+          4.026275590062141,
+          2.59346691519022,
+          1.5250778421759605,
+          2.2977138683199883,
+          5.854490041732788,
+          2.62324795126915,
+          3.2425586879253387,
+          2.421014830470085,
+          5.938616290688515,
+          3.797149807214737,
+          3.345157042145729,
+          2.785490319132805,
+          4.421755768358707,
+          2.685534566640854,
+          1.8713108599185944,
+          1.9324085861444473,
+          7.52336460351944,
+          3.9887099862098694,
+          4.862186089158058,
+          3.32910393178463,
+          5.170074641704559,
+          3.7577602565288544,
+          2.659795254468918,
+          3.300824150443077,
+          4.723713465034962,
+          3.716644361615181,
+          2.256448417901993,
+          3.518241763114929,
+          5.7084067314863205,
+          2.902904212474823,
+          3.130408078432083,
+          2.798021540045738,
+          3.5378131419420242,
+          1.9177157580852509,
+          1.0634594559669495,
+          2.2257579416036606,
+          3.7652279511094093,
+          2.55037584900856,
+          1.3338886052370071,
+          3.1169515401124954,
+          3.753877580165863,
+          0.7405920624732971,
+          1.2118046283721924,
+          1.4006876796483994
+        ]
+      },
+      "methods": {
+        "Adaptive-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.981,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.05667493176088179,
+          "best_initial_plus_proposals": 1.7969,
+          "proposal_best_hse_gap": 1.7969,
+          "empirical_conditional_unseen_mean_true_gap": 2.8950519877675864,
+          "generation_seconds": 0.2708835839875974,
+          "initial_duplicate_fraction": 0.019,
+          "within_unseen_pool_duplicate_fraction": 0.911,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "LargePenalty-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.89,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.05667493176088179,
+          "best_initial_plus_proposals": 1.7969,
+          "proposal_best_hse_gap": 1.7969,
+          "empirical_conditional_unseen_mean_true_gap": 3.2753942696629235,
+          "generation_seconds": 0.1450947080156766,
+          "initial_duplicate_fraction": 0.11,
+          "within_unseen_pool_duplicate_fraction": 0.72,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "Penalty-FMQAOA": {
+          "empirical_raw_feasible_rate": 0.0,
+          "raw_unseen_feasible_fraction": 0.0,
+          "accepted_count": 0,
+          "unused_new_bb_budget": 5,
+          "normalized_regret_initial_plus_proposals": 0.08003250474027464,
+          "best_initial_plus_proposals": 1.909,
+          "proposal_best_hse_gap": null,
+          "empirical_conditional_unseen_mean_true_gap": null,
+          "generation_seconds": 43.358107374981046,
+          "initial_duplicate_fraction": 0.0,
+          "within_unseen_pool_duplicate_fraction": 0.0,
+          "exact_feasible_probability": 4.876110734294706e-05,
+          "exact_unseen_feasible_probability": 4.3635084829673286e-05,
+          "exact_conditional_unseen_expected_true_gap": 3.307950895842815
+        },
+        "XY-FMQAOA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.891,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.05667493176088179,
+          "best_initial_plus_proposals": 1.7969,
+          "proposal_best_hse_gap": 1.7969,
+          "empirical_conditional_unseen_mean_true_gap": 3.2858223344556676,
+          "generation_seconds": 47.31469725002535,
+          "initial_duplicate_fraction": 0.109,
+          "within_unseen_pool_duplicate_fraction": 0.738,
+          "exact_feasible_probability": 1.0000000000000029,
+          "exact_unseen_feasible_probability": 0.8791236781436041,
+          "exact_conditional_unseen_expected_true_gap": 3.267894627096101
+        }
+      }
+    },
+    {
+      "seed": 19,
+      "status": "completed",
+      "fm_quality": {
+        "train_count": 20,
+        "test_count": 172,
+        "train_rmse": 0.008368455398800457,
+        "test_rmse": 1.1426413218131033,
+        "test_spearman": 0.6327369034226916,
+        "offline_reference_evaluations_not_solver_bb_budget": 192,
+        "all_candidate_predictions": [
+          4.927896469831467,
+          3.8650700449943542,
+          2.5576513651758432,
+          2.459029734134674,
+          3.245275914669037,
+          2.3121223598718643,
+          1.4984862077981234,
+          1.1264229211956263,
+          4.725647695362568,
+          3.6555881202220917,
+          2.5855278614908457,
+          2.213524740189314,
+          4.220533490180969,
+          3.183955043554306,
+          2.0726470332592726,
+          1.813900412991643,
+          2.963828593492508,
+          2.0569230169057846,
+          1.4393975343555212,
+          0.9072092585265636,
+          4.376164503395557,
+          3.3323529064655304,
+          2.458403317257762,
+          1.9262752067297697,
+          3.3900791108608246,
+          2.5869591385126114,
+          1.753961468115449,
+          1.6683089509606361,
+          2.2683634757995605,
+          1.5949163734912872,
+          1.2557012308388948,
+          0.8966070581227541,
+          3.1516571417450905,
+          2.3413040190935135,
+          1.745664769783616,
+          1.3866307623684406,
+          3.3882093876600266,
+          2.4357044845819473,
+          1.8216645661741495,
+          1.1926396116614342,
+          3.169564440846443,
+          2.346732407808304,
+          2.226475017145276,
+          1.3240084070712328,
+          4.370771862566471,
+          3.411033809185028,
+          3.0343523118644953,
+          2.1319458670914173,
+          5.586712956428528,
+          4.477098062634468,
+          2.988419556990266,
+          2.991831563413143,
+          3.5643310844898224,
+          2.5843890607357025,
+          1.5894930828362703,
+          1.3194634336978197,
+          5.157243959605694,
+          4.04039591550827,
+          2.789075830951333,
+          2.5191063471138477,
+          5.1429073959589005,
+          4.123302146792412,
+          2.993585767224431,
+          2.7895280960947275,
+          3.7997179329395294,
+          2.9097855538129807,
+          2.27385170198977,
+          1.7963523752987385,
+          5.175596475601196,
+          4.148758076131344,
+          3.256400117650628,
+          2.778960956260562,
+          3.7120791375637054,
+          2.8058259561657906,
+          2.1387651059776545,
+          1.6618811413645744,
+          3.25064180791378,
+          2.474061496555805,
+          2.300783174112439,
+          1.5504575539380312,
+          4.352651841938496,
+          3.439165510237217,
+          3.009463081136346,
+          2.259197626262903,
+          3.562504041939974,
+          2.6479373686015606,
+          1.7810014355927706,
+          1.5049368580803275,
+          2.6228599697351456,
+          1.8379661664366722,
+          1.4648127611726522,
+          0.9153065280988812,
+          3.753569483757019,
+          2.831769660115242,
+          2.202192148193717,
+          1.6527460804209113,
+          4.886007308959961,
+          3.639511361718178,
+          2.6605967227369547,
+          1.8292892649769783,
+          4.461481153964996,
+          3.344658076763153,
+          2.8595259655267,
+          1.7547768522053957,
+          6.329651825129986,
+          5.075922727584839,
+          4.334366509690881,
+          3.2296775616705418,
+          4.93329131603241,
+          3.8221296817064285,
+          2.0914688650518656,
+          2.3553865030407906,
+          2.3115792870521545,
+          1.3300905227661133,
+          0.09321223385632038,
+          0.08368821628391743,
+          3.9204617366194725,
+          2.8020669519901276,
+          1.3087645564228296,
+          1.299300704151392,
+          4.0025200843811035,
+          2.9123008847236633,
+          1.4969536606222391,
+          1.4600389301776886,
+          2.1164766550064087,
+          1.1559303253889084,
+          0.23436562903225422,
+          -0.07599075697362423,
+          3.6628304943442345,
+          2.5653781443834305,
+          1.3873893413692713,
+          1.0770931206643581,
+          5.304442286491394,
+          4.198847904801369,
+          3.2080241683870554,
+          2.677182026207447,
+          4.513117089867592,
+          3.5371955782175064,
+          3.040154369547963,
+          2.235870571807027,
+          6.071326322853565,
+          4.958498790860176,
+          4.205033475533128,
+          3.400809843093157,
+          3.926318109035492,
+          2.8950102776288986,
+          2.1682563070207834,
+          1.5012574717402458,
+          3.6153285205364227,
+          2.7136935591697693,
+          2.480722116306424,
+          1.5402816254645586,
+          4.9960862621665,
+          3.957545280456543,
+          3.468149730935693,
+          2.5277694053947926,
+          5.297265708446503,
+          3.986399844288826,
+          2.761752897873521,
+          2.066855438053608,
+          4.414374947547913,
+          3.233181953430176,
+          2.5023175347596407,
+          1.5339784193783998,
+          6.437186636030674,
+          5.1190876215696335,
+          4.131799096241593,
+          3.163520146161318,
+          3.094444379210472,
+          2.410306453704834,
+          1.9584302846342325,
+          1.7002773806452751,
+          2.637823984026909,
+          2.0833589285612106,
+          2.125265287235379,
+          1.5936707276850939,
+          3.239071361720562,
+          2.54770028591156,
+          2.3331825379282236,
+          1.8016481436789036,
+          5.174991801381111,
+          4.130484402179718,
+          3.040385441854596,
+          2.7423516679555178,
+          3.9901117384433746,
+          3.0752772092819214,
+          2.4789607767015696,
+          1.9074853472411633,
+          5.418824136257172,
+          4.367083586752415,
+          3.514343047514558,
+          2.942927783355117
+        ]
+      },
+      "methods": {
+        "Adaptive-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.995,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0043131289979789055,
+          "best_initial_plus_proposals": 1.5456,
+          "proposal_best_hse_gap": 1.5618,
+          "empirical_conditional_unseen_mean_true_gap": 2.1927302512562816,
+          "generation_seconds": 0.17347441700985655,
+          "initial_duplicate_fraction": 0.005,
+          "within_unseen_pool_duplicate_fraction": 0.951,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "LargePenalty-FMQA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.902,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0043131289979789055,
+          "best_initial_plus_proposals": 1.5456,
+          "proposal_best_hse_gap": 1.5618,
+          "empirical_conditional_unseen_mean_true_gap": 3.3326893569844778,
+          "generation_seconds": 0.12277845799690112,
+          "initial_duplicate_fraction": 0.098,
+          "within_unseen_pool_duplicate_fraction": 0.731,
+          "exact_feasible_probability": null,
+          "exact_unseen_feasible_probability": null,
+          "exact_conditional_unseen_expected_true_gap": null
+        },
+        "Penalty-FMQAOA": {
+          "empirical_raw_feasible_rate": 0.0,
+          "raw_unseen_feasible_fraction": 0.0,
+          "accepted_count": 0,
+          "unused_new_bb_budget": 5,
+          "normalized_regret_initial_plus_proposals": 0.0043131289979789055,
+          "best_initial_plus_proposals": 1.5456,
+          "proposal_best_hse_gap": null,
+          "empirical_conditional_unseen_mean_true_gap": null,
+          "generation_seconds": 46.41119274997618,
+          "initial_duplicate_fraction": 0.0,
+          "within_unseen_pool_duplicate_fraction": 0.0,
+          "exact_feasible_probability": 4.744633660474835e-05,
+          "exact_unseen_feasible_probability": 4.2519880250404824e-05,
+          "exact_conditional_unseen_expected_true_gap": 3.3955818875335853
+        },
+        "XY-FMQAOA": {
+          "empirical_raw_feasible_rate": 1.0,
+          "raw_unseen_feasible_fraction": 0.917,
+          "accepted_count": 5,
+          "unused_new_bb_budget": 0,
+          "normalized_regret_initial_plus_proposals": 0.0043131289979789055,
+          "best_initial_plus_proposals": 1.5456,
+          "proposal_best_hse_gap": 1.5618,
+          "empirical_conditional_unseen_mean_true_gap": 3.260425517993459,
+          "generation_seconds": 46.6692423329805,
+          "initial_duplicate_fraction": 0.083,
+          "within_unseen_pool_duplicate_fraction": 0.757,
+          "exact_feasible_probability": 1.0000000000000049,
+          "exact_unseen_feasible_probability": 0.9043032641466381,
+          "exact_conditional_unseen_expected_true_gap": 3.286140665110506
+        }
+      }
+    }
+  ],
+  "initial_category_coverage": [
+    {
+      "seed": 42,
+      "unique_organic_in_training": 13,
+      "unique_cation_in_training": 3,
+      "unique_anion_in_training": 4
+    },
+    {
+      "seed": 101,
+      "unique_organic_in_training": 12,
+      "unique_cation_in_training": 3,
+      "unique_anion_in_training": 4
+    },
+    {
+      "seed": 2024,
+      "unique_organic_in_training": 10,
+      "unique_cation_in_training": 3,
+      "unique_anion_in_training": 4
+    },
+    {
+      "seed": 7,
+      "unique_organic_in_training": 12,
+      "unique_cation_in_training": 3,
+      "unique_anion_in_training": 4
+    },
+    {
+      "seed": 19,
+      "unique_organic_in_training": 10,
+      "unique_cation_in_training": 3,
+      "unique_anion_in_training": 4
+    }
+  ]
+}

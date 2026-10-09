@@ -1,0 +1,20 @@
+{
+  "status":"ready",
+  "scope":"local pinned Perovskites lookup, classical SA fixed-alpha sensitivity; not four-method benchmark",
+  "data_sha256":"ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "groups":[16,3,4], "seeds":[42,101,2024,7,19],
+  "alphas":[1,3,10,100,1000,10000,1000000],
+  "initial_count":10, "cycles":70, "bb_budget_cap":80,
+  "FM":"shared fit rank1 AdamW wd0.01 lr0.1 120epochs rawtarget fullbatch; fresh seed+100000*(cycle-1)",
+  "initial":"saved original20 prefix10, identical across alpha perseed",
+  "penalty":"S=max absolute base Ising h,J; lambda=S*alpha; zero S gives lambda0; alpha100 is LargePenalty-FMQA, others sensitivity variants",
+  "SA":"100reads,1000sweeps,geometric; automatic Neal beta range; same seed*100000+cycle*1000 across alpha in BBO",
+  "selection":"shared select: lowest base FM unseen feasible unique max1, tuple tie; no refill; no early stop at optimum",
+  "fixed_FM":"5 initial10 models, 10 repetitions x7alpha x2schedules=700batches,70000 outputs; auto beta vs model-specific alpha1 auto beta range held fixed; seed=seed*100000+rep*1000+17 common across alpha/schedule; repeated batches not BB loop",
+  "closed_loop":"35runs,2450models/cycles,245000outputs; auto schedule only; alpha100 must reproduce all70cycles of saved initial10 LargePenalty baseline",
+  "metrics":"fixed: raw feasibility, candidate existence, selected unseen FM gap, min-capture, selected true value and initial-plus-one regret, unique unseen count, beta range and beta*lambda. BBO: final regret, success, firsthit81 code(nonhit not actual call), candidate-none fraction, median accepted gap, actual evaluations, best-by-cycle",
+  "regret":"global192 true min/max; full truth only offline audit, not acquisition",
+  "statistics":"fixed aggregate repetitions within each model then across5models median/IQR; conditional missing retained with denominators. BBO across5seeds median/IQR. Paired alpha-minus100 for six nonreference alpha: BBO finalregret, firsthit_score81, candidate_none_fraction; fixed autoschedule feasible_rate, selected_gap; total30 Wilcoxon tests two-sided Bonferroni; all-zero differences p1; retain failures; fixed-beta supplementary not inferential",
+  "prevalidation":"unchanged source hashes preserve inherited passed N6/N9/N23 circuit checks; exhaustive N6,N9 penalty algebra plus192feasible/random23bits extremealpha energy check; initial10 firstFM identity and alpha100 raw firstcycle identity",
+  "limits":"already explored192 lookup; original external data terms unresolved,parent benchmark draft. Auto beta varies with penalty, diagnosis includes schedule; fixed beta supplementary isolates schedule adaptation but no claim universally fair. No QAOA runs or XY penalties. No universal threshold/equivalence claim from nonsignificance"
+}

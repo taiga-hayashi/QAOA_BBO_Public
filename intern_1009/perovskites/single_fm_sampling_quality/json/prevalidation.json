@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "single_model_sha256": "0e4a895f07ca581449c2de25037c795e35b5aa2229b886d8045dae291765155a",
+  "source_hashes": "passed",
+  "raw_batches_verified": 70,
+  "FM_predictions_identical": "passed",
+  "FM_QUBO_and_candidate_filter_parity": "passed",
+  "inherited_N6_N9_N23": "passed; unchanged shared source hashes",
+  "source_sha256": {
+    "intern_1009/perovskites/large_penalty_diagnostic/py/run_penalty.py": "199c04c7a53cd52fb2be93d969553ec9cbe3c7139fdb5126d4bc64ba49eb315f",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f"
+  }
+}

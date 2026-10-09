@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "verified_repetitions": 600,
+  "checks": "independent direct ranking versus shared selector; old top5 first-candidate parity; raw feasibility unchanged; exact truth lookup; initial/model/checkpoint/source identity; budget cap21",
+  "reanalysis_script_sha256": "7515a7ba8f692c94e3d090d7d1e04411dc6f8c5fec50b9b44de6efa0de5e3f0a"
+}

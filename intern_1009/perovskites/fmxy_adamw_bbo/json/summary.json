@@ -1,0 +1,289 @@
+{
+  "status": "completed",
+  "XY_runs": 5,
+  "XY_cycles": 300,
+  "ideal_angle_evaluations": 2700,
+  "shots": 3000,
+  "groups": [
+    {
+      "method": "XY-FMQAOA",
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_best": 1.9874,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 40,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 101,
+          "initial_best": 1.5249,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": true,
+          "newly_found_optimum": false,
+          "first_optimum_evaluations": 20,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 2024,
+          "initial_best": 1.8386,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 44,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 7,
+          "initial_best": 1.909,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 66,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 19,
+          "initial_best": 1.5456,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 80,
+          "zero_candidate_cycles": 0
+        }
+      ]
+    },
+    {
+      "method": "Adaptive-FMQA",
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249
+        },
+        "actual_evaluations": {
+          "median": 59.0,
+          "q1": 57.0,
+          "q3": 61.0
+        },
+        "zero_candidate_cycles": {
+          "median": 21.0,
+          "q1": 19.0,
+          "q3": 23.0
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_best": 1.9874,
+          "final_best": 1.5249,
+          "actual_evaluations": 57,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 42,
+          "zero_candidate_cycles": 23
+        },
+        {
+          "seed": 101,
+          "initial_best": 1.5249,
+          "final_best": 1.5249,
+          "actual_evaluations": 63,
+          "initial_optimum": true,
+          "newly_found_optimum": false,
+          "first_optimum_evaluations": 20,
+          "zero_candidate_cycles": 17
+        },
+        {
+          "seed": 2024,
+          "initial_best": 1.8386,
+          "final_best": 1.5249,
+          "actual_evaluations": 55,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 31,
+          "zero_candidate_cycles": 25
+        },
+        {
+          "seed": 7,
+          "initial_best": 1.909,
+          "final_best": 1.5249,
+          "actual_evaluations": 61,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 31,
+          "zero_candidate_cycles": 19
+        },
+        {
+          "seed": 19,
+          "initial_best": 1.5456,
+          "final_best": 1.5249,
+          "actual_evaluations": 59,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 23,
+          "zero_candidate_cycles": 21
+        }
+      ]
+    },
+    {
+      "method": "LargePenalty-FMQA",
+      "statistics": {
+        "final_best": {
+          "median": 1.5249,
+          "q1": 1.5249,
+          "q3": 1.5249
+        },
+        "actual_evaluations": {
+          "median": 80.0,
+          "q1": 80.0,
+          "q3": 80.0
+        },
+        "zero_candidate_cycles": {
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "new_optimum_runs": 4,
+      "final_optimum_runs": 5,
+      "per_seed": [
+        {
+          "seed": 42,
+          "initial_best": 1.9874,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 29,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 101,
+          "initial_best": 1.5249,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": true,
+          "newly_found_optimum": false,
+          "first_optimum_evaluations": 20,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 2024,
+          "initial_best": 1.8386,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 27,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 7,
+          "initial_best": 1.909,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 21,
+          "zero_candidate_cycles": 0
+        },
+        {
+          "seed": 19,
+          "initial_best": 1.5456,
+          "final_best": 1.5249,
+          "actual_evaluations": 80,
+          "initial_optimum": false,
+          "newly_found_optimum": true,
+          "first_optimum_evaluations": 56,
+          "zero_candidate_cycles": 0
+        }
+      ]
+    }
+  ],
+  "paired_tests": [
+    {
+      "contrast": "XY minus Adaptive-FMQA",
+      "metric": "final_regret",
+      "paired_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0
+    },
+    {
+      "contrast": "XY minus Adaptive-FMQA",
+      "metric": "actual_evaluations",
+      "paired_differences": [
+        23,
+        17,
+        25,
+        19,
+        21
+      ],
+      "median_difference": 21.0,
+      "p_raw": 0.0625,
+      "p_bonferroni": 0.25
+    },
+    {
+      "contrast": "XY minus LargePenalty-FMQA",
+      "metric": "final_regret",
+      "paired_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0
+    },
+    {
+      "contrast": "XY minus LargePenalty-FMQA",
+      "metric": "actual_evaluations",
+      "paired_differences": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "median_difference": 0.0,
+      "p_raw": 1.0,
+      "p_bonferroni": 1.0
+    }
+  ]
+}

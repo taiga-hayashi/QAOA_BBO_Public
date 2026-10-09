@@ -1,0 +1,11 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "reused_environment_sha256": "d21c7fecd43ee78be030753fd2105b65413ad63f35d634e07498c0c28709d0ea",
+  "source_protocol_sha256": "39e34b732b9fbe6276a2d6ab1ea5f59ae6ff62c9610cc92a11712f3d764cbf33",
+  "code_sha256": {
+    "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/intern_1009/perovskites/fmqa_penalty_sweep_top1/py/reanalyze.py": "7515a7ba8f692c94e3d090d7d1e04411dc6f8c5fec50b9b44de6efa0de5e3f0a",
+    "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/intern_1009/perovskites/fmqa_penalty_sweep/py/analyze_sweep.py": "072acf47b4fb8c59b02abdf4ad5b8ba7e824f2f78d28547fb056161668f3f734"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "workers": 3,
+  "protocol_sha256": "52799c47efe1a552a1a808e0c33a5b234095889c1121efa0cea822cc6f678fbc",
+  "code_sha256": {
+    "intern_1009/perovskites/standard_qaoa_penalty_sweep/py/run_penalties.py": "312cd82f3c02305a1f7e1b9e91fcd993a190e1b28764c9555729ea5ccaad9cb5",
+    "intern_1009/perovskites/qaoa_shot_accuracy/py/run_shots.py": "a189c880dfa148c16b6ecf2cb6f8344653a780ec18c1bf598c05eee664308f73",
+    "intern_1009/perovskites/fixed_fm_pilot/py/run_pilot.py": "d7ecf8f0c9334d2593964f00bdc588627e46cf451eff949a8ecf8facfc726305",
+    "src/qarp_backend.py": "77eb7d4153b57d29334a40f4b4d3ae50dcf2789977517611f8fde4a934351f2c"
+  }
+}

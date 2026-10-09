@@ -1,0 +1,66 @@
+{
+  "summary_sha256": "fdbeea2464e9d7de933fb74b18acdeab41173eed692e67fb851dbf9e06fcf614",
+  "files": [
+    {
+      "path": "pdf/FM_optimum_alignment.pdf",
+      "sha256": "23543eee704569a80603852a0b50bf0b849d3dd4fa014f341ee8e9217f4adf72"
+    },
+    {
+      "path": "svg/FM_optimum_alignment.svg",
+      "sha256": "3727092b528f0a5a516501f39aaf39e6d1f0c5d72fcd4fce4450cdd1e0db5e8f"
+    },
+    {
+      "path": "png/FM_optimum_alignment.png",
+      "sha256": "660ed1d9980b621365c793a94c28d3a1281e3c3f110b5927212590ec2cd4939c"
+    },
+    {
+      "path": "pdf/global_match.pdf",
+      "sha256": "3b45179e2843fae54bb98a627b31782fbf6e9249883f3756879383d867694ad7"
+    },
+    {
+      "path": "svg/global_match.svg",
+      "sha256": "d11a007bf357a937772d1348697814fe4edf79d18fb8da8851856548f33d1ffc"
+    },
+    {
+      "path": "png/global_match.png",
+      "sha256": "b13aec8467ea35abe720484a6a2dda8fe42493aa6c0cab03672018ffa724674e"
+    },
+    {
+      "path": "pdf/global_chosen_true_value.pdf",
+      "sha256": "e0f15fc0ac75606c85b97d350f9a4e60e894616f38b24b493a7f67afda4597b5"
+    },
+    {
+      "path": "svg/global_chosen_true_value.svg",
+      "sha256": "30ceed79cd1e022e098271b7a52fa202106c1f9a07ea44dcd765eaa63f3e3cae"
+    },
+    {
+      "path": "png/global_chosen_true_value.png",
+      "sha256": "bcbba920d8aee44fdcd25c4e0695250197c8df585d1724879a2fc6d0075b863c"
+    },
+    {
+      "path": "pdf/true_opt_best_FM_rank.pdf",
+      "sha256": "5449e10e8b2cafdc723a4e18e54f49baf64ab0797527c902c478116cf3e8e912"
+    },
+    {
+      "path": "svg/true_opt_best_FM_rank.svg",
+      "sha256": "3d6d876965f247bc2b62b6f270f86d78fcea6ad40dedadc9657d376af204ec90"
+    },
+    {
+      "path": "png/true_opt_best_FM_rank.png",
+      "sha256": "e5abdde8205ef623d7580e456063a2ea1a83cee90dedc8376b3e86491648fa24"
+    },
+    {
+      "path": "pdf/true_opt_FM_gap.pdf",
+      "sha256": "deb21e56124e5e2ae15ce93202c2be1116bcea0e372e172738a72bcff4ac2543"
+    },
+    {
+      "path": "svg/true_opt_FM_gap.svg",
+      "sha256": "1a07c57be62f8ad5a21081c60c12ffbafee25c4055e1674ed1395c424d7c1305"
+    },
+    {
+      "path": "png/true_opt_FM_gap.png",
+      "sha256": "947757a872415ceed21e7a1596d6e00308da099f12a3213762e3566cc9a056a4"
+    }
+  ],
+  "visual_QA": "pending next interactive review"
+}

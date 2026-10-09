@@ -1,0 +1,9 @@
+# 実行前監査と範囲
+
+既存src/fm.pyの共有学習関数、src/fm_to_qubo.py、src/fmqa_solver.pyのbuild_penalty_bqm、intern_0924/src/penalty.pyのAdaptivePenaltyTrackerを再利用。Neal SAは従来どおり1000 sweeps・geometric・自動beta範囲を使い、今回のnum_readsは10。既存固定FM runnerのsa_generateは4×250readsとtracker再作成が固定されているため、再学習サイクル間でtrackerを保持する専用ループを作成した。モデル学習・QUBO変換・ペナルティ構築を複製していない。
+
+選択は10件のraw候補のみに基づき、未評価・One-Hot実行可能・重複除去後のFM予測最小1件とする。192候補の予測は数値照合用に保存するが、全列挙最良をsolverの候補として挿入しない。候補不足を補う評価・再サンプリングはしない。初期20件と採用候補のみがtrainに入る。モデルは毎サイクル新規初期化、modelseedを事前固定し、候補なしでも次サイクルを実行する。
+
+N6/N9/N23回路事前検証は既存合格を継承した。今回はSAのみで、回路変更・QAOA計算はない。初期モデル10条件は直前の固定データ実験を予測最大差0で再現。One-Hot実行可能192状態と各100違反候補に対し、penalized BQMがbase FM＋λΣ(group sum−1)^2と一致することを確認。invalid・既評価・pool duplicate・tie・空候補の選択試験も合格した。全Runでサイクルごとに評価数とunique trainの一致、上限80を検査した。
+
+ルールの主4手法比較とは別のSA pilot。FM設定間は学習改善の対照比較なので、rankとoptimizer/decayを意図的に変える。各FM設定内ではAdaptive/LargePenaltyの初期集合・学習条件・Seed・評価上限・候補規則を共通にした。QAOAを実行せず、その性能を推測しない。元外部データの利用条件・構造対応は既存manifestの未解決事項として残し、親benchmarkをreadyへ昇格しない。

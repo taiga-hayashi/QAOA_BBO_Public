@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "compute_task_id": 33,
+  "plot_task_id": 34,
+  "dependency": "plot runs only after compute succeeds",
+  "working_directory": "/Users/hayashitaiga/Library/CloudStorage/GoogleDrive-taiga.hayashi@gmail.com/My Drive/Intern_Fujitsu/intern_1009/perovskites/fm_optimum_alignment",
+  "figure_visual_review": "all 5 PNG charts inspected; overview PDF rendered separately",
+  "compute_result": "Success",
+  "plot_result": "Success"
+}

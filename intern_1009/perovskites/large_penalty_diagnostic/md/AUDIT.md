@@ -1,0 +1,9 @@
+# 監査・実行前方針
+
+共有fit/select、FM→QUBO、Ising変換、build_penalty_bqm、Nealを既存run_bboから再利用する。新規コードはalpha指定・固定FM反復・保存に限定。共有回路の変更はなく、直近のN6/N9/N23検証とsource hashを引き継ぐ。
+
+以前の初期20・rank2・1000readsの固定FM実験ではalpha1〜1000で選択FM gapが0だった。現在の初期10・rank1 AdamW・100readsに変更し、alpha1〜1000000を調べる。初期集合・モデル条件・評価上限・重複破棄はalpha間で同一。alpha100のみ既定LargePenalty-FMQAで、他は固定alpha感度variant。
+
+実行可能状態ではペナルティが0なのでFM目的値の順位は代数的に変わらない。一方、Nealの1bit flipではカテゴリ変更に違反中間状態が必要であり、エネルギー障壁と温度日程の影響を検証する。候補の真値とFM値は別指標。最終bestだけでは候補品質の悪化を隠すため固定FM gapも測る。
+
+まず固定FMを実行し、その後にBBOを実行する。計画・指標はprotocol.jsonで凍結。自動betaとalpha1基準beta固定を補助比較する。BBOは既存日程を保持した自動betaのみ。標準QAOAはこの検証に含めず、XYはlambda0を保持し再実行しない。

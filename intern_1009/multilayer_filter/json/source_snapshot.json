@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "AL-DQAOA/TMM_calculation.py",
+      "url": "https://raw.githubusercontent.com/Seongmin-Kim-ornl/DQAOA/9ed1842760fee1f20e2e25c8eabd97c841a51233/AL-DQAOA/TMM_calculation.py",
+      "repository": "Seongmin-Kim-ornl/DQAOA",
+      "revision": "9ed1842760fee1f20e2e25c8eabd97c841a51233",
+      "local_path": "data/reference/TMM_calculation.py.txt",
+      "sha256": "2b9e14ec46d32bfa3b5afb3ec1d4b95b42a6717495e3cad8ce3523c04d5d10bd",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "AL-DQAOA/AL-dqQAOA.py",
+      "url": "https://raw.githubusercontent.com/Seongmin-Kim-ornl/DQAOA/9ed1842760fee1f20e2e25c8eabd97c841a51233/AL-DQAOA/AL-dqQAOA.py",
+      "repository": "Seongmin-Kim-ornl/DQAOA",
+      "revision": "9ed1842760fee1f20e2e25c8eabd97c841a51233",
+      "local_path": "data/reference/AL-dqQAOA.py.txt",
+      "sha256": "7f7e91658f00c98f0a512d9976f276962531f8b58e21acd95fde97f3b53af7ae",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/Seongmin-Kim-ornl/DQAOA/9ed1842760fee1f20e2e25c8eabd97c841a51233/README.md",
+      "repository": "Seongmin-Kim-ornl/DQAOA",
+      "revision": "9ed1842760fee1f20e2e25c8eabd97c841a51233",
+      "local_path": "data/reference/README.md.txt",
+      "sha256": "f7b5d9e8acf33ebf10669b7a9badccd8ac674501ad955ebdd6791ea90bd7246e",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "conditions": 32500,
+  "alpha_models": 65,
+  "checks": "all raw shots decoded,independent candidate ranking/true lookup,input/model/checkpoint hashes,angle selection9point,lambda=Salpha,budget21; state norm/cost and alpha5 source parity checked in runner",
+  "source_sha256": {
+    "42": "231b2807b8c026345597d73e638858e8b8743bbfbb54115ce24262cdb6f5865e",
+    "101": "af4904a78c6291faaf4c80e1d71eeb6f171b81097fe22e6f4b03f143987dcddf",
+    "2024": "f2a937d69991fe2b255eabcc2f96af565807c284e3b322ea7fd991cf185a6b69",
+    "7": "3b1d6a3523fae1f204920492aeb6339120b6e3e26ab5f448cab315f46de6ffe5",
+    "19": "a79cf6b03e42fcf59b6b500d8f8fe1c5ef36626b14f0d44754995b66af583eb6"
+  }
+}

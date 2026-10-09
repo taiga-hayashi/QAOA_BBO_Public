@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "inherited_N6_N9_N23_p1_p2_p3": "passed; unchanged source hashes",
+  "initial3_checks": [
+    {
+      "seed": 42,
+      "initial_ids": [
+        134,
+        186,
+        36
+      ],
+      "initial_values": [
+        2.1431,
+        2.4152,
+        5.9083
+      ],
+      "model_hash": "d5fb52073a468356d98f618cb4e76b6b9f68d86e920c455dca19a40f7b0bc0c5",
+      "three_methods_initial_FM_and_p3_anchor_checks": "passed"
+    },
+    {
+      "seed": 101,
+      "initial_ids": [
+        112,
+        143,
+        63
+      ],
+      "initial_values": [
+        3.8529,
+        2.5636,
+        2.3129
+      ],
+      "model_hash": "13182408fbf85c54ebfe5e7344a803c0b736270789936e5fc06760344aa65677",
+      "three_methods_initial_FM_and_p3_anchor_checks": "passed"
+    },
+    {
+      "seed": 2024,
+      "initial_ids": [
+        50,
+        160,
+        68
+      ],
+      "initial_values": [
+        2.9974,
+        4.4192,
+        5.0782
+      ],
+      "model_hash": "dab0038bebf5e287980518a45cb8171ccd5826ed23e27bcd4d07da23d53f8509",
+      "three_methods_initial_FM_and_p3_anchor_checks": "passed"
+    },
+    {
+      "seed": 7,
+      "initial_ids": [
+        54,
+        163,
+        108
+      ],
+      "initial_values": [
+        2.4313,
+        1.9374,
+        4.5314
+      ],
+      "model_hash": "8473d89ec3ce7436781cf17e0392c0cd87c7376dea1eccd1af841487413ae737",
+      "three_methods_initial_FM_and_p3_anchor_checks": "passed"
+    },
+    {
+      "seed": 19,
+      "initial_ids": [
+        5,
+        101,
+        73
+      ],
+      "initial_values": [
+        2.2931,
+        3.3424,
+        2.8141
+      ],
+      "model_hash": "5384d82df1ceda9cdd2f77dfdeaea0ea394047c4fddddd03aa500b5c287c8d80",
+      "three_methods_initial_FM_and_p3_anchor_checks": "passed"
+    }
+  ],
+  "source_sha256": {
+    "intern_1009/perovskites/xy_p3_initial3_bbo/py/run_initial3.py": "bf1977780e0391fab98f976440c9d7afdc5d0b478994dd69108a2b374aed5fd4",
+    "intern_1009/perovskites/large_penalty_diagnostic/py/run_penalty.py": "199c04c7a53cd52fb2be93d969553ec9cbe3c7139fdb5126d4bc64ba49eb315f",
+    "intern_1009/perovskites/xy_depth_sampling/py/run_depth.py": "21b5545a0403d69bc86ff1427931393c5c0f2b3824ecf05cf661394da3e13ac4",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f",
+    "intern_1009/perovskites/py/validate_xy_ring.py": "7045061d1d0941922941581c9af37b020d3e303d4e72829b47647864ae3f48a5"
+  }
+}

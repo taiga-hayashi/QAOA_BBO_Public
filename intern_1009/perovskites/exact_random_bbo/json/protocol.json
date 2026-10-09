@@ -1,0 +1,94 @@
+{
+  "status": "ready",
+  "scope": "local lookup closed-loop exact-FM/random controls; not canonical four-method benchmark",
+  "methods": [
+    "Exact-FM",
+    "Random-unseen"
+  ],
+  "comparison": [
+    "Exact-FM",
+    "Random-unseen",
+    "XY-p3",
+    "LargePenalty-alpha1000"
+  ],
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    19
+  ],
+  "initial_samples": 3,
+  "initial": "same original saved prefix3 as baseline",
+  "cycles": 77,
+  "bb_budget_cap": 80,
+  "data_sha256": "ba55731336cf68a2fcc2a8c6b542ee06d4c238c91ced27d243ce9de95f8d6518",
+  "fm": "shared rank1 AdamW wd0.01 lr0.1 120epochs rawtarget fullbatch, fresh model eachcycle seed+100000*(cycle-1)",
+  "model_seed": "seed+100000*(cycle-1)",
+  "selection_seed": "seed*100000+cycle*1000",
+  "exact": "evaluate all192 baseFM predictions; reject already evaluated; minimize(prediction,onehot bit tuple) using shared select; max1 new true evaluation",
+  "random": "uniform draw directly from remaining feasible candidate IDs sorted ascending; one selected true evaluation; same FM training retained only for controlled diagnostic",
+  "candidate_policy": "all methods reject evaluated/invalid and accept max1; exact/random use explicit feasible unseen domains, no replenishment loops",
+  "sampling_budget_difference": "Exact scans192 and Random directly chooses1; baseline XY/SA use100 raw outputs. These are diagnostic controls, not sampling/computation matched comparisons. Only BB evaluation budgets are matched.",
+  "true_values": "only chosen candidate via evaluator for acquisition; all192 truth exclusively offline analysis; no optimum-driven stop",
+  "baseline_protocol_sha256": "3bf8243ec527e80620b40284eccf9f46157b5dd1b7f6347647e11f1c2d87a0a7",
+  "baseline_files": [
+    {
+      "path": "xy_p3_initial3_bbo/json/XY-p3_seed42.json",
+      "sha256": "53864cfe6b57dfb596599b7a4f24fe436b21d2b55c1999c0367125d769e8a681"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/XY-p3_seed101.json",
+      "sha256": "15f237a4227db40ca45682653570b5798a797b54e08313216ca13420b58dcd80"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/XY-p3_seed2024.json",
+      "sha256": "e1de56cd1ebeb705654f08919970f6a54cb47c24fa2f7f87c8ec71150b8a5835"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/XY-p3_seed7.json",
+      "sha256": "408671dcc3090bd1fceaa1eb3a6a1ad2dc8eb95073dfc153e9e9fed10540c095"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/XY-p3_seed19.json",
+      "sha256": "1f6fddde60a26f1544bb31fb29e70c32f0c7f4c65035ecd752cbd48eb9d73664"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/LargePenalty-alpha1000_seed42.json",
+      "sha256": "02d41cfc381f68561897b6a47e0fcf24ce80994f8c9cd73d855c0b06e73ca9c5"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/LargePenalty-alpha1000_seed101.json",
+      "sha256": "82b7923ee419439d0f74af6086a5f444eda050ee3d97e33b386292e467ba03c9"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/LargePenalty-alpha1000_seed2024.json",
+      "sha256": "280c1bc4b020dbc4878fb909bbce468874189509e916183c6d22f2b494d2ac91"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/LargePenalty-alpha1000_seed7.json",
+      "sha256": "e73f26d9337ff25ecabc877f3b5cb8edc43f960508e7aa513dfe7cb91dcb994f"
+    },
+    {
+      "path": "xy_p3_initial3_bbo/json/LargePenalty-alpha1000_seed19.json",
+      "sha256": "ca59be288c33b001ee5290c7ae90b9987eabcf401998caf327aeacef863cc263"
+    }
+  ],
+  "training_config_sha256": "9efaff8acc2dbda4cff69a6a590e8a19a736d316eb12ba6b33dcd1ff4480cde6",
+  "baseline_audit_sha256": "8d08359709d1e616818667f3b3d5bba516bd95e03beaefbea4987d5d1fd4d954",
+  "metrics": [
+    "best by actual true evaluations",
+    "final normalized regret using global192 min/max",
+    "first hit evaluations including3 (81 if no hit)",
+    "success",
+    "selection/training time separately"
+  ],
+  "statistics": "5seed median/IQR; Exact-minus-Random/XYp3/SA for finalregret andfirsthit81;6 paired Wilcoxon tests Bonferroni6; retain all seeds/failures",
+  "prevalidation": "unchanged inherited N6/N9/N23 checks; five initial3 checkpoint hash reproduction; FM/QUBO/Torch parity; deterministic tie and random-unseen validity",
+  "license_scope": "existing pinned dataset for local diagnostic only; parent remains draft, unresolved original external terms",
+  "source_sha256": {
+    "py/run.py": "36eb4d2ce25f77decf714a44236a7a5239745de01be7232bf4672c190fa549d6",
+    "py/analyze.py": "ae67cec2ff57540cee850b70bca19c18a131b7e13cba78d68dfad9f186599b26"
+  },
+  "visual_QA": "pending after async plotting"
+}

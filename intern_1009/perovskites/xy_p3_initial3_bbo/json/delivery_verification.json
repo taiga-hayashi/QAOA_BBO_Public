@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "numerical_audit": "json/artifact_verification.json",
+  "figure_files": 24,
+  "figure_hashes": "passed",
+  "summary_sha256": "52fbf200ac8fdde257c5c6733175c56f6ffc89dc84b4921b9ebfbd500e4acf60",
+  "rendered_visual_QA": "all 8 PDF figures rendered and inspected; passed",
+  "python_syntax": "passed",
+  "parent_indices_updated": true,
+  "analysis_source_sha256": "38a7f614cf653eda054bac17681d1a6743bab91b5c67f1aa8beddbecb637dde4",
+  "run_source_sha256": "bf1977780e0391fab98f976440c9d7afdc5d0b478994dd69108a2b374aed5fd4"
+}

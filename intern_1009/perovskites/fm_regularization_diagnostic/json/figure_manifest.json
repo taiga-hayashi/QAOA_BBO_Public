@@ -1,0 +1,67 @@
+{
+  "status": "generated",
+  "summary_sha256": "82761605371494729e5922643f70aa4fd56fc87ed7cf3508be61645a3c476f79",
+  "report_script_sha256": "ed669a76241c9bd7a04842756d31f5a6a8b8fe6fdfa87a9954c07fcddb40be6a",
+  "artifacts": [
+    {
+      "path": "pdf/fm_regularization_overview.pdf",
+      "sha256": "1498fea2d7bfc3f2bf0c0fcb02b6288ca91aeb631225092c8bb8d138e7c82b44",
+      "bytes": 21807
+    },
+    {
+      "path": "pdf/selected_true_value.pdf",
+      "sha256": "b107071709e5ba0693f01b11cf9446a4316cad85c46c3965fa97ac6cdf116de2",
+      "bytes": 16610
+    },
+    {
+      "path": "pdf/test_rmse.pdf",
+      "sha256": "e94c1b41cdcb3e7461cd676e85271a3d5e40b6cb5f457220b6732fb93bb762fb",
+      "bytes": 15346
+    },
+    {
+      "path": "pdf/test_spearman.pdf",
+      "sha256": "76d596fbbea3b8c92283aa635fb8226eb1057e9c0f1d66ac52b4344a23b1fcf2",
+      "bytes": 14910
+    },
+    {
+      "path": "svg/fm_regularization_overview.svg",
+      "sha256": "50168e4081e2d2538059d77cc6cc40a7931c19137fcc48f517a39f52eb37f14a",
+      "bytes": 85953
+    },
+    {
+      "path": "svg/selected_true_value.svg",
+      "sha256": "74e284a4c01f826ebee884e6f22110dcdd4f7a9c22693611ec64e62c372c4f59",
+      "bytes": 42079
+    },
+    {
+      "path": "svg/test_rmse.svg",
+      "sha256": "b0ce98c94f25977095fbdf9fa1eff0bcc36cc13530fab28a8e172d841552d5ad",
+      "bytes": 36822
+    },
+    {
+      "path": "svg/test_spearman.svg",
+      "sha256": "82022524357b297954f3b05711395f622a65b9a708d70bdea8bf24f203fd4532",
+      "bytes": 35041
+    },
+    {
+      "path": "png/fm_regularization_overview.png",
+      "sha256": "c251eab6c9052e704ebc59eab40e06c9a73ef4cbaedd25adf4e8769c5888325e",
+      "bytes": 248767
+    },
+    {
+      "path": "png/selected_true_value.png",
+      "sha256": "df04ca663b209fd1eb7effb2da98fe207291d6dd0a7fe9f01a3e152bf6dc81ca",
+      "bytes": 114823
+    },
+    {
+      "path": "png/test_rmse.png",
+      "sha256": "718e3a5c416d4df345a0d4b29f96fe505f6fb736ba1469563db2471a024c956a",
+      "bytes": 83955
+    },
+    {
+      "path": "png/test_spearman.png",
+      "sha256": "b18e7c5c99bc7b145558db43de960f6d7b55f0e27f49e7f89afa57fd569c6b32",
+      "bytes": 75074
+    }
+  ]
+}

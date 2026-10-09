@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "BBO_models": 2450,
+  "fixed_models": 5,
+  "fixed_batches": 700,
+  "previous_alpha100_complete_reproductions": 5,
+  "failed_or_dropped_runs": 0,
+  "checks": "protocol/source/checkpoint/model hashes,FM/QUBO parity,raw candidate filters,alpha/S/lambda,truth/initial/budgets,all70cycles reference parity",
+  "figure_files": 24,
+  "figure_hashes": "passed",
+  "source_hashes": "passed",
+  "rendered_visual_QA": "passed: all eight PDFs; overview and independent panels/trajectory",
+  "python_syntax": "passed",
+  "git_diff_check": "passed",
+  "summary_sha256": "1ad60e02c3f4b73b08e078004ed3723e190bb79567fd55cc4ded225185bbae3b",
+  "analysis_source_sha256": "4ae48fcc23b0410f331c3906d6059807da8313d72ce894a6fb1d8b3922d8f44f"
+}

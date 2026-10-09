@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source_path": "fmqa_rna.py",
+      "url": "https://raw.githubusercontent.com/Shu-Tanaka-Group/fmqa_rna/ad25790e2f1b0e662e3ffa97d15f5b412c9eade0/fmqa_rna.py",
+      "repository": "Shu-Tanaka-Group/fmqa_rna",
+      "revision": "ad25790e2f1b0e662e3ffa97d15f5b412c9eade0",
+      "local_path": "data/reference/fmqa_rna.py.txt",
+      "sha256": "7644a79536f24b6458dfe7aeccad0970d7918409bba7b78deaa08351fab2c16b",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "README.md",
+      "url": "https://raw.githubusercontent.com/Shu-Tanaka-Group/fmqa_rna/ad25790e2f1b0e662e3ffa97d15f5b412c9eade0/README.md",
+      "repository": "Shu-Tanaka-Group/fmqa_rna",
+      "revision": "ad25790e2f1b0e662e3ffa97d15f5b412c9eade0",
+      "local_path": "data/reference/README.md.txt",
+      "sha256": "8403cd0ece69e7c1efb7b624af83ab4b3897fcebe484c53ed844491caadc4ea6",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    },
+    {
+      "source_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/Shu-Tanaka-Group/fmqa_rna/ad25790e2f1b0e662e3ffa97d15f5b412c9eade0/LICENSE",
+      "repository": "Shu-Tanaka-Group/fmqa_rna",
+      "revision": "ad25790e2f1b0e662e3ffa97d15f5b412c9eade0",
+      "local_path": "data/reference/LICENSE.txt",
+      "sha256": "d43945e082f7aed0b34618fe5d09dd0fee2c90d8aac5e2898a2631c06bfd4ade",
+      "retrieved_on": "2026-10-09",
+      "executed": false
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "summary_sha256": "1ad60e02c3f4b73b08e078004ed3723e190bb79567fd55cc4ded225185bbae3b",
+  "files": [
+    {
+      "path": "pdf/large_penalty_overview.pdf",
+      "sha256": "5a460380ab816cec964f6a91ca3369be1be812f89583be1350265cdf81d5a226"
+    },
+    {
+      "path": "svg/large_penalty_overview.svg",
+      "sha256": "ea7234decb981f3e4ad0f1960380a83195165afb7eba5296694e9c7bb55d33cf"
+    },
+    {
+      "path": "png/large_penalty_overview.png",
+      "sha256": "6f5a2669bba5c10f438f005fa1a7bd59ffd05462cae79a045a3365c15579f4cb"
+    },
+    {
+      "path": "pdf/fixed_feasibility.pdf",
+      "sha256": "e3e4f72c790630443dfe2e0c2bdc4d9c47e1e9e9e3a331620b90655153b45e87"
+    },
+    {
+      "path": "svg/fixed_feasibility.svg",
+      "sha256": "3c549ba83bd2d2561fc8ac9d70efe77ea45230ee0e0e86da9391bfa901701336"
+    },
+    {
+      "path": "png/fixed_feasibility.png",
+      "sha256": "e142c9abf0e8a9cad329305d82a5bd260f336cb4cfd367e43e515dad0a600616"
+    },
+    {
+      "path": "pdf/fixed_FM_gap.pdf",
+      "sha256": "1c087a3ac260fbfb4be9f10309dd408fb9b8b6e9f41d06ab3f225953ca06d823"
+    },
+    {
+      "path": "svg/fixed_FM_gap.svg",
+      "sha256": "34736e97075a2095a405a3f36ac197a4dcdc38ba1540b9572a0f1e17f041f120"
+    },
+    {
+      "path": "png/fixed_FM_gap.png",
+      "sha256": "e225453ab34d6189bb79a386ccf6bd1b6c26fd178989463f43b8f42278e877f7"
+    },
+    {
+      "path": "pdf/fixed_candidate_rate.pdf",
+      "sha256": "4b9d21ef2de42b3811a32339bf91110aa72bb3cf93c81fc1b25956a9c5e1274a"
+    },
+    {
+      "path": "svg/fixed_candidate_rate.svg",
+      "sha256": "fec526bb8c4026bcc1dc5636dd9c5d2d7dac647fede4cc95f11ebbab47ac3511"
+    },
+    {
+      "path": "png/fixed_candidate_rate.png",
+      "sha256": "dee5dec918d4f1962f310a5af358b10fa60150f9703d89e55a9884eb31f0cef2"
+    },
+    {
+      "path": "pdf/BBO_final_regret.pdf",
+      "sha256": "3ca663b61327543727c3e0da44a0e3b69f313fd2857a51e8b40000d9f805677a"
+    },
+    {
+      "path": "svg/BBO_final_regret.svg",
+      "sha256": "fa4f1bbf484eb9bff3fa1e311facc4384f5c3b9c63c498732af1c3e91df0cc3a"
+    },
+    {
+      "path": "png/BBO_final_regret.png",
+      "sha256": "8eedaeb3fd0605ff43eb1404731bb520c29ba83ba9107e9f3e0461fc2bfdceaa"
+    },
+    {
+      "path": "pdf/BBO_first_hit.pdf",
+      "sha256": "f73f815380de4684bc0bf60888109d11aec62e7288730e0e95013283a0b04570"
+    },
+    {
+      "path": "svg/BBO_first_hit.svg",
+      "sha256": "c8c98c8babcc21491ec07084941993e8ff90056a3ce3f96aa73bff8a4cb11657"
+    },
+    {
+      "path": "png/BBO_first_hit.png",
+      "sha256": "35f85ce1b2500c493a17f64f9e27cde590c4e6fb6f962be76247dd4a54e88617"
+    },
+    {
+      "path": "pdf/BBO_candidate_none.pdf",
+      "sha256": "1f0e5520b550d0ea25ba019974fd60f408619fa8c7d318c97c3676207a52b20a"
+    },
+    {
+      "path": "svg/BBO_candidate_none.svg",
+      "sha256": "46e3b3bff71cc3af4b39f3597e3af33b4e1328cd9f40f583824bdd991759ddd5"
+    },
+    {
+      "path": "png/BBO_candidate_none.png",
+      "sha256": "a24597a8c8b9eca216debc2ba5a88adbd7d86af94f029e6f0c52b9657dca0df8"
+    },
+    {
+      "path": "pdf/BBO_best_by_cycle.pdf",
+      "sha256": "b03f53a2b81a95b27e05f40a4fa90b13798c625e84a00bb284b4796be3f34636"
+    },
+    {
+      "path": "svg/BBO_best_by_cycle.svg",
+      "sha256": "c5ed083f031e0e4be50a200c67c92e44c641d5d8f1e09d247e79d552d7479e75"
+    },
+    {
+      "path": "png/BBO_best_by_cycle.png",
+      "sha256": "6f839e8b4334b020b7f999db7404d260245cac749984af59f0a713ece03d971b"
+    }
+  ]
+}

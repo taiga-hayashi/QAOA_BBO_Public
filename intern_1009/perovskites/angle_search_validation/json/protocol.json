@@ -1,0 +1,30 @@
+{
+  "status": "ready",
+  "version": "restricted_perovskites_small_angle_validation_v1",
+  "scope": "N6_N9_fixed_FM_restriction_angle_range_resolution_and_scale_validation_not_23bit_BBO",
+  "seeds": [42,101,2024,7,19],
+  "variants": [
+    {"id":"restricted_N6","free_indices":[0,1,2,19,20,21],"fixed_one_indices":[17],"groups":[3,3]},
+    {"id":"restricted_N9","free_indices":[0,1,2,16,17,18,19,20,21],"fixed_one_indices":[],"groups":[3,3,3]}
+  ],
+  "restriction": "first3organic/first3anion in original config; N6 metal fixed Sn,N9 first3 metals all; all other bits fixed0. Not selected from observed optima. Source5 FM checkpoints trained on original20points remain frozen; no new training or BBO",
+  "alphas": [1,5,30,100,1000],
+  "searches": [
+    {"id":"legacy9","gammas":[0.05,0.4,0.8],"betas":[0.1,0.4,0.8],"budget":9},
+    {"id":"wide9","axis_points":3,"budget":9},
+    {"id":"wide49","axis_points":7,"budget":49},
+    {"id":"wide361","axis_points":19,"budget":361}
+  ],
+  "wide_range": "gamma inclusive[0,2pi],beta inclusive[0,pi]; wide grids nested via subdivisions2,6,18. Finite tested ranges,not universal fundamental periods",
+  "methods": "canonical OpenQARP standardX/p1 and XY orderedRing/productW/p1; XY always lambda0",
+  "standard_modes": ["base_S","full_Cost_S"],
+  "base_scale": "max absolute Ising h,J of the restricted unpenalized FM; internal lambda=baseS*alpha",
+  "full_Cost_S": "divide both normalized baseFM and normalized lambda by maximum absolute penalized Ising h,J; alpha/internal physical lambda unchanged; effective original gamma=search_gamma/divisor. Positive global scale changes finite angle range,not discrete ground-state ordering",
+  "fairness": "same restricted FM,seed,and nominal number of circuit evaluations at each search for standard andXY; XY evaluated once since noalpha dependence; count actual circuit calls,retain all angles/norms/expectations/feasible probability. Do not compare raw expectation of different Cost scales",
+  "angle_selection": "lowest exact expected penalized Cost,not maximum feasibility or true objective; tuple grid order tie break",
+  "metrics": ["exact feasible probability at selected angles", "feasible FM optimum probability", "exact10shot feasible/optimum capture", "exact10shot conditional best-FM gap", "mean penalized Cost in common baseS units", "expectation gap to exhaustive penalized ground", "penalized ground feasibility", "minimum cost and maximum feasibility in evaluated angle set kept separately"],
+  "shots": "no stochastic measurement needed; exact IID batch10 probabilities and exact conditional best sample quality from finite basis probabilities; no training-duplicate exclusion in these reduced search diagnostics",
+  "statistics": "five modelSeeds median/IQR; paired wide361 minus legacy9 on feasibility and conditional best10shot FM gap within eachN,method,alpha,mode; Wilcoxon+Bonferroni44tests; retain null conditional values and defined n",
+  "prevalidation": "exhaustive restriction-to-fullFM energy parity,OneHot penalty energy/parity; N6/N9 XY norm+feasible preservation1e-10; exact batch-best formula independently enumerated for a toy distribution",
+  "limits": "restricted9/27 feasible candidates,full64/512states; no extrapolation of success to full23bits; exact angle selection not finite-shot angle optimization; grid minimum not global optimum. No learned hyperparameters,hardware noise,BBO,quantum advantage claims"
+}

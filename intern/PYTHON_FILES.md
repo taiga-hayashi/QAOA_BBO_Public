@@ -97,3 +97,7 @@
 - `experimet/` のJSON・PDF・PNGは現在の検証済みスナップショットです。完全再計算は長時間かかるため、通常は閲覧のみで十分です。
 - 現在のQAOA実行コードは OpenQARP/`qarpx` を使います。Qiskit名を含む教材・過去の説明図は参照資料であり、通常実行や実験再現の依存には含まれません。
 - 個別スクリプトは `intern/` をカレントディレクトリとして実行する前提のものがあります。推奨入口は `python main.py` と `python main.py --experiments` です。
+
+## intern_1009 public snapshot shared dependencies (2026-10-09)
+
+`src/fm.py`, `src/qarp_backend.py`, `src/qaoa_solver.py` in this package are synchronized with the root canonical `src/` copies used by intern_1009. Existing experiment results are retained; this source sync does not recalculate them.

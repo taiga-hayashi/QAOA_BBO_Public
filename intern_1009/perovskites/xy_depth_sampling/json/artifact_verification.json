@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "independent_angle_checks": 3840,
+  "measurement_batches": 300,
+  "shots_verified": 30000,
+  "completed_searches": 30,
+  "failed_or_dropped": 0,
+  "checks": "source/protocol/frozenFM hashes,all candidateangles and expectedenergies/feasibility,chosen probabilities independently,all CDFdraws/selection/gaps,exact ideal mass/capture formula,warm-start monotonic search objective"
+}

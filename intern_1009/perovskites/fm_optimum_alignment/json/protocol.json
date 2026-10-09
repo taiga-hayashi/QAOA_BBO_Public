@@ -1,0 +1,16 @@
+{
+  "status": "ready",
+  "scope": "offline analysis of saved initial3 FM models; no new BBO or training",
+  "source_protocol_sha256": "3bf8243ec527e80620b40284eccf9f46157b5dd1b7f6347647e11f1c2d87a0a7",
+  "models": 1155,
+  "runs": 15,
+  "cycles": 77,
+  "true_opt_tolerance": 1e-10,
+  "FM_argmin_absolute_tolerance": 1e-08,
+  "statistics": "5seed median/IQR;4 paired Wilcoxon tests with Bonferroni",
+  "tie_break": "candidate material tuple lexical order",
+  "unseen_metrics": "only while at least one true optimum remains unseen",
+  "code_sha256": "146310bfd6cf8c1ea759901a73484da81368b489d275dce3a27d6a4637490c23",
+  "prevalidation": "reuse existing passed source model/QUBO/N6/N9 audit; recompute all1155 checkpoint predictions before metrics",
+  "plot_QA": "pending after asynchronous plotting"
+}

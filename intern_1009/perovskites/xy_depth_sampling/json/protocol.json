@@ -1,0 +1,46 @@
+{
+  "status": "ready",
+  "scope": "single_fixed_FM_XY_QAOA_depth_sensitivity; user approved p1/2/3 extension,not default four-method benchmark",
+  "model_seed": 42,
+  "model_checkpoint_sha256": "9dcf0b1e0f6f76ae5c5d6e0e27cae95fa85561163a31d3438bb92ff42a29e7c0",
+  "model_source": "single_fm_sampling_quality/data/fixed_model.pt",
+  "model": "initial10 rank1 AdamW wd0.01 lr0.1 120epochs; frozen no retraining",
+  "group_sizes": [
+    16,
+    3,
+    4
+  ],
+  "original_onehot_bits": 23,
+  "simulator_bits": 8,
+  "backend": "canonical OpenQARPCompactXYQAOA exact encoded simulation of original ordered Ring edge circuit",
+  "depths": [
+    1,
+    2,
+    3
+  ],
+  "lambda": 0,
+  "initial_state": "product W",
+  "normalization": "base Ising S=max absolute h,J,divide QUBO byS,S0div1,constantoffset does not affect probabilities",
+  "search": "10 search seeds 0..9; 128 ideal-expectation evaluations perdepth; every layer gamma/beta in[0,0.8],same upper bound as old9grid; p1 includes old9 then119 uniformrandom candidates; p>1 first candidate previousp best appended gamma=beta=0 then127 uniformrandom candidates; no truth/shot estimates foranglechoice",
+  "search_seed": "SeedSequence([42,1009,depth,search_seed,91]); save allangles/expectations; no early stop; real layer budget128*p differs",
+  "shots": 100,
+  "measurement_repetitions_per_search": 10,
+  "measurement_seed": "SeedSequence([42,1009,search_seed,rep,93]); same100uniform draws acrossdepth,consistent physicalLSB CDF order",
+  "selection": "shared minimum baseFM unseen feasible unique max1,tuple tie,training10 excluded,no refill",
+  "planned_counts": "3840 search state evaluations,30 final-state verifications,300 measurementbatches,30000shots; no BBO",
+  "metrics": [
+    "ideal expected FM gap to global feasible FM minimum",
+    "exact unseen mass",
+    "exact unseen FM minimum probability",
+    "ideal100shot minimum capture 1-(1-Pmin)^100",
+    "empirical100shot min capture frequency",
+    "selected unseenFM gap median/IQR",
+    "pooledunseen meanFMgap",
+    "probabilityCDF and rankfrequencies",
+    "rawfeasibility",
+    "generation/search timing"
+  ],
+  "statistics": "10 search seeds as paired units forselectedgap (withinsearch median over10measurements),empiricalcapture (withinsearch frequency),idealexpectedFMgap; p2/3-minus1 Wilcoxon 6tests Bonferroni; median/IQR oversearchseeds,not10 distinctFM; retainnulls/failures",
+  "prevalidation": "sharedsource hash and priorN6/N9/N23 confirmed; fresh N6/N9 p1/2/3 fullstate vs compact andindependent multilayerreference; targetN23 p1/2/3 compact/reference with strictfeasibility<1e-10; p1old9 model/state exactreproduction",
+  "limits": "ideal simulator/nohardware,no finite-shot anglelearning,no global angleoptimum proof; limitedcontinuousdomain; warmstarting couples depths and guarantees nonworsening searched expectation up toroundoff,not guarantee minimumcapture orselectedFM; equalstatecalls not equalgatebudget; no standardXQAOA orSA rerun,parentbenchmarkdraft"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "models": 3075,
+  "runs": 45,
+  "full_previous20_run_reproductions": 15,
+  "independent_XY_angle_checks": 9225,
+  "checks": "initial nesting and values,source/protocol/checkpoint/model hashes,FM/QUBO,raw sampling/selection/gaps/alpha/budget,all20controltrajectories unchanged; no failed/dropped runs"
+}

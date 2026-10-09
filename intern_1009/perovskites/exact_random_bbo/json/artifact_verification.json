@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "new_checkpoint_models_checked": 770,
+  "baseline_runs_hash_verified": 10,
+  "raw_BBO_budget_and_selection": "passed",
+  "visual_QA": "pending"
+}

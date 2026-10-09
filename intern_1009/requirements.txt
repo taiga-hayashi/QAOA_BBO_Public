@@ -1,0 +1,8 @@
+numpy
+torch
+scipy
+matplotlib
+dimod
+dwave-neal
+openqarp
+pytest

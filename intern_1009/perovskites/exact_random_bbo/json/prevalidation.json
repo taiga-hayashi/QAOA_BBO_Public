@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "seed": 42,
+      "model_sha256": "d5fb52073a468356d98f618cb4e76b6b9f68d86e920c455dca19a40f7b0bc0c5",
+      "exact_first_id": 153,
+      "random_first_id": 140
+    },
+    {
+      "seed": 101,
+      "model_sha256": "13182408fbf85c54ebfe5e7344a803c0b736270789936e5fc06760344aa65677",
+      "exact_first_id": 46,
+      "random_first_id": 90
+    },
+    {
+      "seed": 2024,
+      "model_sha256": "dab0038bebf5e287980518a45cb8171ccd5826ed23e27bcd4d07da23d53f8509",
+      "exact_first_id": 85,
+      "random_first_id": 13
+    },
+    {
+      "seed": 7,
+      "model_sha256": "8473d89ec3ce7436781cf17e0392c0cd87c7376dea1eccd1af841487413ae737",
+      "exact_first_id": 141,
+      "random_first_id": 178
+    },
+    {
+      "seed": 19,
+      "model_sha256": "5384d82df1ceda9cdd2f77dfdeaea0ea394047c4fddddd03aa500b5c287c8d80",
+      "exact_first_id": 123,
+      "random_first_id": 128
+    }
+  ],
+  "source_sha256": {
+    "intern_1009/perovskites/exact_random_bbo/py/run.py": "36eb4d2ce25f77decf714a44236a7a5239745de01be7232bf4672c190fa549d6",
+    "intern_1009/perovskites/xy_p3_initial3_bbo/py/run_initial3.py": "bf1977780e0391fab98f976440c9d7afdc5d0b478994dd69108a2b374aed5fd4",
+    "intern_1009/perovskites/large_penalty_diagnostic/py/run_penalty.py": "199c04c7a53cd52fb2be93d969553ec9cbe3c7139fdb5126d4bc64ba49eb315f",
+    "intern_1009/perovskites/xy_depth_sampling/py/run_depth.py": "21b5545a0403d69bc86ff1427931393c5c0f2b3824ecf05cf661394da3e13ac4",
+    "intern_1009/perovskites/fmqa_adamw_bbo/py/run_bbo.py": "1bba821914d1678ecba7418dce45f2a3170ee9f469abccd284b85a236bb1aad3",
+    "src/fm.py": "040fc7d1a10424c9e9c7666ff1c25e725ff1d4fa3a6f39d837e84c04730c5e15",
+    "src/fm_to_qubo.py": "741ef61f9762984d0dee5d60a362517bc1c400583c422908684ee4d16b84ab57",
+    "src/qarp_backend.py": "e8ba377409a941955e2d3d533167cdfd5cf90774467e87ac502fb1c2c55e14d2",
+    "intern_0924/src/penalty.py": "492f0f027decc9f6550c442ddd5010bd6d4eeffb60969ad40d54847ce54c4f90",
+    "intern_1009/perovskites/py/perovskites_evaluator.py": "6ab76f5763858a0458ab020bb3115b165edd5cf087900c971e8bcb8847673a4f",
+    "intern_1009/perovskites/py/validate_xy_ring.py": "7045061d1d0941922941581c9af37b020d3e303d4e72829b47647864ae3f48a5"
+  },
+  "inherited_N6_N9_N23": "passed unchanged source; no new quantum circuit"
+}

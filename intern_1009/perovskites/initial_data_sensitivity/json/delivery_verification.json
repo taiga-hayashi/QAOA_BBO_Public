@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "models": 3075,
+  "runs": 45,
+  "full_previous20_run_reproductions": 15,
+  "independent_XY_angle_checks": 9225,
+  "checks": "initial nesting and values,source/protocol/checkpoint/model hashes,FM/QUBO,raw sampling/selection/gaps/alpha/budget,all20controltrajectories unchanged; no failed/dropped runs",
+  "source_hashes": "passed",
+  "figure_hashes": "passed",
+  "figure_files": 21,
+  "rendered_PDF_visual_QA": "passed: overview and six individual plots",
+  "python_syntax": "passed",
+  "git_diff_check": "passed",
+  "analysis_source_sha256": "d370835984250053a83e31b67ce9665e0c4b124f0f5561f59a65dbd6c3f95861",
+  "summary_sha256": "d8bdce932651535988dd11bb67d6b4e15d158a19f78de680eae7453ef935327e"
+}

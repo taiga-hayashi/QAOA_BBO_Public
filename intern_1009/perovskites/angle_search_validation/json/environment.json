@@ -1,0 +1,10 @@
+{
+  "python": "3.13.12 (main, Mar 25 2026, 02:48:22) [Clang 22.1.1 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "protocol_sha256": "65553108dccad27ab72ad9d5dd10c12b1c2751d95ef5fa06c23eb109cc286b8a",
+  "code_sha256": {
+    "intern_1009/perovskites/angle_search_validation/py/run_angles.py": "b15976b94753f8ecaaf9b1b481583f329e627f557a58ed047b0524583f19ab61",
+    "src/qarp_backend.py": "77eb7d4153b57d29334a40f4b4d3ae50dcf2789977517611f8fde4a934351f2c",
+    "src/fmqa_solver.py": "681f092f725c4ceeb2f7ace32b26b5765ba2f698c016f4fbd2ba1583f109df6c"
+  }
+}
