@@ -1,0 +1,72 @@
+{
+  "problem_id": "multilayer_filter_L6_K4_code50nm_v1",
+  "parameters": [
+    {
+      "name": "layer_1",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    },
+    {
+      "name": "layer_2",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    },
+    {
+      "name": "layer_3",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    },
+    {
+      "name": "layer_4",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    },
+    {
+      "name": "layer_5",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    },
+    {
+      "name": "layer_6",
+      "type": "categorical",
+      "options": [
+        "SiO2",
+        "Si3N4",
+        "Al2O3",
+        "TiO2"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "name": "FOM",
+      "type": "continuous"
+    }
+  ],
+  "default_goal": "minimize"
+}

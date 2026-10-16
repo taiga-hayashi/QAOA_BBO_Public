@@ -1,0 +1,9 @@
+{
+  "evaluation_mode": "lookup of precomputed optical simulations; no fresh TMM calculation",
+  "source_file": "intern1016/multilayer_filter/json/enumeration.json",
+  "source_sha256": "d271bc6057ad4addcc2296151131798dbc27c5af00b70c2e491aa8b8bf09c9a5",
+  "export_sha256": "a32ddf85f6bf42ab771ffd1d6277c00a7996aa94706078dc5d2af89255a0a8f1",
+  "source_protocol_sha256": "236642aa9a2be5ca76c82f139fcdbfbbeb1915639b6daa17a039050b0ed21eaf",
+  "candidate_order": "lexicographic product(range(4), repeat=6), incident medium to substrate",
+  "usage": "Local research only; source and optical data licensing unresolved; no external publication."
+}

@@ -1,0 +1,67 @@
+{
+  "problem": {
+    "name": "multilayer_filter",
+    "data_path": "data/multilayer_filter/data.csv",
+    "config_path": "data/multilayer_filter/config.json",
+    "group_sizes": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  "output_dir": "results/fm_training_grid_standardization_fixed40",
+  "initial_sets_path": "data/multilayer_filter/ml_initial_sets.json",
+  "seeds": [
+    42,
+    101,
+    2024,
+    7,
+    19
+  ],
+  "initialization_repeats": 3,
+  "initialization_seed_stride": 1000000,
+  "baseline": {
+    "rank": 2,
+    "epochs": 120,
+    "learning_rate": 0.1,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01
+  },
+  "grid": {
+    "rank": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "learning_rate": [
+      0.001,
+      0.01,
+      0.03,
+      0.1
+    ],
+    "weight_decay": [
+      0.0,
+      0.001,
+      0.01,
+      0.1
+    ]
+  },
+  "design": "full factorial rank x learning_rate x weight_decay x target_standardization;epochs120 fixed",
+  "primary_metrics": [
+    "unseen_rmse",
+    "unseen_spearman",
+    "selected_true_regret"
+  ],
+  "evaluation_scope": "remaining4056 candidates are exploratory evaluation only;never passed to training;new independent evaluation required after selecting hyperparameters",
+  "training_policy": "AdamW,fullbatch MSE,CPU1thread,120epochs,no early stopping;standardization mean/population std from training40 only;inverse-transform predictions before every metric",
+  "run_policy": "default action is plan only;run/analyze are explicit actions;no automatic pueue registration",
+  "target_standardization": [
+    false,
+    true
+  ],
+  "statistics": "median over3 model initializations within each data seed,then median/IQR over5 data seeds;baseline contrasts and64 paired normalization contrasts,Bonferroni correction across all primary tests"
+}

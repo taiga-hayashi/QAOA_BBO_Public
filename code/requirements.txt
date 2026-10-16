@@ -1,0 +1,10 @@
+numpy>=1.24
+scipy>=1.10
+torch>=2.0
+dimod>=0.12
+dwave-neal>=0.6
+openqarp
+matplotlib>=3.7
+pandas>=2.0
+ipykernel
+
