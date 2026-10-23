@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "analysis_id": "a-501f06c6846c",
+  "study": "mlfilter-scale",
+  "category": "paper",
+  "created_utc": "2026-10-22",
+  "purpose": "論文用の追加図(概念図、Seed ごとの対応、閉ループの α 掃引、温度の再調整への頑健性、エネルギー分布、閉ループの仕組み、L=6・7・8 の補足、計算コスト表)。古典のペナルティ不要な提案器(カテゴリ型 SA、温度付きボルツマン分布)との比較と、第 2 確認実験(30 Seed)の図を追加",
+  "runs": {
+    "confirm": "c-e0b866ab4433/r-91f13e039c1e",
+    "truth7": "c-5e9cbb5483f7/r-f492fe73e4f9",
+    "paper_extra": "c-9ddf1efaebc1/r-f2433d20d4d3",
+    "explore": {
+      "6": {
+        "bbo_xy": "c-69984f9ea7bb/r-323438e14a2a",
+        "truth": "c-266f9e02f5c8/r-2295f36082ca"
+      },
+      "7": {
+        "bbo_xy": "c-f9d35fc81130/r-422a53454bac",
+        "truth": "c-5e9cbb5483f7/r-f492fe73e4f9"
+      },
+      "8": {
+        "bbo_xy": "c-28adbf06131d/r-61624267714e",
+        "truth": "c-94cc85879e73/r-00239d4f5cc3"
+      }
+    },
+    "classical": "c-458d997c0264/r-2574dd87fffb",
+    "confirm2": "c-436d77725402/r-d6810402d8c9"
+  },
+  "confirm_seeds": [
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007,
+    5008,
+    5009,
+    5010,
+    5011,
+    5012,
+    5013,
+    5014,
+    5015
+  ],
+  "explore_seeds": [
+    42,
+    101,
+    2024,
+    7,
+    19
+  ],
+  "input_checksums": "csv/input_manifest.json(build_csv が読んだ全入力の SHA-256)",
+  "aggregation": {
+    "closed_loop": "Seed ごとの値の中央値と IQR(15 Seed、補足は 5 Seed)",
+    "fixed_fm": "FM ごとに 10 reps の平均、5 FM の中央値"
+  },
+  "notes": "α 掃引・温度の再調整・エネルギー分布は事前固定の検定とは別の探索的な追加解析",
+  "style": "src/aps_style.py"
+}

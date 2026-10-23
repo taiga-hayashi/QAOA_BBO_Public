@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "study": "mlfilter-scale",
+  "phase": "bbo-confirm2",
+  "protocol_phase": "confirmatory",
+  "question": "閉ループ FMQA で重要なのは提案器の正確さではなく提案分布の形か。XY-FMQAOA と古典の温度付き分布はいずれも、FM 最小解を正確に出す提案器(カテゴリ型 SA)より良いか",
+  "decided_by": "利用者(2026-10-22、論文の主張の組み立て直しに伴う確認実験)",
+  "fixed_from": "探索: classical_baselines.json(τ=0.2 はその結果から選んだ値をここで固定)、bbo_confirm.json(XY の条件)",
+  "layers": 7, "budget": 100, "initial_points": 40, "proposal_cycle_cap": 60,
+  "seeds": [6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015,
+            6016, 6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030],
+  "seed_note": "42/101/2024/7/19、3001〜3030、5001〜5015 と重ならない新しい Seed",
+  "conditions": [
+    {"id": "XY-FMQAOA", "kind": "xy", "depth": 4, "objective": "cvar10", "first_evals": 4096, "cycle_evals": 256, "local_maxfev": 192},
+    {"id": "Boltzmann-t0.2", "kind": "boltzmann", "tau": 0.2},
+    {"id": "CatSA", "kind": "catsa"},
+    {"id": "alpha1", "kind": "sa", "alpha": 1.0, "adaptive": false},
+    {"id": "alpha100", "kind": "sa", "alpha": 100.0, "adaptive": false},
+    {"id": "alpha0.3", "kind": "sa", "alpha": 0.3, "adaptive": false},
+    {"id": "RandomFM", "kind": "randomfm"}
+  ],
+  "hypotheses": {
+    "fixed_before_run": "2026-10-22(この実行の結果を見る前に固定)",
+    "primary_metric": "100 評価後の最良解の真の順位(1 = 最適解、小さいほど良い)。Seed ごとに対応",
+    "H1": "XY-FMQAOA < CatSA(片側、対応のある Wilcoxon 符号順位検定)",
+    "H2": "Boltzmann-t0.2 < CatSA(片側、同上)",
+    "H3": "XY-FMQAOA < alpha100(片側、同上)",
+    "multiplicity": "H1〜H3 に Bonferroni 補正(×3)。補正後 p < 0.05 で支持",
+    "secondary": "XY-FMQAOA vs Boltzmann-t0.2、XY-FMQAOA vs alpha1(両側 Wilcoxon、参考)。最適解への到達数(正確な McNemar、参考)。上位 10 位への初到達評価数",
+    "ties": "差 0 の組は zero_method='wilcox'(除外)。全組が 0 なら p=1"
+  },
+  "threads": 1
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "study": "mlfilter-scale",
+  "phase": "bbo-xy",
+  "protocol_phase": "exploratory",
+  "question": "FMQA の閉ループで、調整不要の XY-FMQAOA(λ=0)は、ペナルティ係数の調整に失敗した FMQA(α=0.3、α=100)より良いか",
+  "decided_by": "利用者(2026-10-21)。設計は BBO_XY_DESIGN.md",
+  "layers": [7, 6, 8],
+  "main_layer": 7,
+  "budget": 100,
+  "initial_points": 40,
+  "proposal_cycle_cap": 60,
+  "seeds": [42, 101, 2024, 7, 19],
+  "new_conditions": [
+    {"id": "XY-FMQAOA", "kind": "xy", "depth": 4, "objective": "cvar10", "first_evals": 4096, "cycle_evals": 256, "local_maxfev": 192},
+    {"id": "alpha0.3", "kind": "sa", "alpha": 0.3, "adaptive": false}
+  ],
+  "reused_conditions": {
+    "source": "Phase 1(phase1_penalty.json)の同じ L・Seed の run。予算 400/1600 の run は先頭 100 評価(予算 100 の直接実行と一致を確認済み)。Random は fixed100 の run",
+    "conditions": ["alpha1", "alpha3", "alpha10", "alpha100", "Adaptive", "RandomFM", "Random"]
+  },
+  "xy_details": "src/mlfilter_fmqa_xy.py。1 サイクル目は INTERP で p=1→4(各深さ 4096 評価、p=1 は 49 格子を含む)。2 サイクル目以降は前サイクルの最良角度 + Powell(最大 192)+ 一様乱数で計 256 評価。100 shots は厳密分布から seed*100000 + (cycle-1)*1000 の乱数で抽出",
+  "metrics": {
+    "primary": "100 評価後の最良解の真の順位(1 = 最適解、小さいほど良い)",
+    "secondary": ["上位 10 位への初到達評価数(未到達は 101)", "最適解への到達数", "正規化 regret", "サイクルごとの実行可能率"]
+  },
+  "criterion": {
+    "fixed_before_run": "2026-10-21(この実行の結果を見る前に固定)",
+    "definition": "L=7 の 5 Seed で、XY-FMQAOA の最良順位の中央値が alpha0.3 と alpha100 の両方の中央値より小さければ『調整に失敗した FMQA より良い』(探索段階の判定)",
+    "other_layers": "L=6・8 も同じ表で報告する(L=6 は初到達の速さも見る)",
+    "confirmation": "傾向が出たら、条件を固定して新しい 30 Seed(3001〜3030 以外)で対応のある Wilcoxon により確認する"
+  },
+  "cores": "他セッションが 10〜47 番コアを使用中のため 4〜9 番の 6 コア(1 ジョブ 1 コア)",
+  "threads": 1
+}

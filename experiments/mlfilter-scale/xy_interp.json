@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "study": "mlfilter-scale",
+  "phase": "solver-xyinterp",
+  "protocol_phase": "exploratory",
+  "question": "角度の最適化を強化すると、XY-FMQAOA(λ=0)は同じ固定 FM 上で調整済みの SA(α=1〜3)と同程度になるか",
+  "decided_by": "利用者(2026-10-20)。目標は調整済みのペナルティ法と同程度",
+  "base": "solver-fixedfm の run(同じ固定 FM 5 本)。比較の SA の値はその run の summary.json",
+  "layers_first": [6, 7],
+  "layers_later": "L=8 は L=6・7 で効果を確認してから決める",
+  "depths": [1, 2, 3, 4, 5, 6],
+  "objectives": ["mean", "cvar10"],
+  "search": {
+    "evaluations_per_depth": 4096,
+    "starts": "p=1: 49 格子。p>=2: INTERP(1 つ浅い深さの最良角度を線形補間、Zhou et al. 2020)と 0 埋めの埋め込み。全深さ: 既存の探索(solver-fixedfm の p=1〜3、solver-xydeep の p=4〜6)の同じ深さの最良角度",
+    "global": "一様乱数で 512 評価まで",
+    "local": "目的値の上位 8 点から Powell(各 384 評価まで、xtol 1e-6、ftol 1e-9)",
+    "remaining": "残りを一様乱数",
+    "bounds": "γ ∈ [0, 2π]、β ∈ [0, π]",
+    "angle_seed": "SeedSequence([seed, 1, 2020, depth])"
+  },
+  "sampling": "最良角度の厳密分布から 100 shots × 10 reps(seed*100000 + rep)",
+  "comparable_criterion": {
+    "fixed_before_run": "2026-10-20(この実行の結果を見る前に固定)",
+    "definition": "各 L で次の両方を満たすとき『調整済みの SA と同程度』とする",
+    "gap": "XY の正規化 FM ギャップの 5 FM 中央値 ≤ max(SA α=1 の IQR 上端, SA α=3 の IQR 上端)",
+    "sample_pct": "XY の実行可能サンプルの FM 百分位の 5 FM 中央値 ≤ SA α=3 の 5 FM 中央値",
+    "which_xy": "p=1〜6 × mean/cvar10 の 12 条件のうち、各 L で gap が最小の条件を報告し、全条件の値も示す(複数条件から選ぶことを明記する)"
+  },
+  "cores": "他のセッションが 10〜47 番コアを使用中のため 4〜7 番の 4 コア(1 ジョブ 1 コア)",
+  "threads": 1
+}

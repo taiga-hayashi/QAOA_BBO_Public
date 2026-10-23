@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "study": "mlfilter-scale",
+  "phase": "phase0",
+  "run_ids": [
+    "r-2295f36082ca",
+    "r-f492fe73e4f9",
+    "r-00239d4f5cc3"
+  ],
+  "analysis_ids": [],
+  "jobs": [
+    {
+      "stage": "compute:enumerate",
+      "layers": 6,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 0,
+      "depends_on": [],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh enumerate data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/enumerate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/enumerate.log"
+    },
+    {
+      "stage": "compute:timing",
+      "layers": 6,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 1,
+      "depends_on": [
+        0
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh timing data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/timing.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/timing.log"
+    },
+    {
+      "stage": "compute:xstate",
+      "layers": 6,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 2,
+      "depends_on": [
+        0
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh xstate data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/xstate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-266f9e02f5c8/r-2295f36082ca/logs/xstate.log"
+    },
+    {
+      "stage": "compute:enumerate",
+      "layers": 7,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 3,
+      "depends_on": [],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh enumerate data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/enumerate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/enumerate.log"
+    },
+    {
+      "stage": "compute:timing",
+      "layers": 7,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 4,
+      "depends_on": [
+        3
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh timing data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/timing.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/timing.log"
+    },
+    {
+      "stage": "compute:xstate",
+      "layers": 7,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 5,
+      "depends_on": [
+        3
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh xstate data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/xstate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-5e9cbb5483f7/r-f492fe73e4f9/logs/xstate.log"
+    },
+    {
+      "stage": "compute:enumerate",
+      "layers": 8,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 6,
+      "depends_on": [],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh enumerate data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/enumerate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/enumerate.log"
+    },
+    {
+      "stage": "compute:timing",
+      "layers": 8,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 7,
+      "depends_on": [
+        6
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "run_pinned.sh timing data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3",
+      "submitted_at_utc": "2026-10-20T03:56:12Z",
+      "resources": {
+        "cpus": 1,
+        "gpus": 0,
+        "memory_gb": 16
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/timing.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/timing.log"
+    },
+    {
+      "stage": "compute:xstate",
+      "layers": 8,
+      "scheduler": "pueue (-c /home/jovyan/FMA/.pueue-openqarp/pueue.yml, group mlfilter-scale)",
+      "job_id": 8,
+      "depends_on": [
+        6
+      ],
+      "status": "queued",
+      "execution_profile": "server",
+      "working_directory": "experiments/mlfilter-scale/py",
+      "python_executable": "/home/jovyan/FMA/.venv/bin/python",
+      "command": "env NCORES=16 run_pinned.sh xstate data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3",
+      "submitted_at_utc": "2026-10-20T04:08:30Z",
+      "resources": {
+        "cpus": 16,
+        "gpus": 0,
+        "memory_gb": 160
+      },
+      "stdout_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/xstate.log",
+      "stderr_path": "data/runs/mlfilter-scale/c-94cc85879e73/r-00239d4f5cc3/logs/xstate.log",
+      "note": "2026-10-20 04:08 UTC: 1スレッド版(依存 5,6)を開始前に取り消し、16スレッド(OMP_NUM_THREADS=16、16コア固定)で再投入。他のL・測定は1スレッド"
+    }
+  ],
+  "resume": {
+    "parent_run_id": null,
+    "checkpoint_path": null,
+    "checkpoint_sha256": null,
+    "completed_range": null,
+    "remaining_range": null,
+    "command": null,
+    "prechecks": [
+      "各出力 JSON が存在すると上書きを拒否する。失敗時は新しい run を init して再投入する"
+    ],
+    "tested": false,
+    "test_evidence": null
+  }
+}

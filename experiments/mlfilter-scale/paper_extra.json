@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "study": "mlfilter-scale",
+  "phase": "paper-extra",
+  "protocol_phase": "exploratory",
+  "purpose": "論文用の追加解析(利用者の依頼 2026-10-22)。確認実験の事前固定の検定とは別の、補助的・探索的な解析として扱う",
+  "closed_loop": {
+    "layers": 7, "budget": 100, "proposal_cycle_cap": 60,
+    "seeds": [5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015],
+    "seed_note": "確認実験(bbo_confirm.json)と同じ Seed。α=0.3・1・100、XY、ランダムは確認実験の run を再利用",
+    "conditions": [
+      {"id": "alpha3", "sampler": "sa", "alpha": 3.0, "schedule": "auto"},
+      {"id": "alpha10", "sampler": "sa", "alpha": 10.0, "schedule": "auto"},
+      {"id": "alpha30", "sampler": "sa", "alpha": 30.0, "schedule": "auto"},
+      {"id": "alpha1000", "sampler": "sa", "alpha": 1000.0, "schedule": "auto"},
+      {"id": "Adaptive", "sampler": "adaptive"},
+      {"id": "alpha100-fmscale", "sampler": "sa", "alpha": 100.0, "schedule": "fmscale"},
+      {"id": "alpha100-wide10x", "sampler": "sa", "alpha": 100.0, "schedule": "wide10x"},
+      {"id": "alpha100-fmscale10x", "sampler": "sa", "alpha": 100.0, "schedule": "fmscale10x"}
+    ]
+  },
+  "fixed_fm": {
+    "source": "solver-fixedfm の run(L=6・7・8、各 5 FM)と、XY の最良角度は solver-xyinterp の run(p=4、CVaR10)",
+    "sa_alphas": [1, 3, 10, 30, 100, 1000],
+    "schedules": ["auto", "fmscale", "wide10x", "fmscale10x"],
+    "reps": 10,
+    "distributions": "各条件の実行可能サンプルの FM 百分位を全て保存(エネルギー分布の図用)。XY p=4 CVaR10 とランダム提案も同様"
+  },
+  "schedules": {
+    "auto": "Neal の自動 β 範囲(罰則込みの BQM)、1000 sweeps(これまでの全実験と同じ)",
+    "fmscale": "罰則なしの FM だけの BQM に対する Neal の自動 β 範囲を、罰則込みの BQM に使う(高温側を FM の尺度に合わせる)、1000 sweeps",
+    "wide10x": "自動 β 範囲のまま 10000 sweeps",
+    "fmscale10x": "fmscale の β 範囲で 10000 sweeps"
+  },
+  "check": "trajectory_custom(sampler=auto SA)が確認実験の alpha100 Seed 5001 の軌跡と FM ハッシュを再現することを確認済み(2026-10-22)",
+  "threads": 1
+}
